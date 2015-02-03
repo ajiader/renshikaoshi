@@ -1,0 +1,62 @@
+*{margin:0;padding:0;}
+body{font-family:"宋体";font-size:12px;width:100%;behavior:url("style/hover.htc")/*ie6 hover 显示背景图片*/}
+li{list-style:none;}
+a img{border:0px;margin:0px;padding:0px;}
+a{text-decoration:none;color:#424242;}
+a:hover{color:#ff0000;}
+a {outline: none;}
+a:active {star:expression(this.onFocus=this.blur());}/*去虚线*/
+.cl{clear:both;}
+.fr{float:right;}
+.fl{float:left;}
+#top {width:980px;height: 40px;margin: 0px auto;overflow: hidden;background:#fff;}
+#top .l_logo {float: left;width: 280px;height: 40px;overflow: hidden;}
+#top .l_logo_mid {float: left;width: 100px;height: 40px;overflow: hidden;}
+#top .r_logo {float: right;width: 315px;height: 40px;overflow: hidden;CURSOR: pointer;}
+#main{width:100%;background:url(../../images/boda/img/main_bg.jpg) repeat-x top;clear:both;}
+.w_980{width:980px;margin:0 auto;background:#fff;clear:both;clear:both;_margin-top:10px;*margin-top:10px;margin-top:10px;}
+.white_bg{background:#fff;width:980px;float:left;}
+.w_960{width:960px;margin:0 auto;}
+.logo_zc{float:left;width:188px;}
+.logo_zcx{float:left;padding-top:20px;}
+.nav{background:url(../../images/boda/img/nav_bg.gif) no-repeat;width:960px;height:62px;clear:both;overflow:hidden;}
+.nav a{color:#fff;}
+.nav a:hover{color:#FF0;}
+.nav .home{font-size:16px;font-weight:bold;color:#fff; font-family:"microsoft yahei";width:51px;float:left;text-align:center;line-height:62px;text-shadow: -2px 2px 3px #666;}
+.nav .home a{font-size:16px;}
+.nav dl dt{background:url(../../images/boda/img/dtbg.gif) no-repeat;width:33px;height:62px;float:left;clear:both;text-align:center;font-size:14px;font-weight:bold;font-family:"microsoft yahei";}
+.nav dl {float:left;height:62px;}
+.nav dl.ks{width:68%;float:left;}
+.nav dl.hd{width:25%;float:left;}
+.nav dl dt a{padding:5px;display:block;line-height:22px;text-shadow: -2px 2px 3px #666;}
+.nav dl dd a{display:block;text-align:center;white-space:nowrap;border-left:1px dotted #042941;height:14px;margin-top:8px;width:66px;font-size:12px;line-height:14px;float:left;}
+.row_1{width:958px;clear:both;background:url(../../images/boda/img/ser_bg.gif) repeat-x;height:29px;border-left:1px solid #dedede;border-right:1px solid #dedede;border-bottom:1px solid #dedede;line-height:30px;}
+.nav dl dd {color:#042941;position:relative;left:-1px;}
+.row_1{color:#016b8b;}
+.row_1 a{color:#016b8b;}
+.row_1 a:hover{color:#ff0000;}
+.row_1 .fl{overflow:hidden;padding-right:20px;padding-left:20px;}
+.row_1 .fr{padding-right:20px;}
+.serach{_margin-top:3px;}
+.row_1 .fr .serach input{vertical-align:middle;border:1px solid #016b8b;margin-right:3px;}
+.ser_btn{border:1px solid #016b8b;line-height:18px;width:40px;background:#216b9d;height:18px;color:#FFF;}
+.ser_btn:hover{background:#0096cb;}
+.row_2{clear:both;width:958px;border:1px solid #c1dce8;height:60px;background:url(../../images/boda/img/map.gif) no-repeat;margin-top:10px;overflow:hidden;}
+.row_2 .area{padding-left:75px;font-size:14px;color:#006699;line-height:28px;width:720px;float:left;overflow:hidden;}
+.row_2 .area  a{color:#006699;white-space:nowrap;display:inline-block;padding:0 2px;}
+.row_2 .area  a:hover{color:#f00;}
+.row_2 .stu_acc{width:160px;float:left;overflow:hidden;}
+.row_2 .stu_acc .fl{background:url(../../images/boda/img/icon.gif) no-repeat 0 -26px;width:25px;height:60px;color:#af040e;line-height:22px;border-left:1px solid #dae7f2;border-right:1px solid #dae7f2;font-size:14px;font-weight:bold;text-align:center;padding-top:5px;overflow:hidden;}
+.row_2 .stu_acc .fr .ds{background:url(../../images/boda/img/icon.gif) no-repeat 0 0;width:90px;line-height:22px;padding-left:30px;font-size:12px;color:#005599;margin:6px 0px;height:22px;}
+.row_2 .stu_acc .fr .ds a{color:#005599;}
+.row_2 .stu_acc .fr .ds a:hover{color:#f00;}
+
+
+
+
+
+	
+
+
+
+

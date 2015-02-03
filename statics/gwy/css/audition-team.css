@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-size:14px; background:#ffffff; padding-top:54px; color:#333333;}
+
+.auditionfixed{ height:54px; background:#b00000; line-height:54px; position:fixed; width:100%; top:0px; left:0px; z-index:99;}
+.auditionct{ width:960px; margin:0 auto; overflow:hidden;}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+* html .auditionfixed{position:absolute;left:expression(eval(document.documentElement.scrollLeft));top:expression(eval(document.documentElement.scrollTop))}
+.auditionfixed span{ float:left;}
+.auditionfixed span.sp1{ background:url(../msbimages/team-logo.png) no-repeat; width:180px; height:31px; margin-top:12px;}
+.auditionfixed span.sp2{ line-height:54px; float:right;}
+.auditionfixed span.sp2 a{ display:inline-block; padding:0 15px; background:url(../msbimages/menu-sx.png) no-repeat right center; font-size:20px; color:#ffffff; text-shadow:3px 3px 2px #333333;}
+.auditionfixed span.sp2 a.bgnone{ background:none;}
+.auditionbanner{ height:335px; background:url(../msbimages/banner-bg.jpg) no-repeat center top; position:relative;}
+.auditionbanner div{ position:absolute; top:208px; left:0px; width:100%; height:84px; background:url(../msbimages/bn-po.png) repeat-x; text-align:center; text-shadow:3px 3px 3px #333333; font-size:61px; color:#ffffff; font-weight:bold;}
+.auditionbanner div b{ color:#feeb38;}
+.auditionfourspan{ padding:0 48px; color:#ffffff;}
+.auditionfourspan span{ float:left; width:204px; height:80px; background:#545454; text-align:center; font-size:27px; font-weight:bold; padding-top:5px; margin-right:16px;}
+.auditionfourspan span.mrling{ margin-right:0px;}
+.auditiontymg{ margin-bottom:35px;}
+.auditiontitle{ text-align:center; font-size:40px; font-weight:bold; color:#ffffff; background:#cb0000; height:60px; line-height:60px;}
+.mgone{ margin-bottom:20px;}
+.auditionquestion{ height:370px; background:url(../msbimages/rw-bg.jpg) no-repeat center center; position:relative;}
+.auditionquestion div{ position:absolute; width:340px;}
+.auditionquestion div h3{ font-size:30px; margin-bottom:10px;}
+.auditionquestion div p{ line-height:26px; font-size:14px;}
+.auditionquestion div.dv1{ left:0px; top:10px;}
+.auditionquestion div.dv2{ left:0px; top:200px;}
+.auditionquestion div.dv3{ right:0px; top:10px;}
+.auditionquestion div.dv4{ right:0px; top:200px;}
+.auditionjs{ background:#eae8e8; padding:20px 52px; font-weight:bold;}
+.auditionjs p.p1{ color:#232323; font-size:22px; margin-bottom:15px; line-height:36px;}
+.auditionjs p.p2{ color:#b00000; font-size:32px;}
+.auditionsljbm{ height:850px; background:url(../msbimages/ljbmbg.jpg) no-repeat center 80px; position:relative; margin-top:-50px;}
+.auditionsljbm div{ position:absolute; width:210px; height:210px; background:url(../msbimages/yuanbg.png) no-repeat;}
+.auditionsljbm div h3{  text-align:center; font-size:30px; color:#333333; margin-top:25px;}
+.auditionsljbm div p{ font-size:14px; color:#000000; line-height:18px; padding:0 20px;}
+.auditionsljbm div a{ position:absolute; width:104px; height:30px; text-align:center; line-height:30px; color:#ffffff; bottom:15px; left:52px; background:url(../msbimages/abg.jpg) no-repeat;} 
+.auditionsljbm div.dv1{ top:86px; left:110px;}
+.auditionsljbm div.dv2{ top:265px; left:0px;}
+.auditionsljbm div.dv3{ top:475px; left:10px;}
+.auditionsljbm div.dv4{ top:605px; left:175px;}
+.auditionsljbm div.dv5{ top:605px; left:580px;}
+.auditionsljbm div.dv6{ top:470px; left:740px;}
+.auditionsljbm div.dv7{ top:260px; left:740px;}
+.auditionsljbm div.dv8{ right:110px; top:76px;}
+.auditionsljbm div.dv9,.auditionsljbm div.dv10{ left:310px; top:66px; background:none; width:auto; height:auto; font-weight:bold;}
+.auditionsljbm div.dv9 p,.auditionsljbm div.dv10 p{ line-height:normal;}
+.auditionsljbm div.dv9 h3{ font-size:52px; color:#cb0000; margin-bottom:10px;}
+.auditionsljbm div.dv9 h3 strong{ color:#000000;}
+.auditionsljbm div.dv9 p{ font-size:30px; color:#000000;}
+.auditionsljbm div.dv10{ top:660px; left:366px;}
+.auditionsljbm div.dv10 h3{ font-size:48px;}
+.auditionsljbm div.dv10 p{ color:#cb0000; font-size:24px;}
+.auditionsljbm div.dv11{ width:230px; height:230px; left:300px; top:280px; background:none;}
+.auditionsljbm div.dv11 a{ background:none; height:230px; width:230px; display:block; position:!important;}
+.auditionszy{ font-size:32px; color:#3a3a3a; padding-left:20px; font-weight:bold;}
+.auditionszy strong{ color:#f20108;}
+.auditionslist{ margin:0 20px 20px 20px; border:1px #dadada solid; padding:15px 15px 5px 15px;}
+.auditionslist .listty{ clear:both; border-bottom:1px #d9d9d9 dashed; padding-bottom:10px; margin-bottom:10px;}
+.auditionslist .listty span{ float:left; width:84px; height:29px; line-height:29px; text-align:center; color:#ffffff; font-size:16px; font-weight:bold; margin-right:15px; background:url(../msbimages/icon1.png) no-repeat;}
+.auditionslist .listty ul{ float:left; width:788px;}
+.auditionslist .listty ul li{ float:left; width:175px; line-height:30px; color:#333333;}
+.auditionms{ float:left; width:195px; height:165px; background:url(../msbimages/cjj-pic.jpg) no-repeat;}
+.auditionmsnr{ width:700px; float:right;}
+.auditionmsnr .tcname{ font-size:30px; color:#000000; font-weight:bold; margin-bottom:15px;}
+.auditionmsnr .tcname span{ font-size:16px; color:#cb0000; padding:0 5px; display:inline-block; font-weight:normal;}
+.auditionmsnr .mgling{ margin-bottom:0px;}
+.auditionmsnr .mgling span{ padding:0px;}
+.auditionmsnr p{ line-height:22px;}
+.auditionteacher{ width:220px; float:left; margin-right:10px; display:inline;}
+.auditionteacher h3{ background:#e00200; color:#ffffff; font-size:31px; text-align:center; height:50px; line-height:50px; margin-bottom:15px;}
+.auditionteacher p{ line-height:22px;}
+.mgtwo{ margin:0 20px 20px 20px;}
+.dvwd{ width:285px; margin-right:30px;}
+.mgthree{ margin-right:0px;}
+.ts,.dbz{ border:1px #ff860c solid; border-left:0px; position:relative; height:200px;}
+.ts .splf{ width:211px; height:203px; background:url(../msbimages/tsbg.jpg) no-repeat; position:absolute; left:0px; top:-2px;}
+.ts .dvrg,.dbz .dvrg{ position:absolute; width:675px; right:10px; top:0px;}
+.ts .dvrg h3,.dbz .dvrg h3{ margin:15px 0; font-size:25px; font-weight:bold;}
+.ts .dvrg h3 span,.dbz .dvrg h3 span{ color:#ff7e00;}
+#sexts a,#dbza a{ display:inline-block; width:93px; height:27px; line-height:27px; text-align:center; background:#e6e6e6; color:#333333; margin-right:10px; text-align:center; margin-bottom:8px;}
+#sexts a.selected,#dbza a.selected{ background:url(../msbimages/axz.png) no-repeat; color:#ffffff; width:93px; height:32px; }
+.tsdv{ line-height:22px; text-indent:2em;}
+.dbz{ height:231px;}
+.dbz .dbzlf{ width:196px; height:233px; background:url(../msbimages/dbzbg.jpg) no-repeat; position:absolute; left:0px; top:-1px;}
+.longtrasfoot{ border-top:1px solid #D9D9D9; font-size:12px; padding:20px 0 40px; text-align: center;}
+.longtrasfoot p{ color:#3C3837; line-height:25px;}
+.longtrasfoot p a{ color:#3C3837;}
+.msms-tb{ border-top:1px #9e9e9e solid; border-left:1px #9e9e9e solid; margin:0 0 20px 20px;}
+.msms-tb tr{ background:#ffffff;}
+.msms-tb tr td{ border-bottom:1px #9e9e9e solid; border-right:1px #9e9e9e solid; height:30px; font-size:12px; color:#616161; text-align:center; padding:5px;}
+.msms-tb tr.bgone{ background:#e8e8e8; height:40px;}
+.msms-tb tr.bgone td{ font-size:18px;}
+.msms-tb tr td.yuanjia{ text-decoration:line-through;}
+.msms-tb tr td.yhj{ color:#d10000; font-weight:bold; font-size:14px;}
+.msms-tb tr td.alict{ text-align:left; padding-left:15px;}
+.msms-tb tr td font{ color:#d10000; font-size:12px;}
+.msms-tb tr td a{ font-size:14px; color:#d10000;}

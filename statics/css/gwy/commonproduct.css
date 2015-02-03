@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,span,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,ol,a,font,img,table,td,tr,i{ margin:0px; padding:0px;}
+body{ font-family:微软雅黑; font-size:14px;}
+ul li{ list-style:none;}
+img{ border:0px;}
+a{ text-decoration:none; color:#505050;}
+a:hover{ text-decoration:none; color:#404040;}
+*{ margin:0px; padding:0px;}
+input, select, textarea { outline: medium none;}
+
+
+
+.commondv{ height:469px; overflow:hidden; border:1px #f9af77 solid; border-top:3px #ff7000 solid; width:958px; margin:0 auto;}
+.commontybg,.commondv .dvhed,.commondv .dvhed span.comys,.commondv .dvsy,.commondv .dvsy span.spsyqtnr,.commondv .dvzynr .nrright .dvcut,.commondv .dvzynr .nrright .dvcut span,.commondv .dvzynr .nrright .dvcut a,.commondv .dvzynr .nrright .nrcontent .contentleft p.mfty a.ty,.commondv .dvzynr .nrright .nrcontent .contentleft .bbzx a,.commonul li,.commonul li span a.ckxx,.commondv .dvzynr .nrright .nrcontent .contentct .ckxxkb a,.commondv .dvzynr .nrright .nrcontent .contentright .spcut,.commbjdy li span a.bjdy{ background-image:url(/statics/images/gwy/commpducttybg.png); background-repeat:no-repeat;}
+.commondv .dvhed{ height:64px; line-height:64px; background-position:0px 0px; padding-left:54px;}
+.commondv .dvhed span,.commondv .dvsy span{ float:left;}
+.commondv .dvhed span.comtitle,.commondv .dvsy span.spsyqt{ font-size:22px; font-weight:bold; color:#d93902;}
+.commondv .dvhed span.comys{ width:59px; padding-top:8px; height:55px; line-height:24px; font-size:18px; color:#d93902; text-align:center; background-position:0px -66px; margin:0 10px 0 40px;}
+.commondv .dvhed span.comysnr{ font-size:16px; }
+.commondv .dvhed span.comysnr a,.commondv .dvsy span.spsynra a{ display:inline-block; color:#818181; margin:0 8px;}
+.commondv .dvsy{ background-position:0px -132px; height:40px; border-bottom:1px #f9af77 solid; line-height:40px; padding-left:20px;}
+.commondv .dvsy span.spsyqt{ font-size:16px; width:480px;}
+.commondv .dvsy span.spsyqtnr{ width:76px; text-align:center; font-size:18px; color:#d93902; background-position:-64px -66px; line-height:38px; height:40px;}
+.commondv .dvsy span.spsynra{ font-size:12px;}
+.commondv .dvzynr{ overflow:hidden; height:364px;}
+.commondv .dvzynr .nrleft{ width:169px; float:left; margin-right:15px;}
+.commondv .dvzynr .nrleft a{ display:block; background:#fff9ef; height:71px; border-top:1px #ffffff solid; border-right:1px #f9af77 solid; border-bottom:1px #f9af77 solid; font-size:18px; color:#d93902; font-weight:bold; line-height:71px; text-align:center;}
+.commondv .dvzynr .nrleft a.selected{ border-right:0px; height:72px; border-top:0px; border-left:2px #d93902 solid; background:#ffffff; line-height:73px;}
+.commondv .dvzynr .nrright{ width:756px; padding-top:12px; float:left}
+.commondv .dvzynr .nrright .dvcut{ height:33px; line-height:33px; background-position:-147px -65px;}
+.commondv .dvzynr .nrright .dvcut span{ display:inline-block; width:70px; height:24px; line-height:22px; padding-left:10px; font-size:14px; color:#ffffff; background-position:-147px -103px; margin:5px 20px 0 0;}
+.commondv .dvzynr .nrright .dvcut a{ width:105px; display:inline-block; height:32px; line-height:32px; background-position:-253px -99px; text-align:center; margin-right:8px; font-size:12px; _height:27px; _line-height:27px;}
+.commondv .dvzynr .nrright .dvcut a.selected{ background-position:-365px -99px; color:#d10000;}
+.commondv .dvzynr .nrright .nrcontent{ padding-top:15px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft{ width:245px; float:left; font-size:12px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft .pic{ width:245px; height:154px; display:block; margin-bottom:10px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft .pic img{ width:245px; height:154px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft p{ line-height:25px; border-bottom:1px #f9af77 dashed; color:#535353;}
+.commondv .dvzynr .nrright .nrcontent .contentleft p font{ text-decoration:line-through; font-size:12px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft p.mfty{ position:relative;}
+.commondv .dvzynr .nrright .nrcontent .contentleft p.mfty a.ty{ position:absolute; right:0px; top:0px; width:84px; height:27px; font-size:14px; color:#ffffff; text-align:center; line-height:25px; background-position:-480px -102px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft .bbzx{ display:block; height:40px; line-height:40px; color:#e11e1c; font-weight:bold; font-size:15px;}
+.commondv .dvzynr .nrright .nrcontent .contentleft .bbzx a{ font-size:12px; font-weight:normal; background-position:-926px -105px;}
+.commondv .dvzynr .nrright .nrcontent .contentct{ width:240px; float:left; margin:0 15px; display:inline;}
+.commondv .dvzynr .nrright .nrcontent .contentct p{ font-size:16px; font-weight:bold; color:#333333;}
+.commonul{ display:block; padding:10px 0;}
+.commonul li{ height:26px; line-height:26px; padding-left:13px; background-position:-954px -69px; color:#666666; font-size:12px; position:relative;}
+.commonul li span{ position:absolute; right:0px; top:3px;}
+.commonul li span a.ckxx{ color:#dd0000; display:inline-block; padding:0 5px; height:20px; line-height:20px; background-position:-625px -105px; font-family:宋体;}
+.commondv .dvzynr .nrright .nrcontent .contentct .ckxxkb{ border-top:1px #f9af77 solid; padding-top:15px; text-align:center;}
+.commondv .dvzynr .nrright .nrcontent .contentct .ckxxkb a{ display:inline-block; width:133px; height:31px; line-height:31px; font-size:14px; font-weight:bold; background-position:-709px -100px; color:#ffffff;}
+.commondv .dvzynr .nrright .nrcontent .contentright{ float:left; width:240px;}
+.commondv .dvzynr .nrright .nrcontent .contentright .spcut{ display:block; height:32px; line-height:32px; font-weight:bold; color:#df0b08; padding-left:12px; background-position:0 -176px;}
+.commbjdy li span a.bjdy{ height:17px; line-height:17px; background-position:-65px -111px; width:40px; padding:0px; display:inline-block; text-align:center; color:#ffffff; padding-left:5px;}

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}z_reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_default_blue.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_share.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+</head>
+<body>
+</script>
+{template "content","rsks_top"}
+<!--main-->
+<div class="main">
+	<div class="col-left">
+    <div class="expo_nav_ad">
+      <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <?php 
+if ($siteid == 2):
+?>
+<!-- 广告位：公务员内页-顶部 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538687");</script>
+<?php
+else:
+?>
+<!-- 广告位：职称类-内页顶部banner1 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538603");</script>
+<?php
+endif;
+?>
+    </div>
+    	<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > </span>{catpos($catid)} 标签：<font color="red">{$tag}</font> 总共有 {$total} 条记录</div>
+        <ul class="list lh24 f14">
+{loop $datas $r}
+	<li><span class="rt">{date('Y-m-d',$r[inputtime])}</span>·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>
+	{if $n%5==0}<li class="bk20 hr"></li>{/if}
+{/loop}
+        </ul>
+        <div id="pages" class="text-c">{$pages}</div>
+  </div>
+    <div class="col-auto" style="float:right">
+        <div class="box">
+            <h5 class="title-2">频道总排行</h5>
+           {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+            <ul class="content digg">
+				{loop $data $r}
+					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],50,'')}</a></li>
+				{/loop}
+            </ul>
+            {/pc}
+        </div>
+        <div class="bk10"></div>
+     <?php 
+if ($siteid == 2):
+?>   <div class="ad_pic">
+<!-- 广告位：公务员内页-右侧 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538694");</script>
+</div>
+
+ <div class="ad_pic">
+<!-- 广告位：内页-右侧位02 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("568247");</script>
+</div>
+<?php
+else:
+?>
+<div class="ad_pic">
+<!-- 广告位：职称类-内页右侧位 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538605");</script>
+</div>
+
+<div class="ad_pic">
+<!-- 广告位：内页右侧位02 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("568252");</script>
+</div>
+<?php
+endif;
+?>
+      <div class="box">
+          <h5 class="title-2">频道本月排行</h5>
+     
+      {pc:content action="hits" catid="$catid" num="8" order="monthviews DESC" cache="3600"}
+            <ul class="content rank">
+				{loop $data $r}
+				<li><span>{number_format($r[monthviews])}</span><a href="{$r[url]}"{title_style($r[style])} class="title" title="{$r[title]}">{str_cut($r[title],56,'...')}</a></li>
+				{/loop}
+            </ul>
+            {/pc}
+        </div>
+        
+    </div>
+</div>
+{template "content","rsks_bottom"}
+ </body>
+    </html>

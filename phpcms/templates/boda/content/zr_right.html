@@ -1,0 +1,23 @@
+<div class="lieright">
+        	<div class="lietydv">
+            	<span class="rgtrcut">热门推荐</span>
+                <ul class="toruinewslist">
+                {pc:content  action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+				{loop $data $r}
+                    <li><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 48, '')}</a></li>
+				{/loop}
+			{/pc}
+                </ul>
+            </div>
+            <div class="toruibanner" id="723576"></a></div>
+            <div class="lietydv">
+            	<span class="rgtrcut">报考指南</span>
+                <ul class="toruinewslist">
+                   	{pc:content action="hits" catid="$catid" num="10" order="monthviews DESC" cache="3600"}
+				{loop $data $r}
+                    <li><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 48, '')}</a></li>
+				{/loop}
+			{/pc}
+                </ul>
+            </div>
+        </div>

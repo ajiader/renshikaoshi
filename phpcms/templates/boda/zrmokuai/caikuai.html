@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>财会类模块查询</title>
+<link type="text/css" rel="stylesheet" href="/statics/css/zrmokuai/caikuaiclass.css" />
+<style type="text/css">
+body{ background:#fff}
+</style>
+<script src="/statics/js/53kefu.js"></script>
+<script type="text/javascript">
+
+
+function CheckForm()
+{
+ if((document.form1.q.value == "") || (document.form1.q.value == "请输入你所报考的科目"))
+ {
+  alert("请输入你所报考的科目！");
+  history.back();
+  document.form1.q.focus();
+  return false;
+ }
+else{   //当条件成立时再提交
+document.form1.submit();  
+}
+}
+
+</script>
+</head>
+
+<body>
+<div class="computercenter bg1">
+  <form  name="form1" method="get" action="{siteurl($siteid)}/zrmokuai/">
+	<div class="zrcksearch"><span>博大致睿题库{$typelist['data'][$typeid]['name']}模块搜索</span><input type="input" name="q" class="ssbtn"   id="q" onfocus="if(this.value == this.defaultValue) this.value = '';" 
+     onBlur="if(this.value == '') this.value = this.defaultValue;"
+     value="{if $q}{$q}{else}请输入你所报考的科目{/if}"  />	<input type="button"  class="sstxtbtn" onclick=" CheckForm();"  />
+     <input type="hidden" name="mk" value="caikuai" />
+      <input type="hidden" name="nokefu" value="{intval($_GET['nokefu'])}" />
+     <input type="hidden" name="typeid" value="{$typeid}" />
+	</div>
+  </form>
+	<div class="zg_content">
+		按字母查询：{loop $this->zmarr $k $v}   <a href="{siteurl($siteid)}/zrmokuai/?zm={$v}&mk=caikuai" {if strtoupper($v)==strtoupper($zm)}class="selected"{/if}>{strtoupper($v)}</a>       {/loop}
+    </div>
+     {if $infos}	<table cellpadding="0" cellspacing="0" class="zg_table">
+         
+        	<tr>
+            	<td width="295">考试模块名称</td>
+                <td width="87">上市时间</td>
+                <td width="81">题库零售价</td>
+              	{if $_GET['nokefu']!=1}<td width="199">免费在线试题</td> {/if}
+              <!--  <td width="100">题库试题详情</td>-->
+               {if $_GET['nokefu']!=1} <td width="101">客服咨询</td>
+                <!--<td width="86">考试动态</td>--> {/if}           </tr>
+         {loop $infos $r}
+                	<tr>
+            	<td width="295" class="pd1">{str_replace($q,'<font color="red">'.$q.'</font>',$r['name'])}</td>
+                <td width="87" >{date('Y-m-d',strtotime($r['updatetime']) )}</td>
+                
+                <td width="81">￥{number_format($r['price'],2)}</td>
+                {if $_GET['nokefu']!=1}
+               <td width="199" class="cl3"><a href="javascript:void(0)" onclick="kefulink()" >咨询客服索要<b>免费在线试题</b></a></td>{/if}
+              <!-- <td width="100" class="cl1"><a href="{siteurl($siteid)}/zrmokuai/{$r['id']}.html"  target="_blank">查看详情</a></td>-->
+               {if $_GET['nokefu']!=1}
+               <td class="cl2"><a href="javascript:void(0)" onclick="kefulink()">客服咨询购买</a></td>
+               <!-- <td><a href="http://www.kaozc.com/zyzg/" target="_blank">更多>></a></td>-->  {/if}          </tr>
+                  	 {/loop}
+  </table>
+        <div id="pages" >{str_replace("-0.html","-1.html",$pages)}  </div>
+        {else}<!--没有数据-->
+       <div align="center">很遗憾暂时没有找到 <font color="red">{$q}</font>  相关模块，您可以试一试其它相关的关键词来查询！</div>
+
+         {/if}
+</div>
+</body>
+</html>

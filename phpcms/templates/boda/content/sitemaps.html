@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>人事考试资讯网-网站地图</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg=1208" />
+</head>
+
+<body>
+<div class="cy-tyct">
+ <div class="kzc-posi">当前位置：<a href="http://www.renshikaoshi.net">首页</a><span> &gt; </span>  <a href="/sitemaps.html">站点地图</a></a>
+</div>
+<span style="display:none;"><strong>网站栏目</strong></span>
+{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+      {loop $data $r}
+     
+         {if $r[catid]<='11'}
+                     <div class="sitemaptycut"><a href="{$r[url]}" target="_blank">{$r[catname]}</a></div>{/if} 
+                     
+                     {pc:content action="category" catid="$r[catid]" num="25" siteid="$siteid" order="listorder ASC"}
+      {loop $data $r2}
+            
+          <p class="sitemapclass">   {pc:content action="category" catid="$r2[catid]" num="25" siteid="$siteid" order="listorder ASC"}
+      {loop $data $r3}
+      <a href="{$r3[url]}" target="_blank">{$r3[catname]}</a>
+            {/loop}
+            </p>
+            
+            
+       {/loop}
+
+     {/loop}
+      {/pc}    
+      <div style="height:40px;" id="rsbmrk"></div>
+      <div class="kzc-newsone kzc-btlind">
+    	<div class="kzc-dtl"><span>人事报名入口</span></div>
+         {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+        <table width="100%" cellpadding="0" cellspacing="0" class="bmrk_tb"  style="display:;">
+        	<tr class="bg1">
+            	<td colspan="6" class="sf_name">{$v['name']}人事考试网上报名快速通道</td>
+            </tr>
+            <tr>
+             {php $num = 0}
+         {pc:get sql="SELECT * FROM v9_renshibaoming WHERE cityid = '$v[linkageid]' AND status = '1' and typeid='104' and siteid=1 order by id asc" cache="0"  dbsource="" return="data2" num=1000}
+{loop $data2 $k $val} <td>
+            	 {if $val['filename']}
+         <a href="{siteurl($siteid)}/renshibaoming/{$val['filename']}.html" target="_blank">{$val['seotitle']}报名入口</a>
+         {else}
+          <!-- <a href="{siteurl($siteid)}/renshibaoming/{$val['id']}.html" target="_blank">{$val['title']}</a> -->
+         {/if}
+         </td>
+         {if ($k+1)%6==0}</tr><tr>{/if}
+                {/loop}
+            </tr>
+        </table>
+
+        {/loop}
+    </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" class="bmrk_tb"  style="display:;">
+        	<tr class="bg1">
+            	<td colspan="6" class="sf_name"> <span> <strong>考试专栏</strong></span></td>
+            </tr>
+            <tr>
+             {php $num = 0}
+        {pc:get sql="SELECT * from phpcms_diypage  order by id desc" cache="0" num="1000" return="data"}
+{loop $data $key $val}
+ <td>	
+         <a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a>
+         </td>
+         {if ($key+1)%6==0}</tr><tr>{/if}
+                {/loop}
+            </tr>
+        </table>
+
+ <p> <a href="/download/" target="_blank" title="下载列表">下载列表</a></p>   
+      
+</div>
+{template "content","rsks_bottom"}
+
+</body>
+</html>

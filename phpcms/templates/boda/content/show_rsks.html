@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}人事考试资讯网</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg0126" />
+</head>
+
+<body>
+{template "content","rsks_top"}
+{php $ad_ids = explode('|',$CATEGORYS[$catid][ad_ids])}
+<div class="cy-tyct kzx-dysx ">
+
+<div class="schoolsk">
+    <span class="lfsk">各地人事考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/renshibaoming/{$v['pinyin']}.html" title="{replace_arr($v['name'],array('省','市'))}人事考试网" target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+		<a href="sitemaps.html#rsbmrk" target="_blank">更多>></a>
+    </span>
+    <span class="map"></span>
+</div>
+
+<div id="{$ad_ids[0]}"> </div>
+    <div class="kzc-listym kzc-newsone">
+    	<div class="kzc-posi">当前位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span> {if !in_array($catid, GetCaijiCatid()) }<a href="{$CATEGORYS[$catid][url]}">{$CATEGORYS[$catid][catname]}</a> <span> &gt; </span> {else} <a href="{siteurl($siteid)}/news/">资讯中心</a> <span> &gt; </span>{/if}{$title}</div>
+    	<div class="kzc-detaillf">
+        	<h1 class="h2title">{$title}</h1>
+            <div class="dtly kzc-newsone">来源：{if $topCityList} <a target="_blank" href="/renshibaoming/{$topCityList['pinyin']}.html">{str_replace(array('省',市),'',$topCityList['name'])}人事考试网</a>{else} <a href="{siteurl($siteid)}">人事考试资讯网</a> {/if}&nbsp;&nbsp;&nbsp;发布：{date('Y-m-d',$rs[inputtime])}</div>
+            {if $description}<div class="dtdd kzc-newsone" ><strong>导读：</strong>{$description}</div>{/if}
+            <div class="nrcontent">
+            	{$content}<br />
+ 本文链接：{$url}
+                
+            </div>
+              {if $keywords}<div class="contentwordhot"><font>相关热词搜索</font>{loop $keywords $keyword}<a href="{siteurl($siteid)}/tags-{urlencode($keyword)}_{$catid}_1.html" class="blue">{$keyword}</a>{/loop}</div> {/if}
+            <div id="pages" class="text-c">{str_replace("_0.html","_1.html",$pages)}</div>
+            <div class="bjtj"><span>上一篇：</span><a href="{$previous_page[url]}">{str_cut($previous_page[title],60)}</a></div>
+            <div class="bjtj"><span>下一篇：</span><a href="{$next_page[url]}">{str_cut($next_page[title],60)}</a></div>
+            <div class="kzc-dtline"></div>
+            <div id="{$ad_ids[3]}"> </div>
+           <ul class="newslist ftsmall listmore {$city_id}">
+              {php $where = "catid=$catid and level=1";}
+              {php $where = ($city_id>0)?$where." and cityid=$city_id":$where;}
+             {pc:get sql="SELECT * from phpcms_diypage WHERE $where" cache="0" num="30" return="data"}
+{loop $data $key $val}
+<li><a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a></li>
+{/loop}{/pc}
+            </ul>
+        </div>
+        
+        {template "content","right_rsks"}
+        <div class="clear"></div>
+    </div>
+</div>
+
+{template "content","rsks_bottom"}
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+{loop $ad_ids $k $v}
+{if $v>0}
+    BAIDU_CLB_fillSlotAsync('{$v}', '{$v}');
+	{/if}
+	{/loop}
+</script>
+<!--异步加载结束 -->
+</body>
+</html>

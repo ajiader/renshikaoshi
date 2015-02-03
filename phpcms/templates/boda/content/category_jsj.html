@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+
+<meta name="keywords" content="{$SEO['keyword']}">
+
+<meta name="description" content="{$SEO['description']}">
+
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+
+<script language="javascript" src="/statics/renshikaoshi/js/dvqh.js"></script>
+
+</head>
+
+
+
+<body>
+
+{template "content","rsks_top"}
+
+
+
+<div class="cy-tyct">
+<div class="schoolsk">
+    <span class="lfsk">计算机各地考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/jsj/{$v['pinyin']}/" title="{replace_arr($v['name'],array('省','市'))}职称计算机考试"  target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+    </span>
+    <span class="map"></span>
+</div>
+	<div class="kzc-jsj-top">
+
+    	<div class="kzc-jsj-lfpic">
+
+            <div class="slider-wrapper theme-default">
+
+                <div class="ribbon"></div>
+
+                <div id="sliderjsj" class="nivoSlider">
+
+                     {pc:content  action="position" posid="227" order="listorder DESC" num="5"} {loop $data $key $val}
+
+                        <a href="{$val['url']}"><img src="{thumb($val['thumb'],308,272)}" title="{$val['title']}" /></a>
+
+                         {/loop}{/pc}                </div>
+
+            </div>
+
+        	<script type="text/javascript" src="/statics/renshikaoshi/js/jquery.nivo.slider.pack.js"></script>
+
+			<script type="text/javascript">
+
+            $(window).load(function() {
+
+                $('#sliderjsj').nivoSlider();
+
+            });
+
+            </script>
+
+        </div>
+
+        
+
+        <div class="kzc-jsj-ctnew">
+
+        	{pc:content action="lists" catid="187" order="id DESC" num="1" start="0"}{loop $data $n $r}
+
+        	<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'45','')}</a></h2>
+
+            <p class="hotcontent">{str_cut($r['description'],152)} <a href="{$r[url]}" target="_blank">详细>></a></p>
+
+            {/loop}{/pc}
+
+            <p class="hotlist">{pc:content action="lists" catid="187" order="id DESC" num="2" start="3"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+
+            <p class="hotlist">{pc:content action="lists" catid="187" order="id DESC" num="2" start="5"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+
+            
+
+            {pc:content action="lists" catid="187" order="id DESC" num="1" start="7"}{loop $data $n $r}
+
+        	<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'45','')}</a></h2>
+
+            <p class="hotcontent">{str_cut($r['description'],152)} <a href="{$r[url]}" target="_blank">详细>></a></p>
+
+            {/loop}{/pc}
+
+            <p class="hotlist">{pc:content action="lists" catid="187" order="id DESC" num="2" start="8"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+
+            <p class="hotlist">{pc:content action="lists" catid="187" order="id DESC" num="2" start="10"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+
+        </div>
+
+        
+
+        <div class="kzc-jsj-rgtj">
+
+        	<div class="rgcut">精彩推荐<span>Recommend</span></div>
+
+            {pc:content  action="hits" catid="202" num="1" start="0" order="views DESC" cache="0"}{loop $data $n $r}
+
+            <div class="rgtjpic"><a href="{$r['url']}"  title="{$r['title']}"><img src="{thumb($r['thumb'],260,110)}" width="260"  height="110"/></a><p><a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'],46)}</a></p></div>
+
+            {/loop}{/pc} 
+
+            <ul class="newslist ftsmall">
+
+            	{pc:content  action="hits" catid="202" num="5" start="1" order="views DESC" cache="0"}
+
+                    {loop $data $r}
+
+                        <li><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 46, '')}</a></li>
+
+                    {/loop}
+
+                {/pc}
+
+            </ul>
+
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    <div class="kzc-jsjtwo">
+
+    	<div class="eightk">
+
+        	<a href="http://www.renshikaoshi.net/kaoshi-185-106623-1.html" target="_blank">报考条件</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106684-1.html" target="_blank">合格标准</a>
+
+            <a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank" class="mrling">报名时间</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106622-1.html" target="_blank">考试实施</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106640-1.html" target="_blank">考试科目</a>
+
+            <a href="{$CATEGORYS[189][url]}" target="_blank" class="mrling">历年真题</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106642-1.html" target="_blank">成绩查询</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106686-1.html" target="_blank">证书管理</a>
+
+            <a href="http://www.renshikaoshi.net/jsj/jqxd/" target="_blank" class="mrling">考试心得</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-88138-1.html" target="_blank">考试教材</a>
+
+            <a href="http://www.renshikaoshi.net/kaoshi-185-106620-1.html" target="_blank">考试介绍</a>
+
+            <a href="{$CATEGORYS[182][url]}" target="_blank" class="mrling">考试解密</a>
+
+        </div>
+
+        
+
+        <div class="jsjzixun">
+
+        	<div class="zxcut">最新资讯</div>
+
+            <ul class="daitime">
+
+            	{pc:content action="lists" catid="16" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
+
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+
+            </ul>
+
+        </div>
+
+        
+
+        <div class="kzc-onerg">
+
+        	<div class="onecut">考试报名<a href="{$CATEGORYS[187][url]}" class="more">more</a></div>
+
+            <ul class="daitime">
+
+            	{pc:content action="lists" catid="187" order="id DESC" num="4" cache="3600"}{loop $data $n $r}
+
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'50','')}</a></li>{/loop}{/pc} 
+
+            </ul>
+
+            <div class="onecut">报考指南<a href="{$CATEGORYS[184][url]}" class="more">more</a></div>
+
+            <ul class="daitime">
+
+            	{pc:content action="lists" catid="184" order="id DESC" num="4" cache="3600"}{loop $data $n $r}
+
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'50','')}</a></li>{/loop}{/pc} 
+
+            </ul>
+
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    
+
+    <div class="kzc-newsone" id="PAGE_AD_center">加载中...</div>
+
+    
+
+     <!--考试资讯 -->
+
+    <div class="examinationtycut"><span class="sp1"><a href="{$CATEGORYS[187][url]}">考试报名</a><a href="{$CATEGORYS[188][url]}">成绩查询</a><a href="{$CATEGORYS[196][url]}">准考证打印</a><a href="{$CATEGORYS[197][url]}">证书领取</a></span><h2>考试资讯</h2></div>
+
+    <div class="examinationnrqh">
+
+    	<div class="qhtitlelft"><a href="javascript:;" id="qhnrright1" onmouseover="qhnrright(1)" class="selected">考试报名</a><a  href="javascript:;" id="qhnrright2" onmouseover="qhnrright(2)">成绩查询</a><a  href="javascript:;" id="qhnrright3" onmouseover="qhnrright(3)">准考证打印</a><a  href="javascript:;" id="qhnrright4" onmouseover="qhnrright(4)">证书领取</a></div>
+
+        <div class="qhnrright" id="qhnrrightDIV1">
+
+        	<div class="nrty exammgtwo">
+
+            	<h2 class="titlecut remindcut"><i></i>报名入口<a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank" class="more">更多>></a></h2>
+
+                <span class="spalist"><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">全国</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">安徽</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">北京</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">福建</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">甘肃</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">广东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">广西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">贵州</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">海南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">河北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">河南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">湖北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">湖南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">吉林</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">江苏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">江西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">辽宁</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">宁夏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">青海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">山东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">山西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">陕西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">上海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">四川</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">天津</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">西藏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">新疆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">云南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">浙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">重庆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/" target="_blank">黑龙江</a><a href="#">内蒙古</a></span>
+
+            </div>
+
+            <div class="nrty">
+
+            	<h2 class="titlecut remindcut"><i></i>报名资讯<a href="{$CATEGORYS[187][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                 {pc:content action="lists" catid="187" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                  {/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="qhnrright" id="qhnrrightDIV2" style="display:none;">
+
+        	<div class="nrty exammgtwo">
+
+            	<h2 class="titlecut remindcut"><i></i>查分入口<a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank" class="more">更多>></a></h2>
+
+                <span class="spalist"><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">全国</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">安徽</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">北京</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">福建</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">甘肃</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">广东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">广西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">贵州</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">海南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">河北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">河南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">湖北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">湖南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">吉林</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">江苏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">江西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">辽宁</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">宁夏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">青海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">山东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">山西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">陕西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">上海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">四川</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">天津</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">西藏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">新疆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">云南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">浙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">重庆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">黑龙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank">内蒙古</a></span>
+
+            </div>
+
+            <div class="nrty">
+
+            	<h2 class="titlecut remindcut"><i></i>查分资讯<a href="{$CATEGORYS[188][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                     {pc:content action="lists" catid="188" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                  {/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="qhnrright" id="qhnrrightDIV3" style="display:none;">
+
+        	<div class="nrty exammgtwo">
+
+            	<h2 class="titlecut remindcut"><i></i>打印入口<a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" class="more">更多>></a></h2>
+
+                <span class="spalist"><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">全国</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">安徽</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">北京</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">福建</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">甘肃</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">广东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">广西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">贵州</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">海南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">河北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">河南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">湖北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">湖南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">吉林</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">江苏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">江西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">辽宁</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">宁夏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">青海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">山东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">山西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">陕西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">上海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">四川</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">天津</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">西藏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">新疆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">云南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">浙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">重庆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">黑龙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zkz/" target="_blank">内蒙古</a></span>
+
+            </div>
+
+            <div class="nrty">
+
+            	<h2 class="titlecut remindcut"><i></i>准考证资讯<a href="{$CATEGORYS[196][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                    {pc:content action="lists" catid="196" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="qhnrright" id="qhnrrightDIV4" style="display:none;">
+
+        	<div class="nrty exammgtwo">
+
+            	<h2 class="titlecut remindcut"><i></i>领取入口<a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank" class="more">更多>></a></h2>
+
+                <span class="spalist"><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">全国</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">安徽</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">北京</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">福建</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">甘肃</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">广东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">广西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">贵州</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">海南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">河北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">河南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">湖北</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">湖南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">吉林</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">江苏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">江西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">辽宁</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">宁夏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">青海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">山东</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">山西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">陕西</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">上海</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">四川</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">天津</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">西藏</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">新疆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">云南</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">浙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">重庆</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">黑龙江</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">内蒙古</a></span>
+
+            </div>
+
+            <div class="nrty">
+
+            	<h2 class="titlecut remindcut"><i></i>合格证资讯<a href="{$CATEGORYS[197][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                  {pc:content action="lists" catid="197" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                  {/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="examtyclear"></div>
+
+    </div>
+
+    
+
+    <!--科目辅导 -->
+
+    <div class="examinationtycut"><span class="sp1"><a href="{$CATEGORYS[200][url]}" target="_blank" class="selected">windowsXP</a><a href="{$CATEGORYS[199][url]}" target="_blank">word</a><a href="{$CATEGORYS[201][url]}" target="_blank">Excel</a><a href="{$CATEGORYS[202][url]}" target="_blank">Powerpoint</a><a   href="{$CATEGORYS[203][url]}" target="_blank">Internet</a></span><h2>科目辅导</h2></div>
+
+    <div class="examinationnrqh examhg1">
+
+    	<div class="qhtitlelft examhg1"><a href="{$CATEGORYS[200][url]}" target="_blank" class="selected">windowsXP</a><a href="{$CATEGORYS[199][url]}" target="_blank">word</a><a href="{$CATEGORYS[201][url]}" target="_blank">Excel</a><a href="{$CATEGORYS[202][url]}" target="_blank">Powerpoint</a><a   href="{$CATEGORYS[203][url]}" target="_blank">Internet</a></div>
+
+        <div class="qhnrright">
+
+        	<div class="nrty exammgtwo">
+
+            	<h2 class="titlecut remindcut"><i></i>专项辅导<a href="{$CATEGORYS[198][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                   {pc:content action="lists" catid="198" order="id DESC" num="7" cache="3600"}{loop $data $n $r}
+
+                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                  {/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+            <div class="nrty">
+
+            	<h2 class="titlecut remindcut"><i></i>技巧心得<a href="{$CATEGORYS[192][url]}" target="_blank" class="more">更多>></a></h2>
+
+                <ul class="daitime">
+
+                  {pc:content action="lists" catid="192" order="id DESC" num="7" cache="3600"}{loop $data $n $r}
+
+                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                  {/loop}{/pc} 
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="examtyclear"></div>
+
+    </div>
+
+    
+
+    <!--培训辅导 -->
+
+    <div class="examinationtycut"><span class="sp1"><a href="{$CATEGORYS[200][url]}" target="_blank" class="selected">windowsXP</a><a href="{$CATEGORYS[199][url]}" target="_blank">word</a><a href="{$CATEGORYS[201][url]}" target="_blank">Excel</a><a href="{$CATEGORYS[202][url]}" target="_blank">Powerpoint</a><a   href="{$CATEGORYS[203][url]}" target="_blank">Internet</a></span><h2>培训辅导</h2></div>
+
+    <div class="examinationnrqh examhg2">
+
+    	<div class="qhtitlelft examhg1" id="bmzxA">
+
+            <a href="{$CATEGORYS[192][url]}" class="selected" target="_blank">技巧心得</a>
+
+            <a>考试动态 </a>
+
+            <a>考试辅导</a>
+
+        </div>
+
+        <div id="bmzxDIV">
+
+            <div class="qhnrright">
+
+            	<div class="nrty exammgtwo">
+
+                	<h2 class="titlecut remindcut"><i></i>备考技巧<a href="{$CATEGORYS[192][url]}" target="_blank" class="more">更多&gt;&gt;</a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="192" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc} 
+
+                    </ul>
+
+                </div>
+
+                <div class="nrty">
+
+                	<h2 class="titlecut remindcut"><i></i>专家解题<a href="{$CATEGORYS[917][url]}" target="_blank" class="more">更多>></a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="917" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc} 
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="qhnrright" style="display:none;">
+
+                <div class="nrty exammgtwo">
+
+                    <h2 class="titlecut remindcut"><i></i>考试政策<a href="{$CATEGORYS[185][url]}" target="_blank" class="more">更多&gt;&gt;</a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="185" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc}
+
+                    </ul>
+
+                </div>
+
+                <div class="nrty">
+
+                    <h2 class="titlecut remindcut"><i></i>考试大纲<a href="{$CATEGORYS[186][url]}" target="_blank" class="more">更多&gt;&gt;</a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="186" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="qhnrright" style="display:none;">
+
+                <div class="nrty exammgtwo">
+
+                    <h2 class="titlecut remindcut"><i></i>历年真题<a href="{$CATEGORYS[189][url]}" target="_blank" class="more">更多&gt;&gt;</a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="189" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc}
+
+                    </ul>
+
+                </div>
+
+                <div class="nrty">
+
+                    <h2 class="titlecut remindcut"><i></i>模拟试题<a href="{$CATEGORYS[190][url]}" target="_blank" class="more">更多>></a></h2>
+
+                    <ul class="daitime">
+
+                        {pc:content action="lists" catid="190" order="id DESC" num="6" cache="3600"}{loop $data $n $r}
+
+                       <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+
+                      {/loop}{/pc}
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="examtyclear"></div>
+
+    </div>
+
+    
+
+</div>
+
+
+
+{template "content","rsks_bottom"}
+
+
+
+<!-- 请置于所有广告位代码之前 -->
+
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+
+<script type="text/javascript">
+
+    BAIDU_CLB_fillSlotAsync('874620', 'PAGE_AD_center');
+
+</script>
+
+<script language="javascript">
+
+$(document).ready(function(){
+
+    $('#bmzxA a').mouseover(function(){
+
+        $(this).addClass("selected").siblings().removeClass();
+
+        $("#bmzxDIV > div").eq($('#bmzxA a').index(this)).show().siblings().hide();
+
+    });
+
+});
+
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

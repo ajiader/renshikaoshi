@@ -1,0 +1,67 @@
+<div class="rshead">
+
+	<div class="rsxs">
+
+        <div class="rstobanner"></div>
+
+        <div class="rsmenu">
+
+			<div class="rsctty">
+            
+        		<ul id="menua">
+
+                    <li><a href="{siteurl($siteid)}/" target="_blank">首页</a></li>
+    
+                    <li><a href="/jsj/" target="_blank">职称计算机</a></li>
+    
+                    <li><a href="/En/" target="_blank">职称英语</a></li>
+    
+                    <li><a href="/zyzg/yy/yxgjks/">医学高级</a></li>
+    
+                    <li><a href="/zyzg/yy/zyyaos/">执业药师</a></li>
+    
+                    <li><a href="/zyzg/yy/zyys/" target="_blank">执业医师</a></li>
+    
+                    <li><a href="/zyzg/jz/jzs1/">一级建造师</a></li>
+    
+                    <li><a href="/zyzg/jz/ejjzs/" target="_blank">二级建造师</a></li>
+                    
+                    <li><a href="/download/" target="_blank">学习资料免费下载</a></li>
+    
+                </ul>
+            
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+
+<div class="rsctty">
+
+<div class="rshotnew"><h1>{$seotitle}</h1>网上报名入口({$url})</div>
+<div class="rscitydq">
+
+     {if $cityid>0}
+     {pc:get sql="SELECT * FROM v9_renshibaoming WHERE cityid = '$cityid' AND status = '1' and typeid='104' and siteid=1 order by id asc" cache="0"  dbsource="" return="data2" num=50}
+    {if $data2}
+     <span>当前城市的下级导航</span>
+ <div class="xjct">
+    {loop $data2 $k $val} 
+     {if $val['filename']}
+             <a href="{siteurl($siteid)}/renshibaoming/{$val['filename']}.html" title="{$val['seotitle']}" target="_blank">{$val['title']}</a>
+             {else}
+              <!-- <a href="{siteurl($siteid)}/renshibaoming/{$val['id']}.html" target="_blank">{$val['title']}</a> -->
+             {/if}
+     {/loop}
+     </div> 
+     {/if}
+    {/if}
+    
+    <div class="clear"></div>
+</div>
+	

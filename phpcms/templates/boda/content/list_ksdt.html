@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+</head>
+
+<body>
+
+{template "content","rsks_top"}
+
+<div class="cy-tyct kzx-dysx">
+    <div class="kzc-listym kzc-newsone">
+    	<div class="kzc-posi">当前位置：{catpos($catid)} </div>
+    	<div class="listymlf">
+        	<div class="listcut">考试动态</div>
+            
+            {pc:content action="lists" catid="419" num="30" order="id DESC" page="$page"}
+           <ul class="newslist ftsmall listmore">
+              {loop $data $r}
+              <li><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],90,'...')}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+              {if $n%5==0}</ul>  <ul class="newslist ftsmall listmore">{/if}
+                     {/loop}
+                    </ul>
+                    <div class="detailfy">{$pages}</div>
+            {/pc}
+        </div>
+        
+        {template "content","right_rsks"}
+        <div class="clear"></div>
+    </div>
+</div>
+
+{template "content","rsks_bottom"}
+</body>
+</html>

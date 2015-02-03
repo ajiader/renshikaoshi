@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,p,span,ul,li,dl,dt,dd,table,tr,td,i,font,img,h1,h2,h3,h4,h5,h6,em,input,select,textarea{ margin:0px; padding:0px;}
+body{ font-family:"微软雅黑", "黑体", "新宋体"; font-size:12px; background:#f9f9f9;}
+img{ border:0px;}
+a{ color:#373737; text-decoration:none;outline: none;star:expression(this.onFocus=this.blur());}
+a:hover{ color:#ff6b00; text-decoration:underline;}
+ul li{ list-style:none;}
+
+.zcegtop{ background:url(../images/egtopbg.png) repeat-x; height:41px; line-height:41px; font-family:宋体;}
+.zcegtycent{ width:960px; margin:0 auto; overflow:hidden;}
+.zcegtop img{ margin-top:7px; float:left;}
+.zcegtop a{ float:right;}
+.zcegbanner{ height:198px; background:url(../images/topbannerbg.png) repeat-x; clear:both;}
+.zcegposition{ height:45px; line-height:45px; color:#373737; font-family:宋体;}
+.zcegposition a{ margin:0 5px;}
+.zcegtybor{ border:1px #dfdfdf solid;}
+.zcegmsdh{ padding:10px 0 10px 20px; color:#666666; margin-bottom:10px;}
+.zcegmsdh a{ margin:0 15px; color:#666666;}
+
+.fl { float: left; display: inline;}
+.fr { float: right; display: inline;}
+.imgb h2 { background-image: none !important; background-attachment: scroll !important; background-repeat: repeat !important; background-size: auto !important; background-origin: padding-box !important; background-clip: border-box !important; background-color: rgba(0, 0, 0, 0.6) !important;}
+.imgs i { background-image: none !important; background-attachment: scroll !important; background-repeat: repeat !important; background-size: auto !important; background-origin: padding-box !important; background-clip: border-box !important; background-color: rgba(0, 0, 0, 0.6) !important;}
+.lt span em { background-image: none !important; background-attachment: scroll !important; background-repeat: repeat !important; background-size: auto !important; background-origin: padding-box !important; background-clip: border-box !important; background-color: rgba(0, 0, 0, 0.6) !important;}
+#br { width: 960px; margin-bottom:10px; overflow:hidden;}
+#cr { margin: 10px auto 0px; width: 960px;}
+#hr { margin: 5px auto; width: 960px;}
+.imgb { width: 680px; height: 383px;}
+.imgb h2 { font: 18px/22px "微软雅黑"; padding: 10px 0px 0px 20px; left: 0px; width: 660px; height: 50px; bottom: 0px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal; _bottom: 3px;BACKGROUND: #000; FILTER: Alpha(opacity=60)}
+.imgb h2 span { font: bold 14px/22px 宋体; font-size-adjust: none; font-stretch: normal;}
+.imgs { background: rgb(51, 51, 51); border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0) currentColor; padding: 5px 0px 0px 10px; width: 269px; height: 376px;}
+.imgs li { margin: 11px 10px 0px 0px; padding: 0px; border: 2px solid rgb(255, 255, 255); width: 120px; height: 75px;}
+.imgs li img { float: left;}
+.imgs i { left: -2px; top: -2px; width: 124px; height: 79px; display: block; z-index: 2; cursor: pointer; BACKGROUND: #000; FILTER: Alpha(opacity=60) }
+.l { left: 0px; width: 5px;}
+.r { width: 5px; right: 0px;}
+.pos_r { position: relative;}
+.pos_a { position: absolute;}
+.imgs i.curr { background: black; opacity: 0;}
+.egvideonew{ overflow:hidden;}
+.egvideo{ width:675px; float:left; background:#ffffff; height:364px;}
+.egspcut{ color: #ff6b00;display: block; font-size: 18px; height: 30px; line-height: 30px; margin:5px 0 8px 0; padding-left: 10px;}
+.egvideo .tyvd {
+    display: inline;
+    float: left;
+    height: 135px;
+    margin: 0 8px 0 10px;
+    width: 150px;
+}
+.egvideo .tyvdmg0 {
+    margin-right: 0;
+}
+.egvideo .tyvd span {
+    display: block;
+    height: 100px;
+    position: relative;
+}
+.egvideo .tyvd span img {
+    height: 100px;
+    width: 150px;
+}
+.egvideo .tyvd span em {
+    background: url(../images/videoicon.png) no-repeat right bottom;
+    bottom: 0;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-style: normal;
+    height: 22px;
+    left: 0;
+    line-height: 22px;
+    padding-left: 10px;
+    position: absolute;
+    width: 140px;
+}
+.egvideo .tyvd p {
+    line-height: 30px;
+    text-align: center;
+}
+.egvideo .tyvd p a {
+    color: #343434;
+}
+.egvideo .tyvd p a:hover{ color:#ff6b00;}
+.egvideo .detailfy {
+    margin-top: 10px;
+    text-align: center;
+}
+.egvideo .detailfy a {
+    border: 1px solid #DEDEDE;
+    color: #343434;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 3px;
+    padding: 0 4px;
+}
+.egvideo .detailfy span a {
+    border: 1px solid #DEDEDE;
+    padding: 0 10px;
+}
+.egvideo .detailfy span a.a1:hover{ background:none; border:1px #DEDEDE solid; color:#373737;}
+.egvideo .detailfy span span{ padding:0 11px; margin:0 3px; height:22px; line-height:22px; display:inline-block; background:#ff6b00; color:#ffffff;}
+.egvideo .detailfy b {
+    background: none repeat scroll 0 0 #CC0001;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    margin: 0 5px;
+    padding: 0 8px;
+}
+.egvideo .detailfy a:hover {
+    background: #ff6b00;
+    border:1px #ff6b00 solid;
+    color: #FFFFFF;
+    height: 20px;
+    line-height: 20px;
+	text-decoration: none;
+}
+
+.egclear{ clear:both; line-height:0px; font-size:0; height:0;}
+.egnews{ float:right; width:272px; height:364px; background:#ffffff;}
+.egnews ul{ display:block; margin:0 8px;}
+.egnews ul li{ height:24px; line-height:24px; background:url(../images/icon1.jpg) no-repeat left center; padding-left:12px;}
+.computerfoot{ border-top:1px #c8c8c8 solid; background:#f9f9f9; margin-top:8px; padding-top:15px; text-align:center;}
+.computerfoot p{ line-height:26px; color:#666666;}
+.computerfoot p a{ margin:0 3px; color:#666666;}
+.egdetailvideo{ overflow:hidden; margin-bottom:10px;}
+.egdetailleft{ float:left; width:687px; height:423px;}
+.egdetailright{ float:left; width:273px; height:423px; background:#333333;}
+.egdetailright .nrdv{ border:1px #575757 solid; height:403px; margin:10px; color:#ffffff;}
+.egdetailright .nrdv h2{ border-bottom:1px #575757 solid; line-height:40px; font-size:14px; padding-left:10px; margin-bottom:10px;}
+.egdetailright .nrdv p{ line-height:25px; padding:0 10px;}
+.egdetailright .nrdv p.zj{ margin-bottom:8px;}

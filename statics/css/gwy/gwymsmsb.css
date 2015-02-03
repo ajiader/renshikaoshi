@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#ffffff; font-size:16px; color:#575757;}
+
+.msmsbheader{ height:134px; background:url(http://www.kaogwy.com/statics/images/gwy/head_bg.jpg) repeat-x;}
+.msmsb-ty-center{ width:960px; margin:0 auto; overflow:hidden;}
+.functionheadtop{ height:31px; line-height:31px; font-size:12px;}
+.functionheadtop span{ color:#A2A2A2; float:left;}
+.functionheadtop span a{ color:#A2A2A2; margin:0 5px;}
+.functionheadtop span.topright{ float:right;}
+.functionheadtop span.topright a{ display:inline-block; padding-left:20px;}
+.functionheadtop span.topright a.returnindex{ background: url(http://www.kaogwy.com/statics/images/gwy/returnindex.png) no-repeat left center; color:#D10000;}
+.functionheadtop span.topright a.jrsc{ background: url(http://www.kaogwy.com/statics/images/gwy/jrsc.png) no-repeat left center; padding-left:22px;}
+.funtionnarylogo{ clear:both; height:66px; position:relative;}
+.funtionnarylogo .dvrg{ position:absolute; right:0px; top:20px; text-align:center; font-size:18px; color:#333333}
+.functionnarymenu{ height:36px; line-height:36px; clear:both;}
+.functionnarymenu a{ color:#ffffff; font-size:16px; margin:0 24px; height:36px; display:inline-block; font-weight:500;}
+.functionnarymenu a:hover{ text-decoration:none; color:#ffffff;}
+.msmsbbgone{ background:#e8e8e8;}
+.msms-wzjc,.msmstp span,.msmsjpb,.msms-qldz,.msms-wxts,.msms-tb tr td.youhuijia,.msms-sevenys div span,.msms-address .adone,.msms-address .adthree,.msms-ksmd tr.bgtwo td{ font-weight:bold;}
+.msmstp{ height:45px; line-height:45px; padding-left:20px;}
+.msmstp span{ display:inline-block; padding:0 10px; font-size:25px; color:#ffffff; background:#5c5c5c;}
+.msmsjpb{ padding-top:6px; font-size:25px; color:#5c5c5c; padding-left:30px;}
+.msms-xddw{ position:relative;}
+.msms-tymg{ margin-bottom:10px;}
+.msms-qzsk{ font-size:18px; color:#1e1e1e; padding-right:30px;}
+.msms-ys{ padding:10px 0 20px 0; font-size:25px; color:#e60002;}
+.msms-hdwd{ width:650px; text-align:right;}
+.msms-zx{ padding-bottom:40px;}
+.msms-zx a,.adtwo a,.funtionnarylogo .dvrg p a{ display:inline-block; width:128px; height:30px; line-height:30px; text-align:center; color:#ffffff; background:#e60002; border-radius:8px; -moz-border-radius:8px; -webkit-border-radius:8px; font-size:18px; margin-left:15px;}
+.funtionnarylogo .dvrg p a{ width:140px; font-size:14px; margin:0px;}
+.msms-jddw{ width:260px; height:239px; background:url(/statics/gwy/images/msmsb-pic1.jpg) no-repeat; position:absolute; right:0px; top:66px;}
+.msms-typd{ padding:30px 0;}
+.msms-question{ font-size:45px; color:#565656; font-weight:bold; padding-bottom:10px;}
+.msms-list a,.msms-zxone a{ display:inline-block; margin:0 2px 8px 2px; padding:0 15px; height:36px; line-height:32px; _line-height:36px; background:#bcbcbc; color:#ffffff; font-size:18px; border-radius:36px; -webkit-border-radius:36px; -moz-border-radius:36px; font-weight:bold;}
+.msms-list a:hover,.msms-zxone a:hover,.msms-list a.selected{ background:#ff0000; color:#ffffff; text-decoration:none;}
+.msms-zxone{ text-align:center;}
+.msms-zxone a{ background:#e60002; height:52px; border-radius:52px; -webkit-border-radius:52px; -moz-border-radius:52px; line-height:52px; font-size:25px; padding:0 60px; width:auto;}
+.msms-jgjs{ width:600px; float:left; padding-top:30px;}
+.msms-tyclear{ clear:both; height:0; font-size:0; line-height:0;}
+.jgtitle{ font-size:50px;  font-weight:bold; margin-bottom:20px;}
+.jgtitle b,.msms-hd span b,.msms-qldz span,.msms-tb tr td font,.msms-tb tr td.youhuijia,.msms-tb tr td a,.msms-sevenys div span{ color:#e60002;}
+.msms-jgjs .jgnr{ line-height:30px; color:#2b2b2b;}
+.msms-jgjs .jgnr span{ display:inline;}
+.msms-jgpic{ float:right; width:271px; height:170px; padding:40px 50px 0 0;}
+.msms-hd{ width:266px; float:left; padding:0 50px 20px 0;}
+.msms-hd span{ display:block;  font-size:23px; margin-bottom:20px;}
+.msms-hd p,.msms-qwsz p,.msms-djfd p{ line-height:25px;}
+.msms-wxts{ padding:15px 0; color:#929292;}
+.msms-qldz span{ display:inline-block; font-size:36px;}
+.msms-tb,.msms-ksmd{ border-top:1px #9e9e9e solid; border-left:1px #9e9e9e solid;}
+.msms-tb tr{ background:#ffffff;}
+.msms-tb tr td,.msms-ksmd tr td{ border-bottom:1px #9e9e9e solid; border-right:1px #9e9e9e solid; height:30px; font-size:14px; color:#616161; text-align:center;}
+.msms-tb tr.bgone{ background:#e8e8e8;}
+.msms-tb tr.bgone td{ font-size:18px;}
+.msms-tb tr td.yuanjia{ text-decoration:line-through;}
+.msms-sevenys{ height:520px; background:url(/statics/gwy/images/qdys-bg.jpg) no-repeat center center;}
+.msms-sevenys div{ position:absolute; width:240px;}
+.msms-sevenys div span{ display:block; font-size:36px; margin-bottom:10px;}
+.msms-sevenys div p{ line-height:25px;}
+.msms-sevenys div.dv1{ width:180px; left:400px; top:20px;}
+.msms-sevenys div.dv2{ width:270px; left:620px; top:120px;}
+.msms-sevenys div.dv3{ left:640px; top:300px;}
+.msms-sevenys div.dv4{ left:560px; top:440px;}
+.msms-sevenys div.dv5{ left:150px; top:440px;}
+.msms-sevenys div.dv5 span,.msms-sevenys div.dv6 span,.msms-sevenys div.dv7 span{ text-align:right;}
+.msms-sevenys div.dv6{ width:220px; left:100px; top:300px;}
+.msms-sevenys div.dv7{ left:100px; top:120px;}
+.msms-qwsz{ float:left; width:305px; padding-right:30px;}
+.msms-qwsz .dvtitle{ font-size:34px; margin-bottom:25px; height:35px;}
+.msms-qwsz .dvtitle span{ display:inline-block; background:#e60002; line-height:30px; font-size:16px; color:#ffffff; padding:0 6px; vertical-align:middle; margin-left:10px;}
+.msms-qwwd{ width:280px;}
+.msms-djfd{ width:412px; float:left;}
+.msms-qzmn{ float:right; width:430px;}
+.msms-address{ width:378px; float:left;}
+.msms-address .adone{ font-size:18px;}
+.msms-address .adtwo{ margin-bottom:25px;}
+.msms-address .adtwo a{ margin:0 25px 0 0; background-image:url(/statics/gwy/images/zx-abg.jpg); background-repeat:no-repeat; width:113px; padding-left:15px;}
+.msms-address .adtwo a.a1{ background-position:5px 2px;}
+.msms-address .adtwo a.a2{ background-position:5px -35px;}
+.msms-address .adthree{ font-size:35px;}
+.msms-address .adfoure{ font-size:14px; line-height:25px;}
+.msms-addresspic{ float:right;}
+.msms-ksmd{ float:left; border-left:1px #acacac solid; border-top:1px #acacac solid;}
+.msms-ksmd tr.bgtwo td{ background:#616161; color:#ffffff;}
+.msms-ksmd tr td{ border-bottom:1px #acacac solid; border-right:1px #acacac solid;}
+.msms-tbrg{ float:right;}
+.msms-pxfc img{ margin:0 3px;}
+.longtrasfoot{ border-top:1px solid #D9D9D9; font-size:12px; padding:20px 0 40px; text-align: center;}
+.longtrasfoot p{ color:#3C3837; line-height:25px;}
+.longtrasfoot p a{ color:#3C3837;}

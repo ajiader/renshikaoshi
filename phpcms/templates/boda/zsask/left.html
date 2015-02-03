@@ -1,0 +1,8 @@
+<div class="quizlf">
+    	<div class="wdclass">
+        	<h2>问答分类</h2>
+            {loop $askcategorys $v}
+            <p {if $catid==$v['catid']}class="selected"{/if}><a href="{siteurl($siteid)}/question/qlist_{$v['catid']}_1.html">{$v['catname']}<font>({get_question($v['catid'])})</font></a></p>      {/loop}
+        </div>
+        <span class="spbt"></span>
+    </div>

@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,span,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,ol,a,font,img,table,td,tr,i{ margin:0px; padding:0px;}
+body{ font-size:12px; font-family:"宋体",Arial,sans-serif;}
+ul li{ list-style:none;}
+img{ border:0px;}
+a{ text-decoration:none; color:#3d3d3d; blr:expression_r(this.onFocus=this.blur());outline:none;}
+a:hover{ text-decoration:underline; color:#eb0000;}
+*{ margin:0px; padding:0px;}
+input, select, textarea { outline: medium none;}
+
+.functionaryhead{ height:134px; overflow:hidden; background:url(../images/head_bg.jpg) repeat-x;}
+.functionarytyauto{ width:960px; margin:0 auto; overflow:hidden !important; overflow:visible; height:auto !important;}
+.functionheadtop{ height:31px; line-height:31px;}
+.functionheadtop span{ float:left; color:#a2a2a2;}
+.functionheadtop span a{ color:#a2a2a2; margin:0 5px;}
+.functionheadtop span.topright{ float:right;}
+.functionheadtop span.topright a{ padding-left:20px; display:inline-block;}
+.functionheadtop span.topright a.returnindex{ background:url(../images/returnindex.png) no-repeat left center;  color:#d10000; }
+.functionheadtop span.topright a.jrsc{ background:url(../images/jrsc.png) no-repeat left center; padding-left:22px;}
+.functiontyicon,.functionheadtop span.topright b,.functionnaryct1 .cttopty b,.functionbma,.functionnaryct2 .span1 a,.functiontytitle,.functhover a,.functhover a i,.functioncenthot span,.functionctright .foureqh .qhtitle a,.functionkszt,.functionzxul li,.functionzxul li a,.functionejbg b,.functionfzcut b.b2 a i,.functionpxgright .spspancut b,.functionrightkc span a,.functionrightkc ul li a,.institutiongddt span,.institutionspancut,.countriestop span b,.newbiecut b,.newbieguidenewscut b,.returnindext,.ohterleftcontent .juncut,.otherbjtuij span,.othernewscut b,.otherdhbg{ background-image:url(../images/tyicon.png); background-repeat:no-repeat;}
+.functionheadtop span.topright b{ font-weight:normal; color:#d93f3f; background-position:0px 0px; padding-left:22px; margin-left:15px;}
+.funtionnarylogo{ clear:both; height:66px; position:relative;}
+.funtionnarylogo span.logo,.funtionnarylogo span.dqposition{ float:left;}
+.funtionnarylogo span.dqposition{ font-size:16px; color:#666666; line-height:66px; padding-left:10px; font-family:微软雅黑;}
+.funtionnarylogo span.sousuo{ position:absolute; right:0px; top:17px;}
+.funtionnarylogo span.sousuo input{ height:33px; border:0px; vertical-align:middle;}
+.funtionnarylogo span.sousuo input.sstext{ width:290px; height:33px; border:0px; padding-left:10px; line-height:33px; background-position:0px -832px; color:#686868; font-size:12px;}
+.funtionnarylogo span input.ssbtn{ width:40px; background-position:-318px -832px;  cursor:pointer;}
+.functionnarymenu{ height:36px; line-height:36px; clear:both;}
+.functionnarymenu a{ color:#ffffff; font-weight:500; font-size:14px; background:url(../images/menuabg.png) no-repeat right center; padding:0 17px; height:36px; display:inline-block; font-weight:bold;}
+.functionnarymenu a:hover{ text-decoration:none; color:#ffffff;}
+.functionnarymenu a.functionabgnone,.institutiongddt a.gddtnone{ background:none;}
+.functiontymg{ margin-top:10px;}
+.functionnaryct1{ height:67px; padding-top:15px;}
+.functionnaryct1 .cttopty,.functionnaryct2{ float:left; position:relative; background:#f7f7f7; border:1px #e1e1e1 solid; display:inline; height:65px;}
+.functionnaryct1 .cttopty b{ position:absolute; width:75px; height:33px; background-position:0px -20px; padding-left:20px; left:-8px; top:-14px; font-weight:normal; font-size:13px; color:#ffffff; line-height:26px;}
+.functionnaryct1 .exam{ width:267px; margin:0px 17px 0 8px;}
+.functionnaryct1 .cttopty span{ display:block;}
+.functionnaryct1 .cttopty span.xssl{ text-align:right;}
+.functionnaryct1 .cttopty span.xssl a{ padding:0 10px; background:#f9f9f9; border:1px #d9d9d9 solid; line-height:19px; display:inline-block; height:19px; color:#e10000; position: absolute; right:2px; top:2px;}
+.functionnaryct1 .gzkaoshi{ width:265px; margin:0 17px 0 8px;}
+.functionnaryct1 .pdspan{ padding:22px 8px 0 8px;}
+.functionnaryct1 .cttopty span.gkmnr{ padding:24px 6px 0 6px; line-height:20px;}
+.functionnaryct1 .cttopty span.gkmnr a{ color:#686868; margin-right:3px;}
+.functionnaryct1 .reference{ width:163px; margin:0 7px 0 8px;} 
+.functionnaryct1 .telephone{ width:184px; float:right;}
+.functionbma{ display:block; height:34px; background-position:0px -60px; margin-top:3px; }
+.functionnaryct2{ float:none; height:62px; clear:both; display:block; overflow:hidden;}
+.functionnaryct2 span{ float:left;}
+.functionnaryct2 .span1{ width:140px;}
+.functionnaryct2 .span1 a{ display:block; height:22px; line-height:22px; color:#333333; padding-left:26px; background-position:0px -99px; margin:6px 13px 0 8px; }
+.functionnaryct2 .span2{ margin-right:3px;}
+.functionnaryct2 .span3{ width:710px; color:#c60001;}
+.functionnaryct2 .span3 a{ line-height:30px; margin:0 5px 0 8px; color:#c60001; *margin:0 6px;}
+.functionnaryct4{ clear:both; line-height:0; font-size:0; height:0;}
+.functionctleft{ width:261px; float:left;}
+.functioncttyys{ background:#f9f9f9; border:1px #dbdbdb solid; border-top:1px #c70102 solid; border-width:2px 1px 1px 1px; padding-bottom:8px; margin-bottom:10px;}
+.functionimg{ margin:0 1px;}
+.functiontxlist{ display:block; margin:0 2px;}
+.functiontxlist li,.functionpxg li{ border-bottom:1px #c5c5c5 dashed; height:28px; _height:29px; _line-height:29px; line-height:28px; color:#444444;}
+.functiontxlist li span{ float:left; padding:0 8px;}
+.functionqt{ display:block; text-align:center; font-size:14px; margin-top:8px; }
+.functionqt a{ color:#d10000; font-weight:bold;}
+
+.funtionnarylogo span.sousuo input{height: 33px;vertical-align: middle;}
+.funtionnarylogo span.sousuo input.sstext{ border:2px #E5E5E5 solid; border-right:0px; color: #686868; font-size: 12px; height: 29px; line-height: 33px; padding-left: 10px; width: 290px;}
+.funtionnarylogo span input.ssbtn{  background: url(../images/sousuobg.png) no-repeat scroll center center #666666;color: #FFFFFF; cursor: pointer;width: 40px;}
+.functiondqwz{ padding:15px 0; color:#686868;}
+.functiondqwz img{ float:left; margin:2px 6px 0 0;}
+.functiondqwz a{ margin:0 5px; color:#686868;}
+.othercontent{ overflow:hidden;}
+.othercontent .otherleft,.othercontent .otherright{ padding:10px 0; border:1px #d9d9d9 solid; font-family:微软雅黑;}
+.othercontent .otherleft{ width:710px; float:left; }
+.othercontent .otherleft h1{ display:block; line-height:35px; font-size:18px; color:#333333;  text-align:center;}
+.othercontent .otherleft h2,.othercut,.otheryqlj span{ margin:8px 10px; background:#f9f9f9 url(../images/xtitlebg.png) no-repeat 10px 13px; border:1px #d9d9d9 dotted; font-size:16px; font-weight:normal; line-height:35px; padding-left:25px;}
+.newsullist{ display:block; margin:0 20px;}
+.newsullist li{ background:url(../images/icon1.jpg) no-repeat left center; height:28px; line-height:28px; padding-left:10px; position:relative; border-bottom:1px #d9d9d9 dotted;}
+.newsullist li a{ color:#333333; font-size:13px;}
+.newsullist li span{ position:absolute; right:5px; top:0px; line-height:28px; color:#999999;}
+.othercontent .otherright{ width:237px; float:right; padding:0px; border:0px;}
+.othercontent .otherright .othertydv{ border:1px #d9d9d9 solid; padding-bottom:5px; margin-bottom:10px;}
+.othercut,.otheryqlj span{ border:0px; margin:0 0 5px 0; border-bottom:1px #d9d9d9 solid;}
+.otherrgul{ margin:0 6px;}
+.otherrgul li{ height:25px; line-height:25px; border:0px;}
+.otheryqlj{ border:1px #d9d9d9 solid; margin-top:10px; font-family:微软雅黑;}
+.otheryqlj span{ display:block; background:#f9f9f9; padding-left:15px;}
+.otheryqlj a{ display:inline-block; background:url(../images/icon1.jpg) no-repeat 6px center; width:110px; margin:0 4px 5px 5px; line-height:22px; border:1px #d9d9d9 solid; padding-left:15px;}
+.functionfoot{ padding:15px 0; text-align:center; border-top:1px #d9d9d9 solid; margin-top:10px; color:#666666;}
+.functionfoot p{ line-height:20px;}
+.functionfoot p a{ color:#666666;}
+.otherggw{ margin:0 0 10px 0;}
+.othercontent .otherright .mg0{ margin-bottom:0px;}

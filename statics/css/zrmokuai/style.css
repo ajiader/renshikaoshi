@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+body{font-family:"宋体";font-size:14px;width:100%;background:url(/statics/images//zrmokuai/top_bg.jpg) repeat-x;/*ie6 hover 显示背景图片*/}
+li{list-style:none;}
+a img{border:0px;margin:0px;padding:0px;}
+a{text-decoration:none;color:#424242;}
+a:hover{ color:#e04819;}
+a {outline: none;}/*去虚线*/
+a:active {star:expression(this.onFocus=this.blur());}/*去虚线*/
+.fl{float:left;}
+.fr{float:right;}
+.cl{clear:both;}
+.top{background:url(/statics/images//zrmokuai/tt_k.jpg) no-repeat;width:1000px;margin:0 auto;height:174px;}
+.row1{width:890px;margin:0 auto;padding-top:10px;}
+.ser_box label{font-size:22px;font-weight:bold;font-family:"microsoft yahei";color:#ffffff;}
+.text_box{width:328px;height:35px;}
+.ser_btn{background:url(/statics/images//zrmokuai/ser_btn.jpg) no-repeat;width:67px;height:50px;border:none;display:inline-block;}
+.ser_box{position:relative;left:56px;width:518px;float:left;}
+.sc{padding-top:5px;}
+.sc a{background:url(/statics/images//zrmokuai/sc_bg.jpg) no-repeat;width:67px;height:30px;line-height:30px;text-align:center;font-size:14px;display:inline-block;float:right;}
+.sc a{color:#ffffff;}
+.row2{width:958px;height:68px;background:#fffaea;border:1px solid #f5a21b;margin:0 auto;margin-top:15px;}
+.js_box{background:url(/statics/images//zrmokuai/js_bg.jpg) no-repeat;width:659px;height:52px;margin-top:8px;float:left;}
+.js_box .txt{font-size:21px;font-family:"microsoft yahei";line-height:52px;padding-left:122px;}
+.js_box .txt a{color:#512c23;padding:0 5px; display:inline-block;}
+.js_box .txt a:hover{background:#FCC;border:1px solid #a89387;}
+.row2 .adv{margin-top:5px;float:right;padding-right:8px;}
+.row3{width:960px;margin:0 auto;margin-top:8px;}
+.row3_t{background:url(/statics/images//zrmokuai/tt_bg.jpg) repeat-x;width:958px;height:31px;border:1px solid #dddddd;}
+.tab_name {font-size:18px;font-family:"microsoft yahei";line-height:40px;height:40px;}
+.pre_tab tr td{border-bottom:1px solid #cecece;height:45px;}
+.sub_tab{border-left:1px solid #cecece;border-right:1px solid #cecece;}
+.sub_tab tr{border-bottom:1px solid #cecece;}
+.sub_tab tr td{background:#ccffff;border-right:1px solid #cecece;line-height:24px;text-align:center;}
+.td1{height:20px;background:#b1c8e7;}
+.cur{background:#FCC;border:1px solid #a89387;}
+.chak{background:url(/statics/images//zrmokuai/chak.jpg) no-repeat 0px 12px;height:16px;padding-left:22px; cursor:pointer;}

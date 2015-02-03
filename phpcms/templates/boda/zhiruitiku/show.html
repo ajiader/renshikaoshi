@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2014{$r['name']}题库 | 博大致睿：中国执业、职称考试辅导软件第一品牌</title>
+<meta name="keywords" content=" {$r['name']}、{$r['name']}题库">
+<meta name="description" content="{$r['name']}题库精选市面上的优质试题，试题内容覆盖考试大纲要求的全部考点，软件针对考生薄弱环节进行诊断，定期的万人模考帮助考生体验考试五味，明确自己在同期考友中的水平。">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/zrmokuai/css/toruisearch.css" />
+</head>
+<body>
+<!--导航-->
+{template "zhiruitiku","header"}
+
+<div class="onlinequizct">
+
+	<!--搜索-->
+    {template "zhiruitiku","form"}
+    
+    <!--当前位置-->
+    <div class="torui-position">当前位置：<a href="{siteurl($siteid)}/zhiruitiku/">首页</a>><a href="{siteurl($siteid)}/zhiruitiku/type_{$r['typeid']}.html">{$typeArr['name']}</a>><a href="{siteurl($siteid)}/zhiruitiku/{$r['pinyin']}.html">{$r['name']}</a></div>
+    <!--软件介绍-->
+    <div class="torui-content">
+    	<div class="torui-pic"><img src="/statics/kaozc/zrmokuai/images/pic/type_{$r[typeid]}.jpg" /></div>
+        <div class="torui-rj-pro">
+        	<h1 class="tydv col"><span>题库软件</span>{$r['name']}</h1>
+            <div class="tydv"><span>试题数量</span><span class="bgnone">{$r['name_num']}题</span><span>运行平台</span><span class="bgnone">Windows 2000及以上操作系统</span></div>
+            <div class="tydv"><span>软件价格</span><span class="bgnone"><strong>￥{$r['price']}</strong></span><span>已下载数</span><span class="bgnone">{rand(1000,10000)}次</span></div>
+            <div class="tydv"><span>更新日期</span><span class="bgnone">{date('Y-m-d',strtotime($r['updatetime']))}</span><span>软件版本</span><span class="bgnone">12.0</span></div>
+            <div class="tydv"><span>软件等级</span>★★★★★★</div>
+            <div class="down-or-buy"><a href="{$r['down_url']}" target="_blank" class="a1">立即下载</a><a href="javascript:viod(0)" onclick="kefulink()"  class="a2">购买咨询</a></div>
+        </div>
+    </div>
+    
+    <!--软件详细介绍-->
+    <div class="torui-dv-bod torui-ty-mg">
+    	<div class="bod-cut torui-ty-mg">软件介绍</div>
+        <div class="torui-write">{nl2br($r['content'])}　</div>
+    </div>
+    
+    <!--软件功能介绍-->
+    {template "zhiruitiku","jieshao"}
+    
+    <!--购买流程-->
+    <div class="torui-dv-bod torui-ty-mg">
+    	<div class="bod-cut torui-ty-mg">购买流程</div>
+        <div class="torui-align"><img src="/statics/kaozc/zrmokuai/images/gm-lc.jpg" /></div>
+    </div>
+    
+</div>
+
+<!--底部-->
+{template "zhiruitiku","footer"}
+
+</body>
+</html>

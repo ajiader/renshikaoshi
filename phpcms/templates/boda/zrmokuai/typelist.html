@@ -1,0 +1,73 @@
+{template "zrmokuai","header"}
+	</div>
+    <table cellpadding="0" cellspacing="0" class="zg_listtable">
+        <tr class="bg1">
+            <td colspan="10">{$type_list[$typeid]['name']}</td>
+        </tr>
+        <tr>
+            <td width="68"><strong>总块数</strong></td>
+            <td width="64">{$type_list[$typeid]['count']['count_num']}个</td>
+            <td width="64"><strong>总题量</strong></td>
+            <td width="98">{intval($type_list[$typeid]['count']['name_num'])}</td>
+            <td width="127"></td>
+            <td width="57"></td>
+            <td width="124"></td>
+            <td width="42"></td>
+            <td width="204"></td>
+            <td width="108"></td>
+        </tr>
+        <tr>
+            <td width="68"><strong>售价</strong></td>
+            <td width="90">133元/模块</td>
+            <td colspan="8">点击以下模块名称查看详情</td>
+        </tr>
+        {if $type_list[$typeid]['child'] == 1} <!--有子类情况-->
+        {loop $type_list[$typeid]['zilei'] $c}
+        <tr>
+            <td colspan="10"><strong>{$c['name']}（{$c['count']['count_num']}）个</strong></td>
+        </tr>
+        <tr>
+        <?php
+        $typeid = $c['linkageid'];
+        $num=1;
+        ?>
+         {pc:get sql="SELECT * FROM v9_zirui_mokuai where typeid= $typeid" cache="0" dbsource="" return="data"  num="100"  }
+          {loop $data $n $r}  
+            <td width="96"><a href="{siteurl($siteid)}/zrmokuai/{$r['id']}.html" target="_blank">{$r['name']}</a></td>
+            {if $num%10==0}</tr><tr>{/if}
+            {php $num++}
+            {/loop}
+            {/pc}
+        </tr>
+        
+        {/loop}
+        {else} <!--无子类情况-->
+
+          <tr>
+        <?php
+        $num=1;
+        ?>
+         {pc:get sql="SELECT * FROM v9_zirui_mokuai where typeid= $typeid" cache="0" dbsource="" return="data"  num="100"  }
+          {loop $data $n $r}  
+            <td width="96"><a href="{siteurl($siteid)}/zrmokuai/{$r['id']}.html" target="_blank">{$r['name']}</a></td>
+            {if $num%10==0}</tr><tr>{/if}
+            {php $num++}
+            {/loop}
+            {/pc}
+        </tr>
+        {/if}<!--判断子类情况结束-->
+    </table>
+     {template "content","footer"}
+          <!--异步加载开始-->
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+ <script type="text/javascript">
+ <!--图文-->
+   // BAIDU_CLB_fillSlotAsync('728639','728639');
+ -->
+</script>
+<!-- 广告位：致睿-查询-浮窗 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("749415");</script>
+<!--异步加载结束 --> 
+</div>
+</body>
+</html>

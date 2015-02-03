@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if $typeArr['name']}{$typeArr['name']}-{else}找到 {$q} 相关-{/if}致睿模块</title>
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/zrmokuai/css/toruisearch.css" />
+
+</head>
+
+<body>
+
+{template "zhiruitiku","header"}
+
+<div class="onlinequizct">
+
+	<!--搜索-->
+{template "zhiruitiku","form"}
+    {if $typeid}
+  <!--软件分类导航-->
+    <div class="torui-dv-bod torui-ty-mg">
+    	<div class="bod-cut torui-ty-mg">{$typeArr['name']}</div>
+        <div class="torui-dv-alla">
+        {if $typeid==3363}
+        {pc:block pos="zhiruitiku_3363"}{/pc}
+        {elseif $typeid==3364}
+        {pc:block pos="zhiruitiku_3364"}{/pc}
+         {elseif $typeid==3366}
+        {pc:block pos="zhiruitiku_3366"}{/pc}
+         {elseif $typeid==3367}
+        {pc:block pos="zhiruitiku_3367"}{/pc}
+         {elseif $typeid==3368}
+        {pc:block pos="zhiruitiku_3368"}{/pc}
+         {elseif $typeid==3369}
+        {pc:block pos="zhiruitiku_3369"}{/pc}
+         {elseif $typeid==3370}
+        {pc:block pos="zhiruitiku_3370"}{/pc}
+         {elseif $typeid==3375}
+        {pc:block pos="zhiruitiku_3375"}{/pc}
+        {/if}
+      </div>
+    </div>
+    {/if}
+    <div class="torui-ty-mg">
+    	<table width="958" border="0" cellspacing="0" cellpadding="0" class="torui-table-lt">
+          <tr>
+            <td width="723" class="bgone alg">{if $typeArr['name']}{$typeArr['name']} -{/if} 模块名称</td>
+            <td width="77" class="bgone">试题量</td>
+            <td width="77" class="bgone">产品价格</td>
+            <td width="80" class="bgone">查看</td>
+          </tr>
+             {if $infos}
+               {loop $infos $r}
+          <tr>
+            <td class="tla alg"><a href="{siteurl($siteid)}/zhiruitiku/{$r['pinyin']}.html"  target="_blank">{$r['name']}</a></td>
+            <td>{$r['name_num']}题</td>
+            <td>￥{$r['price']}元</td>
+            <td><a href="{siteurl($siteid)}/zhiruitiku/{$r['pinyin']}.html" title="{$r['name']}" target="_blank">详细信息</a></td>
+          </tr>{/loop}
+          <tr>
+            <td colspan="4" align="center" class="pagefy">
+          {str_replace("page=0","page=1",$pages)} 
+            </td></tr>
+         
+          {else}
+     <tr>
+            <td colspan="4" align="center" class="tla alg">很遗憾暂时没有找到 <font color="red">{$q}</font>  相关模块，您可以试一试其它相关的关键词来查询！</td>
+          </tr>
+    {/if}
+        </table>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+<!--底部-->
+{template "zhiruitiku","footer"}
+
+</body>
+</html>

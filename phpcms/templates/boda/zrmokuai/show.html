@@ -1,0 +1,48 @@
+{template "zrmokuai","header"}
+    <table cellpadding="0" cellspacing="0" class="zg_listtable">
+        <tr class="bg1">
+            <td colspan="10">{$r['name']}</td>
+        </tr>
+        <tr>
+            <td width="82"><strong>总题量</strong></td>
+            <td width="68">{$r['name_num']}</td>
+            <td width="72"><strong>题量范围</strong></td>
+            <td width="125">网罗2000-2013年市面上所有</td>
+            <td width="109"><strong>软件是否上市</strong></td>
+            <td width="52">{if $r['status'] == 1}已上市{else}即将上市{/if}</td>
+            <td width="96"><strong>报名时间</strong></td>
+            <td width="139">{$r['bmtime']}</td>
+            <td width="95"><strong>考试时间</strong></td>
+            <td width="118">{$r['kstime']}</td>
+        </tr>
+        <tr>
+            <td width="82"><strong>定期模考</strong></td>
+            <td width="68">{$r['dqmk']}</td>
+            <td width="72"><strong>题型题量</strong></td>
+            <td width="125">{nl2br($r['type_num'])}</td>
+            <td width="109"><strong>历年真题数量</strong></td>
+            <td width="52">{$r['lnzt']}</td>
+            <td width="96"><strong>历年真题时间</strong></td>
+            <td width="139">{$r['lnzttime']}</td>
+            <td width="95"><strong>下次升级时间</strong></td>
+            <td width="118">{if strtotime($r['nextsj_time'])>0}{date('Y-m-d',strtotime($r['nextsj_time']) )}{else}待公布{/if}</td>
+        </tr>
+       	<tr>
+        	<td width="82"><strong>题库介绍</strong></td>
+            <td colspan="9" class="nrxx"> {nl2br($r['content'])}	</td>
+        </tr>
+    </table>
+    {template "content","footer"}
+         <!--异步加载开始-->
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+ <script type="text/javascript">
+ <!--图文-->
+   // BAIDU_CLB_fillSlotAsync('728639','728639');
+ -->
+</script>
+<!-- 广告位：致睿-查询-浮窗 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("749415");</script>
+<!--异步加载结束 --> 
+</div>
+</body>
+</html>

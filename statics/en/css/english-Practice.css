@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#ffffff; font-size:14px; font-family:宋体; color:#4d4d4d;}
+a{ color:#4d4d4d;}
+a:hover{ color:#ffd152;}
+
+.jq-top-bg{ height:33px; line-height:33px; background:url(http://www.kaozc.com/statics/kaozc/ask/images/top_bg.jpg) repeat-x; font-size:12px;}
+.jq-top-bg a,.lecture-top-bg{ color:#333333;}
+.jq-top-bg a{ display:inline-block; margin:0 5px;}
+.practice-ct{ width:960px; margin:0 auto;}
+.practice-banner{ height:248px; background:#ffd152 url(/statics/en/images/lxzt/banner.jpg) no-repeat center top;}
+.practice-bor{ border:1px #e5e5e5 solid;}
+.practice-bor .borlf{ width:220px; float:left;}
+.practice-bor .borrg{ float:right; width:739px; border-left:1px #e5e5e5 solid;}
+.practice-tybg,.lf-cut,.practice-dalc div,.practice-rgtrheeclass .rg-cut span,.practice-rgtrheeclass .rg-cut div{ background-image:url(../images/practice-ty-bg.png); background-repeat:no-repeat;}
+.lfcutwai{ position:relative; height:40px;  margin-bottom:10px;}
+.tycolor,.lf-cut,.practice-dalc div span.sp2,.practice-lx a,.practice-rgtrheeclass .rg-cut span,.practice-rgtrheeclass .rg-dv .dvcut span{ color:#763e00; font-family:微软雅黑; font-size:16px; }
+.lf-cut{ height:40px; width:200px; padding-left:25px; background-position:0px 0px; position:absolute; left:-5px; top:0px; line-height:36px;}
+.practice-dalc{ padding:0 6px; overflow:hidden;}
+.practice-dalc div{ float:left; height:33px; line-height:33px; margin-bottom:8px;}
+.practice-dalc div span{ display:inline-block;}
+.practice-dalc div span.sp1{ width:23px; height:23px; text-align:center; font-weight:bold; color:#feb009; font-size:16px;}
+.practice-dalc div span.sp2{ font-size:14px; padding-left:10px;}
+.practice-dalc div.dv1{ background-position:0px -114px; width:207px;}
+.practice-dalc div.dv2{ background-position:-207px -114px; width:95px; margin-right:18px;}
+.practice-dalc div.dv3{ margin-right:0px;}
+.practice-lx{ background:#fdf3d5; border:1px #feb009 dashed; width:184px; height:31px; line-height:31px; clear:both; margin:0 15px;}
+.practice-lx a{ display:block; text-align:center; color:#ff9000;}
+.practice-lx a:hover{ background:#feb009; color:#ffffff;}
+.practicetymg{ margin-bottom:10px;}
+.practice-mryl{ display:block; margin:0 8px;}
+.practice-mryl li{ height:20px; position:relative; line-height:20px; font-size:12px; margin-bottom:5px;}
+.practice-mryl li i,.practice-tylist li i{ width:4px; height:4px; background:#999999; border-radius:4px; float:left; margin:7px 6px 0 0; line-height:0px; font-size:0;}
+.practice-mryl li span{ position:absolute; right:0px; top:0px; height:18px; border:1px #e5e5e5 solid; line-height:18px; padding:0 10px;}
+#teacheryiwen{ height:310px; overflow:hidden;}
+.practice-xypj{ display:block; margin:0 8px; height:310px; overflow:hidden;}
+.practice-xypj li{ border-bottom:1px #ebebeb dashed; height:56px; clear:both; margin-bottom:5px; overflow:hidden;}
+.practice-xypj li span{ float:left;}
+.practice-xypj li span.sp1{ width:35px; text-align:center;}
+.practice-xypj li span.sp2{ width:160px; float:right; font-size:12px;}
+.practice-rgtrheeclass{ height:255px;}
+.practice-rgtrheeclass .rg-cut{ height:34px; border-bottom:1px #ffd256 solid; position:relative;}
+.practice-rgtrheeclass .rg-cut span{ width:123px; height:34px; line-height:34px; text-align:center; background-position:0 -42px; display:inline-block;}
+.practice-rgtrheeclass .rg-cut div{ position:absolute; top:3px; left:260px; width:300px; height:24px; line-height:24px; text-align:center; background-position:0 -82px; font-size:12px;}
+.practice-rgtrheeclass .rg-cut div a{ margin:0 5px;}
+.practice-rgtrheeclass .rg-dv{ float:left; width:330px; float:left; margin:0 15px 0 21px; display:inline;}
+.practice-rgtrheeclass .rg-dv .dvcut{ position:relative; height:34px; border-bottom:2px #b1b1b1 solid;}
+.practice-rgtrheeclass .rg-dv .dvcut span{ position:absolute; left:0px; bottom:-2px; border-bottom:2px #ffd152 solid; height:34px; line-height:34px; padding:0 10px;}
+.practice-rgtrheeclass .rg-dv .dvcut a.more{ position:absolute; right:0px; top:10px; font-size:12px;}
+.practice-tylist li{ height:26px; line-height:26px; clear:both;}
+.practice-tylist li i{ margin-top:10px;}
+.computerfoot{ border-top:1px #ebebeb solid; padding:15px 0; text-align:center; font-size:12px;}
+.computerfoot p{ line-height:26px;}
+.computerfoot p a{ margin:0 3px;}

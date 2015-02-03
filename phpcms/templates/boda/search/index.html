@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{$SEO['site_title']}{$search_q} - Powered by PHPCMS</title>
+<link href="{CSS_PATH}z_reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_default_blue.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_share.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}search.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+</head>
+<body>
+
+ {template "content","top_mini"}
+	<div class="clr sr_body">
+    	<div class="sr_main">
+
+            <div class="sr_logo"><a href="javascript:;"><img src="{IMG_PATH}search/se_logo.png" width="230" height="158" /></a></div>
+
+			<form name="search" type="get">
+			  <input type="hidden" name="m" value="search"/>
+			  <input type="hidden" name="c" value="index"/>
+			  <input type="hidden" name="a" value="init"/>
+			  <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+			  <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+            <div class="sr_frm">
+            	<div class="sr_frm_box">
+                	<div class="sr_frmipt"><input type="text" name="q" id="q" class="ipt"><div class="sp" id="aca">▼</div><input type="submit" class="ss_btn" value="搜 索"></div>
+                </div>
+                <div id="sr_infos" class="wrap sr_infoul">
+                </div>
+            </div>
+			</form>
+{if !$setting['suggestenable']}
+<script type="text/javascript" src="{JS_PATH}jquery.suggest.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_suggest.js"></script>
+{/if}
+<script language="JavaScript">
+<!--
+$(document).ready(function(){
+	$("#q").focus();
+}); 
+//-->
+</script>
+ {template "content","footer"}
+ </body>
+
+</html>

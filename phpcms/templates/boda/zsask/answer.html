@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}人事考试网</title>
+<meta name="description" content="{$SEO['title']}">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/ask/css/online_quiz.css?xg1218" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script language="javascript" src="/statics/js/53kefu.js"></script>
+</head>
+
+<body>
+<?php
+if ($info['catid']==3): //职称英语头部
+$catidsql = 9;
+endif;
+?>
+<?php
+if ($info['catid']==2): //职业资格头部
+$catidsql = 11;
+endif;
+?>
+<?php
+if ($info['catid']==1): //计算机头部
+$catidsql = 10;
+endif;
+?>
+{template "content","rsks_top"}
+<div class="onlinequizct">
+
+	<div class="quizdetail">
+    	<div class="dqposition">当前位置：<a href="{siteurl($siteid)}">考职称</a>><a href="{siteurl($siteid)}/question/">在线问答</a>><a href="{siteurl($siteid)}/question/{if $s>0}n{/if}qlist_{$info[catid]}_1.html">{$askcategorys[$info[catid]]['catname']}</a>><a href="{$info[url]}">{$info['question']}</a></div>
+         {php $answer = $ts_answer[0];}
+        <div class="detaildv">
+        	<h2>{$info['question']}</h2>
+            <p class="ptime">提问者：考生　　浏览：<span id="hits"></span>次　　时间：{format_date($info[addtime])}</p>
+            {if $info['content']}<div class="answernr"><strong>问题补充：</strong>{$info['content']}</div>{/if}
+            <div class="zjhdcut"><span class="lf">专家回答</span><span class="rg">回答时间：{format_date($answer[addtime])}</span></div>
+           <div class="answernr">　   {if $answer[content]}{$answer[content]} {else}
+        &nbsp;等待专家回答！
+        {/if}</div>
+			<div class="rgzx"><a href="javascript:void(0)" onclick="kefulink()">不满意？点击人工咨询</a></div>
+        </div>
+        
+        <div class="quiztydv detaildv">
+    		<span class="detailsp">相关问题</span>
+            <ul class="quiznews">
+             {pc:get sql="SELECT question,url,ip,catid from v9_ask_question 
+WHERE status != 1 AND aid >0 and siteid=$this->siteid and catid=$info[catid] and qid != $info[qid] ORDER BY rand()" cache="0" num="10" dbsource="" return="data"} {if $data}
+         {loop $data $key $val}
+            	 <li><a href="{$val['url']}" title="{$val['question']}" target="_blank">{str_cut($val['question'],100,'')}</a></li> 
+      {/loop}
+      {else}
+        <li>没有找到相关问题！</li>
+      {/if}
+            </ul>
+        </div>
+        
+  </div>
+  
+  	
+    {template "zsask","right"}
+    
+</div>
+{template "content","rsks_bottom"}
+<script type="text/javascript" src="{APP_PATH}kapi.php?op=count&id={$info[qid]}&module=zsask"></script>
+ <!--异步加载开始-->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+    <!-- 广告位：职称问答-右侧中部banner -->
+		  BAIDU_CLB_fillSlotAsync('729604','729604');
+<!-- 广告位：职称问答顶部-环绕广告 -->
+		   BAIDU_CLB_fillSlotAsync('729601','729601');
+
+		   BAIDU_CLB_fillSlotAsync('806651','806651');
+</script>
+
+<!--异步加载结束 -->  
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc423ac9f2c732e1388bc1aa4648cf47e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe447b8f522bec4777516cc59544c029f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

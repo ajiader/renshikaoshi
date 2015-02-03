@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-size:14px; color:#707070; background:#9a0002;}
+
+.mstgtop,.pointsinformation .tjxx input{ background-image:url(../cfimages/mstg-ty-bg.png); background-repeat:no-repeat;}
+.mstgtop{ height:51px; border-bottom:1px #d3d3d3 solid; background-position:0px 0px; background-repeat:repeat-x;}
+.mstgct{ width:960px; margin:0 auto; overflow:hidden;}
+.mstgtop span{ float:left;  margin-top:5px;}
+.mstgtop span.sp1{ float:right; line-height:45px;}
+.mstgtop span.sp1 a{ margin:0 8px;}
+a{ color:#666666;}
+a:hover{ color:#9a0002;}
+
+.pointspc{ text-align:center; background:url(../cfimages/check-pc.jpg) no-repeat center 60px; height:230px;}
+.pointcontent{ background:#ffffff; padding:30px 50px; width:865px; margin-bottom:30px;}
+.points-k{ height:100px; background:url(../cfimages/points-k.png) no-repeat; font-size:18px; line-height:36px; padding:15px 30px; margin-bottom:30px;}
+.pointstitle{ color:#9a0002; font-size:56px; text-align:center; font-weight:bold; margin-bottom:30px;}
+.pointsinformation{ width:450px; margin:0 auto; overflow:hidden;}
+.pointsinformation .xxdv{ border-bottom:1px #d9d9d9 dashed; padding-bottom:5px; clear:both; margin-bottom:5px;}
+.pointsinformation .xxdv label{ float:left; width:90px; font-size:16px; line-height:30px; color:#555555;}
+.pointsinformation .xxdv input{ width:328px; height:30px; border:1px #aaaaaa solid; line-height:30px; padding-left:5px; font-family:微软雅黑;}
+.pointsinformation .xxdv select{ width:162px; margin-right:10px;}
+.pointsinformation .xxdv label.lbone{ line-height:22px;}
+.pointsinformation .tjxx{ padding:20px 0 0 0; text-align:center;}
+.pointsinformation .tjxx input{ color:#ffffff; font-family:微软雅黑; font-size:30px; border:0px; background-position:0 -67px; width:237px; height:49px; cursor:pointer;}
+.pointsinformation .tjxx input:hover{ background-position:0 -124px;}

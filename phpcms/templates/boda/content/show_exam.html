@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<meta name="baidu-site-verification" content="uhu52zagQh" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<link type="text/css" rel="stylesheet" href="/statics/en/css/zcenglishnew.css" />
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery.featureList-1.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.featureList(
+			$("#feature_tabs li"),
+			$("#feature_output li"), {
+				start_item : 0,
+				transition_interval: 5000
+			}
+		);
+	});
+</script>
+<script language="javascript">
+$(document).ready(function(){
+	$('#dtA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#dtDIV > ul").eq($('#dtA a').index(this)).show().siblings().hide();
+	});
+	$('#dtAone a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#dtDIVone > ul").eq($('#dtAone a').index(this)).show().siblings().hide();
+	});
+});
+</script>
+</head>
+
+<body>
+{template "content","rsks_top"}
+
+<div class="onlinequizct">
+
+	<div class="quizdetail">
+    	<div class="dqposition">当前位置：<a href="{siteurl($siteid)}">考职称</a>><a href="{siteurl($siteid)}/question/">在线问答</a>><a href="{siteurl($siteid)}/question/{if $s>0}n{/if}qlist_{$info[catid]}_1.html">{$askcategorys[$info[catid]]['catname']}</a>><a href="{$info[url]}">{$info['question']}</a></div>
+         {php $answer = $ts_answer[0];}
+        <div class="detaildv">
+        	<h1>{$info['question']}</h1>
+            <p class="ptime">提问者：考生　　浏览：<span id="hits"></span>次　　时间：{format_date($info[addtime])}</p>
+            {if $info['content']}<div class="answernr"><strong>问题补充：</strong>{$info['content']}</div>{/if}
+            <div class="zjhdcut"><span class="lf">专家回答</span><span class="rg">回答时间：{format_date($answer[addtime])}</span></div>
+           <div class="answernr">　   {if $answer[content]}{$answer[content]} {else}
+        &nbsp;等待专家回答！
+        {/if}</div>
+			<div class="rgzx"><a href="javascript:void(0)" onclick="kefulink()">不满意？点击人工咨询</a></div>
+        </div>
+        
+                {php $num = rand(1,10)}
+
+           {pc:get sql="SELECT * FROM v9_pinlun AS t1 JOIN (SELECT ROUND(RAND() * ((SELECT MAX(id) FROM `v9_pinlun` where siteid=1 and catid=$catidsql)-(SELECT MIN(id) FROM `v9_pinlun` where siteid=1 and catid=$catidsql))+(SELECT MIN(id) FROM `v9_pinlun` where siteid=1 and catid=$catidsql)) AS id) AS t2 WHERE t1.id >= t2.id   ORDER BY t1.id limit 0,$num--" cache="0" dbsource="" return="data" }
+
+
+
+              {if $data}
+    <div class="quiztydv detaildv">
+    		<span class="detailsp">用户评论</span>
+      <ul class="yhplul">
+      {loop $data $r}
+<li><span>游客说：</span>{$r[content]}</li>  
+  {/loop}
+      </ul>
+    </div>        
+     {/if}
+          {/pc}
+        
+        <div class="quiztydv detaildv">
+    		<span class="detailsp">相关问题</span>
+            <ul class="quiznews">
+             {pc:get sql="SELECT question,url,ip,catid from v9_ask_question 
+WHERE status != 1 AND aid >0 and siteid=$this->siteid and catid=$info[catid] and qid != $info[qid] ORDER BY rand()" cache="0" num="10" dbsource="" return="data"} {if $data}
+         {loop $data $key $val}
+            	 <li><a href="{$val['url']}" title="{$val['question']}" target="_blank">{str_cut($val['question'],100,'')}</a></li> 
+      {/loop}
+      {else}
+        <li>没有找到相关问题！</li>
+      {/if}
+            </ul>
+        </div>
+        
+  </div>
+    
+    {template "content","right_rsks"}
+</div>
+
+{template "content","rsks_bottom"}
+
+</body>
+</html>

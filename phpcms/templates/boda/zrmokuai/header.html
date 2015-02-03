@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if $r['name']}{$r['name']}_{/if}职业资格查询系统</title>
+
+ <link rel="stylesheet" type="text/css" href="<?php echo JS_PATH?>calendar/jscal2.css">
+<link rel="stylesheet" type="text/css" href="<?php echo JS_PATH?>calendar/border-radius.css">
+<link rel="stylesheet" type="text/css" href="<?php echo JS_PATH?>calendar/win2k.css">
+<script type="text/javascript" src="<?php echo JS_PATH?>calendar/calendar.js"></script>
+<script type="text/javascript" src="<?php echo JS_PATH?>calendar/lang/en.js"></script>
+<script language="javascript">
+window.onload=function()
+{
+	var txt=document.getElementById("mgseletxt");
+	txt.onclick=function()
+	{
+		document.getElementById("mfseleul").style.display="block";	
+	}
+	var mful=document.getElementById("mfseleul").getElementsByTagName("li");
+	for(var i=0; i<mful.length; i++)
+	{
+		mful[i].onclick=function()
+		{
+			txt.value=this.innerHTML;
+			document.getElementById("mfseleul").style.display="none";
+		}	
+	}	
+}
+</script>
+<link type="text/css" rel="stylesheet" href="{CSS_PATH}boda/zg_search.css" />
+</head>
+
+<body>
+{if $_GET['iframe'] != 1}
+<div class="zg_searchtop"><img src="{IMG_PATH}zrmokuai/top_img.jpg" /></div>
+<div class="zg_topbg">
+	<div class="zg_topbgcenter">
+    	<div class="searchdiv">
+        <form method="get" action="{siteurl($siteid)}/zrmokuai/"><label>模块搜索</label><input type="text" name="q" class="searchtxt" /><input type="submit" name="searchbtn" class="searchbtn" value="查询" />
+        <input type="hidden" name="m" value="zrmokuai">
+        </form>
+        </div>
+    </div>
+</div>
+{/if}
+<div class="zg_searchtop">
+{if $_GET['iframe'] != 1}
+	<div class="zg_menu">
+    	<span class="menutitle">分类<br />检索</span>
+        <span class="menuclass">
+        {loop $type_list $v}<a href="{siteurl($siteid)}/zrmokuai/type_{$v['linkageid']}.html" {if $v['linkageid']==$typeid} class="selected"{/if}>{$v['name']}</a> {/loop}</span>
+    </div>{/if}
+    <div class="zg_content">
+     <form method="get" action="{siteurl($siteid)}/zrmokuai/">
+      <input type="hidden" name="m" value="zrmokuai">
+		<span class="span1"><label class="bel1">高级搜索</label><label>类别</label><select name="typeid">
+        <option value="">请选择</option>
+        {loop $type_list $v}
+        <option value="{$v['linkageid']}"  {if $v['linkageid'] == $typeid} selected="selected"{/if}>{$v['name']}</option>
+        {/loop}
+        </select>
+        
+        <label>上市时间</label><input type="text" name="start_time" id="start_time" value="<?=$start_time?>" size="21" class="put2" readonly=""><script type="text/javascript">
+      Calendar.setup({
+      weekNumbers: true,
+        inputField : "start_time",
+        trigger    : "start_time",
+        dateFormat: "%Y-%m-%d",
+        showTime: true,
+        minuteStep: 1,
+        onSelect   : function() {this.hide();}
+      });
+        </script>
+        <label>至</label>
+        <input type="text" name="end_time" id="end_time" value="<?=$end_time?>" size="21" class="put2" readonly=""><script type="text/javascript">
+      Calendar.setup({
+      weekNumbers: true,
+        inputField : "end_time",
+        trigger    : "end_time",
+        dateFormat: "%Y-%m-%d",
+        showTime: true,
+        minuteStep: 1,
+        onSelect   : function() {this.hide();}
+      });
+        </script>
+        <label>考试时间</label>
+        <select name="kstime">
+        <option>选择月份</option>
+        {loop $this->marr $k $v}
+        <option value="{$v}" {if $bmtime == $v} selected="selected"{/if}>{$v}月</option>
+        {/loop}
+        </select>
+        <input type="submit" class="put3" value="搜索" />
+        </span>
+  {if  $_GET['iframe']==1}
+  <input type="hidden" name="iframe"  value="1" />    {/if}  
+        </form>
+        <div style="clear:both;"></div>
+        <span class="span1 span2">按字母查询：{loop $this->zmarr $k $v}
+        <a href="{siteurl($siteid)}/zrmokuai/?zm={$v}{if  $_GET['iframe']==1}&iframe=1{/if}" {if strtoupper($v)==strtoupper($zm)}class="selected"{/if}>{strtoupper($v)}</a>{/loop}
+</span>

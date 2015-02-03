@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/jsj/css/cyjsjre.css" />
+<link rel="stylesheet" type="text/css" href="/statics/jsj/css/cycity.css"/>
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script language="javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="/statics/jsj/js/jq_scroll.js"></script>
+<script language="JavaScript" type="text/javascript">
+var scrollCount=1;
+var pauseTime=3*1000; /*数字越小移动的时间越快*/
+var timer1;
+function changeClips() {
+ for (i=1; i<5; i++){
+  var allCtn="ctn"+i;
+  var allTtl="ttl"+i;
+  document.getElementById(allCtn).style.display="none";
+  document.getElementById(allTtl).className="default";
+  }
+ }
+ 
+function ttlOn(n) {
+ var curCtn="ctn"+n;
+ var curTtl="ttl"+n;
+ changeClips();
+ document.getElementById(curCtn).style.display="block";
+ document.getElementById(curTtl).className="selected";
+ scrollCount=n;
+ }
+ 
+function affScroll() {
+ stopScroll();
+ ttlOn(scrollCount);
+ scrollCount+=1;
+ if (scrollCount==5) {
+  scrollCount=1;
+  }
+  timer1=setTimeout("affScroll()",pauseTime);
+ }
+ 
+function stopScroll() {
+ clearTimeout(timer1);
+ }
+</script>
+<base target="_blank" />
+</head>
+
+<body>
+<div class="jsjcontent">
+	{template "content","rsks_top"}
+    <div class="jsj_ct jsjpdtp">
+      <div class="schoolsk">
+    <span class="lfsk">计算机各地考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/jsj/{$v['pinyin']}/" title="{replace_arr($v['name'],array('省','市'))}职称计算机考试"  target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+    </span>
+    <span class="map"></span>
+</div>
+        <div class="select-city-box">
+             <div class="select-title">{citys2city($cityList['name'])}站</div>
+             <div class="select-city-all">
+             	{loop $childCitylist $v}
+                  {if $v['pinyin']} <a href="{$CATEGORYS[$catid]['url']}{$v['pinyin']}/" title="{$v['name']}职称计算机考试网"{if $nametid == $v['linkageid']} style="color:#f00000;"{/if}>{citys2city($v['name'])}</a><span>|</span>{/if}
+                {/loop}
+             </div>
+        </div>
+        <!--//select city box-->
+        <div class="jsj_nr1">
+        
+        	<div class="nr1-lf">
+            	<div class="pictab jsjtymg">
+                	<ul><li class="selected" id="ttl1" onmouseover="ttlOn(1);" ><a href="javascript:;">全真模拟</a></li><li id="ttl2" onmouseover="ttlOn(2)" ><a href="javascript:;">快速通关</a></li><li id="ttl3" onmouseover="ttlOn(3)" ><a href="javascript:;">真题题库</a></li><li id="ttl4" onmouseover="ttlOn(4)" style="margin-right:0px;"><a href="javascript:;">升职加薪</a></li></ul>
+                    <div class="picdv">
+                    	{pc:content  action="position" posid="242" order="listorder DESC" num="4"}
+                        {loop $data $key $val}
+				           <p id="ctn{$n}" ><a href="{$val['url']}" title="{$val['title']}" target="_blank"><img src="{thumb($val['thumb'],300,560)}" alt="{$val['title']}" /></a></p>
+                        {/loop} {/pc}
+                    </div>
+                    <script language="JavaScript" type="text/javascript">affScroll();</script>
+                </div>
+                <div class="nrtydv jsjtymg">
+                	<div class="tycut">历年真题<a href="{$CATEGORYS[189][url]}" class="more">更多>></a></div>
+                    <ul class="newsty">
+                       {pc:content action="lists" catid="189" order="id DESC" num="9"}
+                        {loop $data $n $r}
+                    	<li><a href="{$r['url']}" title="{$r['title']}" target="_blank" >{str_cut($r['title'],48)}</a></li>
+                        {/loop}
+                       {/pc}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="nr1-ct">
+            	<h1><span>资讯</span>
+				{pc:content action="position" posid="183" order="listorder DESC" num="1" cache="0"}
+				  {loop $data $key $r}
+                   <a href="{$r['url']}" target="_blank" style="float:left;" title="{$r['title']}">{str_cut($r['sl_title'],80,'')}</a>
+                  {/loop}
+				{/pc}</h1>
+                <h2><span>报名</span>：<a href="/jsj/ksdt/kssj_{$cityList_t['pinyin']}/">[{citys2city($cityList['name'])}职称计算机考试时间]</a> <a href="/jsj/ksdt/bmsj_{$cityList_t['pinyin']}/">[{citys2city($cityList['name'])}职称计算机报名时间]</a><br />
+				<span>指南</span>：<a href="http://www.renshikaoshi.net/kaoshi-185-106623-1.html">[考试条件]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106620-1.html">[考试介绍]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106642-1.html">[成绩查询]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106640-1.html">[考试科目]</a></h2>
+                
+				<h3><span>真题</span>{pc:content action="category" catid="198" num="3" order="listorder DESC"}
+				 {loop $data $r}		 
+				   <a href="http://www.renshikaoshi.net/jsj/lnzt/">{$r[catname]}</a>
+				 {/loop}
+				{/PC} </h3>
+                
+				<h2>{pc:content  action="position" catid="189" posid="171" order="listorder DESC" num="4" start="0"}
+					{loop $data $n $r}
+					{php $num++;}
+                	  <a href="{$r['url']}" title="{$r[title]}">{str_cut($r['sl_title'],50,'')}</a>
+					{if $num % 2 == 0}<br />{/if}
+					{/loop}
+					{/pc}<span>模块</span>：<a href="http://www.renshikaoshi.net/jsj/ksmk/Word2003/">Word2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/excel/">Excel2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/ppt/">Powerpoint2003</a></h2>            
+			 
+                <h3><span>辅导</span>				
+				{pc:content action="position" posid="317" order="listorder DESC" num="1" start="0"}
+				  {loop $data $n $r}
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				  {/loop}
+				{/pc}
+				</h3>
+                <h2><a href="javascript:;">辅导</a>：				
+				{pc:content action="position" posid="317" order="listorder DESC" num="2" start="1"}
+				  {loop $data $n $r}
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				   {/loop}
+				{/pc}<br /><a href="javascript:;">必看</a>：				 
+				 {pc:content action="position" posid="318" order="listorder DESC" num="2"}
+				  {loop $data $n $r}
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				   {/loop}
+				{/pc}
+				 </h2>
+				 
+                <div class="newstab" id="newstabone"><a href="javascript:;" class="selected">最近更新</a><a href="javascript:;">报考通知</a><a href="javascript:;">成绩查询</a><a href="javascript:;">准考证打印</a></div>
+                <div class="newsdv jsjtymg" id="newsdvone">
+                	<ul class="newsty">
+                		{pc:content action="lists" catid="10" order="id DESC" num="8"}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+						{/pc}
+                    </ul>
+                    <ul class="newsty" style="display:none;">
+                    	{pc:content action="lists" catid="187" order="id DESC" num="8"}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+						{/pc}
+                    </ul>
+                    <ul class="newsty" style="display:none;">
+                    	{pc:content action="lists" catid="188" order="id DESC" num="8"}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+						{/pc}
+                    </ul>
+                    <ul class="newsty" style="display:none;">
+                    	{pc:content action="lists" catid="196" order="id DESC" num="8"}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+						{/pc}
+                    </ul>
+                    
+
+                </div>
+                
+            </div>
+            
+            <div class="nr1-rg">
+            	<div class="nrtydv jsjtymg">
+                	<div class="tycut jsjtymg">报考指南<a href="{$CATEGORYS[184][url]}" class="more">更多>></a></div>
+                    <div class="bkzn">
+                    	<a href="http://www.renshikaoshi.net/kaoshi-185-106620-1.html">考试介绍</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106620-1.html">考试教材</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106623-1.html">报考条件</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106640-1.html" class="a1">考试科目</a>
+                        <a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/">报名时间</a>
+                        <a href="http://www.renshikaoshi.net/jsj/lnzt/">历年真题</a>
+                        <a href="http://www.renshikaoshi.net/jsj/jqxd/">考试心得</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106622-1.html" class="a1">考试实施</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106642-1.html">成绩查询</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106684-1.html">合格标准</a>
+                        <a href="http://www.renshikaoshi.net/kaoshi-185-106686-1.html">证书领取</a>
+                        <a href="http://www.renshikaoshi.net/download/zhichenjisuanji/" class="a1">题库下载</a>
+                    </div>
+                </div>
+                <div class="jsjtymg" id="PAGE_AD_675854"></div>
+                <div class="nrtydv jsjtymg">
+                	<div class="tycut jsjtymg">在线问答</div>
+                    <div class="zkquestion">
+                      <form action="/question/" target="_blank">
+						 <input type="text" name="serch" value="请输入您需要了解的问题" onfocus="this.value='';this.style.color='#333333'" class="ip1" />
+						 <input type="submit" name="questionbtn" value="搜索问题" class="ip2" />
+				      </form>		 
+			        </div>
+                    <div class="quesdv" id="teacheryiwen">
+                    	<ul>
+                       {pc:get sql="SELECT aq.qid,aq.question,aq.url,aq.ip,aq.catid,aa.* from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid WHERE aq.status != 1 AND aa.content != '' and aq.catid=1 and aq.siteid=1 ORDER BY aa.qid desc" cache="3600"  dbsource="" return="data" num="6"}
+                         {loop $data $key $val}
+                        <li><p><a href="{$val['url']}" target="_blank" title="{$val['question']}">{str_cut($val['question'],'45')}</a></p><p>{trim(str_cut(strip_tags($val['content']),'70'))}</p></li>
+                         {/loop}
+						{/pc} 
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            
+            <div class="clear"></div>
+        </div>
+
+        
+        <!--//考试模块-->
+        <div class="city-box">
+           <div class="city-mk-title">
+               <h2 class="cmth2">学习软件</h2>
+               <div class="cmtintro">
+                  <span></span>
+                  
+               </div>
+           </div>
+           <div class="clear"></div>
+           <!--//city-mk-title-->
+           <div class="city-box-border">
+               <div class="pd8">
+                   <h3 class="mkh3">2015年考试宝典职称计算机考试软件 - 全国过关率最高,真题率最高职称计算机考试模拟题软件</h3>
+                   <div class="detail-mk">
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/pointer2007.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">PowerPoint2007</a><br />科目代码：213 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/excel2007.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Excel2007</a><br />科目代码：212 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/word2007.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Word2007</a><br />科目代码：211 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Internet.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Internet应用</a><br />科目代码：303 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/PowerPoint2003.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">PowerPoint2003</a><br />科目代码：207 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Excel2003.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Excel2003</a><br />科目代码：206 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/wrod2003.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">wrod2003</a><br />科目代码：205 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/xp.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">WindowsXP</a><br />科目代码：102 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Frontpage2000.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Frontpage2003</a><br />科目代码：305 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/jswz.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">金山文字2005</a><br />科目代码：208 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/jsbg.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">金山表格2005</a><br />科目代码：209 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/jsys.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">金山演示2005</a><br />科目代码：210 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/wpsoffice.jpg" width="45" height="45" /></a></dt>
+                          <dd class="dou"><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">WPSOffice办公组合中文字处理</a><br />科目代码：204 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Frontpage2000.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Frontpage2000</a><br />科目代码：302 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/cad.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">AutoCAD2004</a><br />科目代码：503 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/u8.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">用友U8</a><br />科目代码：403 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/VisualFoxPro.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">VisualFoxPro5.0</a><br />科目代码：401 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Flash.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">FlashMX2004动画制作</a><br />科目代码：504 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Authorware.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Authorware7.0</a><br />科目代码：505 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Frontpage2000.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Project2000项目管理</a><br />科目代码：901 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/Access2000.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Access2000</a><br />科目代码：402 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/ps.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">PhotoshopCS4图像处理</a><br />科目代码：506 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/u8.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">用友T3会计信息化软件</a><br />科目代码：404 常考模块</dd>
+                       </dl>
+                       <dl class="mk-dl" style="margin-right:0px;">
+                          <dt><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912"><img src="/statics/kaozc/images/ps.jpg" width="45" height="45" /></a></dt>
+                          <dd><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.lwaC2Q&id=37117006912">Photoshop6.0图像处理</a><br />科目代码：502 常考模块</dd>
+                       </dl>
+                   </div>
+               </div>
+           
+           </div>
+        </div>
+        <div class="space10"></div>
+        <!--//ad-->
+        <div class="city-box">
+            <div class="zxfd-title"><h2>专项辅导</h2></div>
+            <div class="zxfd-box">
+                <div class="zxfd-box-left">
+                    <div class="zxfd-h40">
+                        <h2 class="zxfd-md-tt">XP、Internet、Office系列</h2>
+                        <div class="zxfd-more"><a href="{$CATEGORYS['199']['url']}">word</a><a href="{$CATEGORYS['201']['url']}">Excel</a><a href="{$CATEGORYS['202']['url']}">PowerPoint</a><a href="{$CATEGORYS['10']['url']}" class="orange">更多&gt;&gt;</a></div>
+                    </div>
+                    <div class="zxfd-bd">
+                        <div class="zxfd-mk-b">
+                            <div class="changtab-box" id="mk01"><span class="on">word2003</span><span>word2007</span><span>Excel2003</span><span>Excel2007</span></div>
+                            <div class="changtab-content" id="mk01_tab">
+                                <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="199" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="809" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="201" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="842" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+								
+                            </div>
+                        </div>
+                        <!--//box-->
+                        <div class="zxfd-mk-b" style="float:right;">
+                            <div class="changtab-box" id="mk02"><span class="on">Powerpoint2003</span><span>Powerpoint2007</span><span>windows XP</span><span>Internet</span></div>
+                            <div class="changtab-content" id="mk02_tab">
+                                <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="202" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="843" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="200" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="203" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//box-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--//left-->
+                <div class="zxfd-box-right">
+                    <div class="zxfd-br-title"><h2>考试政策</h2></div>
+                    <ul class="list-zxfd-br">
+                    {pc:content  action="lists" catid="185" order="id DESC" num="10" start="0" cache="0"} 
+                      {loop $data $key $val}
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       {/loop}
+					{/pc}
+                   </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="space10"></div>
+        <!--//-->
+        <div class="city-box" id="PAGE_AD_538171">
+       
+        </div>
+        <div class="space10"></div>
+        <!--//ad-->
+        <div class="city-box">
+            <div class="zxfd-box">
+                <div class="zxfd-box-left">
+                    <div class="zxfd-h40">
+                        <h2 class="zxfd-md-tt">金山、CAD、网页制作系列</h2>
+                        <div class="zxfd-more"><a href="{$CATEGORYS['214']['url']}">AutoCAD 2004</a><a href="{$CATEGORYS['215']['url']}">Frontpage 2000</a><a href="{$CATEGORYS['10']['url']}" class="orange">更多&gt;&gt;</a></div>
+                    </div>
+                    <div class="zxfd-bd">
+                        <div class="zxfd-mk-b">
+                            <div class="changtab-box" id="mk03"><span class="on">AutoCAD 2004</span><span>Frontpage 2000</span><span>Frontpage 2003</span></div>
+                            <div class="changtab-content" id="mk03_tab">
+                                <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="214" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="215" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="845" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//box-->
+                        <div class="zxfd-mk-b" style="float:right;">
+                            <div class="changtab-box" id="mk04"><span class="on">WPS Office</span><span>金山表格05</span><span>金山文字05</span><span>金山演示05</span></div>
+                            <div class="changtab-content" id="mk04_tab">
+                                <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="213" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="204" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="205" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="207" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//box-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--//left-->
+                <div class="zxfd-box-right">
+                    <div class="zxfd-br-title"><h2>考试答疑</h2></div>
+                    <ul class="list-zxfd-br">
+                    {pc:content  action="lists" catid="194" order="id DESC" num="10" start="0" cache="0"} 
+                      {loop $data $key $val}
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       {/loop}
+					{/pc}
+                   </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="space10"></div>
+        <!--//-->
+        <div class="city-box" id="PAGE_AD_675847">
+        </div>
+        <div class="space10"></div>
+        <!--//ad-->
+        <div class="city-box">
+            <div class="zxfd-box">
+                <div class="zxfd-box-left">
+                    <div class="zxfd-h40">
+                        <h2 class="zxfd-md-tt">图像制作、数据库管理系列</h2>
+                        <div class="zxfd-more"><a href="{$CATEGORYS['208']['url']}">Access 2000</a><a href="{$CATEGORYS['216']['url']}">Aithorware 7.0</a><a href="{$CATEGORYS['10']['url']}" class="orange">更多&gt;&gt;</a></div>
+                    </div>
+                    <div class="zxfd-bd">
+                        <div class="zxfd-mk-b">
+                            <div class="changtab-box" id="mk05"><span class="on">Flash MX 2004</span><span>Access 2000</span><span>Aithorware 7.0</span><span>用友U8</span></div>
+                            <div class="changtab-content" id="mk05_tab">
+                           <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="210" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="208" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="216" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="844" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//box-->
+                        <div class="zxfd-mk-b" style="float:right;">
+                            <div class="changtab-box" id="mk06"><span class="on">用友T3</span><span>Visual Foxpro 5.0</span><span>Project 2000</span><span>Photoshop CS4</span></div>
+                            <div class="changtab-content" id="mk06_tab">
+                           <ul class="list-chang-content" style="display:block;">
+                                 {pc:content  action="lists" catid="206" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="212" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="211" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                                <ul class="list-chang-content">
+                                 {pc:content  action="lists" catid="209" order="id DESC" num="8" start="0" cache="0"}
+								 {loop $data $n $r}
+                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+								  {/loop}
+								 {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--//box-->
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--//left-->
+                <div class="zxfd-box-right">
+                    <div class="zxfd-br-title"><h2>技巧心得</h2></div>
+                    <ul class="list-zxfd-br">
+                    {pc:content  action="lists" catid="192" order="id DESC" num="10" start="0" cache="0"} 
+                      {loop $data $key $val}
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       {/loop}
+					{/pc}
+                   </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="space10"></div>
+        <!--//-->
+        
+    </div>
+    
+    <!--footer-->
+     {template "content","rsks_bottom"}
+</div>
+<script language="javascript">
+$(document).ready(function(){
+	$('#mk01 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk01_tab > ul").eq($('#mk01 span').index(this)).show().siblings().hide();
+	});
+	$('#mk02 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk02_tab > ul").eq($('#mk02 span').index(this)).show().siblings().hide();
+	});
+	$('#mk03 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk03_tab > ul").eq($('#mk03 span').index(this)).show().siblings().hide();
+	});
+	$('#mk04 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk04_tab > ul").eq($('#mk04 span').index(this)).show().siblings().hide();
+	});
+	$('#mk05 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk05_tab > ul").eq($('#mk05 span').index(this)).show().siblings().hide();
+	});
+	$('#mk06 span').mouseover(function(){
+		$(this).addClass("on").siblings().removeClass();
+		$("#mk06_tab > ul").eq($('#mk06 span').index(this)).show().siblings().hide();
+	});
+	$('#newstabone a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#newsdvone > ul").eq($('#newstabone a').index(this)).show().siblings().hide();
+	});
+
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#teacheryiwen").Scroll({line:1,speed:500,timer:3000});
+});
+</script>
+
+</body>
+</html>

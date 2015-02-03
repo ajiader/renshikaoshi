@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$('#hotnewsqha a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#hotnewsqhdv > ul").eq($('#hotnewsqha a').index(this)).show().siblings().hide();
+	});
+	$('#lglA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#lglDIV > ul").eq($('#lglA a').index(this)).show().siblings().hide();
+	});
+	$('#wslA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#wslDIV > ul").eq($('#wslA a').index(this)).show().siblings().hide();
+	});
+	$('#jtjqA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#jtjqDIV > ul").eq($('#jtjqA a').index(this)).show().siblings().hide();
+	});
+});
+</script>
+</head>
+
+<body>
+
+{template "content","rsks_top"}
+
+<div class="cy-tyct">
+<div class="schoolsk">
+    <span class="lfsk">职称英语各地考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/En/{$v['pinyin']}/" title="{replace_arr($v['name'],array('省','市'))}职称英语考试"  target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+    </span>
+    <span class="map"></span>
+</div>
+	<div class="kzc-en-indexlf">
+    	<div class="en-pc-qh">
+        	<div id="wrapper">
+                <div class="slider-wrapper theme-default">
+                    <div class="ribbon"></div>
+                    <div id="slider" class="nivoSlider">
+                        {pc:content  action="position" posid="131" order="listorder DESC" num="5"} {loop $data $key $val}
+                        <a href="{$val['url']}"><img src="{thumb($val['thumb'],420,240)}" title="{$val['title']}" /></a>
+                         {/loop}{/pc}
+                    </div>
+                </div>
+            </div>
+        	<script type="text/javascript" src="/statics/renshikaoshi/js/jquery.nivo.slider.pack.js"></script>
+			<script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+            </script>
+        </div>
+        
+        <div class="hotnew">
+        	
+            {pc:content  action="lists" catid="419"  order="id DESC" num="1" start="0" cache="3600"}{loop $data $n $r}
+			<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'68','')}</a></h2>
+            {/loop}{/pc}
+        	<p>{pc:content  action="lists" catid="419"  order="id DESC" num="2" start="1" cache="3600"}{loop $data $n $r}
+            <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'50','')}</a>
+            {/loop}{/pc}</p>
+            
+            {pc:content  action="lists" catid="419"  order="id DESC" num="1" start="3" cache="3600"}{loop $data $n $r}
+			<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'68','')}</a></h2>
+            {/loop}{/pc}
+        	<p>{pc:content  action="lists" catid="419"  order="id DESC" num="2" start="4" cache="3600"}{loop $data $n $r}
+            <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'50','')}</a>
+            {/loop}{/pc}</p>
+            
+            {pc:content  action="lists" catid="419"  order="id DESC" num="1" start="6" cache="3600"}{loop $data $n $r}
+			<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'68','')}</a></h2>
+            {/loop}{/pc}
+        	<p>{pc:content  action="lists" catid="419"  order="id DESC" num="2" start="7" cache="3600"}{loop $data $n $r}
+            <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'50','')}</a>
+            {/loop}{/pc}</p>
+        </div>
+        <!--循环div<start>-->
+        {pc:content  action="lists" catid="419"  order="id DESC" num="9" start="9" cache="3600"}{loop $data $n $r}
+        <div class="hotdv">
+        	<h3><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>[{str_cut(trim($r[title]),'50','')}]</a></h3>
+            <p class="ply">{date('Y-m-d',$r[inputtime])}</p>
+            <p class="pcont">{str_cut(trim($r[description]),'84','')}...<a href="{$r[url]}" target="_blank">[详细]</a></p>
+        </div>
+        {/loop}{/pc}
+        <!--循环div<end>-->
+        <div class="ckmore"><a href="/En/ksdt/bktz/" target="_blank">查看更多</a></div>
+    </div>
+    
+    <div class="kzc-en-indexrg">
+    	<div class="rgdvty rgmg">
+        	<div class="enrgcut"><span class="entitle">考试报名</span><a href="{$CATEGORYS[420][url]}" target="_blank" class="more">more</a></div>
+            <ul class="ennewsul">
+            	{pc:content  action="lists" catid="420"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
+<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
+
+  target=_blank>{str_cut(trim($r[title]),'50','')}</a></li>
+                 {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="rgdvty">
+        	<div class="enrgcut"><span class="entitle">准考证打印</span><a href="{$CATEGORYS[421][url]}" class="more">more</a></div>
+            <ul class="ennewsul">
+            	{pc:content  action="lists" catid="421"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
+<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
+
+  target=_blank>{str_cut(trim($r[title]),'50','')}</a></li>
+                 {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="btline"></div>
+        <div class="rgdvty rgmg">
+        	<div class="enrgcut"><span class="entitle">成绩查询</span><a href="{$CATEGORYS[422][url]}" target="_blank" class="more">more</a></div>
+            <ul class="ennewsul">
+            	{pc:content  action="lists" catid="422"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
+<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
+
+  target=_blank>{str_cut(trim($r[title]),'48','')}</a></li>
+                 {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="rgdvty">
+        	<div class="enrgcut"><span class="entitle">证书领取</span><a href="{$CATEGORYS[423][url]}" target="_blank" class="more">more</a></div>
+            <ul class="ennewsul">
+            	{pc:content  action="lists" catid="423"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
+<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
+
+  target=_blank>{str_cut(trim($r[title]),'48','')}</a></li>
+                 {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="btline"></div>
+        
+        <!-- 综合类-->
+        <div class="enclass">
+        	<div class="enrgcut enpre"><span class="entitle">综合类</span><span class="flqh" id="hotnewsqha"><a href="{$CATEGORYS[167][url]}" class="selected">资料辅导</a><a href="{$CATEGORYS[168][url]}">历年真题</a><a href="{$CATEGORYS[169][url]}">模拟题</a><a href="{$CATEGORYS[428][url]}">备考技巧</a></span></div>
+            <div class="classty">
+            	<div class="listlf" id="hotnewsqhdv">
+                	<ul class="ennewsul">
+                        {pc:content  action="lists" catid="167"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="168"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="169"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="428"  order="id DESC" num="6" start="1" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                </div>
+                {php $catid=167; //历年真题}
+                {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0"}{loop $data $n $r}
+                <div class="picrg">
+                	<a href="{$r[url]}"><img src="{thumb($r['thumb'],199,149)}" width="199" /></a><p><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></p>
+                </div>
+                {/loop}{/pc}
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="btline"></div>
+        
+        <!--理工类-->
+        <div class="enclass">
+        	<div class="enrgcut enpre"><span class="entitle">理工类</span><span class="flqh" id="lglA"><a href="{$CATEGORYS[159][url]}" class="selected">资料辅导</a><a href="{$CATEGORYS[160][url]}">历年真题</a><a href="{$CATEGORYS[161][url]}">模拟题</a><a href="{$CATEGORYS[154][url]}">备考技巧</a></span></div>
+            <div class="classty">
+            	<div class="listlf" id="lglDIV">
+                	<ul class="ennewsul">
+                        {pc:content  action="lists" catid="159"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="160"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="161"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="154"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                </div>
+                {php $catid=159; //历年真题}
+                {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0"}{loop $data $n $r}
+                <div class="picrg">
+                	<a href="{$r[url]}"><img src="{thumb($r['thumb'],199,149)}" width="199" /></a><p><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></p>
+                </div>
+                {/loop}{/pc}
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="btline"></div>
+        
+        <!--卫生类-->
+        <div class="enclass">
+        	<div class="enrgcut enpre"><span class="entitle">卫生类</span><span class="flqh" id="wslA"><a href="{$CATEGORYS[163][url]}" class="selected">资料辅导</a><a href="{$CATEGORYS[164][url]}">历年真题</a><a href="{$CATEGORYS[165][url]}">模拟题</a><a href="{$CATEGORYS[427][url]}">考试心得</a></span></div>
+            <div class="classty">
+            	<div class="listlf" id="wslDIV">
+                	<ul class="ennewsul">
+                        {pc:content  action="lists" catid="163"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="164"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="165"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                    	{pc:content  action="lists" catid="427"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                </div>
+                {php $catid=163; //历年真题}
+                {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0"}{loop $data $n $r}
+                <div class="picrg">
+                	<a href="{$r[url]}"><img src="{thumb($r['thumb'],199,149)}" width="199" /></a><p><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></p>
+                </div>
+                {/loop}{/pc}
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="btline"></div>
+        
+        <!--解题技巧-->
+        <div class="enclass">
+        	<div class="enrgcut enpre"><span class="entitle">解题技巧</span><span class="flqh" id="jtjqA"><a href="{$CATEGORYS[147][url]}" class="selected">词汇选项</a><a href="{$CATEGORYS[150][url]}">阅读理解</a><a href="{$CATEGORYS[149][url]}">概括大意与完成句子</a><a href="{$CATEGORYS[148][url]}">阅读判断</a></span></div>
+            <div class="classty">
+            	<div class="listlf" id="jtjqDIV">
+                	<ul class="ennewsul">
+                        {pc:content  action="lists" catid="147"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                        {pc:content  action="lists" catid="150"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                        {pc:content  action="lists" catid="149"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                    <ul class="ennewsul" style="display:none;">
+                        {pc:content  action="lists" catid="148"  order="id DESC" num="6" start="0" cache="3600"}{loop $data $n $r}
+						<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'54','')}</a></li>
+                 		{/loop}{/pc}
+                    </ul>
+                </div>
+                {php $catid=147; //历年真题}
+                {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0"}{loop $data $n $r}
+                <div class="picrg">
+                	<a href="{$r[url]}"><img src="{thumb($r['thumb'],199,149)}" width="199" /></a><p><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></p>
+                </div>
+                {/loop}{/pc}
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="clear"></div>
+</div>
+
+{template "content","rsks_bottom"}
+</body>
+</html>

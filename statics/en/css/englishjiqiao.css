@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#ffffff; font-size:12px; color:#666666;}
+a{ color:#666666;}
+
+.jq-top-bg{ height:33px; line-height:33px; background:url(/statics/kaozc/ask/images/top_bg.jpg) repeat-x; font-size:12px;}
+.jq-top-bg a,.lecture-top-bg{ color:#333333;}
+.jq-top-bg a{ display:inline-block; margin:0 5px;}
+.jq-ty-ct{ width:960px; margin:0 auto; overflow:hidden;}
+.substancefirst .hdppic .picswitchnum ul li,.substancefirst .rgremind .ksjl span.tl,.examinationtycut,.examinationtycut h2,.examinationnrqh .qhtitlelft a,.examinationnrqh .jtjqdv span.jtcut,.examinationnrqh .jtjqdv span.jtcut a.selected{ background-image:url(/statics/en/images/jq-ty-icon.png); background-repeat:no-repeat;}
+
+.eg-banner{ background:url(http://www.kaozc.com/En2/kfb/images/eg-bn-bg.jpg) repeat-x; clear:both;}
+.eg-banner .eg-wai{ background:url(http://www.kaozc.com/En2/kfb/images/eg-banner.jpg) no-repeat center top; height:305px; font-weight:bold;}
+.eg-banner .eg-wai .dv1{ height:27px; line-height:27px; background:#4147a7; font-weight:normal; color:#ffffff; width:400px; text-align:center; margin:26px 0 10px 0; }
+.eg-banner .eg-wai .dv2{ font-size:82px; color:#f4f761;}
+.eg-banner .eg-wai .dv2 span,.eg-banner .eg-wai .dv3 span{ color:#f7eefb;}
+.eg-banner .eg-wai .dv3{ font-size:53px; color:#deec76;  padding-left:20px;}
+.eg-banner .eg-wai .dv3 span{ font-size:35px; font-style:italic; display:inline-block; padding-left:15px;}
+.substancefirst{ overflow:hidden;}
+.exammgone{ margin-bottom:10px;}
+.exammgtwo{ margin-bottom:18px;}
+.substancefirst .hdppic{ float:left; height:200px; width:290px; position:relative;}
+.substancefirst .hdppic .picswitchnum { position:absolute; top:180px; right:0px;margin-left:auto; margin-right:auto; z-index:9999;}
+.substancefirst .hdppic .picswitchpic{ position:relative; overflow:hidden; width:290px; height:200px; margin-left:auto; margin-right:auto;}
+.substancefirst .hdppic .picswitchpic ul{ position:absolute;}
+.substancefirst .hdppic .picswitchpic ul li{ width:290px; height:200px; position:absolute;}
+.substancefirst .hdppic .picswitchnum ul li{ width:11px; height:11px; font-size:0; line-height:0px; float:left; margin-right:8px; background-position:0px 0px;}
+.substancefirst .hdppic .picswitchnum ul li.selected{ background-position:-26px 0px;}
+.substancefirst .hdppic img{ width:290px; height:200px;}
+.substancefirst .centernews{ float:left; width:331px; margin-left:22px;}
+.examnewslist li{ position:relative; background:url(/statics/images/jsj/icon.jpg) no-repeat left center; padding-left:10px; height:23px; line-height:23px;}
+.examnewslist li a{ color:#666666; font-size:13px;}
+.examnewslist li a:hover{ color:#ff9900;}
+.examnewslist li span{ position:absolute; right:8px; top:0px; line-height:23px; color:#bababa;}
+.substancefirst .rgremind{ width:292px; float:right;}
+.titlecut{ display:block; height:30px; border-bottom:2px #b6b6b6 solid;position:relative; margin-bottom:6px;}
+.titlecut span{ font-size:16px; color:#ff9900; font-weight:bold; border-bottom:2px #ff9900 solid; height:30px; line-height:30px; left:0px; bottom:-2px; padding:0 15px; position:absolute;}
+.titlecut a{ position:absolute; right:5px; top:0px; font-weight:normal; }
+.titlecut a.more{ line-height:26px; color:#999999; font-size:12px;}
+.titlecut a.otherzx{ color:#ff8400; font-size:14px;}
+.substancefirst .rgremind .ksjl{ width:259px; border:1px #ebebeb solid; background:#f9f9f9; margin:44px 11px 5px 11px; position:relative; height:78px;}
+.substancefirst .rgremind .ksjl span.tl{ display:block; text-align:center; font-size:18px; font-weight:bold; color:#ffffff; background-position:0px -18px; height:56px; position:absolute; top:-44px; left:-12px; width:284px; line-height:40px;}
+.substancefirst .rgremind .ksjl span.djs{ display:block; font-size:20px; color:#2d2d2d; text-align:center; font-weight:bold; margin:10px 0 6px 0; border-bottom:1px #d9d9d9 dashed; padding-bottom:8px;}
+.substancefirst .rgremind .ksjl span.djs font{ display:inline-block; margin:0 8px; color:#d10000;  }
+.substancefirst .rgremind .ksjl p{ padding-left:10px; color:#666666;}
+.examinationtycut{ height:41px; background-position:0px -82px; background-repeat:repeat-x; position:relative;}
+.examinationtycut h2{ width:161px; height:46px; position:absolute; left:420px; line-height:46px; top:-8px; background-position:0px -129px; font-size:23px; color:#ffffff; text-align:center; font-weight:normal;}
+.examinationnrqh{ border:1px #EBEBEB solid; overflow:hidden; height:170px;}
+.examinationnrqh .qhtitlelft{ width:169px; float:left; height:170px; background:url(/statics/en/images/qhlftbg.jpg) repeat-y; font-size:14px; height:180px;}
+.examinationnrqh .qhtitlelft a{ display:block; height:36px; background-position:0px -180px; text-align:center; color:#666666; line-height:36px;}
+.examinationnrqh .qhtitlelft a.selected{ background-position:0px -219px; font-weight:bold;}
+.examtyclear{ clear:both; line-height:0; font-size:0; height:0; overflow:hidden;}
+.examinationnrqh .qhnrright{ width:780px; float:right; margin:6px 0 0 0; display:inline; }
+.examinationnrqh .qhnrright .nrty{ width:392px; float:left; margin-left:10px;}
+.examinationnrqh .qhnrright .nrtywd{ width:358px;}
+.examinationnrqh .qhnrright .ksfdwd{ width:245px;}
+.examinationnrqh .qhnrright .nrty .spalist{ display:block;}
+.examinationnrqh .qhnrright .nrty .spalist a{ display:inline-block; width:40px; height:24px; border:1px #d9d9d9 solid; margin:0 2px 5px 3px; text-align:center; color:#666666; line-height:24px;}
+.examhg1{ height:180px;}
+.examinationnrqh .jtjqdv{ width:308px; float:left; margin:10px 0 0 8px; display:inline;}
+.examinationnrqh .jtjqdv span.jtcut{ display:block; height:33px;  background-position:0px -272px; margin-bottom:5px;}
+.examinationnrqh .jtjqdv span.jtcut a{ display:inline-block; width:140px; color:#8c8c8c; font-size:14px; text-align:center; height:33px;}
+.examinationnrqh .jtjqdv span.jtcut a.selected{ background-position:-161px -144px; color:#fe8220; font-weight:bold;}
+.examinationnrqh .jtjqdv span.jtcut a:hover{ text-decoration:none;}
+.computerfoot{ border-top:1px #ebebeb solid; background:#f9f9f9; margin-top:8px; padding-top:15px; text-align:center;}
+.computerfoot p{ line-height:26px; color:#666666;}
+.computerfoot p a{ margin:0 3px; color:#666666;}

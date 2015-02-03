@@ -1,0 +1,170 @@
+{if $filename}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{$r['seotitle']}-网上报名</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link href="{CSS_PATH}z_reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_default_blue.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}z_share.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+</head>
+<body>
+
+  {template "content","top_mini"}
+
+<div class="main">
+	<div class="col-left">
+    <div class="expo_nav_ad">
+      <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+        <?php 
+if ($siteid == 2):
+?>
+<!-- 广告位：公务员内页-顶部 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538687");</script>
+<?php
+else:
+?>
+<!-- 广告位：职称类-内页顶部banner1 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538603");</script>
+<?php
+endif;
+?>
+    </div>
+   	 <div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> > </span>
+     <?php
+     if($typedir == 'renshibaoming'):
+     ?>
+     <a href="{siteurl($siteid)}/special/arc-366.html">人事考试报名</a>
+     <?php
+     else:
+     ?>
+     <a href="{siteurl($siteid)}/{$typedir}/">人事考试报名</a>
+   
+    <?php
+     endif;
+     ?>
+      </div>
+      <div class="colLM">
+    	<h1 class="fB f14px">{$r['seotitle']}</h1>
+        
+        <?php
+        $table = $siteid==2?'v9_news_gwy':'v9_news';
+        ?>
+         {pc:get sql="SELECT id,style,url,title,description,updatetime FROM $table where title like '%$title%' and status=99 order by id desc" page="$page" num=25  urlrule=""}
+         {if !$data}
+{pc:get sql="SELECT id,style,url,title,description,updatetime FROM $table where title like '%$cityname%' and title like '%人事%' and status=99 order by id desc" page="$page" num=25  urlrule=""}
+         {/if}
+       <ul class="newsList dotted">
+	   <li><font color=red>{$seotitle}网上报名入口（{$url}）</font></li>
+          {loop $data $r}
+          <li><span class="article"><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],90,'...')}</a></span></li>
+          {if $n%5==0}</ul>  <ul class="newsList dotted">{/if}
+                 {/loop}
+           		</ul>
+                <div class="pageList lrBothMar4 martop15">
+    	{str_replace(array('_1.html','_0.html'),'.html',$pages)}   
+   		</div>
+        {/pc}
+            </div><!--colLM end-->
+         
+      <div class="bk10"></div>
+
+          </div>
+    <div class="col-auto" style="float:right">
+        <div class="box">
+            <h5 class="title-2">频道总排行</h5>
+           {pc:content action="hits" catid="10" num="10" order="views DESC" cache="3600"}
+            <ul class="content digg">
+				{loop $data $r}
+					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],50,'')}</a></li>
+				{/loop}
+            </ul>
+            {/pc}
+        </div>
+        <div class="bk10"></div>
+     <?php 
+if ($siteid == 2):
+?>   <div class="ad_pic">
+<!-- 广告位：公务员内页-右侧 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538694");</script>
+</div>
+
+ <div class="ad_pic">
+<!-- 广告位：内页-右侧位02 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("568247");</script>
+</div>
+<?php
+else:
+?>
+<div class="ad_pic">
+<!-- 广告位：职称类-内页右侧位 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("538605");</script>
+</div>
+
+<div class="ad_pic">
+<!-- 广告位：内页右侧位02 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("568252");</script>
+</div>
+<?php
+endif;
+?>
+      <div class="box">
+          <h5 class="title-2">频道本月排行</h5>
+     
+      {pc:content action="hits" catid="9" num="8" order="monthviews DESC" cache="3600"}
+            <ul class="content rank">
+				{loop $data $r}
+				<li><span>{number_format($r[monthviews])}</span><a href="{$r[url]}"{title_style($r[style])} class="title" title="{$r[title]}">{str_cut($r[title],56,'...')}</a></li>
+				{/loop}
+            </ul>
+            {/pc}
+        </div>
+        
+    </div>
+</div>
+<script type="text/javascript">
+<!--
+
+$(function(){
+  $('#Article .content img').LoadImage(true, 660, 660,'{IMG_PATH}s_nopic.gif');    
+})
+//-->
+</script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=left&amp;uid=6537364" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":409};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+
+{template "content","footer"}
+    </body>
+    </html>
+    
+{else}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base target="_self" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo ($r['seotitle'])?$r['seotitle']:$r['title']; ?>-{$typearr['name']}入口</title>
+</head>
+
+<frameset rows="400,*" frameborder="no" border="0" framespacing="0">
+
+  <frame src="{KSBM_PATH}top.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+
+
+  <frame src="{$r['url']}" name="mainFrame" id="mainFrame" title="mainFrame" />
+</frameset>
+<noframes><body>
+</body>
+</noframes></html>
+{/if}

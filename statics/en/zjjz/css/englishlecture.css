@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lecture-top-bg{ height:34px; line-height:34px; background:url(http://www.kaozc.com/statics/kaozc/ask/images/top_bg.jpg) repeat-x; font-size:12px;}
+.lecture-top-bg a,.lecture-top-bg{ color:#333333;}
+.lecture-top-bg a{ display:inline-block; margin:0 5px;}
+.lecture-ty-ct{ width:1000px; margin:0 auto; overflow:hidden;}
+.lecture-banner{ background:url(../images/banner-bg.jpg) repeat; height:292px;}
+.lecture-banner img{ display:block;}
+.lecture-mg{ margin-bottom:10px;}
+.lecture-lf{ float:left; width:266px;}
+.lecture-lf .qh-pic{ height:212px; width:266px; position:relative;}
+.lecture-list .dv-cut{ height:26px; border-bottom:2px #a05bb4 solid; line-height:26px;}
+.lecture-list .dv-qh a{ display:inline-block; width:105px; font-weight:bold; height:26px; text-align:center; margin-right:1px;}
+.lecture-list .dv-qh a.selected,.lecture-list .dv-qh a:hover{ background:#a05bb4; color:#ffffff;}
+.lecture-ty-bg,.lecture-list .ul-list li,.lecture-rg .tydv span.sp1,.lecture-list .dv-cut span,.lecture-rg .tydv span.sp3 a,.toruitcnr table tr td a.bm,.toruitcnr table tr td a.am,.lecture-lf .qh-pic .picswitchnum ul li{ background-image:url(../images/lecture-ty-bg.png); background-repeat:no-repeat;}
+.lecture-list .dv-cut span{ display:inline-block; width:132px; background-position:0px 0px; text-align:center; font-weight:bold; font-size:16px;}
+.lecture-list .ul-list{ display:block;}
+.lecture-list .ul-list li{ padding-left:14px; background-position:-289px 6px; height:25px; line-height:25px;}
+.lecture-ct{ width:380px; float:left; margin-left:15px;}
+.lecture-ct .tw-hr{ height:136px; font-size:12px; line-height:22px; padding-top:2px;}
+.lecture-ct .tw-hr img{ float:left; margin-right:10px;}
+.lecture-rg{ float:right; width:320px;}
+.lecture-rg .tydv span{ display:block; font-size:12px;}
+.lecture-rg .tydv span.sp1{ line-height:30px; font-size:16px; font-weight:bold; color:#f88a40; padding-left:35px; background-position:-269px -38px;}
+.lecture-rg .tydv span.sp2{ padding:6px 0; border-bottom:1px #ffffff dashed; line-height:24px; margin-bottom:5px;}
+.lecture-rg .tydv span.sp2 font{_font-size:14px; color:#d10000;}
+.lecture-rg .tydv span.sp3{ text-align:center; padding-top:10px;}
+.lecture-rg .tydv span.sp3 a{ display:inline-block; width:108px; padding-left:25px; text-align:left; height:37px; line-height:37px; color:#e77501; margin-right:10px; font-size:16px;}
+.lecture-rg .tydv span.sp3 a.a1{ background-position:0px -80px;}
+.lecture-rg .tydv span.sp3 a.a2{ background-position:-138px -80px;}
+.lecture-gg-pic{ clear:both; padding:10px 0;}
+.lecture-teacher{ height:300px; background:#a05bb4; padding:15px 0;}
+.tcleft{ float:left; width:474px; margin:0 0 0 10px;}
+.tcright{ width:494px;}
+.tcleft .tcnr{ float:left; width:232px;}
+.tcleft .tcnr span{ display:block;}
+.tcleft .tcnr span font{ display:inline-block; width:120px; text-align:center; line-height:42px; font-weight:bold; color:#ffffff; font-size:30px; background:#ee6e00;}
+.tcleft .tcnr span font a{ color:#ffffff;}
+.tcleft .tcnr p.p1{ color:#fff600; font-size:16px; padding:10px 0;}
+.tcleft .tcnr p.p2{ font-size:14px; color:#ffffff; line-height:25px;}
+.tcleft .tcpic{ width:220px; height:240px; float:right; border:1px #6e2b82 solid; padding:3px; margin-top:50px;}
+.tcleft .tcpic img{ margin-bottom:10px;}
+.tcleft .tcpic p{ font-size:14px; line-height:25px;}
+.tcleft .tcpic p.p1{ color:#ffffff;}
+.tcleft .tcpic p.p2{ color:#6e2b82; margin-bottom:10px;}
+.tcleft .tcpic p.p3{ height:30px; text-align:center; margin-bottom:10px;}
+.tcleft .tcpic p.p3 a{ display:inline-block; width:103px; height:27px; background-image:url(../images/zxgm.jpg); background-repeat:no-repeat;}
+.tcleft .tcpic p.p3 a.a1{ background-position:0px 0px; margin-right:7px;}
+.tcleft .tcpic p.p3 a.a2{ background-position:-110px 0px;}
+.tcleft .tcrg{ float:right; width:252px;}
+.tcleft .tclf{ float:left;}
+.lecture-msqj{ text-align:center; border-bottom:1px #ffffff dashed; font-weight:bold; padding-bottom:20px; margin-bottom:20px;}
+.lecture-msqj .dvone{ font-size:72px; color:#ebf65a; margin-bottom:10px;}
+.lecture-msqj .dvtwo{ color:#ffffff; line-height:30px;}
+.lecture-list .lecture-more-video{ height:35px;}
+.lecture-list .lecture-more-video span{ line-height:35px; background-position:-8px -138px; font-weight:bold; font-size:18px; width:188px;}
+.lecture-more-video-a a{ display:inline-block; width:234px; height:154px; margin:0 14px 0 2px;}
+.toruitcj{ height:60px; background:url(../images/tcj_bg.png) no-repeat; position:relative; margin-top:25px;}
+.toruitccut{ height:40px; background:#e5e5e5; line-height:40px; color:#323232;}
+.toruitcj .azx{ position:absolute; right:32px; top:0px; height:32px; width:116px; text-align:center; line-height:28px; background-position:-299px -55px; color:#e46d13; font-size:16px;}
+.toruitcnr{ background:#ffffff; overflow:hidden; margin-bottom:15px;}
+.toruitcnr table{ width:1000px;}
+.toruitcnr table tr td{ border-bottom:1px #e5e5e5 solid; border-left:1px #e5e5e5 solid; text-align:center; color:#323232; padding:0 10px; font-size:14px;}
+.toruitcnr table tr td a.bm,.toruitcnr table tr td a.am{ width:91px; height:26px; line-height:26px; display:inline-block;}
+.toruitcnr table tr td a.bm{ background-position:0px -192px;}
+.toruitcnr table tr td a.am{ background-position:-98px -192px;}
+.toruitcnr table tr td.xian{ text-decoration:line-through;}
+.toruitcnr table tr td.col{ color:#d10000;}
+.toruitcnr table tr.bg1{ height:40px; background:#e5e5e5; color:#323232;  }
+.toruitcnr table tr.bg1 td{ border:0px;}
+.toruitcnr table tr td.pd{ padding:20px 0;}
+.zruifoot{ background:#ffffff; padding:15px 0; text-align:center; color:#3e3536;}
+.zruifoot p{ line-height:25px; font-size:12px;}
+.zruifoot p a{ color:#3e3536;}
+.lecture-lf .qh-pic .picswitchnum{ margin-bottom:5px;margin-left:auto; margin-right:auto; position:absolute; right:0; top:195px; z-index:9999;}
+.lecture-lf .qh-pic .picswitchpic{ height:254px; margin-left:auto; margin-right:auto; overflow:hidden; position:relative; width:296px;}
+.lecture-lf .qh-pic .picswitchpic ul{ position: absolute;}
+.lecture-lf .qh-pic .picswitchpic ul li{ height:216px; position:absolute; width:296px;}
+.lecture-lf .qh-pic .picswitchnum ul li{background-position:-289px -142px; float:left; font-size:0; height:11px; line-height:0;  margin-right:8px; width:11px;}
+.lecture-lf .qh-pic .picswitchnum ul li.selected{ background-position:-263px -142px;}
+.lecture-lf .qh-pic img{ height:212px; width:266px;}

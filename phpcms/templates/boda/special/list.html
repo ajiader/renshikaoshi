@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang=zh xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META content=zh-cn http-equiv=Content-Language>
+<META content=IE=7 http-equiv=X-UA-Compatible>
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<LINK rel=stylesheet type=text/css href="/statics/css/boda/style.css">
+<LINK rel=stylesheet type=text/css href="/statics/css/boda/reviewlist1205.css">
+<style type="text/css"> .expo_nav a{ padding:0 5px;color:#333; }</style>
+</HEAD>
+{template 'content', 'top_mini'}
+
+<SPAN 
+class=blank3></SPAN>
+<DIV class=area style="margin-bottom:10px;">
+  <DIV class=title-top>
+<img src="{IMG_PATH}boda/20121123085941c333d.jpg" />
+  </DIV>
+  <div class="clear"></div>
+</DIV>
+<div class="clear"></div>
+<DIV class="area clearfix" style="margin-bottom:8px;"><SPAN class=colTop></SPAN>
+  <DIV class="col150" ><SPAN class=blank15></SPAN>
+    <DIV class=content>
+      <UL class=leftNav>
+      {loop $types $t}
+        <LI><A href="{$t['url']}">&gt; {$t['name']}</A>
+{/loop}
+      </UL>
+    </DIV>
+  </DIV>
+  <DIV class=col460><SPAN class=blank15></SPAN>
+    <DIV class=content>
+    
+	{pc:special  action="content_list" specialid="$specialid" typeid="$typeid" listorder="3" page="$page" num="10"}
+       {loop $data $r}
+
+      <DIV class="listBox clearfix">
+        <H2 class=title><a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'], 60)}</a></H2>
+        <P 
+class=digest>{$r['description']}</P>
+        <SPAN 
+class=more><A 
+href="{$r['url']}">&gt;&gt; 
+        详细</A></SPAN> </DIV>
+      <SPAN class=parting02></SPAN>
+       {/loop}{/pc}
+    
+    </DIV>
+    <SPAN class=blank20></SPAN><SPAN class=blank15></SPAN>
+    <div class=pageList>
+      {$pages}
+    </div>
+  </DIV>
+  <DIV class=col350><SPAN class=blank15></SPAN>
+    <DIV class=content><SPAN class=blank3></SPAN>
+      <H2 class=fB>最受欢迎文章</H2>
+      <SPAN class=blank6></SPAN>
+      <UL class=rank-list>
+      {php $num=0}
+      {pc:special action="hits" specialid="$specialid" listorder="2" num="3"}
+        {loop $data $r}
+        {php $num++}
+        <LI><SPAN class=rank-num>{$num}</SPAN><A 
+  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],40,'')}</A></LI>
+ {/loop}
+  {/pc}
+      </UL>
+      <SPAN class=blank12></SPAN><SPAN class=parting01></SPAN><SPAN 
+class=blank15></SPAN>
+      <DIV class="contactBox contactBox-left">
+        <H2 class=title-black>关注我们</H2>
+        <SPAN class=blank15></SPAN>
+        <DIV><A class="contactIcon icon-t163" title=网易微博 
+href="http://t.163.com/theotherside"></A><A class="contactIcon icon-weibo" 
+title=新浪微博 href="http://weibo.com/theotherside163"></A><A 
+class="contactIcon icon-rss" title=RSS订阅 
+href="http://news.163.com/special/00011K6L/rss_newsattitude.xml"></A></DIV>
+        <SPAN 
+class=blank6></SPAN></DIV>
+      <DIV class=contactBox>
+        <H2 class=title-black>欢迎来稿</H2>
+        <SPAN class=blank15></SPAN>
+        <DIV><A class="contactIcon icon-email" title=欢迎来稿 
+href="mailto:xiexh@corp.netease.com"></A></DIV>
+        <SPAN 
+class=blank6></SPAN></DIV>
+      <SPAN class=blank15></SPAN><SPAN 
+class=parting01></SPAN></DIV>
+  </DIV>
+</DIV>
+{template "content","footer"}
+
+
+</BODY>
+</HTML>

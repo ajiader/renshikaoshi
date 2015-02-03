@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,p,span,em,font,img,a,h1,h2,h3,h4,h5,h6,table,tr,td,dl,dt,dd,ul,li,i{ margin:0px; padding:0px;}
+body{ font-family:"微软雅黑","宋体"; font-size:12px;}
+a{ color:#555555; text-decoration:none;}
+a:hover{ color:#ca2100; text-decoration:underline;}
+ul li{ list-style:none;}
+img{ border:0px;}
+
+.rshead{ height:182px; background:url(../images/headbg.jpg) repeat-x;}
+.rsctty{ width:960px; margin:0 auto; overflow:hidden;}
+.rsdh{ height:29px; line-height:29px; font-size:14px;}
+.rsdh a{ margin:0 5px;}
+.ksjm .spancut,.computeroneleft .ksjm .newshot span i,.computeronecenter .newstitle b,.computeronecenter .newsqhcut,.rgbgone dl dt a,.tykgwyspan{ background-image:url(../images/computertyicon.png); background-repeat:no-repeat;}
+.rsmenu{ height:35px; line-height:35px; _line-height:30px;}
+.rsmenu ul li{ float:left; width:120px; text-align:center; position:relative;}
+.rsmenu ul li a{ color:#ffffff; font-size:14px; font-weight:bold;}
+.rsmenu ul li a:hover{ color:#ffffff;}
+.rsmenu ul li div{ position:absolute; left:0px; top:35px; background:#ca2100; width:120px; display:none; padding-bottom:6px;}
+.rsmenu ul li div p{ line-height:30px; text-align:center;}
+.rsmenu ul li div p a{ color:#ffffff; font-weight:normal;  font-size:12px;}
+.rshotnew{ height:31px; background:url(../images/hotbg.jpg) repeat-x; line-height:31px; padding-left:15px;}
+.rshotnew a{ font-size:14px;}
+.rshotnew a font{ color:#ca2100; margin-left:6px;}
+.rstwhr{ height:211px; border:1px #ebebeb solid; background:#f9f9f9;}
+.rstymgbt{ margin-bottom:10px;}
+.rstwhr .dvone{ width:160px; float:left; padding-left:6px;}
+.rstwhr .dvone p,.rstwhr .dvthree{ line-height:30px;}
+.rstwhr .dvtwo{ width:643px; float:left;}
+.rstwhr .dvtwo p{ height:30px; line-height:30px;}
+.rstwhr .dvtwo p a{ display:inline-block; width:300px; text-align:center;}
+.rstwhr .dvtwo span{ display:block; margin:5px 0;}
+.rstwhr .dvthree{ width:145px; float:left; text-align:right;}
+.computeroneleft{ float:left; width:288px;}
+.computeroneleft .hdppic{ height:254px; width:288px; position:relative;}
+.computeroneleft .hdppic .picswitchnum { margin-bottom: 5px; position:absolute; bottom:5px; right:0px;
+margin-left:auto; margin-right:auto; z-index:9999;}
+.computeroneleft .hdppic .picswitchpic{ position:relative; overflow:hidden; width:288px; height:254px; margin-left:auto; margin-right:auto;}
+.computeroneleft .hdppic .picswitchpic ul{ position:absolute;}
+.computeroneleft .hdppic .picswitchpic ul li{ width:288px; height:254px; position:absolute;}
+.computeroneleft .hdppic .picswitchnum ul li{ width:20px; height:5px; font-size:0; line-height:5px; float:left; background:#ffffff; margin-right:8px;}
+.computeroneleft .hdppic .picswitchnum ul li.selected{ background:#0071ad;}
+.computeroneleft .hdppic img{ width:288px; height:254px;}
+.computeronetyheight{ height:358px;}
+.computeroneleft .ksjm ul li{ line-height:26px; font-size:14px;}
+.computeronecenter{ float:left; width:366px; margin:0 8px;}
+.classnews{ background:#ffffff; border:1px #77c1de solid; height:252px;}
+.computeronecenter .newstitle{ display:block; margin:5px 10px; line-height:25px;}
+.computeronecenter .newstitle font{ font-size:14px; font-weight:bold; color:#E51F16;}
+.computeronecenter .newstitle b{ width:34px; height:20px; line-height:20px; font-weight:normal; padding-left:6px; color:#ffffff; background-position:-210px -215px; margin:3px 8px 0 0; float:left;}
+.computeronecenter .newstitle a{ font-size:14px; color:#e51f16;}
+.computeronecenter .newsul{ margin:0 10px; padding:0 0 5px 20px; border-bottom:1px #d7d8dc dashed; height:42px; }
+.computeronecenter .newsul li{ width:170px; line-height:22px; float:left; _line-height:20px;}
+.wenziyc,.computeronecenter .newsul li,.newsultylist li a,.computernwwdul li p,.ksztdl dd a{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal;}
+.computeronecenter .newsul.bdnone{ border-bottom:0px;}
+.computeronecenter .newsqhdiv{ background:#ffffff; border:1px #77c1de solid;}
+.computeronecenter .newsqhcut{ display:block; height:32px; background-position:-25px -312px; line-height:32px; margin-bottom:6px;}
+.computeronecenter .newsqhcut a{ display:inline-block; padding:0 20px; font-size:14px; cursor:pointer;}
+.computeronecenter .newsqhcut a:hover,.computeronecenter .newsqhcut a.selected{ text-decoration:none; color:#00669b; background:url(../images/newscutaxz.jpg) no-repeat center top;}
+.computeroneright{ float:right; width:288px;}
+.newsultylist{ margin:2px 6px 5px 6px; _margin:6px 6px 3px 6px;}
+.newsultylist li{ line-height:26px; height:26px; padding-left:15px; background:url(../images/icon1.jpg) no-repeat 5px center;}
+.newsultylist li a{ font-size:14px;}
+.newsclear{ clear:both; height:0px; line-height:0px; font-size:0;}
+.rsfoot{ text-align:center; padding:15px 0; line-height:25px; font-size:14px;}
+.tykgwyspan{ display:block; height:32px; background-position:0px 0px; line-height:32px; padding-left:26px; color:#ffffff; font-weight:bold; font-size:14px;}
+.gwyksfdbd{ border:1px #ebebeb solid; border-top:0px; padding:6px 0 0 0;}
+.spcut2{ display:block; height:33px; background:#f9f9f9; border-top:1px #d8d8d8 solid; border-left:1px #d8d8d8 solid;}
+.spcut2 a{ display:inline-block; padding:0 13px; font-size:14px; color:#666666; border-right:1px #d8d8d8 solid; font-weight:bold; line-height:33px;}
+.spcut2 a.selected{ color:#d10000; background:#ffffff;}
+.spnpicts{ width:93px; float:left; display:inline; margin:5px 10px 0 30px;}
+.spnpicts img{ width:93px; height:128px;}
+.spnpicts p{ line-height:25px; text-align:center;}
+.computernwwdul{ display:block; height:164px; margin:0 6px;}
+.computernwwdul li{ background:url(../images/wenhao.jpg) no-repeat left top;padding:0 0 2px 25px; border-bottom:1px #cccccc dotted; margin-top:3px; _margin-top:4px;}
+.computernwwdul li p{ width:250px; line-height:20px; height:20px; color:#b4b4b4; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.computernwwdul li p a{ color:#3b3b3b; font-size:12px;}
+.computernwwdul li.lastbd{ border-bottom:0px;}
+#teacheryiwen{ height:164px; overflow:hidden;}
+
+.longtrasdysleft{ float:left; width:296px; padding-top:25px;}
+.longtrainingcut{ display:block; height:39px; background:url(../images/ty_cut.png) no-repeat; position:relative; padding-left:35px; line-height:39px;}
+.longtrainingcut img{ margin-top:7px;float:left;}
+.longtrainingcut b{ display:inline-block; font-size:22px; color:#ffffff; font-weight:normal;}
+.longtrainingcut .azx{ position:absolute; right:18px; top:0px; line-height:39px; color:#c50101; font-size:14px;}
+.longtrainingct{ background:#ffffff; overflow:hidden !important; overflow:visible; height:auto !important; min-height:100px;  padding:0 10px;}
+.longtrainingys{ border:1px #e0e0e0 solid; height:315px; position:relative;}
+.longtrasdysh2{ display:block; line-height:24px; font-size:16px; color:#cd171c; margin-bottom:5px;}
+.longtrasdysh2 i{ float:left; height:19px; padding:0 5px; background:url(../images/icon2.jpg) no-repeat; font-size:18px; color:#ffffff;  line-height:19px; margin:4px 5px 0 0; font-style:normal; text-align:center;}
+.lonttrasdysspan{ display:block; line-height:24px; color:#666666; font-size:14px; clear:both; padding-bottom:20px;}
+.lonttrasdysspan font,.lonttrasdysspan a{ font-size:14px; color:#cd171c;}
+.longtrasdyslf2{ float:left; width:284px; padding-top:25px; margin:0 22px; display:inline;}
+.longtrasdysmg{ margin-left:10px; display:inline;}
+.longtrainingfourys{ text-align:center; margin:30px 0 8px 0;}
+.rshotnew h1{ color:#333333; display:inline; font-size:14px; margin-right:10px;}
+.xszdgwy a{ display:inline-block; line-height:23px; border:1px #d9d9d9 solid; margin:0 0 5px 5px; padding:0 18px; background:#f9f9f9;}

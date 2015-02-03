@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,p,span,ul,li,dl,dt,dd,table,tr,td,i,font,img,h1,h2,h3,h4,h5,h6,em{ margin:0px; padding:0px;}
+body{ font-family:"微软雅黑", "黑体", "新宋体"; font-size:14px;}
+img{ border:0px;}
+a{ color:#424242; text-decoration:none;outline: none;star:expression(this.onFocus=this.blur());}
+a:hover{ color:#31a4e5; text-decoration:underline;}
+ul li{ list-style:none;}
+
+.zg_searchtop{ width:960px; margin:0 auto; overflow:hidden !important; overflow:visible; height:auto !important; min-height:38px; background:#ffffff; }
+.zg_topbg{ background:#0080d2 url(/statics/images/zrmokuai/topct_bg.jpg) no-repeat center center;}
+.zg_topbgcenter{ width:960px; height:202px; margin:0 auto; position:relative; color:#ffffff; font-size:16px; font-weight:bold;}
+.zg_topbgcenter .searchdiv{ position:absolute; bottom:14px; left:30px; line-height:35px;}
+.zg_topbgcenter .searchdiv label{ display:inline-block; float:left;}
+.zg_topbgcenter .searchdiv input{ vertical-align:middle; height:35px; border:0px; float:left; font-family:微软雅黑;}
+.zg_topbgcenter .searchdiv input.searchtxt{ width:300px; line-height:35px; padding-left:32px; background:url(/statics/images/zrmokuai/searchtxt.jpg) no-repeat; margin:0 3px 0 12px; }
+.zg_topbgcenter .searchdiv input.searchbtn{ width:55px; background:url(/statics/images/zrmokuai/searchbtn.jpg) no-repeat; color:#0080d2; font-size:16px; cursor:pointer;}
+.zg_menu{ margin:15px 0; border:1px #0d6299 solid; height:60px; padding:6px 0 6px 10px;}
+.zg_menu span{ display:inline-block; float:left;}
+.zg_menu .menutitle{ width:74px; height:55px; background:url(/statics/images/zrmokuai/menuttile.jpg) no-repeat; color:#ffffff; font-weight:bold; font-size:16px; text-align:center; padding-top:7px; letter-spacing:5px;}
+.zg_menu .menuclass{ margin:10px 0 0 30px;}
+.zg_menu .menuclass a{ display:inline-block;  padding:6px 10px; margin:0 5px; text-align:center;  color:#424242; font-size:18px; border:1px #ffffff solid;}
+.zg_menu .menuclass a:hover,.zg_menu .menuclass a.selected{ background:url(/statics/images/zrmokuai/menuabg.jpg) repeat-x; color:#ffffff; border:1px #d88c03 solid; text-decoration:none; }
+.zg_content{ border:1px #d3d3d3 solid; border-radius:5px;-moz-border-radius:5px; -webkit-border-radius:5px;}
+.zg_content span{ display:block; position:relative; border-bottom:1px #d3d3d3 solid; line-height:33px;}
+.zg_content span.span1{ height:32px; background:url(/statics/images/zrmokuai/nrcut.jpg) repeat-x; padding:0 10px;}
+.zg_content span.span1 label,.zg_content span.span1 input{ vertical-align:middle;}
+.zg_content span.span1 label{ display:inline-block; font-size:14px; color:#424242; margin-right:6px; }
+.zg_content span.span1 label.bel1{ font-size:15px; margin-right:20px;}
+.zg_content span.span1 input{ margin-right:6px;}
+.zg_content span.span1 input.put1{ width:90px; height:21px; border:0px; line-height:21px; background:url(/statics/images/zrmokuai/selectbg.jpg) no-repeat; padding-left:5px; color:#838383; cursor:pointer;}
+.zg_content span.span1 input.put2{ height:19px; border:1px #d1d1d1 solid; line-height:21px; padding-left:3px; width:122px; background:#ffffff url(/statics/images/zrmokuai/putbg.jpg) no-repeat right center;}
+.zg_content span.span1 input.put3{ width:50px; border:1px #d1d1d1 solid; height:21px; background:url(/statics/images/zrmokuai/nrcut.jpg) repeat-x; color:#666666; line-height:21px;}
+.zg_content span.span2{ font-family:微软雅黑; color:#424242; position:static;}
+.zg_content span.span2 a{ margin:0 9px; color:#424242; }
+.zg_content span.span2 a.selected{ color:#ffae18;}
+.zg_content .stable{ height:39px; border-bottom:1px #d3d3d3 solid; color:#424242; padding-left:10px;}
+.zg_content .stable span{ display:inline-block; border-bottom:0px; font-size:14px; line-height:39px;}
+.zg_content .stable span.sp1{ width:290px; padding-left:10px;}
+.zg_content .stable span.sp2{ width:88px;}
+.zg_content .stable span.sp3{ width:120px;}
+.zg_table{ margin:0 10px; width:940px;}
+.zg_table tr:hover{ background:#f9f9f9;}
+.zg_table tr td{ height:40px; border-bottom:1px #e4e4e4 dashed; color:#545454;}
+.zg_table tr td.pd1{ padding-left:10px;}
+.zg_table tr td.cl1 a{ color:#ffac16;}
+.zg_table tr td.cl2{ color:#f10202;}
+.zg_table tr td.cl2 a{ color:#f10202; margin:0 2px;}
+.gwylistfy{ text-align:center; clear:both; padding:20px 0;}
+.gwylistfy strong,.gwylistfy a{ display:inline-block; margin:0 5px;}
+.functionfoot{ padding:15px 0; text-align:center; border-top:1px #bdbdbd solid; margin-top:15px; font-size:12px; color:#525252;}
+.functionfoot p{ line-height:23px;}
+.zg_mfsele{ width:90px; border:1px #d1d1d1 solid; position:absolute; left:124px; top:26px; z-index:99; background:#ffffff; font-size:12px; display:none;}
+.zg_mfsele ul{ width:90px;}
+.zg_mfsele ul li{ height:25px; line-height:25px; border-bottom:1px #d1d1d1 dotted; padding-left:10px; color:#626262; cursor:pointer;}
+.zg_mfsele ul li:hover{ background:#f3f3f3;}
+.zg_listtable{ width:958px; border-left:1px #d1d1d1 solid; border-top:1px #d1d1d1 solid; margin-top:15px; color:#626262;}
+.zg_listtable tr.bg1{ background:url(/statics/images/zrmokuai/othercutbg.jpg) repeat-x left bottom; text-align:center; color:#525252; font-size:18px;}
+.zg_listtable tr.bg1 td{ height:40px; border-bottom:0px;}
+.zg_listtable tr td{ height:40px; border-bottom:1px #d1d1d1 solid; border-right:1px #d1d1d1 solid; text-align:center;}
+.zg_listtable tr td strong{ display:block; text-align:left; padding-left:5px;}
+.zg_listtable tr td.nrxx{ text-align:left; padding:10px; line-height:25px;}
+
+/*分页*/
+#pages { padding:14px 0 10px;font-family:宋体; text-align:right}
+#pages a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
+#pages a.a1 { background:url(../images/admin_img/pages.png) no-repeat 0 5px; width:56px; padding:0 }
+#pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }
+#pages span { display:inline-block; height:22px;padding:0 10px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center; }
+.page .noPage { display:inline-block; height:22px; line-height:22px; background:url(../img/icu/titleBg.png) repeat-x 0 -55px ; border:1px solid #e3e3e3; text-align:center; color:#a4a4a4; }

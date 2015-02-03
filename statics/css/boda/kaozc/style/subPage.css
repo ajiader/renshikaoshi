@@ -1,0 +1,194 @@
+/*==========backgroundImage===========*/
+.column .simhei18,.column .menu li,.column .menu li span,.fillet .top,.fillet .bottom,.fudao h2{ background-image:url(images/templet/img_subPage.gif); background-repeat:no-repeat}/*不重复*/
+#menuBox,.column h2,.fillet li,.newsList h1{background-image:url(images/templet/bg_subPage.gif); background-repeat:repeat-x}/*横向平铺*/
+#menuBox .className,.current,.newsList h1 span{background-image:url(images/bg_li.gif); background-repeat:no-repeat}
+
+.main { width:690px}
+.main .left{ width:270px}
+.main .right{width:390px}
+.sideBar{ position:relative; width:260px}
+#listPage .classTj{ margin-top:0}
+.sideBar .right ul{ display:none}
+
+#menuBox{ height:35px; background-position:0 0; border:#CCE2EA 1px solid}
+#menuBox span{ display:block; float:left}
+#menuBox .className{ padding:0 0 0 15px; margin:7px 0 0 5px; background-position:0 -259px;font-size:20px; font-family:simhei; *font-weight:normal}
+#menuBox .subMenu{ margin:7px 0 0 15px}
+
+.current{ width:928px; margin:0 auto; padding:3px 0 0 30px; background-position:10px -153px; background-color:#EEF6F8; border:#A9CCD6 1px solid }/*当前位置*/
+.current a{ margin:0 5px}
+.sideBar .fudao{height:100%; padding:5px 8px 7px; background:#ECF9FD; border:#C1D9DF 1px solid}
+.fudao .exam li{ width:100%; background:none; border:none}
+.fudao h2{ height:27px; padding:3px 0 0 15px; margin-bottom:5px; background-position:0 -104px}
+
+.zonghe{ height:100%; padding-bottom:8px; background:#ECF9FD}/*新闻页综合辅导*/
+.zonghe ul li{ display:block;float:left; width: 24.5%; height:24px; padding:7px 0 2px 0; overflow:hidden; margin-top:-20px; margin-bottom:0; background:#fff; border:#B9DEFF 1px solid; margin-right:-1px; margin-top:-1px;text-align:center}
+
+.sideBar h2,sideBar h2 a{ color:#016b8b}
+.newsBox{ height:100%; border:#A9CCD6 1px solid; border-top:none}
+.newsBox h2{ height:25px; padding:7px 0 0 10px; background:url(images/templet/bg_index.gif) 0 -177px; }
+.newsBox ul{ margin:10px 8px 8px 10px}
+.newsBox li span{ display:none}
+.newsBox li { height:22px; overflow:hidden}
+
+/*==========栏目页主体===========*/
+.partOne h1{ font-size:14px; text-align:center}
+.partOne h1 a{ color:#c00}
+.partOne p{ height:43px; padding-bottom:5px; color:#666;background:url(images/templet/dot.gif) bottom repeat-x;overflow:hidden; margin-bottom:3px; line-height:180%}
+
+
+/*=====栏目页课堂=====*/
+#class h2{  position:relative; height:32px; background:url(images/templet/bg_index.gif) 0 -176px}
+#class h2 span{ position:absolute}
+#class span.titClass{  left:0; width:143px;height:32px; background:url(images/templet/img_index.gif) 0 -76px}
+#class span.titBook{ right:155px; top:3px; width:115px;height:29px; background:url(images/templet/img_index.gif) 143px -76px}
+#class span.bgTitRight{ right:-2px; width:3px; height:32px; background:url(images/templet/img_index.gif)  -274px -75px no-repeat}
+#class span.testTime{ top:5px; left:150px}
+#class .main{ height:100%; border:#C1D9DF 1px solid; border-top:none}
+#class  .classList{ width:97%; margin:5px auto; background:#C2D9E0}
+#class .classList th{ background:#EBF8FC; font-size:14px; line-height:240%; color:#016B8B}
+#class .classList td{ padding:3px; background:#fff; text-align:center}
+#class .classList .name{ text-align:left; color:#1C357F; font-size:14px}
+
+#class span.detail{ color:#cc0000; padding-left:20px; margin-right:7px; background:url(images/templet/img_index.gif) -100px -50px no-repeat; cursor:pointer}
+#bookList{ background:#C1D9DF}
+#bookList td{ background:#fff}
+#bookList ul{ margin:0 10px}
+#bookList li{ position:relative; display:block; float:left; width:33%; height:110px; margin-top:5px;overflow:hidden}
+#bookList .bookPic{ width:85px; height:105px; margin:0 10px 0 0; border:#ccc 1px solid; float:left}
+#bookList .bookPic img{ width:85px; height:100px}
+#bookList h4{ margin-top:10px; font-size:12px; font-weight:normal}
+#bookList h4 a{ color:#016B8B}
+#bookList .bookName{ font-weight:bold}
+
+
+#bookList .buy{ position:absolute; left:85px; top:65px}
+.column{ height:100%; clear:both; border:#C1D9DF 1px solid}
+.column h2{ padding-top:7px; height:30px; background-position:0 -41px; border-bottom:#ccc 1px solid}
+.column .simhei18{ left:10px; top:7px; padding-left:15px; background-position:0 3px}
+.column .menu{ position:absolute; top:13px; left:300px}
+.column .menu li{ position:relative; display:inline; float:left; height:22px; padding: 2px 15px 0 15px; margin:0 5px; background-position:0 -62px; text-align:center; font-weight:normal}
+.column .menu li span{ position:absolute; right:0; width:15px; height:24px;  background-position:-105px -62px}
+.column .menu li.hover{ background-position:0 -34px; font-weight:bold}
+.column .menu li.hover a{ text-decoration:none}
+.column .menu li.hover span{ background-position:-105px -34px}
+.column .left{ padding-left:10px;border-right:#ccc 1px solid; line-height:210%}
+.column .newsLi14{ margin:10px auto}
+.column li{ height:22px; overflow:hidden}
+.column .recommend li{ height:25px}
+.column  h4{ margin-left:10px}
+.column  h4 a{ color:#C41643}
+.column  p{ display:none}
+.columnBox .column { width:49%; clear:none}
+.columnBox .left{ padding:0; line-height:200%}
+
+/*==========三级栏目页===========*/
+#sanji .partOne .left{ width:280px;border:#C1D9DF 1px solid}
+#sanji .partOne .left li{ height:25px; overflow:hidden}
+#sanji .partOne h2{width:258px; height:21px; margin-top:4px; padding:4px 0 0 22px;background:url(images/templet/img_index.gif) 0 -1px no-repeat}
+#sanji .partOne .right{ width:380px}
+#sanji .partOne .right h2{ background:none; text-align:center; width:auto}
+#sanji .partOne .right p{ height:40px;  background:url(images/templet/dot.gif) bottom repeat-x; overflow:hidden; margin-bottom:8px; line-height:160%}
+#sanji .partOne .right h2 a{ color:#c00}
+#sanji .partOne .tuijian{ margin:10px; line-height:210%}
+#sanji .column h3{ height:23px; padding:3px 0 5px 10px; margin-bottom:5px; background-position:10px -91px; background-color:#EAF6FA;border-bottom:#BDD6E8 1px solid }
+#sanji .column h3 a{ color:#016B8B}
+#sanji .column h3 span{ top:6px}
+#sanji .column ul{ margin:5px 10px}
+#sanji .column h1{margin:6px 10px 5px}
+
+/*=====新闻列表页=====*/
+.newsList{ width:690px; height:auto; padding:0; border:#A9CCD6 1px solid}
+.newsList1{ width:690px; height:auto; padding:0; border:#A9CCD6 1px solid}
+.newsList h1{  height:28px; padding:7px 0 0 10px; background-position:0 0; border-bottom:#A9CCD6 1px solid}
+.newsList h1 span{ position:static; padding-left:25px; background-position:0 -127px; font-size:20px; font-family:simhei; *font-weight:normal}
+.newsList h1 .className{ position:static; padding-left:25px; background:url(images/templet/bg_li.gif) no-repeat 0 -128px}
+.newsList ul{ 0}
+.newsList .lineBetween{ position:static; display:block;margin:10px 0 15px -13px; _margin-top:0; height:0;border-bottom:#666 1px dashed; border-right:#666 15px dashed}
+.news_List{ margin: 10px 15px 15px}
+.news_List li{ padding-left:20px; margin:3px auto; background:url(images/templet/bg_newsList.gif) no-repeat 0 10px }
+
+.cities { height:90px; overflow:hidden; margin:10px 10px 0 20px; color:#016B8B}
+.cities a{ color:#016b8b}
+.cities h3{ font-size:14px; margin-bottom:5px}
+.cities ul{ margin-left:-10px}
+.cities li{ display:block; float:left; width:6%; padding:0 0; margin:0 0 5px; background:#e5e5ee5; list-style:none; background:none; font-size:12px; text-align:center}
+.cities font{ font-size:12px}
+
+
+.newsList span{ font-size:14px; color:#016B8B}
+#dongtai .newsList{ height:1053px}
+#dongtai .cityName{ width:97%; background-color:#D6E4E9}
+#dongtai .cityName th{ background:#fff}
+#dongtai .cityName td{ background:#fff; text-align:center}
+#dongtai li span{ right:20px}
+
+
+/*老师列表*/
+#teacherList{ margin:20px 0 0}
+#teacherList li{ margin-top:10px; padding-bottom:10px; background:url(/images/dot.gif) repeat-x bottom}
+#teacherList .photo{ float:left; padding:5px; border:#ccc 1px solid; margin-right:10px}
+#teacherList .photo img{ width:160px; height:130px}
+#teacherList .info{ margin-top:-15px}
+#teacherList .teacherName{ height:15px; font-weight:bold; margin-bottom:10px}
+#teacherList p.teacherInfo{ line-height:160%}
+#teacherList p.teacherInfo a{ font-size:12px}
+
+/*页码按钮*/
+.showPage {
+margin: 30px 20px 20px;
+padding-top: 15px;
+text-align: center;
+border-top:1px dotted #ccc;
+font-size: 14px;
+}
+.showPage select { margin-bottom: -3px; }
+.showPage a {
+font-size: 12px;
+border: 1px solid #ccc;
+border-top-color:#FFF;
+border-left-color:#FFF;
+padding: 5px 5px 3px;
+background-color: #F0F0F0;
+margin:0 0 0 5px;
+}
+.showPage a:hover {
+background-color: #ccc;
+color: #FFF;
+text-decoration: none;
+border-color: #526426;
+border-top-color:#FFF;
+border-left-color:#FFF;
+}
+
+/*=====新闻页=====*/
+.newsContent{ width:670px; padding:10px}
+.rightBar{ width:290px}
+.zhinan{ height:160px; background:#E7F5FC}
+.newsTit{font-family: 黑体;font-size: 19px;margin:15px auto 5px; line-height:200%; text-align:center;color: #000000;}
+
+.pro{ border-top:#D1E6EC 1px solid; border-bottom:#D1E6EC 1px solid; margin:15px;  text-align:center; color:#666}
+.pro span{ margin:0 3px}
+.pro a{ margin:0 2px; color:#016B8B}
+.pro .freeClass a{ color:#c00}
+.note{ margin:5px 0; padding:5px 0 0; text-align:right; border-top:#ccc 1px solid}
+.newsText{
+	font-size:13px;
+	margin:0 20px;
+	line-height: 30px;
+	color: #000000;
+	text-indent: 0px;
+}
+
+#newsSearch{ position:relative; margin:10px auto; padding:5px 0 5px 80px; background:#D9E8F0}
+#newsSearch label{ position:absolute;  padding-left:30px; background:url(images/templet/img_subPage.gif) -200px -34px no-repeat}
+#newsSearch .kw{ position:relative; top:-6px; margin:0 5px 0 90px; *top:0; border:#ccc 1px solid; height:22px; line-height:22px}
+#newsSearch .btnSearch{ position:relative; top:3px}
+/*=====网校名师=====*/
+#teacher{ height:753px; overflow:hidden}
+#teacher ul{ margin:0 10px; padding:0}
+#teacher li{ background:none}
+#teacher img.left{ width:230px; height:180px; margin:25px 20px 0 0; border:#000 1px solid}
+#teacher h2 a{ color:#016b8b}
+#teacher span.red{ color:#cc0000}
+#teacher .dashed{ margin: 20px auto 0}

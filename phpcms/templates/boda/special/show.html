@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBliC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang=zh xml:lang="zh" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META content=zh-cn http-equiv=Content-Language>
+<META content=IE=7 http-equiv=X-UA-Compatible>
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<LINK rel=stylesheet type=text/css href="/statics/css/boda/style.css">
+<LINK rel=stylesheet type=text/css href="/statics/css/boda/reviewlist1205.css">
+
+<style type="text/css">
+.expo_nav a {
+	padding:0 5px;
+	color:#333;
+}
+</style>
+</HEAD>
+<BODY>
+
+{template 'content', 'top_mini'}
+<SPAN 
+class=blank3></SPAN>
+<DIV class=area style="margin-bottom:10px;">
+  <DIV class=title-top>
+<img src="{IMG_PATH}boda/20121123085941c333d.jpg" />
+  </DIV>
+  <div class="clear"></div>
+</DIV>
+<DIV class="area  clearfix">
+  <DIV class=path> <SPAN class=crumb><a href="{APP_PATH}">首页</a><span> &gt; </span><a href="{$_special['url']}">{$_special['title']}</a> <span> &gt; </span> {$title} </SPAN></DIV>
+  <SPAN class=blank20></SPAN>
+  <DIV class=colLM>
+    <DIV class=brief>
+      <H1>{$title}</H1>
+      <P style="DISPLAY: none" id=ptime>{date('Y-m-d H:i:s', $inputtime)}</P>
+      <P style="PADDING-BOTTOM: 6px; FLOAT: left; FONT-SIZE: 11px" id=pdate></P>
+      <P style="PADDING-BOTTOM: 6px; FLOAT: left; FONT-SIZE: 11px"><A 
+style="PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; MARGIN-BOTTOM: 0px; FLOAT: left; COLOR: rgb(102,102,102); FONT-SIZE: 11px; PADDING-TOP: 0px" 
+id=endpageUrl1 class=cDRed 
+href="#comment_iframe"><SPAN 
+class=comment id="comment">0</SPAN>人参与讨论</A> </P>
+      <P 
+style="CLEAR: both">{$description}</P>
+    </DIV>
+    <SPAN 
+class=blank20></SPAN><SPAN class=blank9></SPAN>
+    <DIV class=colL>
+      <DIV id=page-header class="trail trailblock">
+        <H5>作者：{$author}</H5>
+      
+      </DIV>
+    </DIV>
+  <SPAN class=blank9></SPAN><SPAN 
+class=blank20></SPAN></DIV>
+  <DIV class=colR></DIV>
+</DIV>
+<DIV class="area areabg1 clearfix" style="border-top:1px solid #E4E4E4">
+  <DIV class=colLM>
+    <DIV id=endText class=feed-text>
+    <p>
+      {$content}
+</p>
+      <div id="pages" class="text-c">{$title_pages}</div>
+    </DIV>
+    <DIV class="shareArea clearfix">
+      <DIV class=source>
+        <P><SPAN>来源 &gt;&nbsp; <A 
+href="http://www.kaozc.com" 
+rel=nofollow target=_blank>博大教育</A></SPAN> </P>
+      </DIV>
+     {if module_exists('comment')}
+      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("special_content",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
+      <div class="box">
+        		<h5>评论排行<a href="" class="more">更多>></a></h5>
+				 {pc:comment action="bang" cache="3600"}
+            	<ul class="content list blue f14 row-2">
+				{loop $data $r}
+                	<li>·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 26)}</a><span>({$r[total]})</span></li>
+					{/loop}
+                </ul>
+				{/pc}
+        </div>
+		{/if} 
+    </DIV></DIV>
+  <!--左栏结束 右栏开始 -->
+  <DIV class=colR >
+    <DIV class=articleList><SPAN class=blank9></SPAN><!--专栏最受欢迎文章 --><!--专业控模板-专栏最受欢迎文章模块 --><!--专栏最受欢迎文章 -->
+      <DIV>
+        <H2 class=articleTitle>专栏最受欢迎文章</H2>
+      </DIV>
+      <DIV>
+      {php $num=0}
+      {pc:special action="hits" specialid="$specialid" listorder="2" num="3"}
+        {loop $data $r}
+        {php $num++}
+   <LI class=list><SPAN class=logo-rank-top>{$num}</SPAN>
+          <P class=title><A 
+  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],40,'')}</A></P>
+        </LI>
+ {/loop}
+  {/pc}
+        
+      </DIV>
+      <!--专栏最受欢迎文章 --><!--专栏最受欢迎文章 --><SPAN 
+class=blank9></SPAN><SPAN class=bgLine></SPAN><SPAN class=blank15></SPAN>
+      <DIV class="titleBar titleBar-small">
+        <H2>专栏其他作者</H2>
+        <SPAN class=more><A 
+href="#">更多</A></SPAN> </DIV>
+      <DIV class=paddingLR-15>
+      {pc:content  action="position" posid="24" order="listorder DESC" num="6" start="0"}
+{loop $data $n $r}
+        <DIV id=authorImg1 class=image-text><A class=left 
+href="{$r['url']}"><IMG 
+src="{thumb($r['thumb'],75,75)}" width=75 
+height=75></A>
+          <DIV class=imgInfo>
+            <H4><A href="{$r['url']}" target="_blank" title="{$r['title']}">
+              <P>{str_cut(trim($r['title']),'8','')}</P>
+              </A></H4>
+            <P>{str_cut(strip_tags($r[description]), 30)}</P>
+          </DIV>
+        </DIV>
+        <DIV id=blankcontent1><SPAN class=blank15></SPAN><SPAN class=hr-dot></SPAN><SPAN 
+class=blank12></SPAN></DIV>
+ {/loop}{/pc}   
+       
+        <SPAN 
+class=blank6></SPAN></DIV>
+      <SPAN class=blank6></SPAN></DIV>
+  </DIV>
+</DIV>
+{template "content","footer"}
+
+</BODY>
+</HTML>

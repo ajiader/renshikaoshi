@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$SEO['title']}</title>
+<meta name="keywords" content="{$SEO['keywords']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/css/rsstyle.css?d=1204" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script language="javascript" src="/statics/kaozc/js/qhnews.js"></script>
+<script language="javascript" src="/statics/kaozc/js/jq_scroll.js"></script>
+<script language="javascript" src="/statics/zyzg/js/qh.js"></script>
+<script language="javascript" src="/statics/js/53kefu.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+$("#teacheryiwen").Scroll({line:1,speed:500,timer:3000});
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#menua li").mousemove(function(){$(this).find("div").show();});
+$("#menua li").mouseleave(function(){$(this).find("div").hide();});
+});
+</script>
+<script type="text/javascript">
+function hftb(){
+  window.open("http://item.taobao.com/item.htm?spm=a1z10.1.w6842337-6518291215.31.Q60c6b&id=37117006912","_blank");
+}
+</script>
+</head>
+<body>
+ {template "renshibaoming","header"}
+ <div class="cy-tyct kzx-dysx">
+<div id="{$ad_ids[0]}"> </div>
+    <div class="kzc-listym kzc-newsone">
+    	<div class="kzc-posi">当前位置：<a href="http://www.renshikaoshi.net">首页</a><span> &gt; </span>  <a href="{siteurl($siteid)}/{$typedir}/{$filename}.html">{$seotitle}</a>  &gt; <a href="{siteurl($siteid)}/{$typedir}/{$filename}-{$typeRow[typeid]}-1.html">{$typeRow[name]}</a>  </div>
+    	<div class="listymlf">
+        	<div class="listcut"><span style="float:right; font-weight:normal; padding-right:10px; font-size:12px;"> </span>{$title}{$typeRow[name]} </div>
+            
+           
+            
+            <h3 class="bjtj" style="display:none;"><span>编辑推荐</span></h3>
+            {pc:get sql="SELECT id,style,url,title,description,inputtime,updatetime FROM phpcms_news where (title like '%$title%' or title like '%$cityname%' or city_id in ($arrchildid)) and typeid='$type_id' and status=99 order by id desc" page="$page" num=20  urlrule=""}
+           <ul class="newslist ftsmall listmore">
+              {loop $data $r}
+              <li><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],100,'...')}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+              {if $n%5==0}</ul>  <ul class="newslist ftsmall listmore">{/if}
+                     {/loop}
+                    </ul>
+                    <div class="detailfy">{$pages}</div>
+            {/pc}
+            
+            <ul class="newslist ftsmall listmore">
+             {pc:get sql="SELECT * from phpcms_diypage WHERE cityid in ($arrchildid) and level=1 order by id desc" cache="0" num="30" return="data"}
+{loop $data $key $val}
+<li><a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a></li>
+{/loop}{/pc}
+            </ul>
+        </div>
+        
+        {template "renshibaoming","right_rsks"}
+        <div class="clear"></div>
+    </div>
+</div>
+ {template "content","footer"}
+ 
+  <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+	<script type="text/javascript">   
+		<!-- 广告位：地方人事-图文环绕 -->
+		BAIDU_CLB_fillSlotAsync('943278', 'PAGE_AD_943278');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo ($r['seotitle'])?$r['seotitle']:$r['title']; ?>-{$typearr['name']}入口</title>
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #9C1000;
+}
+-->
+</style>
+</head>
+
+
+<body>
+<div align="center">
+<!-- 广告位：人事内页 -->
+
+<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "554028";</script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script> 
+</div>
+
+ <div>
+ <iframe noresize="noresize" frameborder="0" src="{$r['url']}" width="100%" id="barframe"></iframe>
+ </div>
+ <script type='text/javascript' src='http://chat.53kf.com/kf.php?arg=cdbroadcom&style=2'></script><div style='display:none;'><a href='http://www.53kf.com'>在线客服系统</a></div>
+ <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script>
+$(function(){
+
+	var barframe = $('#barframe');
+	barframe.css('height',$(window).height() - 68);
+	$(window).resize(function() {
+		barframe.css('height',$(window).height() - 68);
+	});
+
+});
+</script>
+<div style="display:none">
+<script src="http://s17.cnzz.com/stat.php?id=4951434&web_id=4951434" language="JavaScript"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc423ac9f2c732e1388bc1aa4648cf47e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe8e2ee78f232c622837940189c3875a3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+    <script type="text/javascript" src="/statics/js/jquery.min.js"></script>
+<script src="/statics/js/jquery.bigautocomplete.js" type="text/javascript" charset="utf-8" ></script>
+<script type="text/javascript">
+$(function(){
+    $('#ssbtn').click(function(){
+	    if($('#keyword').val() == ''){
+			alert('请输入关键词！');
+			return false;
+		}else{
+		    $('#searchform').submit();
+		}
+	});
+	var url_ = "/ajax_getzrmkname.html";
+	$("#keyword").bigAutocomplete({url:url_});
+});
+</script>
+    <div class="torui-sousuo-cut torui-ty-mgtpbt">
+    <form id="searchform" action="/zhiruitiku/search/" method="get">
+    	<input name="q" type="text" class="sstext" id="keyword" value="{$q}" />
+      <input type="button" id="ssbtn" name="ssbtn" class="ssbtn" value="搜索" /></form>
+        <span><b>热门搜索：</b><a href="{siteurl($siteid)}/zhiruitiku/search/?q={urlencode('临床执业医师资格考试')}">临床执业医师资格考试</a>|<a href="{siteurl($siteid)}/zhiruitiku/search/?q={urlencode('主管护师')}">主管护师</a>|<a href="{siteurl($siteid)}/zhiruitiku/search/?q={urlencode('会计从业')}">会计从业</a>|<a href="{siteurl($siteid)}/zhiruitiku/search/?q={urlencode('安全工程师')}">安全工程师</a>|<a href="{siteurl($siteid)}/zhiruitiku/search/?q={urlencode('司法考试')}">司法考试</a></span>
+    </div>

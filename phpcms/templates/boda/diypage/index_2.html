@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/gwy/css/otherstyle.css" />
+</head>
+
+<body>
+<!--head部分-->
+{template "content","header_gwy"}
+<!--head部分 end-->
+
+<!--center部分-->
+<div class="functionarytyauto functiontymg">
+
+	<!--考试资讯、公职考试、备考-->
+        {template "content","gwy_top"}
+    
+    <!--当前位置-->
+    <div class="functiondqwz"><img src="/statics/gwy/images/posiitonwz.png" />当前位置：<a href="{siteurl($siteid)}">首页</a>>{$breadcrumb}</div>
+    
+    <div class="othercontent">
+    	<div class="otherleft">
+        	<h1>{$h1}</h1>
+            {if $h2arr}
+            {loop $h2arr $v}
+            {if $v['name']}
+            <h2>{$v['name']}</h2>
+            <ul class="newsullist">
+            {if $v['like']}
+             {pc:get sql="SELECT id,style,url,title,description,inputtime FROM v9_news_gwy where  status=99 $v[like] order by id desc" cache="3600" page="$page" dbsource="" return="data" start="0" num="7"  }
+             {loop $data $n $r}  
+            	<li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{$r['title']}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+                {/loop}{/pc}
+                {else}
+                <li>没有找到相关信息</li>
+                {/if}
+            </ul>{/if}
+            {/loop}
+           {/if}
+        </div>
+        
+        <div class="otherright">
+        	<div class="othertydv">
+        		<h2 class="othercut">热门专题</h2>
+                <ul class="newsullist otherrgul">
+                {pc:content  action="lists" catid="289" order="id DESC" num="10"}{loop $data $key $r}
+                    <li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],44,'')}</a></li>
+            {/loop}{/pc}        
+                </ul>
+            </div>
+            <div class="otherggw"><a href="#"><img src="/statics/gwy/images/guojiapic2.jpg"  /></a></div>
+            <div class="othertydv mg0">
+        		<h2 class="othercut">考试答疑</h2>
+                <ul class="newsullist otherrgul">
+                
+      {pc:get sql="SELECT aq.qid,aq.question,aq.url,aq.ip,aq.catid,aa.* from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid
+
+WHERE aq.status != 1 AND aq.aid > 0 and aq.siteid=$siteid ORDER BY aq.qid desc" cache="1800"  dbsource="" return="data" num="10"}
+    {loop $data $key $val}
+                   <li><a href="{$val['url']}" target="_blank" title="{$val['question']}">{str_cut($val['question'],'45')}</a></li>
+                   {/loop} {/pc}
+                </ul>
+            </div>
+        </div>
+        <div class="functionnaryct4"></div>
+    </div>
+    
+    <!-- 友情链接-->
+    <div class="otheryqlj">
+    	<span>友情链接</span>
+        {$link}
+    </div>
+    
+     {template "content","footer"}
+    
+</div>
+</body>
+</html>

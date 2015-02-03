@@ -1,0 +1,13 @@
+<div class="cptp">
+    	<div class="cpist"> {pc:get sql="SELECT catid,catname,url FROM v9_category WHERE parentid=198 order by catid asc" cache="0" dbsource="" return="data" start="0" num="8" }{loop $data $key $val}<a href="{$val['url']}" target="_blank">{$val['catname']}</a>|{/loop}{/pc} <div class="amore" id="amoreone">更多<div>{pc:get sql="SELECT catid,catname,url FROM v9_category WHERE parentid=198 order by catid asc" cache="0" dbsource="" return="data" start="8" num="20" }{loop $data $key $val}<a href="{$val['url']}" target="_blank">{$val['catname']}</a>{/loop}{/pc}</div></div></div>
+        <div class="cpist"><a class="gdzx"></a>{pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND keyid=1 AND linkageid NOT IN (33,34,35,3358, 3360)" cache="3600"  dbsource="" return="data" num=14}
+   {loop $data $key $v}<a href="{siteurl($siteid)}/{$nameUrl}/{$v['pinyin']}.html" target="_blank">{str_replace(array('省','市'),'',$v['name'])}</a>{/loop}{/pc}<div class="amore" id="amoretwo">更多<div class="dvtwo">{pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND keyid=1 AND linkageid NOT IN (33,34,35,3358,3360)" cache="3600"  dbsource="" return="data" start=14 num=30}
+   {loop $data $key $v}<a href="{siteurl($siteid)}/{$nameUrl}/{$v['pinyin']}.html" target="_blank">{str_replace(array('省','市'),'',$v['name'])}</a>{/loop}{/pc}</div></div></div>
+   
+     {if $childCitylist && $cityurl} <div>{loop $childCitylist $r}
+    <?php
+    $thiscityname =  strlen($r['name'])>6?str_replace(array('省','市','县'),'',$r['name']):$r['name'];
+    ?>
+    <a href="{siteurl($siteid)}/{$nameUrl}/{getCityUrl($r['pinyin'])}.html" title="{$thiscityname}{$catname}考试">{$thiscityname}</a>{/loop}</div>
+    {/if}
+    </div>

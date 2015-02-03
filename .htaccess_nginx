@@ -1,0 +1,196 @@
+
+default_type   text/html;
+#防止sql注入
+if ($request_uri ~* (.*)(Field=Keywor|insert|[+|(%20)]select[+|(%20)]|[+|(%20)]delete[+|(%20)]|[+|(%20)]update[+|(%20)]|(cost\()|(concat\()|union|[+|(%20)]count[+|(%20)]|\*|master|truncate|declare|\'|\;|[+|(%20)]and[+|(%20)]|[+|(%20)]or[+|(%20)]|exec)(.*)$ ) {
+return 404;
+}
+#上传目录禁止执行php
+location ~ ^/(statics|uploadfile|phpsso_server/uploadfile|cxb/images)/ {
+    if ($request_uri ~* (.*)(php|php5|Php|PHp|PHP|phP|pHP|PhP)(.*)$ ) {
+      return 404;
+    }
+}
+
+  rewrite ^/special/buy.html$ http://$host/jsj2/computer2013/ permanent;
+
+location ~ /phpcms { 
+    return 404;
+    #deny  all; 
+} 
+location ~ /\.ht { 
+    return 404;
+    #deny  all; 
+} 
+
+
+#如果是目录自动加斜杠
+if (-d $request_filename) {
+rewrite ^/(.*)([^/])$ http://$host/$1$2/ permanent;
+}
+
+
+rewrite ^/kfb/zcjsj/$ /download/zhichenjisuanji/ permanent;
+rewrite ^/(zhiruitiku|ksbd)/ /download/ permanent;
+rewrite ^/zyzg/867-120770-1.html$  / permanent;
+#老版计算机英语地方站301新版地方站
+include /home/wwwroot/renshikaoshi.net/.htaccess_nginx_301;
+
+
+#旧版网站规则
+#rewrite ^/renshibaoming/xianyang.html /goshouye.php?m=renshibaoming&a=show&typedir=renshibm&id=73&$query_string break;
+rewrite ^/(computer|English|2011zcyy|down|plus|special|uploads|templets)/(.*) /old/$1/$2 break; 
+#rewrite ^/index.html /goshouye.php last; 
+
+
+#所有静态文件都由nginx处理，并用gzip压缩输出
+location ~* \.(jpg|jpeg|png|gif|css|js|swf|mp3|avi|flv|xml|zip|rar)$ {
+        expires 7d;
+        gzip on;
+        gzip_types  text/plain application/x-javascript text/css application/xml;
+	error_page 403 404 /404-1.php;
+}
+location ~ ^/NginxStatus/ { 
+	    stub_status on; #Nginx 状态监控配置
+	    access_log off;
+	 } 
+
+location /news/ {
+    if (!-e $request_filename){
+        rewrite ^/(.*) /news/index.php last;
+    }
+}
+ location ~ .*\.(htm|html)?$
+                        {
+                              set $memc_cmd 'get';
+                              set $memc_key $host$uri;
+                              memc_pass mem_backend;
+                              error_page 404 = @trymemfile404;
+                        }
+
+location / {
+			      set $memc_cmd 'get';
+                              set $memc_key $host$uri;
+                              memc_pass mem_backend;
+                              error_page 404 = @trymemfile404;
+} 
+
+ location @trymemfile404{
+
+                         #set $memc_cmd 'set';
+                         #set $memc_key $uri;
+                         #set $memc_exptime 24;
+                        # memc_pass mem_backend;
+
+#站点地图
+rewrite ^/sitemaps.html$  /goshouye.php?m=content&c=index&a=sitemaps last;
+#自定义表单页面
+rewrite ^/(.*)_form.html$ /goshouye.php?m=content&c=index&a=formpost&typeurl=$1&$query_string last;
+
+#kaozc专家页面
+rewrite ^/(jsj|En|zyzg)/zhuanjia/t_([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=index&a=zhuanjia_list&tid=$2&page=$3&catdir=$1 last;
+rewrite ^/(jsj|En|zyzg)/zhuanjia/ /goshouye.php?m=content&c=index&a=zhuanjia&catdir=$1 last;
+
+#考试时间查询
+rewrite ^/(jsj|En|zyzg)/kaoshichaxun/s/ /goshouye.php?m=content&c=index&a=kaoshichaxun&catdir=$1&$query_string  last;
+rewrite ^/(jsj|En|zyzg)/kaoshichaxun/ /goshouye.php?m=content&c=index&a=kaoshichaxun&catdir=$1 last;
+
+#计算机的 报名 等级 软件
+rewrite ^/(jsjbm|jsjrj|jsjdj)/(.*).html$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1&pinyin=$2 last;
+rewrite ^/(jsjbm|jsjrj|jsjdj)/$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1 last;
+
+#人事布局页面
+rewrite ^/jsj/soft.html /goshouye.php?m=content&c=index&a=jsj_soft last;
+rewrite ^/(En|jsj|zyzg)/morecity_([0-9]+).html /goshouye.php?m=content&c=renshi&a=morecity&caturl=$1&cityid=$2 last;
+rewrite ^/(zyzg|jsj)/([0-9]+)/(.*).html /goshouye.php?m=content&c=renshi&caturl=$1&mid=$2&cityurl=$3 last;
+rewrite ^/(En|jsj)/(beijing|shanghai|tianjin|chongqing|hebei|shanxi|neimenggu|liaoning|jilin|heilongjiang|jiangsu|zhejiang|anhui|fujian|jiangxi|shandong|henan|hubei|hunan|guangdong|guangxi|hainan|sichuan|guizhou|yunnan|xizang|shanxis|gansu|qinghai|ningxia|xinjiang)(.*).html /goshouye.php?m=content&c=renshi&caturl=$1&cityurl=$2$3 last;
+
+#内容页
+rewrite ^/(english|jsj|zyzg)/([0-9]+)-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=index&a=show&catid=$2&id=$3&page=$4 last; 
+rewrite ^/kaoshi-([0-9]+)-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 last; 
+#rewrite ^/content-([0-9]+)-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 last; 
+
+
+	if (!-e $request_filename) {
+	#地方站 31省市
+	rewrite ^/(En|jsj)/beijing$ /goshouye.php?m=content&c=city&pinyin=beijing&catdir=$1 last;
+        rewrite ^/(En|jsj)/(beijing|shanghai|tianjin|chongqing|hebei|shanxi|neimenggu|liaoning|jilin|heilongjiang|jiangsu|zhejiang|anhui|fujian|jiangxi|shandong|henan|hubei|hunan|guangdong|guangxi|hainan|sichuan|guizhou|yunnan|xizang|shanxis|gansu|qinghai|ningxia|xinjiang)(.*)/$ /goshouye.php?m=content&c=city&pinyin=$2$3&catdir=$1 last;
+
+	#栏目伪静态
+	rewrite ^/(En|jsj|zyzg)(.*)/(.*)/list.html$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&$query_string last; 
+  rewrite ^/(En|jsj|zyzg)(.*)/(.*)/m([0-9]+)_t([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mid=$4&typeid=$5&page=$6 last;
+  rewrite ^/(En|jsj|zyzg)(.*)/(.*)/m(.*)_t([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mpinyin=$4&typeid=$5&page=$6 last;
+  rewrite ^/(En|jsj|zyzg)(.*)/(.*)/mk([0-9]+)/$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mid=$4 last;
+	rewrite ^/(En|jsj|zyzg)(.*)/(.*)/mk(.*)/$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mpinyin=$4 last;
+  rewrite ^/(En|jsj|zyzg)(.*)/(.*)/(.*)_([0-9]+).html /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&pinyin=$4&page=$5 last;
+  rewrite ^/(En|jsj|zyzg|english)/([0-9]+).html /goshouye.php?m=content&c=index&a=lists&categorydir=$1&page=$2 last; 
+  rewrite ^/(En|jsj|zyzg)(.*)/(.*)/([0-9]+).html /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&page=$4 last; 
+	rewrite ^/(En|jsj|zyzg)(.*)/(.*)/$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3 last; 
+	rewrite ^/(En|jsj|zyzg|english)/$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1 last; 
+	}
+	
+
+        
+
+rewrite ^/list-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=index&a=lists&catid=$1&page=$2 last; 
+#rewrite ^/tag-([^\.]*)-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=tag&catid=$2&tag=$1&page=$3 last; 
+rewrite ^/comment-([0-9]+)-([0-9]+)-([0-9]+).html /goshouye.php?m=comment&c=index&a=init&commentid=content_$1-$2-$3 last;
+
+#专题相关
+#rewrite ^/specials/gwy/ /goshouye.php?m=special&c=index&a=type&specialid=1&typeid=53&$query_string  last; #公务员
+#rewrite ^/specials/en/ /goshouye.php?m=special&c=index&a=type&specialid=1&typeid=54&$query_string  last; #英语
+#rewrite ^/specials/zhirui/ /goshouye.php?m=special&c=index&a=type&specialid=1&typeid=55&$query_string  last; #致睿
+#rewrite ^/specials/ /goshouye.php?m=special&c=index&specialid=1&$query_string  last;
+
+
+#tags关键词
+rewrite ^/tags-(.*)_([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=tag&catid=$2&tag=$1&page=$3 last;
+
+#问答
+rewrite ^/question/nqlist_([0-9]+).html /goshouye.php?m=zsask&a=qlist&page=$1&s=1 last;
+rewrite ^/question/nqlist_([0-9]+)_([0-9]+).html /goshouye.php?m=zsask&a=qlist&cid=$1&page=$2&s=1 last;
+rewrite ^/question/qlist_([0-9]+).html /goshouye.php?m=zsask&a=qlist&page=$1 last;
+rewrite ^/question/qlist_([0-9]+)_([0-9]+).html /goshouye.php?m=zsask&a=qlist&cid=$1&page=$2 last;
+rewrite ^/question/([0-9]+).html /goshouye.php?m=zsask&a=answer&qid=$1 last;
+rewrite ^/question/ask.html /goshouye.php?m=zsask&a=question last;
+rewrite ^/question/s/ /goshouye.php?m=zsask&a=qlist&$query_string last;
+rewrite ^/question/ /goshouye.php?m=zsask last;
+
+
+#人事报名
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz|renshibaoming)/(.*)-([0-9]+)-([0-9]+).html /goshouye.php?m=renshibaoming&a=lists&typedir=$1&filename=$2&typeid=$3&page=$4 last;
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz)/top.html /goshouye.php?m=renshibaoming&a=top last;
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz)/([0-9]+).html /goshouye.php?m=renshibaoming&a=show&typedir=$1&id=$2 last;
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz|renshibaoming)/(.*)_([0-9]+).html /goshouye.php?m=renshibaoming&a=show&typedir=$1&filename=$2&page=$3 last;
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz|renshibaoming)/(.*).html /goshouye.php?m=renshibaoming&a=show&typedir=$1&filename=$2 last;
+rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz)/ /goshouye.php?m=renshibaoming&a=init&typedir=$1 last;
+#rewrite ^/(renshibm|chengjicx|zhengshulq|zhunkaoz)/ /goshouye.php?m=renshibaoming&$query_string last;
+
+#智睿查询模块
+rewrite ^/zrmokuai/([0-9]+).html /goshouye.php?m=zrmokuai&a=show&id=$1 last;
+rewrite ^/zrmokuai/type_([0-9]+).html /goshouye.php?m=zrmokuai&a=typelist&typeid=$1  last;
+rewrite ^/zrmokuai/ /goshouye.php?m=zrmokuai&$query_string last;
+
+#致睿题库
+rewrite ^/zhiruitiku/type_([0-9]+).html$ /goshouye.php?m=zrmokuai&c=zhiruitiku&a=typelist&typeid=$1&$query_string  last;
+rewrite ^/zhiruitiku/search/$ /goshouye.php?m=zrmokuai&c=zhiruitiku&a=typelist&q=$1&$query_string  last;
+rewrite ^/zhiruitiku/([0-9]+).html /goshouye.php?m=zrmokuai&c=zhiruitiku&a=show&id=$1  last;
+rewrite ^/zhiruitiku/(.*).html /goshouye.php?m=zrmokuai&c=zhiruitiku&a=show&pinyin=$1  last;
+rewrite ^/zhiruitiku/$ /goshouye.php?m=zrmokuai&c=zhiruitiku  last;
+
+#专家页面
+rewrite ^/zhuanjia/list_([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=index&a=zhuanjia&id=$1&page=$2 last;
+#自定义seo推广页面
+rewrite ^/r/(.*)/ /goshouye.php?m=diypage&c=index&a=init&dirname=$1 last;
+
+#ajax页面调用
+rewrite ^/ajax_(.*).html /goshouye.php?m=ajax&a=$1 last;
+rewrite ^/kscount_([0-9]+)_([0-9]+).html$  /kapi.php?op=count&id=$1&modelid=$2 last;
+rewrite ^/$ /goshouye.php last;
+# if (-f $request_filename/goshouye.php){
+#             rewrite (.*) $1/goshouye.php;
+#         }
+if (-f $request_filename/index.html){
+            rewrite (.*) $1/index.html break;
+        }
+#rewrite ^/(.*) /goshouye.php?error=1  last;
+}

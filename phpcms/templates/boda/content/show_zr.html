@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}人事考试资讯网</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/zyzg/css/toruistyle.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script language="javascript" src="/statics/zyzg/js/qh.js"></script>
+<script language="javascript" src="/statics/zyzg/js/scrolltop.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#monikaochang").find("li div:first").show();
+	$("#monikaochang li").hover(function(){
+	$("#monikaochang").find("li div").hide();
+    $(this).find("div").show();
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div id="bdshare_l"></div>
+
+<div class="medicalrgpiao"><a href="http://www.renshikaoshi.net/ksbd/" target="_blank" class="a2" title="去商城购买"></a><a href="javascript:;" id="goTopBtn" class="a1" title="返回顶部"></a></div>
+
+
+
+<SCRIPT type=text/javascript>goTopEx();</SCRIPT>
+
+
+
+<!-- heaer<start>-->
+
+
+
+{template "content","rsks_top"}
+{php $ad_ids = explode('|',$CATEGORYS[$catid][ad_ids])}
+
+
+<!-- heaer<end>-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- center<start>-->
+
+
+
+<div class="toruitycenter toruipd">
+	
+    <div class="schoolsk">
+    <span class="lfsk">各地人事考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/renshibaoming/{$v['pinyin']}.html" title="{replace_arr($v['name'],array('省','市'))}人事考试网" target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+		<a href="sitemaps.html#rsbmrk" target="_blank">更多>></a>
+    </span>
+    <span class="map"></span>
+</div>
+
+    <div id="{$ad_ids[0]}"> </div>
+
+
+
+    <div class="toruilistymps">您现在的位置：<a href="{siteurl($siteid)}">首页</a><span> &gt; </span> {if !in_array($catid, GetCaijiCatid()) }<a href="{$CATEGORYS[$catid][url]}">{$CATEGORYS[$catid][catname]}</a> <span> &gt; </span> {else} <a href="{siteurl($siteid)}/news/">资讯中心</a> <span> &gt; </span>{/if}{$title}</div>
+
+
+
+    
+
+
+
+    <div class="toruilistlie">
+
+
+
+    
+
+
+
+    	<div class="lieleftwai">
+
+
+
+    
+
+
+
+            
+
+
+
+            <div class="lieleft">
+
+
+
+                <h1 class="contentnrh1">{$title}</h1>
+
+
+
+                <div class="contentnrly">来源：{if $topCityList} <a target="_blank" href="/renshibaoming/{$topCityList['pinyin']}.html">{str_replace(array('省',市),'',$topCityList['name'])}人事考试网</a>{else}  <a href="{siteurl($siteid)}">人事考试资讯网</a>  {/if} 发布时间：{date('Y年m月d日',$rs[inputtime])}</div>
+
+
+
+                {if $description} <div class="contentnrdd ymmg1"><strong>导读：</strong>{$description}</div>{/if}
+
+
+
+              <div class="contentwznr" id="contentwznr">
+
+
+
+                  {replace_arr($content)}{$randcontent}
+<br />
+
+ 本文链接：{$url}
+
+              </div>
+
+
+
+                 {if $keywords}<div class="contentwordhot"><font>相关热词搜索</font>{loop $keywords $keyword}<a href="{siteurl($siteid)}/tags-{urlencode($keyword)}_{$catid}_1.html" class="blue">{$keyword}</a>{/loop}</div> {/if}
+
+
+
+               <div class="text-c" id="pages">{str_replace("_0.html","_1.html",$pages)}</div>
+
+
+
+               
+
+
+
+            <div class="contentwordhot"><strong>上一篇：</strong><a href="{$previous_page[url]}">{str_cut($previous_page[title],60)}</a></div>
+
+
+
+                <div class="contentwordhot"><strong>下一篇：</strong><a href="{$next_page[url]}">{str_cut($next_page[title],60)}</a>
+
+
+
+                
+
+
+
+                </div>
+
+
+
+                
+
+
+
+                
+
+
+
+                
+
+
+
+     {pc:block pos="content_zyzg_kefu"}{/pc}     
+
+
+ <div class="zrggmrmg" id="{$ad_ids[3]}"></div>
+            {pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="5" keywords="$rs[keywords]" order="id desc"}
+
+
+
+                  {if $data}
+
+
+
+                   
+
+
+
+                    <div class="related" style="display:none">
+
+
+
+                        <h5 class="blue">延伸阅读：</h5>
+
+
+
+                        <ul class="toruinewslist">
+
+
+
+                            {loop $data $r}
+
+
+
+                                <li><a href="{$r[url]}" target="_blank">{$r[title]}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+
+
+
+                            {/loop}
+
+
+
+                        </ul>
+
+
+
+                    </div>
+
+
+
+                  {/if}
+
+
+
+              {/pc}  
+ <ul class="newslist ftsmall listmore {$city_id}">
+              {php $where = "catid=$catid and level=1 ";}
+              {php $where = ($city_id>0)?$where." and cityid=$city_id":$where;}
+             {pc:get sql="SELECT * from phpcms_diypage WHERE $where" cache="0" num="30" return="data"}
+{loop $data $key $val}
+<li><a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a></li>
+{/loop}{/pc}
+            </ul>
+
+
+              
+
+
+
+              
+
+
+
+
+
+
+
+          </div>
+
+
+
+      </div>
+
+
+
+        
+
+
+
+        <div class="lieright">
+
+
+
+        	<!--右侧广告位一-->
+
+
+
+            <div class="toruibanner" id="{$ad_ids[1]}"></div>
+
+
+
+            
+
+
+
+
+
+            <!--右侧广告位二-->
+
+
+
+            <div class="toruibanner" id="979203"></div>
+
+
+
+        
+
+
+
+        	<div class="lietydv">
+
+
+
+            	<span class="rgtrcut">热门推荐</span>
+
+
+
+                <ul class="toruinewslist toruinewslistxg">
+
+
+
+              {pc:content  action="position" posid="292" order="listorder DESC" num="10"}
+
+
+
+                {php $i=1}
+
+
+
+				{loop $data $r}
+
+
+
+                    <li><i {if $i>3}class="num"{/if}>{$i}</i><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 48, '')}</a></li>
+
+
+
+                    {php $i++}
+
+
+
+				{/loop}
+
+
+
+			{/pc}
+
+
+
+                </ul>
+
+
+
+            </div>
+
+
+
+            <!-- 广告位：致睿-内容页-左侧中栏 右侧广告位三 -->
+
+
+
+            <div class="toruibanner" id="{$ad_ids[2]}"></div>
+
+
+
+            <div class="lietydv">
+
+
+
+            	<span class="rgtrcut">试题排行</span>
+
+
+
+                <ul class="toruinewslist toruinewslistxg">
+
+
+
+                   	{pc:content action="hits" catid="$catid" num="10" order="monthviews DESC" cache="3600"}
+
+
+
+                    {php $i=1}
+
+
+
+				{loop $data $r}
+
+
+
+                    <li><i {if $i>3}class="num"{/if}>{$i}</i><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 48, '')}</a></li>
+
+
+
+                    {php $i++}
+
+
+
+				{/loop}
+
+
+
+			{/pc}
+
+
+
+                </ul>
+
+
+
+            </div>
+
+
+
+            
+
+
+
+            <!--右侧广告位四-->
+
+
+
+            <div class="toruibanner" id="979206"></div>
+
+
+
+            
+
+
+
+            </div>
+
+
+
+            
+
+
+
+
+
+            
+
+
+
+        </div>
+
+
+
+        <div class="toruiclear"></div>
+
+
+
+    </div>
+
+
+
+    
+
+
+
+</div>
+
+
+
+<!-- center<end>-->
+
+
+
+
+
+
+
+<!-- footer<start>-->
+
+
+
+<script language="JavaScript" src="/kscount_{$id}_{$modelid}.html"></script>
+
+
+
+	{template "content","rsks_bottom"}
+
+<!-- footer<end>-->
+
+
+
+<!--异步加载开始-->
+
+
+
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+
+
+
+
+
+
+
+<script language="javascript" src="/statics/zyzg/js/jq_scroll.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+$(document).ready(function(){
+
+
+
+
+
+
+
+$("#contentwdhg").Scroll({line:3,speed:500,timer:3000});
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+</script>
+
+
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+{loop $ad_ids $k $v}
+{if $v>0}
+    BAIDU_CLB_fillSlotAsync('{$v}', '{$v}');
+	{/if}
+	{/loop}
+</script>
+<!--异步加载结束 -->
+
+
+
+
+<!--异步加载结束 --> 
+
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+
+<script type="text/javascript" src="/statics/js/53kefu.js"></script>
+
+<!-- Baidu Button BEGIN-->
+
+<!---->
+
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=8&amp;pos=left&amp;uid=585549" ></script>
+
+<script type="text/javascript" id="bdshell_js"></script>
+
+<script type="text/javascript">
+
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+
+</script> 
+
+<!-- Baidu Button end-->
+
+
+
+</body>
+
+
+
+</html>
+
+
+

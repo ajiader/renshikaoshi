@@ -1,0 +1,28 @@
+<div class="quizrg">
+    	<div class="quiztydv">
+    		<span>最新答疑</span>
+            <ul class="ymrightlnzt">
+            <?php 
+             if($info[catid]){
+              $catsql = "and catid=$info[catid]";
+             }
+             ?>
+             {pc:get sql="SELECT qid,question,ip,catid from v9_ask_question WHERE  aid > '' and siteid=$this->siteid $catsql  ORDER BY addtime desc" cache="0" num="10" dbsource="" return="data"}
+{loop $data $key $val}
+                <li><a href="{geturlrule($val['qid'])}" target="_blank" title="{$val['question']}">{str_cut($val['question'],'54','')}</a></li>
+              {/loop}
+           {/pc}
+          </ul>
+        </div>
+        <div class="quiztydv">
+    		<span>热门问题</span>
+            <ul class="ymrightlnzt">
+            <?php
+           $data=zsak_hits(array('limit'=>10,'siteid'=>$this->siteid,'catid'=>$info[catid]));
+           ?>
+{loop $data $key $val}
+              <li><a href="{geturlrule($val['qid'])}" target="_blank" title="{$val['question']}">{str_cut($val['question'],'54','')}</a></li>
+                {/loop}
+          </ul>
+        </div>
+    </div>

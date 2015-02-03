@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/ask/css/online_quiz.css?xg1218" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script language="javascript">
+function getObject(objID)
+ {if (document.getElementById && document.getElementById(objID)) 
+ {return document.getElementById(objID);} 
+ else 
+ {if (document.all && document.all(objID)) 
+ {return document.all(objectId);} 
+ else 
+ {if (document.layers && document.layers[objID]) 
+ {return document.layers[objID];} 
+ else
+ {return false;}
+ }
+ }
+ }
+function questionqh(n)
+{
+for (var i = 1; i <= 2; i++)
+{
+if (i == n) 
+{
+getObject("questionqh" + i).className = "selected";
+getObject("questionqhDIV" + i).style.display = "";
+}
+else
+{
+getObject("questionqh" + i).className = "";
+getObject("questionqhDIV" + i).style.display = "none";
+}
+}
+}
+
+</script>
+
+</head>
+
+<body>
+{template "zsask","header"}
+<div class="onlinequizct">
+
+	{template "zsask","left"}
+    
+    <div class="quizcter">
+    	<div class="dqposition">当前位置：<a href="{siteurl($siteid)}">考职称网</a>><a href="{siteurl($siteid)}/question/">在线问答</a></div>
+        <div class="qhquestion"><a href="{siteurl($siteid)}/question/qlist_1.html" class="selected">已解决<font></font></a><a href="{siteurl($siteid)}/question/qlist_1.html" class="ywmore">更多>></a></div>
+        <div id="questionqhDIV1">
+         {pc:get sql="SELECT aq.qid,aq.question,aq.ip,aq.catid,aa.* from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid
+WHERE aq.status != 1 AND aq.aid>0 and aq.siteid=$this->siteid ORDER BY aq.qid desc" cache="1800" num="5" page="$page" dbsource="" return="data"}
+{loop $data $key $val}
+        	<div class="questiontydv">
+            	<div class="questitle"><a href="{geturlrule($val['qid'])}" title="{$val['question']}" target="_blank">{str_cut($val['question'],'80')}</a></div>
+                <div class="quesauho"><span>专家回答</span>{format_date($val['addtime'])}</div>
+                <div class="quesnr">{str_cut(strip_tags(strip_tags($val['content'])),'200')}</div>
+            </div>
+           {/loop}
+           {/pc}
+        </div>
+        <div class="qhquestion"><a href="{siteurl($siteid)}/question/nqlist_1.html" class="selected">未解决<font></font></a><a href="{siteurl($siteid)}/question/nqlist_1.html" class="ywmore">更多>></a></div>
+        <div id="questionqhDIV2">
+          {pc:get sql="SELECT qid,catid,question,addtime from v9_ask_question WHERE aid=0 and status != 1 and siteid=$this->siteid ORDER BY qid desc" cache="1800"  num="5" page="$page" dbsource="" return="data"}
+{loop $data $key $val}
+<div class="questiontydv dvbgone questionxghg">
+            	<div class="questitle"><a href="{geturlrule($val['qid'])}" title="{$val['question']}" target="_blank">{str_cut($val['question'],'80')}</a><span>({format_date($val['addtime'])})</span></div>
+            </div>
+           {/loop}
+           {/pc} 
+        </div>
+    </div>
+    
+   {template "zsask","right"} 
+    
+</div>
+
+
+{template "content","rsks_bottom"}
+<!--异步加载开始-->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+        BAIDU_CLB_fillSlotAsync('701537','701537');
+		  BAIDU_CLB_fillSlotAsync('701584','701584');
+		  <!--图文-->
+		   BAIDU_CLB_fillSlotAsync('710248','710248');
+		  
+</script>
+
+<!--异步加载结束 --> 
+</body>
+</html>

@@ -1,0 +1,79 @@
+#下载301
+rewrite ^/down$ /down/ permanent;
+
+
+#老版计算机
+rewrite ^/computer/zixun/zhongqing/$ /jsj/chongqing/ permanent;
+rewrite ^/computer/zixun/xicang/$ /jsj/xizang/ permanent;
+rewrite ^/computer/zixun/shanxi1/$ /jsj/shanxis/ permanent;
+rewrite ^/computer/zixun/namenggu/$ /jsj/neimenggu/ permanent;
+rewrite ^/computer/zixun/(.*)/$ /jsj/$1/ permanent;
+rewrite ^/computer/$ /jsj/ permanent;
+
+#英语地方站301新版地方站
+rewrite ^/En/sichuan$ /En/sichuan/ permanent;
+rewrite ^/English/zixun/beijing/$ /En/beijing/ permanent;
+rewrite ^/English/zixun/tianjin/$ /En/tianjin/ permanent;
+rewrite ^/English/zixun/hebei/$ /En/hebei/ permanent;
+rewrite ^/English/zixun/shanxi/$ /En/shanxi/ permanent;
+rewrite ^/English/zixun/jiangsu/$ /En/jiangsu/ permanent;
+rewrite ^/English/zixun/anhui/$ /En/anhui/ permanent;
+rewrite ^/English/zixun/shandong/$ /En/shandong/ permanent;
+rewrite ^/English/zixun/shanghai/$ /En/shanghai/ permanent;
+rewrite ^/English/zixun/zhejiang/$ /En/zhejiang/ permanent;
+rewrite ^/English/zixun/jiangxi/$ /En/jiangxi/ permanent;
+rewrite ^/English/zixun/fujian/$ /En/fujian/ permanent;
+rewrite ^/English/zixun/hunan/$ /En/hunan/ permanent;
+rewrite ^/English/zixun/ningxia/$ /En/ningxia/ permanent;
+rewrite ^/English/zixun/namenggu/$ /En/neimenggu/ permanent;
+rewrite ^/English/zixun/henan/$ /En/henan/ permanent;
+rewrite ^/English/zixun/sichuan/$ /En/sichuan/ permanent;
+rewrite ^/English/zixun/zhongqing/$ /En/chongqing/ permanent;
+rewrite ^/English/zixun/guizhou/$ /En/guizhou/ permanent;
+rewrite ^/English/zixun/yunnan/$ /En/yunnan/ permanent;
+rewrite ^/English/zixun/liaoning/$ /En/liaoning/ permanent;
+rewrite ^/English/zixun/jilin/$ /En/jilin/ permanent;
+rewrite ^/English/zixun/guangdong/$ /En/guangdong/ permanent;
+rewrite ^/English/zixun/guangxi/$ /En/guangxi/ permanent;
+rewrite ^/English/zixun/hainan/$ /En/hainan/ permanent;
+rewrite ^/English/zixun/shanxi1/$ /En/shanxis/ permanent;
+rewrite ^/English/zixun/gansu/$ /En/gansu/ permanent;
+rewrite ^/English/zixun/xinjiang/$ /En/xinjiang/ permanent;
+rewrite ^/English/zixun/qinghai/$ /En/qinghai/ permanent;
+rewrite ^/English/zixun/xicang/$ /En/xizang/ permanent;
+rewrite ^/English/zixun/heilongjiang/$ /En/heilongjiang/ permanent;
+
+rewrite ^/special/arc-121.html$ /En/sichuan/ permanent;
+rewrite ^/special/arc-105.html$ /En/chongqing/ permanent;
+rewrite ^/special/arc-123.html$ /En/guizhou/ permanent;
+rewrite ^/special/arc-122.html$ /En/yunnan/ permanent;
+rewrite ^/special/arc-110.html$ /En/liaoning/ permanent;
+rewrite ^/special/arc-119.html$ /En/guangdong/ permanent;
+rewrite ^/special/arc-124.html$ /En/guangxi/ permanent;
+rewrite ^/special/arc-120.html$ /En/hainan/ permanent;
+rewrite ^/special/arc-125.html$ /En/shanxis/ permanent;
+rewrite ^/special/arc-126.html$ /En/gansu/ permanent;
+rewrite ^/special/arc-129.html$ /En/xinjiang/ permanent;
+rewrite ^/special/arc-128.html$ /En/qinghai/ permanent;
+rewrite ^/special/arc-130.html$ /En/xizang/ permanent;
+rewrite ^/special/arc-131.html$ /En/heilongjiang/ permanent;
+rewrite ^/special/arc-101.html$ /En/beijing/ permanent;
+rewrite ^/special/arc-102.html$ /En/tianjin/ permanent;
+rewrite ^/special/arc-107.html$ /En/hebei/ permanent;
+rewrite ^/special/arc-108.html$ /En/shanxi/ permanent;
+rewrite ^/special/arc-118.html$ /En/hubei/ permanent;
+rewrite ^/special/arc-106.html$ /En/jiangsu/ permanent;
+rewrite ^/special/arc-112.html$ /En/anhui/ permanent;
+rewrite ^/special/arc-114.html$ /En/shandong/ permanent;
+rewrite ^/special/arc-103.html$ /En/shanghai/ permanent;
+rewrite ^/special/arc-111.html$ /En/zhejiang/ permanent;
+rewrite ^/special/arc-113.html$ /En/jiangxi/ permanent;
+rewrite ^/special/arc-104.html$ /En/fujian/ permanent;
+rewrite ^/special/arc-117.html$ /En/hunan/ permanent;
+rewrite ^/special/arc-127.html$ /En/ningxia/ permanent;
+rewrite ^/special/arc-116.html$ /En/neimenggu/ permanent;
+rewrite ^/special/arc-115.html$ /En/henan/ permanent;
+rewrite ^/special/arc-109.html$ /En/jilin/ permanent;
+rewrite ^/English/$ /En/ permanent;
+
+rewrite ^/tg/zcyy/rs/gw001$ /tg/zcyy/rs/ permanent;

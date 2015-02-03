@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg=1212" />
+<script type="text/javascript" src="/statics/renshikaoshi/js/53kf.js"></script>
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+
+</head>
+
+<body>
+{template "content","rsks_top"}
+ {php $catid = $catid>0?$catid:'0';}
+<!--center部分-->
+<div class="cy-tyct">
+    
+    <!--当前位置-->
+    <div class="functiondqwz"><img src="/statics/gwy/images/posiitonwz.png" />当前位置：<a href="/">首页</a>>{$breadcrumb}</div>
+    
+    <div class="seo_onedv">
+    	<div class="wzdylf">
+        	<h1>{$h1}</h1>
+            <div class="dydaodu">
+            	<div class="dlf"></div>
+                <div class="drg" id="limittext">
+                	<div class="content">
+                	{$daodu}
+                    </div>
+                    
+                </div>
+            	<div class="examtyclear"></div>
+            </div>
+            
+        </div>
+        <div class="kstkright">
+        	<div class="kstkcut"><a href="#" class="a1">考试题库</a><a href="javascript:void(0)" onclick="kefulink(6)" class="a2">向职考专家提问</a></div>
+            <div class="kstkcontent">
+            	<p class="p1">编辑推荐:</p>
+                <p class="p1 p2"><a href="{$down_url}" title="{$down_title}" target="_blank">{$down_title}</a></p>
+                <p class="p3">下载次数：<strong>{$down_num}</strong></p>
+                <p class="p4"><a href="{$down_url}" target="_blank">立即下载</a></p>
+            </div>
+        </div>
+    	<div class="clear"></div>
+    </div>
+    <div class="seo_content">
+
+    	<div class="seoleft">
+         {if $h2arr}
+
+            {loop $h2arr $v}
+            {if $v['name']}
+            <h2>{$v['name']}</h2>
+            <ul class="newslist ftsmall listmore">
+                 {if $v['like']}
+             {pc:get sql="SELECT id,style,url,title,description,inputtime FROM v9_news where  status=99 $v[like] order by id desc" cache="3600" page="$page" dbsource="" return="data" start="0" num="5"  }
+             {loop $data $n $r}  
+            	<li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{$r['title']}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+                {/loop}{/pc}
+                {else}
+                <li>没有找到相关信息</li>
+                {/if}
+            </ul>
+            
+             <ul class="newslist ftsmall listmore">
+                 {if $v['like']}
+             {pc:get sql="SELECT id,style,url,title,description,inputtime FROM v9_news where  status=99 $v[like] order by id desc" cache="3600" page="$page" dbsource="" return="data" start="5" num="5"  }
+             {loop $data $n $r}  
+            	<li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{$r['title']}</a><span>{date('m-d',$r['inputtime'])}</span></li>
+                {/loop}{/pc}
+                {else}
+                <li>没有找到相关信息</li>
+                {/if}
+            </ul>
+            {/if}
+            {/loop}
+           {/if}
+            
+        </div>
+        <div class="seoright">
+        	<div class="dvone">
+            	<div class="dvcut">职称计算机考试模块推荐<a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">更多>></a></div>
+                <div class="tjlist">
+                	<span class="sp1 icon1"></span>
+                    <span class="sp2">Word XP模块<br /><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">详情</a></span>
+                   	<span class="sp3"><p class="p1">10元</p><p class="p2">原价50元</p></span>
+                </div>
+                <div class="tjlist">
+                	<span class="sp1 icon2"></span>
+                    <span class="sp2">Word 2003模块<br /><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">详情</a></span>
+                   	<span class="sp3"><p class="p1">10元</p><p class="p2">原价50元</p></span>
+                </div>
+                <div class="tjlist">
+                	<span class="sp1 icon3"></span>
+                    <span class="sp2">Internet模块<br /><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">详情</a></span>
+                   	<span class="sp3"><p class="p1">10元</p><p class="p2">原价50元</p></span>
+                </div>
+                <div class="tjlist">
+                	<span class="sp1 icon4"></span>
+                    <span class="sp2">PPT2003模块<br /><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">详情</a></span>
+                   	<span class="sp3"><p class="p1">10元</p><p class="p2">原价50元</p></span>
+                </div>
+                <div class="tjlist">
+                	<span class="sp1 icon5"></span>
+                    <span class="sp2">Excel 2003模块<br /><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+">详情</a></span>
+                   	<span class="sp3"><p class="p1">10元</p><p class="p2">原价50元</p></span>
+                </div>
+            </div>
+            <div class="kzc-newsone"><a href="http://item.taobao.com/item.htm?spm=2013.1.w5002-6518291210.8.NaZzoG&id=37117006912
+"><img src="/statics/renshikaoshi/images/jsjggpic1.gif" /></a></div>
+            <div class="dvone">
+            	<div class="dvcut">{$CATEGORYS[$catid][catname]}最新动态</div>
+                <ul class="newslist ftsmall listmore seorg">
+                {php $where="status=99";}
+                {php $where = ($catid>0)?$where." and catid=$catid":$where;}
+     {pc:get sql="SELECT * from phpcms_news WHERE $where " cache="0" num="10" return="data"}
+                     {loop $data $r}
+              <li><a href="{$r[url]}" title="{$r[title]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],55,'')}</a></li>
+                 {/loop}{/pc}
+                </ul>
+            </div>
+            <div class="kzc-newsone"><a href="#"><img src="/statics/renshikaoshi/images/jsjggpic1.gif" /></a></div>
+            <div class="dvone">
+            	<div class="dvcut">{replace_arr($cityList['name'],array('省','市'))}考试最新动态</div>
+                <ul class="newslist ftsmall listmore seorg">
+                {php $cityname = replace_arr($cityList['name'],array('省','市'));}
+                     {php $where="status=99";}
+                {php $where = ($cityid>0)?$where." and (city_id in ($cityList[arrchildid])  or title like '%$cityname%')":$where;}
+     {pc:get sql="SELECT * from phpcms_news WHERE $where " cache="0" num="10" return="data"}
+                       {loop $data $r}
+                    <li><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],55,'...')}</a></li>
+                   {/loop}
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<div class="seokszl">
+	<div class="cy-tyct">
+    	<span>考试专栏：</span>
+        <div class="kszldv">
+       {php $where = "id>0";}
+         {php $where = ($catid>0)?$where." and catid=$catid":$where;}
+              {php $where = ($cityid>0)?$where." and  cityid in ($cityList[arrchildid])":$where;}
+        {pc:get sql="SELECT * from phpcms_diypage WHERE $where order by level desc,id desc" cache="0" num="30" return="data"}
+{loop $data $key $val}
+        	<a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a>
+            {/loop}{/pc}
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{template "content","rsks_bottom"}
+</body>
+</html>

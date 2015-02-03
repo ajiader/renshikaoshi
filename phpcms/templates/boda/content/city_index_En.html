@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/en/css/zcyy_cy.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+</head>
+<body onload="DigitalTime1()">
+{template "content","rsks_top"}
+
+<!-- center-->
+<div class="zcyycenter">
+		<div class="schoolsk">
+    <span class="lfsk">职称英语各地考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/En/{$v['pinyin']}/" title="{replace_arr($v['name'],array('省','市'))}职称英语考试"  target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+    </span>
+    <span class="map"></span>
+</div>
+    	<div class="dfzquyu zcenglishtymg">
+    	<table cellspacing="0" cellpadding="0" border="0">
+        	<tbody>
+                <tr>
+                    <td width="13%" class="dfname">{citys2city($cityList['name'])}站</td>
+                    <td width="87%" class="dfnr">
+                	  {loop $childCitylist $v}
+                        {if $v['pinyin']} <a href="{$CATEGORYS[$catid]['url']}{$v['pinyin']}/" title="{$v['name']}职称英语考试网">{citys2city($v['name'])}</a>{/if}
+                      {/loop}				   
+                    </td>
+                </tr>
+        	</tbody>
+        </table>
+    </div>
+    
+    <div class="zcyy_dfct">
+    
+    	<div class="zcyy_ctlf">
+        
+        	<div class="hdppic zcenglishtymg">
+                <span class="picswitchnum">
+                	<ul>
+              {pc:content action="position" posid="131" catid="" thumb="1" order="listorder DESC"  num="5" }
+			    {loop $data $n $r} 
+                 <li></li>
+				 {/loop}
+				 </ul>
+				 </span>
+              <div class="picswitchpic">
+                 <ul>
+                 	{loop $data $n $r} 
+                    <li><a href="{$r['url']}" target="_blank"  title="{str_cut(trim($r[title]),'100','')}"><img src="{thumb($r['thumb'],290, 185)}" /></a></li>
+                    {/loop}		 
+                 </ul>
+               </div>
+			  {/pc}
+            </div>
+            
+            <div class="zcyy_bor_ty zcenglishtymg">
+            	<div class="borcut"><span class="sp1">考试心得</span><span class="sp2"><a href="{$CATEGORYS[427]['url']}">更多>></a></span></div>
+                <ul class="zcenglishnews zcyy_ulmg">
+                	{pc:content action="lists" catid="427" order="id DESC" num="10"}
+					{loop $data $key $val}
+                    <li><a target="_blank" href="{$val['url']}" title="{$val['title']}">{str_cut(trim($val['title']),'44','')}</a></li>
+                    {/loop}
+					{/pc}
+                </ul>
+            </div>
+            
+            
+            
+        </div>
+        
+        <div class="zcyy_ctmd">
+        
+        	<div class="hotnews">
+        		<div class="first"><span>热点</span><h2>{pc:content  action="position" cityid="$topparentid" posid="289" order="listorder DESC" num="1" cache="0"}{loop $data $key $r}<a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a>{/loop}{/pc}</h2></div>
+                <ul>
+                   {pc:content  action="position" cityid="$topparentid" posid="289" order="listorder DESC" num="6" start="1" cache="0"} 
+				     {loop $data $key $r}
+                    <li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a></li>
+                     {/loop}
+				   {/pc}
+                </ul>
+                <div class="line_h"></div>
+          		<div class="first"><span>辅导</span><h2>{pc:content  action="position" cityid="$topparentid" posid="428" order="listorder DESC" num="1" cache="0"}{loop $data $key $r}<a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a>{/loop}{/pc}</h2></div>
+                <ul>
+                   {pc:content  action="position" cityid="$topparentid" posid="428" order="listorder DESC" num="8" start="1" cache="0"} 
+                      {loop $data $key $r}
+                    <li><a href="{$r['url']}" target="_blank" title="{$r['title']}">{str_cut($r['title'],40,'')}</a></li>
+                      {/loop}
+					{/pc} 
+                </ul>
+        	</div>
+            
+            <div id="bkjqA" class="hotcut2">
+                <a target="_blank" href="javascript:;" class="selected">最近更新</a><a target="_blank" href="{$CATEGORYS[420]['url']}">报考通知</a><a target="_blank" href="{$CATEGORYS[421]['url']}">准考证</a><a  target="_blank" href="{$CATEGORYS[422]['url']}">成绩查询</a>
+            </div>
+            <div id="hotDIV">
+            	<ul class="zcenglishnews font14 pd1">
+               <?php
+                $catids = $CATEGORYS['419']['arrchildid'];
+                $data = city_news_list($siteid,$cityList,$catids,10);
+               ?>
+               {loop $data $key $val}
+                    <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'60','')}<span>{date('m-d',$val['updatetime'])}</span></a></li>
+               {/loop}
+                </ul>
+                <ul class="zcenglishnews font14 pd1" style="display:none;">
+                   	{php $data = city_news_list($siteid,$cityList,"420",10);}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],'60','')}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+					{/pc}
+                </ul>
+                <ul class="zcenglishnews font14 pd1" style="display:none;">
+                   	{php $data = city_news_list($siteid,$cityList,"421",10);}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],'60','')}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+					{/pc}
+                </ul>
+                <ul class="zcenglishnews font14 pd1" style="display:none;">
+                   	{php $data = city_news_list($siteid,$cityList,"422",10);}
+						{loop $data $key $val}
+                    	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],'60','')}</a><span>{date('m/d',$val['updatetime'])}</span></li>
+						{/loop}
+					{/pc}
+                </ul>
+            </div>
+            
+            
+        
+        </div>
+        
+        <div class="zcyy_ctrg">
+        
+        	<div class="zcyy_bor_ty zcenglishtymg">
+            	<div class="borcut"><span class="sp1">新手指导</span></div>
+                <div class="msf_xszd">
+            	   <a href="http://www.kaozc.com/kaoshi-154-110018-1.html">考试简介</a><a href="http://www.kaozc.com/kaoshi-154-110027-1.html">报名时间</a><a href="http://www.kaozc.com/kaoshi-154-110026-1.html">考试时间</a>
+                   <a href="http://www.kaozc.com/kaoshi-154-113623-1.html">考试题型</a><a href="http://www.kaozc.com/kaoshi-154-110029-1.html">考试内容</a><a href="http://www.kaozc.com/tg/zcyy/zz/#yongshu">考试用书</a>
+                   <a href="http://www.kaozc.com/kaoshi-154-89297-1.html">免考规定</a><a href="http://www.kaozc.com/En/ksdt/cjcx/">成绩查询</a><a href="http://www.kaozc.com/kaoshi-154-110296-1.html">成绩有效期</a>
+                   <a href="http://www.kaozc.com/kaoshi-154-113624-1.html">考试级别</a><a href="http://www.kaozc.com/kaoshi-154-110277-1.html">合格标准</a><a href="http://www.kaozc.com/En/ksdt/zslq/">证书领取</a>
+
+                </div>
+            </div>
+            
+            <div class="ksjl">
+            	<span class="tl">距离2015年全国职称英语考试</span>
+                <span class="djs">还有<font id="LiveClock1"></font>天</span>
+                <p>考试时间：{$kslist['kstime']}</p>
+            </div>
+            
+            <div class="zcyy_bor_ty zcenglishtymg">
+            	<div class="borcut"><span class="sp1">职称考评</span><span class="sp2"><a href="{$CATEGORYS[280]['url']}">更多>></a></span></div>
+                <ul class="zcenglishnews zcyy_ulmg">
+                	{pc:content action="lists" catid="280" order="id DESC" num="6" start="0"}						          
+					{loop $data $key $val}                    
+					<li><a target="_blank" href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'60','')}</a></li>
+					{/loop}
+					{/pc}
+                </ul>
+            </div>
+            
+            
+            
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    
+    <div class="zcenglishtymg" id="538660"></div>
+    
+    <div class="dfztitlety">考试辅导<span><a href="{$CATEGORYS[179]['url']}">资料辅导</a>/<a href="{$CATEGORYS[933]['url']}">历年真题</a>/<a href="{$CATEGORYS[934]['url']}">模拟题</a></span></div>
+    
+    <div class="dfzfudao">
+    	<div class="fudaodv">
+        	<div class="dvcut">资料辅导<span id="fudaoaone"><a target="_blank" href="{$CATEGORYS[159]['url']}">理工类</a><a target="_blank" href="{$CATEGORYS[167]['url']}" class="selected">综合类</a><a target="_blank" href="{$CATEGORYS[163]['url']}">卫生类</a></span></div>
+            <div id="fudaonrone" class="fudaonr">
+            	<ul class="zcenglishnews">
+               	{pc:content action="lists" catid="159" order="id DESC" num="7" start="0"}						          
+					{loop $data $key $val}                    
+					<li><a target="_blank" href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'60','')}</a></li>
+					{/loop}
+					{/pc}
+                </ul>
+                <ul style="display:none;" class="zcenglishnews">
+               	{pc:content action="lists" catid="167" order="id DESC" num="7" start="0"}						          
+					{loop $data $key $val}                    
+					<li><a target="_blank" href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'60','')}</a></li>
+					{/loop}
+					{/pc}
+                </ul>
+                <ul style="display:none" class="zcenglishnews">
+               	{pc:content action="lists" catid="163" order="id DESC" num="7" start="0"}						          
+					{loop $data $key $val}                    
+					<li><a target="_blank" href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'60','')}</a></li>
+					{/loop}
+					{/pc}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="fudaodv mgfd">
+        	<div class="dvcut">历年真题<span id="fudaoatwo"><a class="selected" target="_blank" href="{$CATEGORYS[933]['url']}">理工类</a><a target="_blank" href="{$CATEGORYS[933]['url']}">综合类</a><a target="_blank" href="{$CATEGORYS[933]['url']}">卫生类</a></span></div>
+            <div id="fudaonrtwo" class="fudaonr">
+            	<ul class="zcenglishnews">
+                		          {pc:content action="lists" catid="160" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}                </ul>
+                					<ul style="display:none;" class="zcenglishnews">
+                		          {pc:content action="lists" catid="168" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}     
+                </ul>
+                <ul style="display:none" class="zcenglishnews">
+                		          {pc:content action="lists" catid="164" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}   
+                </ul>
+            </div>
+        </div>
+        
+        <div class="fudaodv">
+        	<div class="dvcut">模拟题<span id="fudaoathree"><a class="selected" target="_blank" href="{$CATEGORYS[934]['url']}">理工类</a><a target="_blank" href="{$CATEGORYS[934]['url']}">综合类</a><a target="_blank" href="{$CATEGORYS[934]['url']}">卫生类</a></span></div>
+            <div id="fudaonrthree" class="fudaonr">
+            	<ul class="zcenglishnews">
+                		          {pc:content action="lists" catid="934" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}                </ul>
+                <ul style="display:none;" class="zcenglishnews">
+                		          {pc:content action="lists" catid="169" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}     
+                </ul>
+                <ul style="display:none" class="zcenglishnews">
+                		          {pc:content action="lists" where="$where" catid="165" order="id DESC" num="7"}
+						          {loop $data $key $val}
+                    	           <li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],60)}</a></li>
+						          {/loop}
+						          {/pc}   
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<!-- footer-->
+{template "content","rsks_bottom"}
+<script language="javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="/statics/renshikaoshi/js/pictab.js"></script>
+<script language="javascript" src="/statics/renshikaoshi/js/timedjs.js"></script>
+
+<script language="javascript">
+$(document).ready(function(){
+	$('#ksfdA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#ksfdDIV > ul").eq($('#ksfdA a').index(this)).show().siblings().hide();
+	});
+	
+	$('#bkjqA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#hotDIV > ul").eq($('#bkjqA a').index(this)).show().siblings().hide();
+	});
+	
+	$('#ksstA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#ksstDIV > ul").eq($('#ksstA a').index(this)).show().siblings().hide();
+	});
+	
+	$('#fudaoaone a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#fudaonrone > ul").eq($('#fudaoaone a').index(this)).show().siblings().hide();
+	});
+	$('#fudaoatwo a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#fudaonrtwo > ul").eq($('#fudaoatwo a').index(this)).show().siblings().hide();
+	});
+	$('#fudaoathree a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#fudaonrthree > ul").eq($('#fudaoathree a').index(this)).show().siblings().hide();
+	});
+	$("#zcenglishmenu li").mousemove(function(){$(this).find("div").show();});
+	$("#zcenglishmenu li").mouseleave(function(){$(this).find("div").hide();});
+});
+</script>
+</body>
+</html>

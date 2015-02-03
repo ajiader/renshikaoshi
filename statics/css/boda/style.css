@@ -1,0 +1,151 @@
+body {text-align:center;font-family:"\5B8B\4F53",serif;background:#eee url(../../images/boda/body-main.png) repeat-y  center top;font-size:12px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote{padding:0; margin:0;}   
+table,td,tr,th{font-size:12px;}
+li{list-style-type:none;}
+table{ margin:0 auto;}
+img{vertical-align:top;border:0;}
+ol,ul {list-style:none;}   
+caption,th {text-align:left;}   
+h1,h2,h3,h4,h5,h6 {font-size:12px; font-weight:normal;}   
+q:before,q:after {content:'';}   
+abbr,acronym {border:0;}
+address,caption,cite,code,dfn,em,th,var {font-weight:normal; font-style:normal;}   
+strong {font-weight:normal;}
+a {color:#000000;text-decoration:none;}
+a:visited {color:#83006f;text-decoration:none;}
+a:hover {color:#ba2636;text-decoration:underline;}
+a:active {color:#ba2636;}
+.cWhite,.cWhite:visited,.cWhite a{color:#fff;}
+.cYellow,.cYellow:visited{color:#ff0;}
+.cGreen,.cGreen:visited{color:#008000;}
+.cGray,.cGray:visited,.cGray a{color:#333;}
+.cDGray,.cDGray:visited,.cDGray a{color:#727171;}
+.cBlack,.cBlack:visited,.cBlack a{color:#000;}
+.cBlue,.cBlue:visited,.cBlue a{color:#1E50A2;}
+.cRed,.cRed:visited,.cRed a{color:Red;}
+.cDRed,.cDRed:visited,.cDRed a{color:#ba2636;}
+.cRed a:hover,a.cRed:hover,.cBlue a:hover,a.cBlue:hover,.cDRed a:hover,a.cDRed:hover,.cGray a:hover,a.cGray:hover,.cDGray a:hover,a.cDGray:hover,.cWhite a:hover,a.cWhite:hover,.cBlack a:hover,a.cBlack:hover,.cGreen a:hover,a.cGreen:hover,.cYellow a:hover,a.cYellow:hover{color:#ba2636;}
+.fB{font-weight:bold;}
+.fI{font-style: italic;}
+.f12px{font-size:12px;}
+.f14px{font-size:14px;}
+.left{float:left;}
+.right{float:right;}
+.hidden{display:none;}
+.unLine,.unLine a{text-decoration:none;}
+.noBorder{border:none;}
+.I_V_ {background:url(http://img1.cache.netease.com/img09/icon/icon.png) left center no-repeat; padding-left:18px;}
+.I_M_ {background:url(http://img1.cache.netease.com/img09/icon/icon.png) -457px center no-repeat; padding-left:18px;}
+.foot{margin:0 auto; width:960px; line-height:21px; clear:both; color:#4d4d4d;}
+.foot .text{padding:4px 0 5px; border-bottom:1px solid #4d4d4d; margin:0 0 5px;}
+.foot a,.foot a:visited{color:#4d4d4d;}
+.foot a:hover {color:#ba2636;}
+.clear {clear:both; height:0; overflow:hidden; display:block;}
+.clearfix{*zoom:1;}
+.clearfix:after {clear:both; height:0; overflow:hidden; display:block; visibility:hidden; content:"."; }
+.blankW {background:#fff;}
+.blank3 {clear:both; height:3px; overflow:hidden; display:block;}
+.blank6 {clear:both; height:6px; overflow:hidden; display:block;}
+.blank9 {clear:both; height:9px; overflow:hidden; display:block;}
+.blank9w {background:#ffffff; clear:both; height:9px; overflow:hidden; display:block;}
+.blank12 {clear:both; height:12px; overflow:hidden; display:block;}
+.blank15 {clear:both; height:15px; overflow:hidden; display:block;}
+.blank20 {clear:both; height:20px; overflow:hidden; display:block;}
+.ad750{width:750px;margin:0 auto;padding:9px 0;clear:both;}.ad960_70{width:960px;margin:3px auto;clear:both;overflow:hidden;height:70px;}.ad960_70 .ad_750{float:left;width:750px;}.ad960_70 .ad_200{float:right;width:200px;}
+
+/*---------------------------top*/
+.selCity .none {
+POSITION: absolute; LEFT: 50%;
+}
+.selCity .none A {
+TEXT-INDENT: -3000px; WIDTH: 68px; DISPLAY: block; BACKGROUND: url(../../images/boda/top-t.jpg) #000000 no-repeat; HEIGHT: 21px; TEXT-DECORATION: none
+}
+.selCity .none A:hover {
+TEXT-INDENT: -3000px; WIDTH: 68px; DISPLAY: block; BACKGROUND: url(../../images/boda/top-t.jpg) no-repeat; HEIGHT: 21px; TEXT-DECORATION: none
+}
+.selCity TABLE {
+BACKGROUND-COLOR: #000000; MARGIN: 0px auto; WIDTH: 950px; BORDER-COLLAPSE: collapse
+}
+.selCity TABLE TD {
+BORDER-BOTTOM: #8b3d3b 1px dashed; TEXT-ALIGN: center; BORDER-LEFT: #8b3d3b 1px dashed; WIDTH: 157px; HEIGHT: 39px; COLOR: #fff; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; BORDER-TOP: #8b3d3b 1px dashed; BORDER-RIGHT: #8b3d3b 1px dashed
+}
+.selCity TABLE TD A {
+LINE-HEIGHT: 40px; DISPLAY: block; HEIGHT: 40px; COLOR: #fff; TEXT-DECORATION: none
+}
+.selCity TABLE TD A:hover {
+BACKGROUND: #a86e6d; COLOR: #fff; TEXT-DECORATION: none
+}
+.selCity TABLE TD A.cur {
+BACKGROUND: #a86e6d
+}
+.carousel LI {
+TEXT-ALIGN: center; PADDING-LEFT: 10px; WIDTH: 180px; HEIGHT: 125px
+}
+.carousel IMG {
+BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; PADDING-BOTTOM: 2px; MARGIN: 0px auto; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; DISPLAY: block; BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid; PADDING-TOP: 2px
+}
+
+
+#top {
+	MARGIN: 0px auto; WIDTH: 976px; BACKGROUND: #fff; HEIGHT: 40px; OVERFLOW: hidden
+}
+.top-outer{ BACKGROUND: #fff;}
+#top .l_logo {
+	WIDTH: 280px; FLOAT: left; HEIGHT: 40px; OVERFLOW: hidden
+}
+#top .r_logo {
+	WIDTH: 315px; FLOAT: right; HEIGHT: 40px; OVERFLOW: hidden; CURSOR: pointer
+}
+#top .l_logo_mid {
+	WIDTH: 100px; FLOAT: left; HEIGHT: 40px; OVERFLOW: hidden
+}
+
+.expo_nav{ height:30px; line-height:30px; background:url(../../images/boda/zt-nav-bg.jpg) repeat-x; padding-left:15px;width:946px; margin:0 auto; overflow:hidden; clear:both; text-align:left; color:#333; }
+.expo_nav a{ padding:0 5px;color:#333; }
+.title-top{ width:976px; height:295px;overflow:hidden;}
+.title-top img{ width:956px; height:295px;overflow:hidden;margin:0 auto;}
+#site_ft {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #343434; PADDING-TOP: 0px
+}
+#site_ft .links {
+	COLOR: #004498
+}
+#site_ft .links A {
+	COLOR: #004498
+}
+#site_ft .foot_links {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LINE-HEIGHT: 38px; MARGIN: 0px auto 10px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(../../../images/boda/boda/top_login_bg.png) repeat-x 0px -156px; HEIGHT: 38px; COLOR: #004498; PADDING-TOP: 0px
+}
+#site_ft .foot_links .back_top {
+	MARGIN-TOP: 8px; DISPLAY: inline; FLOAT: right
+}
+#site_ft .foot_links .back_top IMG {
+	VERTICAL-ALIGN: top
+}
+#site_ft ADDRESS {
+	TEXT-ALIGN: center; FONT-STYLE: normal; FONT-FAMILY: Arial,????,sans-serif; FONT-WEIGHT: normal; PADDING-TOP: 10px
+}
+.foot_links {
+	POSITION: relative
+}
+
+div.ui-forward {
+color:#666;
+font-family: '微软雅黑','宋体';
+font-size: 14px;
+}
+
+
+.pos-a {
+position: absolute;
+}
+.pos-r {
+position: relative;
+}
+.ui-forward {
+left: 140px;
+top: 195px;
+width: 450px;
+height: 95px;
+color: white;
+}

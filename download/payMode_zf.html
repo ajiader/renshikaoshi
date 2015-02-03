@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>考试宝典：中国执业、职称考试辅导软件第一品牌</title>
+<meta name="description" content="考试宝典产品涵盖了医学医药、建筑工程、财会经济、职称英语、职称计算机等多种执业、职称考试的辅导软件，目前考试宝典旗下产品拥有近千款具体科目辅导软件，是迄今为止系列最全、科目最多、实力最强大的执业、职称考试辅导品牌。考试宝典背后拥有上千名员工团队，超百强大师资力量，力争实现做中国教育软件的领跑者使命！" />
+<meta name="keywords" content="考试宝典,考试宝典官网,考试宝典下载,考试宝典激活码" />
+
+
+<link href="/download/skins/css/agent.css" rel="stylesheet" type="text/css" />
+ <script src="/download/skins/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+ 
+ <script src="/download/skins/js/script.js" type="text/javascript"></script>	
+<style type="text/css">
+#box,#box2,#box3,#box4{ float:left;} 
+</style>
+<script type="text/javascript">
+//===========================点击展开关闭效果====================================
+function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
+var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+var openTip = oOpenTip || "";
+var shutTip = oShutTip || "";
+if(targetObj.style.display!="none"){
+   if(shutAble) return;
+   targetObj.style.display="none";
+   if(openTip && shutTip){
+    sourceObj.innerHTML = shutTip; 
+   }
+} else {
+   targetObj.style.display="block";
+   if(openTip && shutTip){
+    sourceObj.innerHTML = openTip; 
+   }
+}
+}
+
+//展开一栏其他栏目收缩起来
+$(document).ready(function(){
+  $("#zf").click(function(){
+	$("#box").css("display","none");
+	$("#box2").css("display","none");
+	$("#box3").css("display","none");
+  });
+  
+  $("#wd").click(function(){
+	$("#box4").css("display","none");
+	$("#box2").css("display","none");
+	$("#box3").css("display","none");
+  });
+  
+  
+  $("#yh").click(function(){
+	$("#box").css("display","none");
+	$("#box4").css("display","none");
+	$("#box3").css("display","none");
+  });
+  
+  $("#yj").click(function(){
+	$("#box").css("display","none");
+	$("#box4").css("display","none");
+	$("#box2").css("display","none");
+  });  
+});
+
+
+
+//获取页面传过来的值
+$(function(){
+$("#b1").html(decodeURI(GetQueryString("zf_n1")));
+$("#b2").html(decodeURI(GetQueryString("zf_n2")));
+$("#txtNum").val(decodeURI(GetQueryString("zf_n3")));
+$("#b4").attr("src",decodeURI(GetQueryString("zf_n4")));
+});
+function GetQueryString(name) {
+   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+   var r = window.location.search.substr(1).match(reg);
+   if (r!=null) return (r[2]); return null;
+}
+
+
+//从payMode_zf页面传值到payOK页面(支付平台上的)
+function gotoA(ab){
+var ab = $("input[name='pay']:checked").val();
+  if (ab==("zf")){var ab = "https://www.alipay.com/";var payName = "支付宝支付";}
+  var pay1 = "支付平台：";
+
+window.open(ab);
+window.location = "payOK.html?ok_n1="+encodeURI($("#b1").html())+"&ok_n2="+encodeURI($("#tota2").html())+"&ok_n3="+encodeURI($("#txtNum").val())+"&ok_n4="+encodeURI(payName)+"&ok_n5="+encodeURI(pay1)+"&ok_n6="+encodeURI($("#zhanghao").html())+"&ok_n7="+encodeURI($("#yonghu").html());
+}
+
+//从payMode_zf页面传值到payOK页面(银行汇款)
+function gotoB(bank){
+var bank = $("input[name='pay2']:checked").val();  //鼠标选中当前单选框
+
+  if (bank==("yz")){var bank = "http://www.psbc.com/";var payName = "中国邮政储蓄汇款";var addres ="中国邮政储蓄银行四川省双流县华阳镇西支行";var account = "6210986510007554525";}if (bank==("ny")){var bank = "http://www.abchina.com/";var payName = "中国农业银行汇款";var addres ="农业银行四川省双流县华阳镇正西街分理处";var account = "6228480462832940813";}if (bank==("zg")){var bank = "http://www.boc.cn/";var payName = "中国银行汇款";var addres ="中国银行四川省成都市华阳支行";var account = "6217853100011828951";}if (bank==("gs")){var bank = "http://www.icbc.com.cn/";var payName = "中国工商银行汇款";var addres ="中国工商银行四川省成都市华阳支行";var account = "6212264402019750029";}if (bank==("js")){var bank = "http://www.ccb.com/";var payName = "中国建设银行汇款";var addres ="中国建设银行四川省成都市华阳支行";var account = "6217003810021571388";}
+var pay2 = "银行汇款：";
+
+window.open(bank);
+window.location = "payOK.html?ok_n1="+encodeURI($("#b1").html())+"&ok_n2="+encodeURI($("#tota2").html())+"&ok_n3="+encodeURI($("#txtNum").val())+"&ok_n4="+encodeURI(payName)+"&ok_n5="+encodeURI(pay2)+"&ok_n6="+encodeURI(account)+"&ok_n7="+encodeURI($("#user").html())+"&ok_n8="+encodeURI(addres);
+}
+
+
+//邮局汇款
+function gotoC(){
+
+  var pay3 = "邮局汇款";
+  var pay4 = "支付方式：";
+window.location = "payOK.html?ok_n1="+encodeURI($("#b1").html())+"&ok_n2="+encodeURI($("#tota2").html())+"&ok_n3="+encodeURI($("#txtNum").val())+"&ok_n4="+encodeURI(pay3)+
+"&ok_n5="+encodeURI(pay4)+"&ok_n9="+encodeURI($("#person").html())+"&ok_n10="+encodeURI($("#addre").html())+"&ok_n11="+encodeURI($("#postcode").html());
+}
+
+//网店购买
+function gotoD(){
+  var pay5 = "支付方式：";
+  var pay6 = "网店购买";
+  var pay7 = "http://51kzc.taobao.com";
+
+  window.open(pay7);
+  window.location = "payOK.html?ok_n1="+encodeURI($("#b1").html())+"&ok_n2="+encodeURI($("#tota2").html())+"&ok_n3="+encodeURI($("#txtNum").val())+"&ok_n4="+encodeURI(pay6)+
+"&ok_n5="+encodeURI(pay5);
+}
+
+
+
+//数量加减按钮及计算金额
+$(function(){
+	var t = $("#txtNum");
+	$("#add").click(function(){		
+		t.val(parseInt(t.val())+1)
+		setTotal();	})
+		
+	$("#subtraction").click(function(){
+       if (parseInt(t.val()) == 1) {
+          return;
+          }                
+		t.val(parseInt(t.val())-1)
+		setTotal();	})		
+		
+	function setTotal(){
+		$("#total").html((parseInt(t.val())*$("#b2").html()).toFixed(2));//计算
+     	$("#tota2").html((parseInt(t.val())*$("#b2").html()).toFixed(2));//结算 
+	}
+	setTotal();	
+})
+
+    //联系客服
+    function qqlink() {
+        window.open('http://wpa.qq.com/msgrd?v=3&uin=2102526994&site=qq&menu=yes', '_blank');
+    }
+	
+</script>
+
+</head>
+
+<body>
+
+<div class="head_top">
+    <div class="head_top_con">
+      <h3><a href="#" onclick="javascript:window.external.AddFavorite('http://www.renshikaoshi.net','考试宝典：中国执业、职称考试辅导软件第一品牌')">收藏本站</a></h3>
+      <ul>
+        
+
+      </ul>
+    </div>
+  </div>
+
+<div class="head" style="  margin-top:10px;">
+  <h1><a href="http://www.renshikaoshi.net" target="_blank">
+                <img src="/download/skins/images/logo.jpg" height="78" width="288"></a>
+				<div style="margin-top:5px;"><img src="/download/skins/images/logo_bottmo.jpg" /></div></h1>
+  <h3><div class="h3_dinimg"><div style=" height:30px;"><img src="/download/skins/images/title.jpg"/></div>
+  </div>
+  </h3>
+  <ul>  
+   <div class="liucheng">   
+       <h1><img src="/download/skins/images/lc_1.jpg" /></h1>
+	   <h1><img src="/download/skins/images/lc_2.jpg" /></h1>
+	   <h1><img src="/download/skins/images/lc_3.jpg" /></h1>
+	   <h1><img src="/download/skins/images/lc_4.jpg" /></h1>
+	   
+	    <h4><a href="#" title="你可以通过网上银行、支付宝、银行汇款、邮局汇款等方式支付">汇款支付</a></h4>
+		<h4 style=" width:110px;padding-left:20px;"><a href="#" title="你可以通过网上银行、支付宝、银行汇款、邮局汇款等方式支付">获取注册码</a></h4>
+		<h4 style=" width:85px;padding-left:45px;"><a href="#" title="你可以通过网上银行、支付宝、银行汇款、邮局汇款等方式支付">注册软件</a></h4>
+		<h4 style=" width:70px;padding-left:60px;"><a href="#" title="你可以通过网上银行、支付宝、银行汇款、邮局汇款等方式支付">使用成功</a></h4>	  
+    </div><!--liucheng-->   
+  </ul>   
+</div><!--head-->
+
+
+
+
+
+<div id="cart">
+  <div class="cart-error_center" style="margin-bottom:20px;">  
+   <div class="commodity">
+     <h3 class="car_tit">商品清单</h3>
+	 <div class="commodity_list">
+	    <h3 style="width:468px;">商品</h3>
+	    <h3>价格（元）</h3>
+		<h3>数量</h3>
+		<h3 style="border-right:none;">小计（元）</h3>
+		
+		<ul>
+		  <li>
+		  <span class="product"><a href="#"><img src="" id="b4" width="60" height="60"/></a></span> 		  
+		  <div class="product_nr">
+		  
+	  
+		    <span class="product_wz" ><a href="#" id="b1"></a></span>
+			<span class="product_wz" style="margin-top:10px;"><font color="#999">软件形式：网站下载</font></span>						  
+		  </div>		  		  
+		  <div class="product_pr">		    
+			
+			 <span class="product_price"><font color="#FE0000" id="b2"></font></span>		  
+		  </div>
+		  
+		  <div class="product_num">		  
+		  <div class="shul">		  
+		  	    
+<input id="txtNum" type="text" value="1" style="width:50px;" onafterpaste="value=value.replace(/[^0-9]/g,'')" onkeyup="value=value.replace(/[^0-9]/g,'')"><span id="add" style="cursor:pointer;" onclick="addnum()"></span><span id="subtraction" style="cursor:pointer;" onclick="subtnum()"></span>
+  
+  </div><!--shul-->
+		  </div>		 
+		  
+
+		  <div class="product_co">		   
+			 <span class="product_count"><font color="#FE0000" id="total"></font></span>		  
+		  </div>		  
+		  </li>
+ 
+		</ul>
+	 </div><!--commodity_list-->
+	 
+	 <div class="price_all">
+	    <div class="price_all_wz" style=" margin-right:20px;">应付总额:<font id="tota2" style="color:#FE0000; font-size:16px; font-weight:bold;"></font></div>
+	 </div>	 
+   </div><!--commodity -->   
+    
+	<div class="pay_way">
+	<div class="pay_wz">
+	   <span class="pay_w1">选择支付方式</span><span class="pay_w2">请按照上方统计的应付总额的价格支付，金额到分，比如：98.53或58.68，方便我们核对汇款来源</span>
+	 </div><!--pay_wz-->
+	   
+	   <div class="pay_yh"><h5 id="zf" onclick="openShutManager(this,'box4')">支付平台<img src="/download/skins/images/pay_jt.jpg"></img></h5><div id="box4" style="display: block;"><div class="pay_box"><ul><li><span class="radio"><input type="radio" value="zf" checked="true" name="pay"></input></span><span class="pay_yhmc"><img width="130" height="38" src="/download/skins/images/pay_pic01.jpg"></img></span><label class="pay_nu"><span class="pay_acc"><strong>账号：</strong><span id="zhanghao">5360342@qq.com</span></span><span class="pay_acc"><strong>用户名：</strong><span id="yonghu">陈艾</span></span></label></li></ul></div><h4 class="car_tit2"><a onclick="gotoA()"><input id="btnSubim" class="pay_btn" type="button" value="确认付款"></input></a></h4></div></div><div class="pay_yh"><h5 id="wd" onclick="openShutManager(this,'box')">网店购买<img src="/download/skins/images/pay_jt.jpg"></img></h5><div id="box" class="pay_box" style="display: block;"><div class="car_tit2"><a onclick="gotoD()"><input id="btnSubim" class="go_1" type="button" value="点击进入网店购买>>"></input><font color="#666">进入网店购买后，请关闭此页面</font></a></div></div></div><div class="pay_yh"><h5 id="yh" onclick="openShutManager(this,'box2')">银行汇款<img src="/download/skins/images/pay_jt.jpg"></img></h5><div id="box2" style="display: block;"><p class="car_ddxq_box" style="padding-top:10px;"><span class="gray">1. 汇款交易完成后，请务必第一时间联系我们或在个人中心-订单管理页面点击"我已付款"按钮，我们收到确认信息后会立即为您注册；<br></br>2. 银行汇款时金额到分，比如： 98.53 或 58.68 ，这样方便核对汇款来源；</span></p><p class="car_ddxq_box" style="padding-top:10px;"><strong>我们支持以下银行汇款：</strong></p><div class="pay_yh_box"><div class="pay_yh_box_left"><input type="radio" value="yz" name="pay2"></input></div><div class="pay_yh_box_right"><p class="yh_box_tit"><span><img width="58" height="48" src="/download/skins/images/pay_pic26.jpg"></img></span><span>中国邮政储蓄</span></p><p class="yh_box_xx">开户行：中国邮政储蓄银行四川省双流县华阳镇西支行</p><p class="yh_box_xx">账  号：6210986510007554525</p><p class="yh_box_xx">户  名：<span id="user">王楠</span></p></div></div><div class="pay_yh_box"><div class="pay_yh_box_left"><input type="radio" value="ny" name="pay2"></input></div><div class="pay_yh_box_right"><p class="yh_box_tit"><span><img width="58" height="48" src="/download/skins/images/pay_pic23.jpg"></img></span><span>中国农业银行</span></p><p class="yh_box_xx">开户行：农业银行四川省双流县华阳镇正西街分理处</p><p class="yh_box_xx">账  号：6228480462832940813</p><p class="yh_box_xx">户  名：<span id="user">王楠</span></p></div></div><div class="pay_yh_box"><div class="pay_yh_box_left"><input type="radio" value="zg" name="pay2"></input></div><div class="pay_yh_box_right"><p class="yh_box_tit"><span><img width="58" height="48" src="/download/skins/images/pay_pic05.jpg"></img></span><span>中国银行</span></p><p class="yh_box_xx">开户行：中国银行四川省成都市华阳支行</p><p class="yh_box_xx">账  号：6217853100011828951</p><p class="yh_box_xx">户  名：<span id="user">王楠</span></p></div></div><div class="pay_yh_box"><div class="pay_yh_box_left"><input type="radio" value="gs" name="pay2"></input></div><div class="pay_yh_box_right"><p class="yh_box_tit"><span><img width="58" height="48" src="/download/skins/images/pay_pic21.jpg"></img></span><span>中国工商银行</span></p><p class="yh_box_xx">开户行：中国工商银行四川省成都市华阳支行</p><p class="yh_box_xx">账  号：6212264402019750029</p><p class="yh_box_xx">户  名：<span id="user">王楠</span></p></div></div><div class="pay_yh_box"><div class="pay_yh_box_left"><input type="radio" value="js" name="pay2"></input></div><div class="pay_yh_box_right"><p class="yh_box_tit"><span><img width="58" height="48" src="/download/skins/images/pay_pic22.jpg"></img></span><span>中国建设银行</span></p><p class="yh_box_xx">开户行：中国建设银行四川省成都市华阳支行</p><p class="yh_box_xx">账  号：6217003810021571388</p><p class="yh_box_xx">户  名：<span id="user">王楠</span></p></div></div></div><h4 class="car_tit2"><a href="http://51kzc.taobao.com" target="_blank"><input id="btnSubim" class="pay_btn" type="button" value="确认付款"></input></a></h4></div>
+	   
+	</div><!--pay_way-->		
+  </div><!--cart-error_center-->  
+</div><!--cart-->
+
+
+<div class="bottmo_jl"></div>
+<div class="bottom_nav">
+  <ul>
+    <li>
+     <span class="bottom_nav_ico"><img src="/download/skins/images/bottom_ico01.png" width="35" height="35" /></span> 
+     <span class="bottom_nav_tit">使用帮助</span> 
+     <span class="bottom_nav_list"><a href="help/help_xszn.html">新手指南</a><a href="help/help_cjwt.html">常见问题</a><a href="help/help.html">帮助中心</a><a href="help/help_xszn.html">联系客服</a></span> 
+    </li>
+    <li>
+     <span class="bottom_nav_ico"><img src="/download/skins/images/bottom_ico02.png" width="35" height="35" /></span> 
+     <span class="bottom_nav_tit">支付方式</span> 
+     <span class="bottom_nav_list"><a href="/download/help/help_zffs.html">淘宝购买</a><a href="/download/help/help_zffs.html">网店购买</a><a href="/download/help/help_zffs.html">银行汇款</a></span> 
+    </li>
+    <li style=" margin-top:10px;">
+      <img src="/download/skins/images/logo_bottom.png" />
+    </li>
+    <li>
+     <span class="bottom_nav_ico"><img src="/download/skins/images/bottom_ico03.png" width="35" height="35" /></span> 
+     <span class="bottom_nav_tit">售后服务</span> 
+     <span class="bottom_nav_list"><a href="help/help_shfw.html">100%正品保障</a><a href="help/help_shfw.html">售后服务政策</a><a href="help/help_shfw.html">售后服务流程</a></span> 
+    </li>
+    <li>
+     <span class="bottom_nav_ico"><img src="/download/skins/images/bottom_ico04.png" width="35" height="35" /></span> 
+     <span class="bottom_nav_tit">关于考试宝典</span> 
+     <span class="bottom_nav_list"><a href="help/help_shfw.html">品牌介绍</a></span> 
+    </li>
+  </ul>
+</div><!--bottom_nav-->
+
+
+<div class="friendship_link">
+      <ul>	  
+	  
+	  </ul>
+    </div>
+
+
+ <div class="footer"> <h4><div class="h4_lx"><h3>4000188625</h3></div></h4>
+  <p><br /><p>《考试宝典》系列正版下载中心 皖ICP备13019968号 <br />柳州英腾软件有限公司正版授权 授权编号：KSBD101226-1</p><p></p>
+</div><!--footer-->
+
+
+
+<!--联系客服 -->
+    <div id="qqkf">
+        <div class="online_01">        </div>
+        <div class="online_02">
+            <p class="qqjt" onclick="qqlink();"><img style="cursor: pointer;" src="/download/skins/images/online_pic01.jpg"></img></p><a target="_blank" href="http://amos.alicdn.com/getcid.aw?v=2&uid=lain_aky&site=cntaobao&s=1&groupid=0&charset=utf-8"><p class="wwjt"><img style="cursor: pointer;" src="/download/skins/images/online_pic02.jpg"></img></p></a><div class="lianxi"><span class="lianxi_wz">4000188625</span></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<meta name="baidu-site-verification" content="uhu52zagQh" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css?xg=010" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg=0112" />
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery.slideBox.js"></script>
+<script language="javascript" src="/statics/jsj/js/jq_scroll.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$('#dtA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#dtDIV > ul").eq($('#dtA a').index(this)).show().siblings().hide();
+	});
+	$('#dtAone a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#dtDIVone > div").eq($('#dtAone a').index(this)).show().siblings().hide();
+	});
+	 $("#teacheryiwen").Scroll({line:1,speed:500,timer:3000});
+});
+</script>
+<script type="text/javascript" src="http://www.51kaozc.com/themes/kaozc/js/timedjs.js"></script>
+<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("http://siteapp.baidu.com/webapp/www.renshikaoshi.net","http://www.renshikaoshi.net");</script>
+<script type="text/javascript">
+jQuery(function($){
+	$('#slidepic').slideBox({
+		duration : 0.3,//滚动持续时间，单位：秒
+		easing : 'linear',//swing,linear//滚动特效
+		delay : 5,//滚动延迟时间，单位：秒
+		hideClickBar : false,//不自动隐藏点选按键
+		clickBarRadius : 10
+	});
+});
+</script>
+<base target="_blank" />
+</head>
+
+<body onload="DigitalTime1()">
+
+{template "content","rsks_top_index"}
+
+
+
+
+<div class="cy-tyct">
+	
+    <div class="schoolsk">
+    <span class="lfsk">各地人事考试入口</span>
+    <span class="rgsk">
+     {pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/renshibaoming/{$v['pinyin']}.html" title="{replace_arr($v['name'],array('省','市'))}人事考试网" target="_blank">{replace_arr($v['name'],array('省','市'))}</a>
+{/loop}
+		<a href="sitemaps.html#rsbmrk" target="_blank">更多>></a>
+    </span>
+    <span class="map"></span>
+</div>
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="lf-1">
+        	<div class="jhyd">距离2015年全国职称英语考试还有：<b id="LiveClock1"></b> 天</div>
+
+        	{php $posid=302; //首页-热点推送1}
+        	{pc:content  action="position" posid="$posid" order="listorder DESC" num="1" start="0"}{loop $data $n $r}
+        	<h1> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h1>
+        	  {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="1" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a><br />{/loop}{/pc}</p>
+
+           
+        	{pc:content  action="position" posid="$posid" order="listorder DESC" num="1" start="5" }{loop $data $n $r}
+        	<h2> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h2>
+        	  {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="6" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a><br />{/loop}{/pc}</p>
+
+            
+        	{pc:content  action="position" posid="$posid" order="listorder DESC" num="1" start="10" }{loop $data $n $r}
+        	<h2> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h2>
+        	  {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="11" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a><br />{/loop}{/pc}</p>
+
+        </div>
+        
+        {php $posid=303; //首页-焦点图}
+        <div class="rg-1">
+        	<div class="slideBox" id="slidepic">
+                <ul class="items">
+                	{pc:content  action="position" posid="$posid" order="listorder DESC" num="5"}{loop $data $key $val}
+                    <li><a href="{$val['url']}" title="{$val['title']}" target="_blank"><img src="{thumb($val['thumb'],300,560)}" alt="{$val['title']}" title="{$val['title']}" height="300" width="540" /></a></li>
+                    {/loop} {/pc}
+                </ul>
+            </div>
+
+        	
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="lf-1">
+        	{php $posid=316; //首页-热点推送2}
+            {pc:content  action="position" posid="$posid" order="listorder  DESC" num="1" start="0" }
+
+            {loop $data $n $r}
+            <h2> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h2>
+              {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="1" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a><br />{/loop}{/pc}</p>
+
+           
+            {pc:content  action="position" posid="$posid" order="listorder DESC" num="1" start="5" }{loop $data $n $r}
+            <h2> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h2>
+              {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="6" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a><br />{/loop}{/pc}</p>
+
+           
+            {pc:content  action="position" posid="$posid" order="listorder DESC" num="1" start="10" }{loop $data $n $r}
+            <h2> <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'62','')}</a></h2>
+              {/loop}{/pc}
+            <p> {pc:content  action="position" posid="$posid" order="listorder DESC" num="2" start="11" }{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a><br />{/loop}{/pc}</p> 
+        </div>
+        
+        <div class="rg-1">
+        	<div class="kzc-ksdt kzc-mg1">
+            	<div class="dtcut" id="dtA"><a href="#" class="selected">报考公告</a><a href="#">准考证打印</a></div>
+                <div id="dtDIV">
+                	<ul class="newslist">
+                        {php $_where = "catid in (420,187,225,226,227,228,229,230,231, 232)"; //英语（420）  计算机（187） 致睿（225  226  227  228  229  230  231  232）}
+                         {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}
+                    	<li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_ksgg.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'60','')}</a></h2></div></li>{/loop}{/pc}
+
+                          {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="1" num="6" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a></li>
+                        {/loop}{/pc}
+                    </ul>
+                    <ul class="newslist" style="display:none;">
+                    	{php $_where = "catid in ('421','196')"; //准考证打印：英语（421）   计算机（196）}
+                         {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_zkzdy.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'60','')}</a></h2></div></li>{/loop}{/pc}
+
+                          {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="1" num="6" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a></li>
+                        {/loop}{/pc}
+                    </ul>
+                </div>
+            </div>
+            <div class="kzc-ksdt">
+            	<div class="dtcut" id="dtAone"><a href="http://www.renshikaoshi.net/jsj/ksdt/cjcx/" target="_blank" class="selected">成绩查询</a><a href="http://www.renshikaoshi.net/jsj/ksdt/zslq/" target="_blank">证书领取</a><a href="http://www.renshikaoshi.net/question/" target="_blank">问答中心</a></div>
+                <div id="dtDIVone">
+                	<div><ul class="newslist">
+                    	{php $_where = "catid in ('422','188')"; //成绩查询： 英语（422）        计算机（188）}
+                         {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_fscx.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></h2><p>{str_cut(trim($r['description']),'66')}</p></div></li>{/loop}{/pc}
+
+                          {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="1" num="6" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a></li>
+                        {/loop}{/pc}
+                    </ul></div>
+                	<div style="display:none"><ul class="newslist">
+                    	{php $_where = "catid in ('423','197')"; //证书领取：英语（423）        计算机（197）}
+                         {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_zslq.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'44','')}</a></h2><p>{str_cut(trim($r['description']),'66')}</p></div></li>{/loop}{/pc}
+
+                          {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="1" num="6" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'200','')}</a></li>
+                        {/loop}{/pc}
+                    </ul></div>
+                    <div id="teacheryiwen" class="quesdv" style="display:none;">
+                        <ul>
+                            {pc:get sql="SELECT aq.qid,aq.question,aq.url,aq.ip,aq.catid,aa.* from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid WHERE aq.status != 1 AND aq.aid>0 and aq.siteid=$siteid ORDER BY aa.qid desc" cache="1800"  dbsource="" return="data" num="4"}
+                            {loop $data $key $val}
+                            <li><p><a href="{$val['url']}" title="{$val['question']}" target="_blank">{str_cut($val['question'],'75')}</a></p><p>{str_cut(strip_tags($val['content']),'180')}</p></li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="kzc-newsone kzc-btlind" id="banner01">加载中...</div>
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="kzc-dtl"><span>医药卫生职称考试</span><div class="moredv"><a href="{$CATEGORYS['225']['url']}" target="_blank">护士考试</a> / <a href="{$CATEGORYS['226']['url']}" target="_blank">执业医师</a> / <a href="{$CATEGORYS['227']['url']}" target="_blank">医学高级</a> / <a href="{$CATEGORYS['228']['url']}" target="_blank">执业药师</a> / <a href="{$CATEGORYS['229']['url']}" target="_blank">主治医师</a> / <a href="{$CATEGORYS['230']['url']}" target="_blank">主管技师</a> / <a href="{$CATEGORYS['231']['url']}" target="_blank">药师资格</a></div></div>
+        
+        <div class="xg_ct2">
+        	<div class="ct2_cut"><span>考试指南</span></div>
+            <ul class="kszn_l">
+            	<li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/yxgjks/" class="a1">医学高级</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/yxgjks/m0_t71_1.html" class="a1">2014医学高级职称考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxgjks/m0_t111_1.html">医学高级职称考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxgjks/m0_t97_1.html">医学高级职称考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxgjks/m0_t100_1.html" class="a1">医学高级职称考试真题</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/" class="a1">执业药师</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/m0_t71_1.html" class="a1">2014执业药师考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/m0_t111_1.html">执业药师考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/m0_t97_1.html">执业药师考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/m0_t100_1.html" class="a1">执业药师考试题库</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/zzys/">主治医师</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/zzys/m0_t71_1.html" class="a1">2014主治医师考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/zzys/m0_t111_1.html">主治医师考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/zzys/m0_t97_1.html">主治医师考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/zzys/m0_t100_1.html" class="a1">主治医师考试真题</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/">执业医师</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/m0_t71_1.html" class="a1">2014执业医师考试报名 </a><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/m0_t111_1.html">执业医师考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/m0_t97_1.html">执业医师考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/m0_t100_1.html">执业医师分数线</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyys/m0_t100_1.html" class="a1">执业医师考试真题</a></li>
+                <li><strong><a href="/zyzg/yy/yjks/">医技考试</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/zgjs/m0_t71_1.html" class="a1">2014技师考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/zgjs/m0_t111_1.html">技师考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/zgjs/m0_t97_1.html">技师考试成绩查询</a><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yijikaoshi/" class="a1">技师考试题库</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/hszyzgks/">护士考试</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/hszyzgks/m0_t71_1.html" class="a1">2014护士资格证考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/hszyzgks/m0_t111_1.html">护士资格证考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/hszyzgks/m0_t97_1.html">护士资格证考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/hszyzgks/m0_t100_1.html" class="a1">护士资格证考试真题</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/yszg/">药师资格</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/yszg/m0_t71_1.html" class="a1">2014药师资格证考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/yszg/m0_t111_1.html">药师资格证报名时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/yszg/m0_t97_1.html">药师资格证查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/yszg/m0_t100_1.html">药师资格证考试科目</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyyaos/">住院医师</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/zyuanys/m0_t71_1.html" class="a1">2014住院医师规范化考试考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyuanys/m0_t97_1.html">住院医师规范化考试查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/zyuanys/m0_t100_1.html">住院医师规范化考试题库</a></li>
+                <li><strong><a href="http://www.renshikaoshi.net/zyzg/yy/yxsj/">医学三基</a></strong><a href="http://www.renshikaoshi.net/zyzg/yy/yxsj/m0_t71_1.html" class="a1">2014医学三基考试报名</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxsj/m0_t111_1.html">医学三基考试时间</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxsj/m0_t97_1.html">医学三基考试成绩查询</a><a href="http://www.renshikaoshi.net/zyzg/yy/yxsj/m0_t100_1.html">医学三基题库</a></li>
+            </ul>
+        </div>
+        
+        <div class="xg_ct3">
+        	<div class="ct2_cut"><span>考试题库下载</span></div>
+            <ul class="xxdowload">
+            	<li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/gaojizhichen/" class="a1">医学卫生高级职称考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/gaojizhichen/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhiyeyaoshi/" class="a1">执业药师考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhiyeyaoshi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhuzhiyishi/">主治医师考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhuzhiyishi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhiyeyishi/">执业医师考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhiyeyishi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yijikaoshi/">医技考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yijikaoshi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/hulikaoshi/">护理考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/hulikaoshi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yaoxuezhicheng/">药学职称考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yaoxuezhicheng/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhuyuanyishi/">住院医师考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/zhuyuanyishi/">[下载]</a></span></li>
+                <li><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yixuesanji/">医学三基考试宝典</a><span><a href="http://www.renshikaoshi.net/download/yiyaokaoshi/yixuesanji/">[下载]</a></span></li>
+            </ul>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+    
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="kzc-dtl"><span>职称考试攻略</span><div class="moredv"><a href="http://www.renshikaoshi.net/jsj/jqxd/">职称计算机</a>/<a href="http://www.renshikaoshi.net/english/">职称英语</a>/<a href="http://www.renshikaoshi.net/zyzg/yy/">医药卫生</a></div></div>
+        <div class="kzc-xszdty kzc-mg2">
+        	<div class="flcut kzc-newsone"><span>医药卫生</span></div>
+            <ul class="newslist ftsmall">
+            	{php $catid=217; // 医药卫生}
+                         {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_yyws.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+
+                         {pc:content  action="lists" catid="$catid" order="id DESC" num="6" start="1" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a></li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="kzc-xszdty kzc-mg2">
+        	<div class="flcut kzc-newsone"><span>职称计算机</span></div>
+            <ul class="newslist ftsmall">
+            	{php $catid=16 // 考试动态}
+                         {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_zcjsj.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+                
+                         {pc:content  action="lists" catid="$catid" order="id DESC" num="6" start="1" }{loop $data $n $r}
+                        <li><a href="{$r[url]}" title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'100','')}</a> </li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="kzc-xszdty">
+        	<div class="flcut kzc-newsone"><span>职称英语</span></div>
+            <ul class="newslist ftsmall">
+                {php $_where = "catid in (154,155,280)"; //考试指南：英语（154 155 280） 计算机（184）  致睿（871）}
+            	{pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_zcyy.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+
+                        {pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="1" num="6" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a></li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="kzc-newsone kzc-btlind" id="banner02">加载中...</div>
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="kzc-dtl"><span>职称考试辅导</span><div class="moredv"><a href="http://www.renshikaoshi.net/jsj/ksdt/bktz/">职称计算机报名</a> / <a href="http://www.renshikaoshi.net/En/ksdt/bktz/">职称英语报名</a> / <a href="http://www.renshikaoshi.net/zyzg/">医药卫生报名</a></div></div>
+        <div class="kzc-xszdty kzc-mg2">
+        	<div class="flcut kzc-newsone"><span>建筑工程</span><div></div></div>
+            <ul class="newslist ftsmall">
+            {php $_where = "catid=218";  //建筑工程}
+            {pc:content  action="lists" catid="218" order="id DESC" num="1" start='0' cache="0"}{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_jzgc.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+
+                         {pc:content  action="lists" catid="218" order="id DESC" num="6" start="1" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a></li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="kzc-xszdty kzc-mg2">
+        	<div class="flcut kzc-newsone"><span>财会经济</span><div></div></div>
+            <ul class="newslist ftsmall">
+               {pc:content  action="lists" catid="18" order="id DESC" num="1" start='0' cache="0"}{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_ckjj.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+
+                         {pc:content  action="lists" catid="18" order="id DESC" num="6" start="1" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a></li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="kzc-xszdty">
+        	<div class="flcut kzc-newsone"><span>职业资格</span><div></div></div>
+            <ul class="newslist ftsmall">
+               {pc:content  action="lists" catid="11" order="id DESC" num="1" start='0' cache="0"}{loop $data $n $r}
+                        <li class="lione"><a href="{$r[url]}"><img src="/statics/renshikaoshi/images/zy_zyzg.jpg" /></a><div class="pccontent"><h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'80','')}</a></h2></div></li>{/loop}{/pc}
+
+                         {pc:content  action="lists" catid="11" order="id DESC" num="6" start="1" }{loop $data $n $r}
+                        <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'100','')}</a></li>
+                        {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+	<div class="kzc-newsone kzc-btlind" id="banner03">加载中...</div>
+    
+    <div class="kzc-newsone kzc-btlind">
+    	<div class="kzc-dtl"><span>友情链接</span></div>
+        <div class="rsbmrk">{pc:link  action="type_list" typeid="0" siteid="$siteid" order="listorder DESC" num="48"   linktype="0" return="dat"}
+		{loop $dat $v}
+              <a href="{$v[url]}" target="_blank">{$v[name]}</a>
+		{/loop}
+	{/pc}</div>
+    </div>
+</div>
+<div class="ftadd_link">
+    <p align="center"><a href="http://www.renshikaoshi.net/jsjbm/" title="职称计算机考试报名时间" target="_blank">职称计算机考试报名时间</a> - <a href="http://www.renshikaoshi.net/jsjbm/shandong.html" title="山东职称计算机考试报名时间" target="_blank">山东职称计算机考试报名时间</a> - <a href="http://www.renshikaoshi.net/jsjbm/sichuan.html" title="四川职称计算机考试报名时间" target="_blank">四川职称计算机考试报名时间</a> - <a href="http://www.renshikaoshi.net/jsjbm/guangdong.html" title="广东职称计算机考试报名时间" target="_blank">广东职称计算机考试报名时间</a> - <a href="http://www.renshikaoshi.net/jsjbm/hebei.html" title="河北职称计算机考试报名时间" target="_blank">河北职称计算机考试报名时间</a> - <a href="http://www.renshikaoshi.net/jsjbm/yunnan.html" title="云南职称计算机考试报名时间" target="_blank">云南职称计算机考试报名时间</a></p>
+    </div>
+
+{template "content","rsks_bottom"}
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+    <!-- 广告位：首页-banner01 -->
+    BAIDU_CLB_fillSlotAsync('869421','banner01');
+    <!-- 广告位：首页-banner02 -->
+    BAIDU_CLB_fillSlotAsync('869426','banner02');
+    <!-- 广告位：首页-banner03 -->
+    BAIDU_CLB_fillSlotAsync('869431','banner03');
+</script>
+</body>
+</html>

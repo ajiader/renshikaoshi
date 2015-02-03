@@ -1,0 +1,52 @@
+  {template "zrmokuai","header"}
+
+        {if $infos}
+        <!--<div class="stable"><span class="sp1">考试模块名称</span><span class="sp2">上市时间</span><span class="sp2">升级时间</span><span class="sp3">模块零售价</span><span class="sp2">模块下载</span> {if $_GET['pc']!=1}<span class="sp2">模块详情</span><span class="sp2">客服咨询</span><span class="sp2">考试动态</span>{/if}</div>-->
+        <table cellpadding="0" cellspacing="0" class="zg_table">
+        	<tr>
+            	<td width="280">考试模块名称</td>
+                <td width="93">上市时间</td>
+                <td width="93">升级时间</td>
+                <td width="120">模块零售价</td>
+              {if $_GET['pc']==1}  <td width="91">在线购买</td>{else}<td width="91">模块下载</td>{/if} 
+                 {if $_GET['pc']!=1}<td width="85">模块详情</td>
+                <td>客服咨询</td>
+                <td>考试动态</td>{/if}
+            </tr>
+        
+        {loop $infos $r}
+        	<tr>
+            	<td width="280" class="pd1">{str_replace($q,'<font color="red">'.$q.'</font>',$r['name'])}</td>
+                <td width="93" {if $r['status']==0}style="color:#CCC"{/if}>{date('Y-m-d',strtotime($r['updatetime']) )}</td>
+                <td width="93">{if strtotime($r['nextsj_time'])>0}{date('Y-m-d',strtotime($r['nextsj_time']) )}{else}待公布{/if}</td>
+                <td width="120">￥{number_format($r['price'],2)}</td>
+              {if $_GET['pc']==1}
+               <td width="91" class="cl2"><a href="http://www.egbroad.com/goods.php?id=754" target="_blank">立即购买</a></td>
+                {else} <td width="91" class="cl2">{if $r['status']==1}<a href="{$r['down_url']}" target="_blank">下载or升级</a>{else}<font color="#CCCCCC">下载or升级</font>{/if}</td> {/if}
+                {if $_GET['pc']!=1}  <td width="85" class="cl1"><a href="{siteurl($siteid)}/zrmokuai/{$r['id']}.html"  target="_blank">查看详情</a></td>
+               <td class="cl2"><a href="{if  $_GET['iframe']!=1}http://www3.53kf.com/webCompany.php?arg=cdbroadcom&style=1&language=zh-cn&lytype=0&charset=gbk&kflist=on&kf=sl864,lq834,ycy875,lilinglin,tanggl,zhoucl,qinwen,yushunlai,litingting,zhangjing,fanxuemei,zhouq835,lijanq,hr869,zhangyu,yangjiao,linj,lijiao867,xiangrj&zdkf_type=1&referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&keyword=http%3A//www.kaozc.com/&tfrom=1&tpl=crystal_blue&timeStamp=1357266825875{else}http://www3.53kf.com/webCompany.php?arg=cdbroadcom&style=2&language=cn&lytype=0&charset=gbk&kflist=on&kf=wj,lijanq,zhangjing,zhoucl,hr869,yangjiao,lyr,hy,fanw,luoq,lijiao867,tanggl&zdkf_type=1&referer=http%3A%2F%2Fwww.egbroad.com%2Fkfb%2Fzyzg%2F&keyword=&tfrom=1&tpl=crystal_blue&timeStamp=1374460137212{/if}" target="_blank">客服咨询</a></td>
+                <td>{if $r['more_url']}<a href="{$r['more_url']}" target="_blank">更多>></a>{/if}</td>{/if}
+            </tr>
+          {/loop}
+        </table>
+        <div id="pages" >{str_replace("-0.html","-1.html",$pages)}  </div>
+	</div>
+    {else}
+    <div align="center">很遗憾暂时没有找到 <font color="red">{$q}</font>  相关模块，您可以试一试其它相关的关键词来查询！</div>
+    {/if}
+    {if  $_GET['iframe']!=1}
+    {template "content","footer"}
+     <!--异步加载开始-->
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+ <script type="text/javascript">
+ <!--图文-->
+   // BAIDU_CLB_fillSlotAsync('728639','728639');
+ -->
+</script>
+<!-- 广告位：致睿-查询-浮窗 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("749415");</script>
+<!--异步加载结束 --> 
+    {/if}
+</div>
+</body>
+</html>

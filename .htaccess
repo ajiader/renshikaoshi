@@ -1,0 +1,131 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^statics/(.*) statics/$1 [L]
+
+
+
+
+
+RewriteRule ^list-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=lists&catid=$1&page=$2 [L]
+#RewriteRule ^/gwy/ goshouye.php?m=content&c=index&a=lists&catid=6 [L]
+#RewriteRule ^(.*)/273.html  old/$1/273.html [L]
+
+
+#kaozc专家页面
+RewriteRule ^(jsj|En|zyzg)/zhuanjia/t_([0-9]+)_([0-9]+).html goshouye.php?m=content&c=index&a=zhuanjia_list&tid=$2&page=$3&catdir=$1 [L]
+RewriteRule ^(jsj|En|zyzg)/zhuanjia/ goshouye.php?m=content&c=index&a=zhuanjia&catdir=$1 [L]
+
+#考试时间查询
+RewriteRule ^(jsj|En|zyzg)/kaoshichaxun/ goshouye.php?m=content&c=index&a=kaoshichaxun&catdir=$1 [L]
+RewriteRule ^kaoshichaxun/ goshouye.php?m=content&c=index&a=kaoshichaxun [L]
+
+
+
+
+#地方站 31省市
+        RewriteRule ^(En|jsj)/(beijing|shanghai|tianjin|chongqing|hebei|shanxi|neimenggu|liaoning|jilin|heilongjiang|jiangsu|zhejiang|anhui|fujian|jiangxi|shandong|henan|hubei|hunan|guangdong|guangxi|hainan|sichuan|guizhou|yunnan|xizang|shanxis|gansu|qinghai|ningxia|xinjiang)(.*)/$ goshouye.php?m=content&c=city&pinyin=$2$3&catdir=$1 [L]
+
+#栏目列表页面
+
+#栏目伪静态
+#大类列表分页规则
+	
+RewriteRule ^(rmzt|pxb)/([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1&page=$2 [L]
+
+RewriteRule ^(jsj)/([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1&page=$2 [L]
+
+
+
+
+#地方新闻列表
+
+RewriteRule ^(gjgwy|dfgwy|sydw|zjks|zfgj|cg|xds|jszp|szyf|yhxys|zwjs|xcfd|slfd|msfd|lnzt|bkzn|xczl|slzl|mszl|gxg|jzg)(.*)/(.*)/(.*)_([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&page=$5&pinyin=$4 [L]
+
+RewriteRule ^(gjgwy|dfgwy|sydw|zjks|zfgj|cg|xds|jszp|szyf|yhxys|zwjs|xcfd|slfd|msfd|lnzt|bkzn|xczl|slzl|mszl|gxg|jzg)(.*)/(.*)/([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&page=$4 [L]
+RewriteRule ^(rmzt|gjgwy|dfgwy|sydw|zjks|zfgj|cg|xds|jszp|szyf|yhxys|zwjs|xcfd|slfd|msfd|lnzt|bkzn|xczl|slzl|mszl|msjz|gxg|jzg|mqzt)(.*)/(.*)/ goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3 [L]
+
+RewriteRule ^(rmzt|gjgwy|dfgwy|sydw|zjks|zfgj|cg|xds|jszp|szyf|yhxys|zwjs|xcfd|slfd|msfd|lnzt|bkzn|xczl|slzl|mszl|msjz|gxg|jzg|pxb)/ goshouye.php?m=content&c=index&a=lists&categorydir=$1 [L]
+
+RewriteRule ^(En|jsj|zyzg)(.*)/(.*)/m([0-9]+)_t([0-9]+)_([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mid=$4&typeid=$5&page=$6 [L]
+RewriteRule ^(En|jsj|zyzg)(.*)/(.*)/mk([0-9]+)/ goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&mid=$4 [L]
+RewriteRule ^(En|jsj|zyzg)(.*)/(.*)/(.*)_([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&pinyin=$4&page=$5 [L]
+RewriteRule ^(En|jsj|zyzg)(.*)/(.*)/([0-9]+).html goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&page=$4 [L]
+RewriteRule ^(En|jsj|zyzg)(.*)/(.*)/$ goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3 [L]
+RewriteRule ^(En|jsj|zyzg)/$ goshouye.php?m=content&c=index&a=lists&categorydir=$1 [L]
+
+
+
+
+RewriteRule ^list-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=lists&catid=$1&page=$2 [L]
+RewriteRule ^tag-([^\.]*)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=tag&catid=$2&tag=$1&page=$3 [L]
+RewriteRule ^comment-([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=comment&c=index&a=init&commentid=content_$1-$2-$3 [L]
+
+
+RewriteRule ^specials/gwy/ goshouye.php?m=special&c=index&a=type&specialid=1&typeid=53 [L]
+
+RewriteRule ^show-([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 [L]
+RewriteRule ^kaoshi-([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 [L]
+RewriteRule ^content-([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 [L]
+
+RewriteCond  %{QUERY_STRING}  page=(.*)
+RewriteRule ^specials/(.*) goshouye.php?m=special&c=index&specialid=1&page=$1 [QSA]
+
+RewriteRule ^specials/ goshouye.php?m=special&c=index&specialid=1 [L]
+
+RewriteRule ^computer/beijing/ goshouye.php?m=content&c=city&pinyin=beijing [L]
+RewriteRule ^(sichuan)(.*)/citylist-(.*)-(.*)-([0-9]+).html /goshouye.php?m=content&c=city&a=lists&pinyin=$1$2&catids=$3&nameid=$4&page=$5 [L]
+RewriteRule ^(sichuan|heilongjiang)(.*)/ goshouye.php?m=content&c=city&pinyin=$1$2 [L]
+
+#人事布局页面
+RewriteRule ^jsj/soft.html goshouye.php?m=content&c=index&a=jsj_soft [L]
+RewriteRule ^(En|jsj|zyzg)/morecity_([0-9]+).html goshouye.php?m=content&c=renshi&a=morecity&caturl=$1&cityid=$2 [L]
+RewriteRule ^(zyzg|jsj)/([0-9]+)/(.*).html goshouye.php?m=content&c=renshi&caturl=$1&mid=$2&cityurl=$3 [L]
+RewriteRule ^(En|jsj)/(.*).html goshouye.php?m=content&c=renshi&caturl=$1&cityurl=$2 [L]
+
+#内容页
+RewriteRule ^(english|jsj|zyzg)/([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=show&catid=$2&id=$3&page=$4 [L]
+RewriteRule ^kaoshi-([0-9]+)-([0-9]+)-([0-9]+).html goshouye.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3 [L]
+
+
+#tags关键词
+RewriteRule ^tags-(.*)_([0-9]+)_([0-9]+).html goshouye.php?m=content&c=tag&catid=$2&tag=$1&page=$3  [L]
+
+#问答
+RewriteRule ^question/nqlist_([0-9]+).html goshouye.php?m=zsask&a=qlist&page=$1&s=1 [L]
+RewriteRule ^question/nqlist_([0-9]+)_([0-9]+).html goshouye.php?m=zsask&a=qlist&cid=$1&page=$2&s=1 [L]
+
+RewriteRule ^question/qlist_([0-9]+).html goshouye.php?m=zsask&a=qlist&page=$1 [L]
+RewriteRule ^question/qlist_([0-9]+)_([0-9]+).html goshouye.php?m=zsask&a=qlist&cid=$1&page=$2 [L]
+RewriteRule ^question/([0-9]+).html goshouye.php?m=zsask&a=answer&qid=$1 [L]
+RewriteRule ^question/ask.html goshouye.php?m=zsask&a=question [L]
+RewriteRule ^question/s/ goshouye.php?m=zsask&$query_string [L]
+RewriteRule ^question/ goshouye.php?m=zsask [L]
+
+#人事报名
+RewriteRule ^(renshibm|chengjicx|zhengshulq|zhunkaoz)/top.html goshouye.php?m=renshibaoming&a=top [L]
+RewriteRule ^(renshibm|chengjicx|zhengshulq|zhunkaoz)/([0-9]+).html goshouye.php?m=renshibaoming&a=show&typedir=$1&id=$2 [L]
+RewriteRule ^(renshibm|chengjicx|zhengshulq|zhunkaoz|renshibaoming)/(.*)_([0-9]+).html goshouye.php?m=renshibaoming&a=show&typedir=$1&filename=$2&page=$3 [L]
+RewriteRule ^(renshibm|chengjicx|zhengshulq|zhunkaoz|renshibaoming)/(.*).html goshouye.php?m=renshibaoming&a=show&typedir=$1&filename=$2 [L]
+RewriteRule ^(renshibm|chengjicx|zhengshulq|zhunkaoz)/ goshouye.php?m=renshibaoming&a=init&typedir=$1 [L]
+
+RewriteRule ^zrmokuai/type_([0-9]+).html goshouye.php?m=zrmokuai&a=typelist&typeid=$1  [L]
+RewriteRule ^zrmokuai/([0-9]+).html goshouye.php?m=zrmokuai&a=show&id=$1  [L]
+
+#专家页面
+RewriteRule ^zhuanjia/list.html goshouye.php?m=content&c=index&a=zhuanjia_list [L]
+RewriteRule ^zhuanjia/list_([0-9]+)_([0-9]+).html goshouye.php?m=content&c=index&a=zhuanjia&id=$1&page=$2 [L]
+RewriteRule ^zhuanjia/ goshouye.php?m=content&c=index&a=zhuanjia [L]
+
+
+
+#自定义seo推广页面
+RewriteRule ^r/(.*)/ goshouye.php?m=diypage&c=index&a=init&dirname=$1 [L]
+RewriteRule ^$  goshouye.php [L]
+
+#公务员公共产品页面调用
+RewriteRule ^commonproduct.html goshouye.php?m=content&c=index&a=commonProduct [L]
+
+#ajax页面调用
+RewriteRule ^ajax_(.*).html goshouye.php?m=ajax&a=$1 [L]
+</IfModule>

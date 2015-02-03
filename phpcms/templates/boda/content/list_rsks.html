@@ -1,0 +1,90 @@
+<?php if ($catid == '820') { $catid='9';}
+ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg=0105" />
+</head>
+
+<body>
+<style>
+.red{color:#F00}
+</style>
+{template "content","rsks_top"}
+
+{php $ad_ids = explode('|',$CATEGORYS[$catid][ad_ids])}
+
+<div class="cy-tyct kzx-dysx">
+<div id="{$ad_ids[0]}"> </div>
+    <div class="kzc-listym kzc-newsone">
+    	<div class="kzc-posi">当前位置：<a href="http://www.renshikaoshi.net">首页</a><span> &gt; </span>  <a href="{$CATEGORYS[$catid][url]}">{$CATEGORYS[$catid][catname]}</a>  &gt; <a href="{$CATEGORYS[$catid][url]}mk{$mpinyin}/">{get_mokuainame($mid)}</a>  </div>
+    	<div class="listymlf">
+        	<div class="listcut">{if $catid != '9'}<span style="float:right; font-weight:normal; padding-right:10px; font-size:12px;"><a href="{$CATEGORYS[$catid][url]}list.html?typeid=71"  {if $typeid==71}class="red"{/if}>考试报名</a> | <a href="{$CATEGORYS[$catid][url]}list.html?typeid=72" {if $typeid==72}class="red"{/if}>考试指南</a> | <a href="{$CATEGORYS[$catid][url]}list.html?typeid=96" {if $typeid==96}class="red"{/if}>准考证打印</a> | <a href="{$CATEGORYS[$catid][url]}list.html?typeid=97" {if $typeid==97}class="red"{/if}>成绩查询</a> </span> {/if} {$CATEGORYS[$catid][catname]}{if $typeid>0}{get_typename($typeid)}{/if} </div>
+            
+            <?php
+                $cat_inarr=array(9,427,428,147,148,149,150,151,152,159,160,161,163,164,165,167,168,169);
+                if(!in_array($catid,$cat_inarr)):
+                ?>
+                
+            <div class="othertydaohao">
+                <span class="otherdhbg">地区导航</span>
+                <a href="{$CATEGORYS[$catid][url]}" {if !$pinyin} class="selected"{/if}>全部</a>{pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND keyid=1 AND linkageid NOT IN (33,34,35,3358,3360)" cache="0"  dbsource="" return="data" num=32}
+              {loop $data $v}
+<a href="{$CATEGORYS[$catid]['url']}{$v['pinyin']}_1.html" {if $pinyin==$v['pinyin']} class="selected"{/if}>{replace_arr($v['name'],array('省','市'))}</a> {/loop}{/pc}
+            </div>
+             <?php
+                endif;
+                ?>
+            
+            <h3 class="bjtj" style="display:none;"><span>编辑推荐</span><a href="#">司法部：未举办任何形式的考前培训班</a></h3>
+            {if $pinyin}
+                    {php $where = "islink=0 and status=99 and (city_id in ($cityList[arrchildid]) or title like '%$cityname%')"}
+                      {pc:content action="lists" catid="$catid" num="40" order="id DESC"  page="$page" where="$where" }
+                    {else}
+                 {pc:content action="lists" catid="$catid" num="40" order="id DESC" page="$page"}
+                  {/if}
+           <ul class="newslist ftsmall listmore">
+              {loop $data $r}
+              <li><a href="{$r[url]}" target="_blank"{title_style($r[style])}>{str_cut($r[title],180,'...')}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+              {if $n%5==0}</ul>  <ul class="newslist ftsmall listmore">{/if}
+                     {/loop}
+                    </ul>
+                    <div class="detailfy">{$pages}</div>
+            {/pc}
+            <div class="zr_kszl">
+            	<span>考试专栏：</span>
+                <div class="kszlA">
+                	{pc:get sql="SELECT * from phpcms_diypage WHERE catid=$catid and level=1 order by id desc" cache="0" num="30" return="data"}
+                    {loop $data $key $val}
+                    <a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a>
+                    {/loop}{/pc}
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+        {template "content","right_rsks"}
+        <div class="clear"></div>
+    </div>
+</div>
+
+{template "content","rsks_bottom"}
+
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+{loop $ad_ids $k $v}
+{if $k>0}
+    BAIDU_CLB_fillSlotAsync('{$k}', '{$k}');
+	{/if}
+	{/loop}
+</script>
+<!--异步加载结束 -->
+
+</body>
+</html>

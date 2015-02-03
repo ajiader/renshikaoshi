@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="/statics/renshikaoshi/js/dvqh.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$('#ckksA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#ckksDIV > ul").eq($('#ckksA a').index(this)).show().siblings().hide();
+	});
+	$('#jzgcA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#jzgcDIV > ul").eq($('#jzgcA a').index(this)).show().siblings().hide();
+	});
+	$('#yywsA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#yywsDIV > ul").eq($('#yywsA a').index(this)).show().siblings().hide();
+	});
+	$('#sfksA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#sfksDIV > ul").eq($('#sfksA a').index(this)).show().siblings().hide();
+	});
+	$('#wmksA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#wmksDIV > ul").eq($('#wmksA a').index(this)).show().siblings().hide();
+	});
+	$('#qtksA a').mouseover(function(){
+		$(this).addClass("selected").siblings().removeClass();
+		$("#qtksDIV > ul").eq($('#qtksA a').index(this)).show().siblings().hide();
+	});
+});
+</script>
+</head>
+
+<body>
+{template "content","rsks_top"}
+
+<div class="cy-tyct">
+	<div class="kzc-jsj-top">
+    	<div class="kzc-jsj-lfpic">
+            <div class="slider-wrapper theme-default">
+                <div class="ribbon"></div>
+                <div id="sliderjsj" class="nivoSlider">
+                     {pc:content  action="position" posid="109" order="listorder DESC" num="5"} {loop $data $key $val}
+                        <a href="{$val['url']}"><img src="{thumb($val['thumb'],308,272)}" title="{$val['title']}" /></a>
+                         {/loop}{/pc}      
+                </div>
+            </div>
+        	<script type="text/javascript" src="/statics/renshikaoshi/js/jquery.nivo.slider.pack.js"></script>
+			<script type="text/javascript">
+            $(window).load(function() {
+                $('#sliderjsj').nivoSlider();
+            });
+            </script>
+        </div>
+        
+        <div class="kzc-jsj-ctnew">
+        	{pc:content action="lists" catid="255" order="id DESC" num="1" start="0"}{loop $data $n $r}
+        	<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'45','')}</a></h2>
+            <p class="hotcontent">{str_cut($r['description'],152)} <a href="{$r[url]}" target="_blank">详细>></a></p>
+            {/loop}{/pc}
+            <p class="hotlist">{pc:content action="lists" catid="255" order="id DESC" num="2" start="3"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+            <p class="hotlist">{pc:content action="lists" catid="255" order="id DESC" num="2" start="5"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+            
+            {pc:content action="lists" catid="255" order="id DESC" num="1" start="7"}{loop $data $n $r}
+        	<h2><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'45','')}</a></h2>
+            <p class="hotcontent">{str_cut($r['description'],120)} <a href="{$r[url]}" target="_blank">详细>></a></p>
+            {/loop}{/pc}
+            <p class="hotlist">{pc:content action="lists" catid="255" order="id DESC" num="2" start="8"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+            <p class="hotlist">{pc:content action="lists" catid="255" order="id DESC" num="2" start="10"}{loop $data $n $r}<a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'36','')}</a>{/loop}{/pc}</p>
+        </div>
+        
+        <div class="kzc-jsj-rgtj kzc-jsj-rgzr">
+        	<div class="rgcut zrcut">精彩推荐<span>Recommend</span></div>
+            {pc:content  action="position" posid="292" order="listorder DESC" num="1"}
+            {loop $data $r}
+            <div class="rgtjpic"><a href="{$r['url']}"  title="{$r['title']}"><img src="{thumb($r['thumb'],260,110)}" width="260"  height="110"/></a><p><a href="{$r['url']}" title="{$r['title']}" target="_blank">{str_cut($r['title'],46)}</a></p></div>
+            {/loop}{/pc} 
+            <ul class="newslist ftsmall">
+            	{pc:content  action="position" posid="292" order="listorder DESC" num="5" start="1"}
+                    {loop $data $r}
+                        <li><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 46, '')}</a></li>
+                    {/loop}
+                {/pc}
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="kzc-jsjtwo">
+    	<div class="kzc-zrlft">
+        	<div class="onecut twocut">报考指南<a href="{$CATEGORYS[252][url]}" class="more zrmore">more</a></div>
+            <ul class="daitime">
+            	{pc:content  action="position" posid="252" order="listorder DESC" num="9" start="1"}{loop $data $n $r}
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
+            </ul>
+        </div>
+        
+        <div class="jsjzixun">
+        	<div class="zxcut zrcut">最近更新</div>
+            <ul class="daitime">
+            	{pc:content action="lists" catid="867" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+            </ul>
+        </div>
+        
+        <div class="kzc-onerg">
+            <div class="onecut twocut">试题排行<a href="{$CATEGORYS[867][url]}" class="more zrmore">more</a></div>
+            <ul class="daitime">
+            	{pc:content  action="hits" catid="867" order="weekviews DESC" num="9"}{loop $data $n $r}
+            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'50','')}</a></li>{/loop}{/pc} 
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="kzc-newsone" id="PAGE_AD_1">加载中...</div>
+    
+    <div class="rs-zrcontent">
+    	<div class="zrtydv">
+        	<div class="tycut">财会考试<span id="ckksA"><a href="{$CATEGORYS[255][url]}" target="_blank" class="selected">会计从业</a><a href="{$CATEGORYS[256][url]}" target="_blank">初级会计职称</a><a href="{$CATEGORYS[271][url]}" target="_blank">经济师</a></span></div>
+            <div id="ckksDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="255" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="256" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none;">
+                    {pc:content  action="hits" catid="271" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+        <div class="zrtydv zrctmg">
+        	<div class="tycut">建筑工程<span id="jzgcA"><a href="{$CATEGORYS[245][url]}" target="_blank" class="selected">一级建造师</a><a href="{$CATEGORYS[233][url]}" target="_blank">二级建造师</a></span></div>
+            <div id="jzgcDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="245" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="233" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+        <div class="zrtydv">
+        	<div class="tycut">医药卫生<span id="yywsA"><a href="{$CATEGORYS[226][url]}" target="_blank" class="selected">执业医师</a><a href="{$CATEGORYS[228][url]}" target="_blank">执业药师</a><a href="{$CATEGORYS[869][url]}" target="_blank">卫生资格</a></span></div>
+            <div id="yywsDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="226" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="228" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="869" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="kzc-newsone" id="PAGE_AD_2">加载中。。。</div>
+    
+    <div class="rs-zrcontent">
+    	<div class="zrtydv">
+        	<div class="tycut">司法考试<span id="sfksA"><a href="{$CATEGORYS[491][url]}" target="_blank" class="selected">国家司法</a><a href="{$CATEGORYS[456][url]}" target="_blank">法律顾问</a></span></div>
+            <div id="sfksDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="491" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="456" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+        <div class="zrtydv zrctmg">
+        	<div class="tycut">外贸考试<span id="wmksA"><a href="{$CATEGORYS[223][url]}" target="_blank" class="selected">跟单员</a><a href="{$CATEGORYS[224][url]}" target="_blank">单证员</a><a href="{$CATEGORYS[221][url]}" target="_blank">报关员</a></span></div>
+            <div id="wmksDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="223" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="224" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="221" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+        <div class="zrtydv">
+        	<div class="tycut">其他考试<span id="qtksA"><a href="{$CATEGORYS[303][url]}" target="_blank" class="selected">秘书资格</a><a href="{$CATEGORYS[301][url]}" target="_blank">社会工作师</a></span></div>
+            <div id="qtksDIV">
+            	<ul class="daitime">
+                    {pc:content  action="hits" catid="303" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+                <ul class="daitime" style="display:none">
+                    {pc:content  action="hits" catid="301" order="weekviews DESC" num="8"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a></li>{/loop}{/pc} 
+            	</ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{template "content","rsks_bottom"}
+
+<!-- 请置于所有广告位代码之前 -->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+    BAIDU_CLB_fillSlotAsync('874625', 'PAGE_AD_1');
+    BAIDU_CLB_fillSlotAsync('874627', 'PAGE_AD_2');
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+

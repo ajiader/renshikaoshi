@@ -1,0 +1,641 @@
+﻿.channel-path { background:#fff; height:37px; line-height:37px; }
+.channel-path .logo { margin:5px 9px 0 3px; float:left; }
+.area { width:976px; margin:0 auto; overflow:hidden; clear:both; text-align:left; color:#333 }
+.area a { color:#333; }
+.area a:visited { color:#83006f; }
+.area a:hover { color:#ba2636; }
+.area p { margin:0; line-height:1.8 }
+
+.title-top {}
+.title-top-h { float:left; position:absolute; font-size:20px; font-family:Microsoft Yahei, "&#x9ED1;&#x4F53;", serif; }
+.colTop { display:block; border-top:1px solid #E1E1E1; height:1px; overflow:hidden; }
+.col150 { float:left; width:150px;}
+.col460 { float:left; width:460px; }
+.col350 { float:left; width:350px; }
+.col150 .content { padding:0 10px; }
+.col460 .content { padding:0 20px 15px 10px; border-right:1px solid #ccc }
+.col350 .content { padding:0 20px; }
+.parting01 { display:block; height:1px; overflow:hidden; background:#ccc; }
+.parting02 { display:block; height:1px; overflow:hidden; background:url(http://img1.cache.netease.com/cnews/img12/review1205/dotline2.png) repeat-x; margin:15px 0 }
+.leftNav { font-size:14px; line-height:31px;  font-family:Microsoft Yahei, "&#x5B8B;&#x4F53;", serif; }
+.listBox { padding-left:10px; line-height:1.8; background:url(http://img1.cache.netease.com/cnews/img12/review1205/titlesquare2.png) no-repeat 0 10px;  font-family:Microsoft Yahei, "&#x5B8B;&#x4F53;", serif; }
+.listBox .title { font-weight:bold; font-size:18px; }
+.listBox .digest { font-size:14px; color:#666; margin-top:5px; }
+.listBox .more { float:right; }
+.listBox .more a { color:#666; }
+.listBox .more a:visited { color:#83006F; }
+.listBox .more a:hover { color:#ba2636; }
+.rank-list li { padding:10px 0 10px 34px; font-family:Microsoft Yahei, "&#x5B8B;&#x4F53;", serif; }
+.rank-num { float:left; margin-left:-34px; width:20px; height:13px; overflow:hidden; background:#f9f9f9; border:1px solid #e5e5e5; font-size:11px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:none; text-align:center }
+.contactBox { float:left; width:150px; text-align:center }
+.contactBox-left { border-right:1px solid #ccc; }
+.contactIcon { width:35px; height:28px; overflow:hidden; display:inline-block; background:url(http://img1.cache.netease.com/cnews/img12/review1205/icon_contact.png) no-repeat }
+.icon-t163 { background-position:0 0; }
+.icon-weibo { background-position:0 -30px; }
+.icon-rss { background-position:0 -60px; }
+.icon-email { background-position:0 -90px; }
+.pages { text-align:center; }
+.pages li { display:inline-block; *display:inline; *zoom:1; height:15px; line-height:15px; border:1px solid #dcdada; margin:0 6px 10px; color:#666; }
+.pages li a { color:#666; display:inline-block; padding:0 5px; }
+.pages li a:visited { color:#666; }
+.pages li a.current, .pages li a:hover { color:#666; background:#e0e0e0; text-decoration:none }
+.review-channel-end .cBlue { color:#b3b3b3; }
+.review-channel-end .cBlue a, .review-channel-end .cBlue a:visited { color:#333; }
+.review-channel-end .cBlue a:hover { color:#ba2636; }
+
+.tab .normal {
+	DISPLAY: none
+}
+.tab .on {
+	DISPLAY: block
+}
+.ggarea {
+	BORDER-BOTTOM: #dcdddd 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #dcdddd 1px solid; MARGIN: 0px auto; WIDTH: 958px; BACKGROUND: #fafafa; CLEAR: both; OVERFLOW: hidden; BORDER-TOP: #dcdddd 1px solid; BORDER-RIGHT: #dcdddd 1px solid
+}
+.ggarea .ggtext {
+	PADDING-LEFT: 12px; WIDTH: 965px
+}
+.ggarea .ggtext LI {
+	WIDTH: 120px; FLOAT: left; MARGIN-RIGHT: 13px
+}
+.ggarea .ggtext LI A {
+	COLOR: #7b7c7d
+}
+.ggarea .ggimg {
+	PADDING-LEFT: 12px
+}
+.ggarea .ggimg LI {
+	FLOAT: left; MARGIN-RIGHT: 12px
+}
+.ggarea .ggimg LI.gg125 {
+	WIDTH: 125px
+}
+.ggarea .ggimg LI.gg680 {
+	WIDTH: 660px
+}
+.gg_padding {
+	VERTICAL-ALIGN: top; PADDING-TOP: 2px
+}
+.gg735 {
+	WIDTH: 735px; FLOAT: left; OVERFLOW: hidden
+}
+.gg210 {
+	WIDTH: 210px; FLOAT: right; OVERFLOW: hidden
+}
+.ggR {
+	MARGIN: 0px auto; WIDTH: 200px
+}
+.ggText {
+	BORDER-BOTTOM: #dcdddd 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #dcdddd 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 958px; PADDING-RIGHT: 0px; BACKGROUND: #f3f3f3; COLOR: #7b7c7d; CLEAR: both; BORDER-TOP: #dcdddd 1px solid; BORDER-RIGHT: #dcdddd 1px solid; PADDING-TOP: 3px
+}
+.ggText UL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 9px; PADDING-RIGHT: 9px; DISPLAY: block; CLEAR: both; PADDING-TOP: 0px
+}
+.ggText LI {
+	LINE-HEIGHT: 21px; WIDTH: 128px; FLOAT: left; MARGIN-RIGHT: 6px
+}
+.ggM {
+	LINE-HEIGHT: 21px; MARGIN: 0px auto; WIDTH: 415px; BACKGROUND: #f3f3f3
+}
+.ggM .name {
+	BORDER-BOTTOM: #f3f3f3 2px solid; TEXT-ALIGN: center; BORDER-LEFT: #f3f3f3 2px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 34px; PADDING-RIGHT: 0px; BACKGROUND: #dcdddd; BORDER-TOP: #f3f3f3 2px solid; BORDER-RIGHT: #f3f3f3 3px solid; PADDING-TOP: 0px
+}
+.ggL {
+	LINE-HEIGHT: 21px; WIDTH: 250px; BACKGROUND: #f3f3f3
+}
+.channel {
+	LINE-HEIGHT: 21px; MARGIN: 0px auto; WIDTH: 960px; HEIGHT: 32px
+}
+.channel H1 {
+	MARGIN: 2px 19px 0px 2px; WIDTH: 107px; FLOAT: left; HEIGHT: 24px; OVERFLOW: hidden
+}
+.channel H2 {
+	FLOAT: left; MARGIN-RIGHT: 19px
+}
+.channel H3 {
+	MARGIN-TOP: 10px; FLOAT: left;
+}
+.channel .focus {
+	TEXT-ALIGN: left; MARGIN-TOP: 10px; FLOAT: left; OVERFLOW: hidden
+}
+.channel .focus A {
+	PADDING-RIGHT: 6px
+}
+.channel .weather {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 120px; PADDING-RIGHT: 0px; FLOAT: right; HEIGHT: 21px; OVERFLOW: hidden; PADDING-TOP: 10px
+}
+.nav_channel {
+	MARGIN: 0px auto; WIDTH: 960px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites_jpg.jpg) #0f65ae repeat-x left -153px; HEIGHT: 32px
+}
+.nav_channel .rightS {
+	WIDTH: 8px; DISPLAY: block; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites_jpg.jpg) no-repeat right -467px; FLOAT: right; HEIGHT: 32px; OVERFLOW: hidden
+}
+.nav_channel .nav {
+	LINE-HEIGHT: 33px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites_jpg.jpg) no-repeat left -235px; FLOAT: left; HEIGHT: 32px; COLOR: #fff; OVERFLOW: hidden
+}
+.nav_channel .nav A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 11px; PADDING-RIGHT: 7px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -253px; FLOAT: left; PADDING-TOP: 0px
+}
+.nav_channel .nav .i_mobi {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/i_mobi.gif) no-repeat left 9px; MARGIN-LEFT: 70px; PADDING-TOP: 0px
+}
+.nav_channel .nav .current {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 4px; PADDING-LEFT: 0px; WIDTH: 44px; PADDING-RIGHT: 0px; BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/sybg.gif) no-repeat left bottom; FLOAT: left; HEIGHT: 32px; COLOR: #000; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 0px; _display: inline
+}
+.nav_channel .nav A.current:visited {
+	COLOR: #000
+}
+.nav_channel .nav A.current:hover {
+	COLOR: #ba2636
+}
+.nav_channel .nav .nobg {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.nav_channel .nav A {
+	COLOR: #fff
+}
+.nav A:visited {
+	COLOR: #fff
+}
+.nav_channel .nav A:hover {
+	COLOR: #fff
+}
+.nav_channel .goHome {
+	POSITION: relative; WIDTH: 70px; FLOAT: right; HEIGHT: 32px
+}
+.goHome A {
+	TEXT-ALIGN: left; MARGIN-TOP: 9px; WIDTH: 67px; DISPLAY: block; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat right -257px; COLOR: #fff; CURSOR: pointer
+}
+.nav_channel .search {
+	MARGIN: 6px 1px 0px 16px; WIDTH: 128px; DISPLAY: inline; FLOAT: right; HEIGHT: 20px; OVERFLOW: hidden
+}
+.search .textBox {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; BORDER-RIGHT-STYLE: none; TEXT-INDENT: 4px; PADDING-LEFT: 0px; WIDTH: 106px; PADDING-RIGHT: 0px; BORDER-TOP-STYLE: none; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat right -287px; FLOAT: left; HEIGHT: 20px; COLOR: #727171; BORDER-LEFT-STYLE: none; PADDING-TOP: 2px
+}
+.search .btn {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; TEXT-INDENT: -100em; WIDTH: 22px; BORDER-TOP-STYLE: none; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -5px; FLOAT: left; HEIGHT: 20px; BORDER-LEFT-STYLE: none; CURSOR: pointer
+}
+.areabg1 {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/areabg.gif) #fff repeat-y right top
+}
+.areabg2 {
+	BACKGROUND: url(bg01.gif) repeat-x left top
+}
+.dotLine {
+	DISPLAY: block; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) repeat-x left -481px; HEIGHT: 1px; CLEAR: both; OVERFLOW: hidden
+}
+.colEnd {
+	DISPLAY: block; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat right top; HEIGHT: 1px; CLEAR: both; OVERFLOW: hidden
+}
+.area {
+	TEXT-ALIGN: left; MARGIN: 0px auto; WIDTH: 960px; COLOR: #2b2b2b; OVERFLOW: hidden
+}
+.area P {
+	LINE-HEIGHT: 21px; MARGIN: 0px
+}
+.colLM {
+	WIDTH: 750px; FLOAT: left; OVERFLOW: hidden
+}
+.colLM .colM {
+	FLOAT: right; OVERFLOW: hidden
+}
+.colMR .colM {
+	FLOAT: left; OVERFLOW: hidden
+}
+.colL {
+	WIDTH: 310px; FLOAT: left; OVERFLOW: hidden
+}
+.colM {
+	WIDTH: 440px; FLOAT: left; OVERFLOW: hidden
+}
+.colR {
+	WIDTH: 210px; FLOAT: right; OVERFLOW: hidden
+}
+.colH {
+	WIDTH: 50%; FLOAT: left; OVERFLOW: hidden
+}
+.content {
+	LINE-HEIGHT: 21px; ZOOM: 1; MARGIN-LEFT: 6px; CLEAR: both; OVERFLOW: hidden
+}
+.colL .content {
+	MARGIN: 0px 10px 0px 6px
+}
+.colM .content {
+	MARGIN: 0px 22px 0px 16px
+}
+.colR .content {
+	MARGIN: 0px 10px 0px 16px
+}
+.colL .dotLine {
+	MARGIN-RIGHT: 10px
+}
+.titleBar {
+	LINE-HEIGHT: 25px; HEIGHT: 25px; OVERFLOW: hidden
+}
+.titleBar .more {
+	PADDING-RIGHT: 8px; FLOAT: right
+}
+.titleBar H2 {
+	LINE-HEIGHT: 25px; FLOAT: left; COLOR: #000; FONT-WEIGHT: bold
+}
+.titleBar H3 {
+	LINE-HEIGHT: 25px; FLOAT: left; COLOR: #000; FONT-WEIGHT: bold
+}
+.titleBar H2 A {
+	COLOR: #000
+}
+.titleBar H2 A:visited {
+	COLOR: #000
+}
+.titleBar H3 A {
+	COLOR: #000
+}
+.titleBar H3 A:visited {
+	COLOR: #000
+}
+.titleBar H2 A:hover {
+	COLOR: #ba2636
+}
+.titleBar H3 A:hover {
+	COLOR: #ba2636
+}
+.colL .titleBar {
+	MARGIN: 0px 11px 9px 0px; CLEAR: both
+}
+.colM .titleBar {
+	MARGIN: 0px 15px 9px 10px; CLEAR: both
+}
+.colLM .colM .titleBar {
+	MARGIN: 0px 15px 9px 10px; CLEAR: both
+}
+.colR .titleBar {
+	MARGIN: 0px 11px 9px; CLEAR: both
+}
+.ui_s1 {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites_jpg.jpg) #fff repeat-x left -317px
+}
+.ui_s1 H2 {
+	PADDING-LEFT: 17px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -213px; FLOAT: left; PADDING-TOP: 5px
+}
+.ui_s1 .more {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat right -317px
+}
+.ui_sm {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/titlebarbg.jpg) #fff no-repeat left top
+}
+.ui_sm H2 {
+	PADDING-LEFT: 24px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat 7px -75px; FONT-WEIGHT: bold
+}
+.ui_sr {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) repeat-x left 24px
+}
+.ui_sr H2 {
+	PADDING-LEFT: 24px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat 6px -75px; FONT-WEIGHT: bold
+}
+.ui_sr H3 {
+	PADDING-LEFT: 24px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat 6px -75px; FONT-WEIGHT: bold
+}
+.ui_lm {
+	LINE-HEIGHT: 28px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites_jpg.jpg) #fff repeat-x left -75px; HEIGHT: 28px
+}
+.ui_lm H2 {
+	PADDING-LEFT: 17px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -380px; PADDING-TOP: 6px
+}
+.ui_lm .more {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat right -352px
+}
+.f14bla LI {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 9px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -541px; CLEAR: both; FONT-SIZE: 14px
+}
+.f14bla LI .f12px {
+	LINE-HEIGHT: 21px
+}
+.f14bla LI .st {
+	LINE-HEIGHT: 21px; COLOR: #1e50a2
+}
+.f14bla LI .st A {
+	LINE-HEIGHT: 21px; COLOR: #1e50a2
+}
+.f14bla LI .st A:visited {
+	LINE-HEIGHT: 21px; COLOR: #1e50a2
+}
+.f14bla LI .st A:hover {
+	COLOR: #ba2636
+}
+.f12bla LI {
+	LINE-HEIGHT: 21px; PADDING-LEFT: 9px; BACKGROUND: url(http://img1.cache.netease.com/cnews/img09/sprites.gif) no-repeat left -544px; CLEAR: both
+}
+.f12bla LI .f14px {
+	LINE-HEIGHT: 25px
+}
+.f12bla LI.nobg {
+	PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.f12bla .firstNd {
+	LINE-HEIGHT: 0; PADDING-LEFT: 0px; MARGIN-BOTTOM: 6px; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.f12bla .firstNd H3 {
+	LINE-HEIGHT: 21px; FONT-WEIGHT: bold
+}
+.f12bla .firstNd H4 {
+	LINE-HEIGHT: 21px; FONT-WEIGHT: bold
+}
+.f12bla .firstNd IMG {
+	BORDER-BOTTOM: #dcdddd 1px solid; BORDER-LEFT: #dcdddd 1px solid; LINE-HEIGHT: 21px; MARGIN: 3px 8px 0px 0px; FLOAT: left; BORDER-TOP: #dcdddd 1px solid; BORDER-RIGHT: #dcdddd 1px solid
+}
+.f12bla .firstNd P {
+	LINE-HEIGHT: 21px; TEXT-INDENT: 2em; COLOR: #727171
+}
+.cList {
+	WIDTH: 100%
+}
+.cList1 {
+	WIDTH: 100%
+}
+.cList LI {
+	LINE-HEIGHT: 21px; WIDTH: 100%; BACKGROUND: url(http://img1.cache.netease.com/tech/img09/images/bg_norp.gif) repeat-x 0px -690px; FLOAT: left
+}
+.cList1 LI {
+	LINE-HEIGHT: 21px; WIDTH: 100%; BACKGROUND: url(http://img1.cache.netease.com/tech/img09/images/bg_norp.gif) repeat-x 0px -690px; FLOAT: left
+}
+.cList1 LI {
+	LINE-HEIGHT: 25px; WIDTH: 100%; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; FONT-SIZE: 14px
+}
+.cList LI .s1 {
+	PADDING-LEFT: 8px; PADDING-RIGHT: 6px; BACKGROUND: url(http://img1.cache.netease.com/tech/img09/images/bg_norp.gif) no-repeat 0px -373px; FLOAT: left
+}
+.cList1 LI .s1 {
+	PADDING-LEFT: 8px; PADDING-RIGHT: 6px; BACKGROUND: url(http://img1.cache.netease.com/tech/img09/images/bg_norp.gif) no-repeat 0px -373px; FLOAT: left
+}
+.cList LI .s2 {
+	PADDING-LEFT: 6px; FLOAT: right; COLOR: #646464
+}
+.cList1 LI .s2 {
+	PADDING-LEFT: 6px; FLOAT: right; COLOR: #646464
+}
+.picList {
+	MARGIN: 0px auto
+}
+.picList LI IMG {
+	BORDER-BOTTOM: #e3e3e3 1px solid; BORDER-LEFT: #e3e3e3 1px solid; MARGIN-LEFT: 30px; BORDER-TOP: #e3e3e3 1px solid; BORDER-RIGHT: #e3e3e3 1px solid
+}
+.picList H4 {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 6px; PADDING-LEFT: 7px; PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}
+.imgList4 {
+	BORDER-BOTTOM: #dcdddd 1px solid; BORDER-LEFT: #dcdddd 1px solid; WIDTH: 958px; OVERFLOW: hidden; BORDER-RIGHT: #dcdddd 1px solid
+}
+.imgList4 UL {
+	MARGIN: 0px 1px; BACKGROUND: url(bg01.gif) repeat-x left top; HEIGHT: 151px
+}
+.imgList4 LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 11px; PADDING-RIGHT: 2px; FLOAT: left; PADDING-TOP: 16px
+}
+.imgList4 IMG {
+	BORDER-BOTTOM: #dcdddd 1px solid; BORDER-LEFT: #dcdddd 1px solid; MARGIN-BOTTOM: 3px; BORDER-TOP: #dcdddd 1px solid; BORDER-RIGHT: #dcdddd 1px solid
+}
+.focusText H2 {
+	LINE-HEIGHT: 24px; MARGIN: 7px 0px 6px; FONT-FAMILY: '黑体'; FONT-SIZE: 20px; FONT-WEIGHT: 100
+}
+.focusText H3 {
+	LINE-HEIGHT: 24px; MARGIN: 7px 0px 6px; FONT-FAMILY: '黑体'; FONT-SIZE: 18px; FONT-WEIGHT: 100
+}
+.focusText P {
+	COLOR: #1e4fa0
+}
+.focusText P A {
+	COLOR: #1e4fa0
+}
+.focusPic {
+	BORDER-BOTTOM: #dcdddd 1px solid; BORDER-LEFT: #dcdddd 1px solid; WIDTH: 308px; BACKGROUND: #fff; HEIGHT: 290px; BORDER-TOP: #dcdddd 1px solid; BORDER-RIGHT: #dcdddd 1px solid
+}
+.focusPic .main {
+	MARGIN: 4px auto 0px; WIDTH: 300px; HEIGHT: 255px; OVERFLOW: hidden
+}
+.focusPic .main H2 {
+	LINE-HEIGHT: 24px; MARGIN-TOP: 3px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.focusPic .main .icon {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.focusPic .sidePic {
+	FLOAT: right; HEIGHT: 24px
+}
+.sidePic LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 26px; WIDTH: 21px; FONT-FAMILY: Tahoma; BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/focusbg2.gif) no-repeat left bottom; FLOAT: left; HEIGHT: 24px; COLOR: #2b2b2b; FONT-SIZE: 14px; CURSOR: pointer; FONT-WEIGHT: bold; MARGIN-RIGHT: 7px
+}
+.sidePic .on {
+	BACKGROUND: url(http://img1.cache.netease.com/cnews/newstest1204/focusbg1.gif) no-repeat left bottom; COLOR: #fff
+}
+H2.bigsize {
+	LINE-HEIGHT: 24px; MARGIN: 10px 0px 7px; FONT-FAMILY: '黑体'; FONT-SIZE: 20px; FONT-WEIGHT: 100
+}
+H3.bigsize {
+	LINE-HEIGHT: 24px; MARGIN: 10px 0px 7px; FONT-FAMILY: '黑体'; FONT-SIZE: 18px; FONT-WEIGHT: 100
+}
+
+
+.ui_til01 {
+	WIDTH: 960px; HEIGHT: 38px; COLOR: #ffffff
+}
+.colLM {
+	WIDTH: 570px; FLOAT: left; OVERFLOW: hidden
+}
+.colL {
+	WIDTH: 320px; FLOAT: left; OVERFLOW: hidden
+}
+.colM {
+	WIDTH: 480px; FLOAT: right; OVERFLOW: hidden
+}
+.colR {
+	WIDTH: 360px; FLOAT: right; OVERFLOW: hidden
+}
+.areabg1 {
+	BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/areabg.jpg) #ffffff repeat-y right top
+}
+IMG.contributor-pic {
+	FLOAT: left; MARGIN-RIGHT: 22px
+}
+DIV.contributor-shift {
+	PADDING-LEFT: 15px; WIDTH: 300px; FLOAT: left; PADDING-TOP: 5px
+}
+#page-header H1 {
+	LINE-HEIGHT: 1.1; FONT-SIZE: 24px; FONT-WEIGHT: bold
+}
+#page-header H2 {
+	LINE-HEIGHT: 1.1; FONT-SIZE: 14px; PADDING-TOP: 5px
+}
+DIV#biography {
+	MARGIN-BOTTOM: 12px
+}
+.bio {
+	MARGIN-BOTTOM: 3px; BORDER-TOP: 1px dotted; PADDING-TOP: 3px
+}
+#biography H2 {
+	MARGIN: 0px 0px 14px; FONT-SIZE: 14px; BORDER-TOP: 4px solid; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.ui_til03 {
+	HEIGHT: 10px; BORDER-TOP: 4px solid
+}
+#page-header {
+	FONT-FAMILY: "微软雅黑","宋体",serif; COLOR: #666666
+}
+.contentList {
+	PADDING-LEFT: 15px; PADDING-TOP: 10px
+}
+.contentTitle H2 {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 12px; FONT-FAMILY: "宋体",serif; BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/bg_n.jpg) no-repeat left 8px; CLEAR: both; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.ti2em {
+	PADDING-LEFT: 5px; FONT-SIZE: 14px; PADDING-TOP: 10px
+}
+.detailInfo {
+	PADDING-BOTTOM: 15px; PADDING-RIGHT: 10px; FLOAT: right
+}
+.detailInfo A {
+	COLOR: #666666
+}
+.bgLine {
+	WIDTH: 400px; DISPLAY: block; BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/bgborder.jpg) no-repeat 0px 0px; HEIGHT: 1px; CLEAR: both; OVERFLOW: hidden
+}
+.areaLine {
+	MARGIN: 0px auto; WIDTH: 960px; DISPLAY: block; BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/bgLine.jpg) no-repeat 0px 0px; HEIGHT: 1px; CLEAR: both; OVERFLOW: hidden
+}
+.articleList {
+	PADDING-LEFT: 10px
+}
+.articleTitle {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 15px; CLEAR: both; FONT-SIZE: 12px; FONT-WEIGHT: bold; _padding-left: 2px
+}
+.list {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; CLEAR: both; OVERFLOW: hidden; PADDING-TOP: 8px
+}
+.list-pic {
+	FLOAT: left; PADDING-TOP: 2px
+}
+.title {
+	PADDING-LEFT: 12px; COLOR: #666666; line-hight: 13px
+}
+.title A {
+	COLOR: #666666
+}
+.logo-rank-top {
+	TEXT-ALIGN: center; LINE-HEIGHT: 13px; WIDTH: 22px; DISPLAY: inline-block; FONT-FAMILY: "Arial"; BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/rankbg.jpg) no-repeat 0px 2px; FLOAT: left; HEIGHT: 15px; COLOR: #666666; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-TOP: 3px
+}
+.underline {
+	TEXT-DECORATION: underline
+}
+.image-text {
+	OVERFLOW: hidden
+}
+.left {
+	FLOAT: left; OVERFLOW: hidden
+}
+.image-text IMG {
+	MARGIN-RIGHT: 10px
+}
+.image-text H4 {
+	COLOR: #666; FONT-WEIGHT: bold
+}
+.image-text P {
+	COLOR: #666
+}
+.imgTitle {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; DISPLAY: block; FONT-WEIGHT: bold; PADDING-TOP: 0pt
+}
+.titleBar-small H2 {
+	PADDING-LEFT: 5px; _padding-left: 0px
+}
+.titleBar H2 {
+	FLOAT: left; FONT-WEIGHT: bold
+}
+.titleBar-small .more {
+	PADDING-RIGHT: 8px
+}
+.titleBar .more {
+	FLOAT: right
+}
+.brief .title {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 22px
+}
+.brief H1 {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 22px; font-weight:bold;
+}
+.brief H1.subline {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 22px
+}
+.brief P {
+	COLOR: #666
+}
+
+.feed-text P {
+	TEXT-ALIGN: justify; PADDING-BOTTOM: 14px; LINE-HEIGHT: 23px; WORD-WRAP: break-word; CLEAR: both; FONT-SIZE: 14px; PADDING-TOP: 8px
+}
+.feed-text {
+	PADDING-RIGHT: 20px
+}
+.hr-dot {
+	DISPLAY: block; BACKGROUND: url(http://img5.cache.netease.com/cnews/2011/spectator2011/dotbg.jpg) repeat-x left 5px; HEIGHT: 11px; CLEAR: both; OVERFLOW: hidden
+}
+#ckepop .ckepopBottom {
+	DISPLAY: none
+}
+#ckepop .centerBottom {
+	DISPLAY: none
+}
+#ckepop {
+	PADDING-RIGHT: 20px; FLOAT: right
+}
+.source {
+	LINE-HEIGHT: 18px !important; FONT-FAMILY: "微软雅黑","宋体",serif; FLOAT: left
+}
+.path .logo {
+	MARGIN: 5px 9px 0px 3px; FLOAT: left
+}
+.path .crumb {
+	FLOAT: left
+}
+.path {
+	LINE-HEIGHT: 37px
+}
+.colR .titleBar {
+	MARGIN: 0px 11px 9px 5px; CLEAR: both
+}
+.imgInfo {
+	PADDING-TOP: 22px
+}
+.ui_til04 {
+	HEIGHT: 2px; BORDER-TOP: 2px solid
+}
+.more A {
+	COLOR: #000
+}
+.source A {
+	COLOR: #000000
+}
+#page-header H5 {
+	PADDING-RIGHT: 10px; DISPLAY: inline
+}
+A.gallery {
+	POSITION: relative; WIDTH: 218px; FLOAT: right; HEIGHT: 145px; CURSOR: url(http://img1.cache.netease.com/cnews/img12/datablog/zoomin.cur),pointer
+}
+A.gallery SPAN {
+	POSITION: absolute; WIDTH: 40px; BOTTOM: 0px; DISPLAY: block; BACKGROUND: url(http://img1.cache.netease.com/cnews/img12/datablog/zoom.png) no-repeat center center; HEIGHT: 40px; RIGHT: 0px; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://img1.cache.netease.com/cnews/img12/datablog/zoom.png")
+}
+#lightbox-container-image {
+	CURSOR: url(http://img1.cache.netease.com/cnews/img12/datablog/zoomout.cur),pointer
+}
+A#lightbox-nav-btnPrev {
+	WIDTH: 87px
+}
+A#lightbox-nav-btnNext {
+	WIDTH: 87px
+}
+/*--pages--*/
+.pageList{ text-align:center; line-height:30px;margin-top:15px;}
+.pageList a,.pageList span{ padding:3px 5px; border:1px solid #dddddd; background:#f0f4f5; }
+.pageList a,.pageList a:visited{color:#1f3a87}
+.pageList span{ font-weight:bold; color:#cc0000}
+.pageList a, .pageList span {background:#F0F4F5 none repeat scroll 0 0;border:1px solid #DDDDDD;padding:2px 3px;}
+.lrBothMar4 {margin:0 7px;}
+.f14px{ font-size:14px; font-weight:bold;}

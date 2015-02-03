@@ -1,0 +1,51 @@
+<div class="listymrg">
+<div class="kzc-newsone" id="{$ad_ids[1]}">load...</div>
+        	<div class="rgcut">推荐阅读</div>
+            <div class="rgctdv">
+            	<ul>
+                    {pc:content  action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+                    {php $i=1}
+                    {loop $data $r}
+                        <li><i {if $i>3}class="i1"{/if}>{$i}</i><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 50, '')}</a></li>
+                        {php $i++}
+                    {/loop}
+                	{/pc}
+                </ul>
+            </div>
+           <div class="kzc-newsone" id="{$ad_ids[2]}">load...</div>
+            <div class="rgcut">考试辅导</div>
+            <div class="rgctdv">
+            	<ul>
+                	{pc:content  action="hits" catid="192" num="10" order="views DESC" cache="3600"}
+                    {php $i=1}
+                    {loop $data $r}
+                        <li><i {if $i>3}class="i1"{/if}>{$i}</i><a href="{$r[url]}" target="_blank" title={$r[title]}>{str_cut($r[title], 50, '')}</a></li>
+                        {php $i++}
+                    {/loop}
+                {/pc}
+                </ul>
+            </div>
+          
+        </div>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+ <?php
+    //考职称英语
+if(strstr($CATEGORYS[$catid]['arrparentid'],'0,9') or $catid == 9 ):
+?>
+BAIDU_CLB_fillSlotAsync("874630","ad1");
+BAIDU_CLB_fillSlotAsync("874631","ad2");
+ <?php
+    //考职计算机
+elseif(strstr($CATEGORYS[$catid]['arrparentid'],'0,9') or $catid == 9 ):
+?>
+BAIDU_CLB_fillSlotAsync("874633","ad1");
+BAIDU_CLB_fillSlotAsync("874636","ad2");
+ <?php
+    //职业资格
+elseif(strstr($CATEGORYS[$catid]['arrparentid'],'0,9') or $catid == 9 ):
+?>
+BAIDU_CLB_fillSlotAsync("874630","ad1");
+BAIDU_CLB_fillSlotAsync("874631","ad2");
+<?php endif; ?>
+</script>

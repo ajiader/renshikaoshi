@@ -1,0 +1,5 @@
+/*top */
+#top { width:960px; height:40px; margin:0px auto; overflow:hidden;}
+#top .l_logo{ float:left; width:280px; height:40px; overflow:hidden;}
+#top .r_logo{ float:right; width:315px; height:40px; overflow:hidden; CURSOR: pointer;}
+#top .l_logo_mid{ float:left; width:100px; height:40px; overflow:hidden;}

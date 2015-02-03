@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background:#ffffff; font-size:12px; color:#333333; padding-top:40px;}
+a{ color:#555555;}
+a:hover{ color:#ff9c03;}
+strong{ font-weight:bold;}
+
+.schooltopfixed{ height:40px; line-height:40px; position:fixed; top:0px; left:0px; width:100%; background:#f1f1f1; z-index:99999; border-bottom:1px #e5e5e5 solid;}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed}
+* html .schooltopfixed{position:absolute;left:expression(eval(document.documentElement.scrollLeft));top:expression(eval(document.documentElement.scrollTop))}
+
+.schoolct{ width:980px; margin:0 auto; overflow:hidden;}
+.schooltopsp a{ display:inline-block; padding:0 15px; height:40px; font-size:14px; border-left:1px #e2e2e2 solid; border-right:1px #fbfbfb solid; font-weight:bold;}
+.schooltopsp a:hover{ text-decoration:none; color:#ffffff;}
+.schooltopsp a.a1{ border:0px;}
+.eglish-search-banner{ height:302px; background:#9c3429;}
+.eglish-search-banner img{ display:block;}
+.eglish-menu{ height:40px; line-height:40px; background:#3a3a3a; font-size:14px;}
+.eglish-menu a{ padding:0 35px; display:inline-block; color:#ffffff; font-weight:bold;}
+.eglish-menu a:hover{ background:#ff9c03; text-decoration:none;}
+.eglish-picqh{ width:284px; height:173px; overflow:hidden; float:left;}
+.eglish-typd{ padding-top:10px;}
+.eglish-tymg{ margin-bottom:10px;}
+.eglish-newslist{ float:left; width:380px; margin:0 10px; display:inline;}
+.eglish-newslist p{ line-height:30px; font-size:16px; text-align:center;}
+.eglish-newslist p a{ color:#d10000; }
+.eglish-listnews{ display:block;}
+.eglish-listnews li{ height:24px; line-height:24px; clear:both; font-size:14px;}
+.eglish-listnews li i{ float:left; width:4px; height:4px; line-height:0; font-size:0; background:#999999; margin:10px 8px 0 0; border-radius:4px;}
+.eglish-kstx{ width:296px; float:left;}
+.eglish-kstx .dvcut{ height:30px; background:url(/statics/en/images/bt-bg.jpg) no-repeat left bottom; line-height:30px; font-size:16px; font-weight:bold; padding-left:6px;}
+.eglish-kstx-table{ border-left:1px #dddddd solid; border-top:1px #dddddd solid;}
+.eglish-kstx-table td{ border-bottom:1px #dddddd solid; border-right:1px #dddddd solid; text-align:center; padding:5px 3px;}
+.eglish-kstx-table tr.bg1{ background:#f9f9f9;}
+.eglish-kstx-table tr.bg1 td{ color:#333333; font-weight:bold; height:30px; padding:0px;}
+.eglish-kstx-table td span{ color:#d10000; font-weight:bold; padding:0 5px;}
+.eglish-kstx-table td a{ color:#d10000;}
+.eglish-kstx-table tr.bg2 td{ font-weight:bold;}
+.eglish-dqxq{ height:68px; border:1px #f9cfb0 solid;}
+.eglish-dqxq span{ float:left;}
+.eglish-dqxq span.sp1{ background:url(/statics/en/images/dqxq.jpg) no-repeat; width:120px; height:68px; border-right:1px #f9cfb0 solid;}
+.eglish-dqxq span.sp2{ width:840px; padding:6px 0 0 10px; color:#666666; }
+.eglish-dqxq span.sp2 a{ display:inline-block; color:#666666; margin:5px 12px;}
+.eglish-dqxq span.sp2 a.col,.colone{ color:#d10000;}
+.eglish-bmlc{ border:1px #dddddd solid; background:#f9f9f9;}
+.eglish-bmlc .bmlccut{ height:39px; border-bottom:1px #dddddd solid; position:relative;}
+.eglish-bmlc .bmlccut span{ display:inline-block; height:39px; background:url(/statics/en/images/cutbg.jpg) no-repeat; padding-left:20px; line-height:39px; font-weight:bold; font-size:20px; color:#ffffff; width:121px;}
+.eglish-bmlc .bmlccut .wla{ position:absolute; right:10px; top:0px; line-height:39px; }
+.eglish-bmlc .bmlccut .wla a{ display:inline-block; margin:0 5px;}
+.eglish-bmlc .lcpic{ text-align:center;}
+.eglish-bkxq{ float:left; width:672px;}
+.eglish-xqwai{ padding:5px; background:#ffffff;  line-height:26px;}
+.eglish-wxts{ background:#fef3e4; padding:0 6px;}
+.zxtx{ text-align:right; color:#d10000; }
+.lieright{ width:298px; float:right;}
+.lieright .lietydv{ border:1px #ebebeb solid; margin-bottom:10px; clear:both;}
+.lieright .lietydv .rgtrcut,.engclass span a,.engclass,.xszdnr a,.kswdul li{ background-image:url(/statics/en/images/englishtybg.png); background-repeat:no-repeat;}
+.lieright .lietydv .rgtrcut{ display:block; height:32px; background-position:0px -298px; margin:6px; padding-left:20px; line-height:32px; font-size:16px; color:#ff7101;}
+.zcteacher{ width:122px; float:left; display:inline; margin:0 10px 6px 13px}
+.zcteacher img{ width:122px; height:90px; margin-bottom:6px;}
+.zcteacher p{ text-align:center;}
+.lietydvxg{ padding:0 0 5px 8px;}
+.toruinewslistxg li{ line-height:23px; height:23px;}
+.toruinewslistxg li i{ display:inline-block; font: bold 9px Tahoma; background:#F38C0A; width:16px; height:16px; text-align:center; line-height:16px; font-style:normal; color:#ffffff; vertical-align:middle;}
+.toruinewslistxg li i.num{ background:#2D2D2D;}
+.toruinewslistxg li a{ background:none; padding-left:8px;}
+.xglulss li{ height:auto;}
+.xglulss li div{ position:relative; height:25px; line-height:25px; display:none;}
+.xglulss li div span{ position:absolute; top:0px; line-height:25px;}
+.xglulss li div span.sp1{ left:0px; color:#fea700;}
+.xglulss li div span.sp2{ right:5px;}
+.xglulss li div span.sp2 a{ border:1px #ffe6b0 solid; padding:0 6px; display:inline-block; background:#fff1d3;}
+.engclass{ height:22px; background-position:-613px -320px; line-height:22px; padding-left:28px; border-bottom:1px #d9d9d9 dashed; position:relative; margin:0 5px 5px 5px;}
+.engclass span{ position:absolute; right:5px; top:0px; line-height:22px;}
+.engclass span a{ display:inline-block; width:35px; height:22px; padding-left:30px; background-position:-494px -678px;}
+.xszdnr a{ display:inline-block; width:92px; height:27px; line-height:27px; text-align:center; background-position:0px -165px; margin:0 0 7px 5px; }
+.xszdnr a:hover{ background-position:-104px -165px;}
+#contentwdhgs{ height:240px; overflow:hidden;}
+.kswdul li{ height:33px; padding-bottom:10px; margin-bottom:4px; background-image:url(/statics/images/gwy/tyicon.png); background-repeat:no-repeat; background-position:-375px -435px; border-bottom:1px #dfdfdf dotted; padding-left:32px;}
+.kswdul{ margin:0 0; overflow:hidden;}
+.kswdul li p{ line-height:20px; color:#a3a3a3;}
+.zcenglishclear{ clear:both; line-height:0; font-size:0; height:0;}

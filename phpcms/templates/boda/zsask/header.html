@@ -1,0 +1,34 @@
+<script type="text/javascript" src="/statics/js/jquery.min.js"></script>
+<script  language="javascript"  src="/statics/gwy/ask/js/common.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#ctl00_txtKey").val("请输入您的问题").addClass("sousuotext")
+    .blur(function(){
+        $(this).removeClass('highligth');
+        if($(this).val()==""){
+            $("#ctl00_txtKey").val("请输入您的问题").addClass("search");
+        }
+    })
+    .focus(function(){
+        $(this).addClass('highligth'); 
+        if($(this).val()=="请输入您的问题"){
+            $("#ctl00_txtKey").val("").removeClass("search");  
+        }
+    });      
+	
+	$("#sousuobtns").click(function(){
+		var q = $("input[name='serch']").val();
+	    if (q == "请输入您的问题"){
+			alert(q);
+			return false;
+		}
+	});                
+});
+
+
+</script>
+<div class="quiztop">
+	<div class="onlinequizct quizban">
+    	<div class="sousuodv"><form action="/question/s/" method="get" id="search"><input type="text" name="serch"   id="ctl00_txtKey"/><input type="submit" name="sousuobtn"  id="sousuobtns"value=" " class="sousuobtn" /><a href="{siteurl($siteid)}/question/ask.html"  target="_blank" class="tiwen" ></a></form><div class="tiwenclear"></div></div>
+    </div>
+</div>

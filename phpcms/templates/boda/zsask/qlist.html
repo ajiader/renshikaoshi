@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}博大弘仕国家公务员考试网</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/ask/css/online_quiz.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+
+<script language="javascript">
+function getObject(objID)
+ {if (document.getElementById && document.getElementById(objID)) 
+ {return document.getElementById(objID);} 
+ else 
+ {if (document.all && document.all(objID)) 
+ {return document.all(objectId);} 
+ else 
+ {if (document.layers && document.layers[objID]) 
+ {return document.layers[objID];} 
+ else
+ {return false;}
+ }
+ }
+ }
+function questionqh(n)
+{
+for (var i = 1; i <= 2; i++)
+{
+if (i == n) 
+{
+getObject("questionqh" + i).className = "selected";
+getObject("questionqhDIV" + i).style.display = "";
+}
+else
+{
+getObject("questionqh" + i).className = "";
+getObject("questionqhDIV" + i).style.display = "none";
+}
+}
+}
+</script>
+</head>
+
+<body>
+{template "zsask","header"}
+<div class="onlinequizct">
+
+	{template "zsask","left"}
+    
+    <div class="quizcter questionxgrg">
+    	<div class="dqposition">当前位置：<a href="{siteurl($siteid)}">考职称</a>><a href="{siteurl($siteid)}/question/">在线问答</a>{if $catid}><a href="{siteurl($siteid)}/question/{if $s>0}n{/if}qlist_{$catid}_1.html">{$askcategorys[$catid]['catname']}</a>{/if}</div>
+        <div class="qhquestion"><a href="{siteurl($siteid)}/question/{if $s>0}n{/if}qlist_{if $catid}{$catid}_{/if}1.html" class="selected">{if $s>0}待{else}已{/if}解决<font></font></a></div>
+        {if $s>0}
+        <div id="questionqhDIV2">
+        {if qlist}
+        {loop $qlist $key $val}
+        	<div class="questiontydv dvbgone questionxghg">
+            	<div class="questitle"><a href="{geturlrule($val['qid'])}" target="_blank">{if $fenciarr}{replace_search($fenciarr,$val['question'])}{else}{replace_search($q,$val['question'])}{/if}</a><span>({format_date($val['addtime'])})</span></div>
+            </div>
+     {/loop}
+     {else}
+     <div class="questitle">未找到相关问题！</div>
+     {/if}
+     <div class="detailfy"><span> {$pages} </span></div>
+        </div>
+        {else}
+        <div id="questionqhDIV1">
+{loop $qlist $key $val}
+        	<div class="questiontydv">
+            	<div class="questitle"><a href="{geturlrule($val['qid'])}" target="_blank">{if $fenciarr}{replace_search($fenciarr,$val['question'])}{else}{replace_search($q,$val['question'])}{/if}</a></div>
+                <div class="quesauho"><span>专家回答</span>{format_date($val['addtime'])}</div>
+                <div class="quesnr">{str_cut(strip_tags(getAnswerContent($val['aid'])),'200')}</div>
+            </div>
+              {/loop}
+         
+
+            <div class="detailfy"><span> {$pages} </span></div>
+        </div>
+        {/if}
+      
+        
+    </div>
+    
+    {template "zsask","right"}
+</div>
+{template "content","rsks_bottom"}
+ <!--异步加载开始-->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+        BAIDU_CLB_fillSlotAsync('701537','701537');
+		  BAIDU_CLB_fillSlotAsync('701584','701584');
+		   <!--图文-->
+		   BAIDU_CLB_fillSlotAsync('710248','710248');
+</script>
+
+<!--异步加载结束 --> 
+</body>
+</html>

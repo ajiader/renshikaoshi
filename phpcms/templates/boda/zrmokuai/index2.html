@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>职业资格查询系统</title>
+<link href="{CSS_PATH}/zrmokuai/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+</head>
+<script>
+ $(document).ready(function(){
+	 
+  
+   $('.chak').click(function(){
+	  var tabid = '#child-'+this.id;
+     $(tabid).toggle(1000);
+  });
+   $("tr[id^=child]").toggle(); 
+  
+  $('.ser_btn').click(function(){
+	  if($("#title").val() == ""){
+          //alert('请输入查询的关键词！');
+		  $('#search').submit();  
+	  }else{
+	      $('#search').submit();
+	  }
+  });
+  
+});
+</script>
+<body>
+<div class="top"></div>
+<div class="row1">
+<div class="ser_box">
+
+<form action="" method="get" id="search">
+<table width="100%%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><label>模块搜索：</label></td>
+    <td><input name="q" type="text" id="title" class="text_box" value="{$q}"/></td>
+    <td><input name="" type="button" class="ser_btn" /></td>
+  </tr>
+</table>
+<input type="hidden" name="m" value="zrmokuai" />
+
+</form>
+</div>
+<div class="sc"><a href="javascript:void(0);" target="_self" onclick="javascript:try{ window.external.AddFavorite(document.URL,'致睿产品模块查询系统'); } catch(e){ (window.sidebar)?window.sidebar.addPanel('致睿产品模块查询系统',document.URL,''):alert('请使用按键 Ctrl+d，收藏致睿产品模块查询系统'); }">加入收藏</a></div>
+</div>
+<div class="cl"></div>
+<div class="row2">
+ <div class="js_box">
+   <div class="txt">
+   {loop $type_list $vo}
+   <a href="/zrmokuai/?typeid={$vo['typeid']}" {if $typeid == $vo['typeid']}class="cur"{/if}>{$vo['name']}</a>
+   {/loop}
+   </div>
+ </div>
+  <div class="adv"><img src="{IMG_PATH}zrmokuai/gg.jpg" width="282" height="56" /></div>
+</div>
+<div class="cl"></div>
+<div class="row3">
+  <div class="row3_t"></div>
+  {if $infos}
+  <table width="100%%" border="0" cellspacing="0" cellpadding="0" class="pre_tab">
+ 
+  <tr class="tab_name"  style="font-size:18px;">
+    <td>考试模块名称</td>
+    <td>更新时间</td>
+    <td>模块售价（元/个）</td>
+    <td>模块详情</td>
+    <td>模块下载</td>
+    <td>在线购买</td>
+    <td>在线咨询</td>
+    <td>&nbsp;</td>
+  </tr>
+  {php $num = 1}
+  {loop $infos $r}
+  <tr class="parent">
+    <td>{str_replace($q,'<font color="red">'.$q.'</font>',$r['name'])}</td>
+    <td>{date('Y-m-d',strtotime($r['updatetime']) )}</td>
+    <td>&#65509 {number_format($r['price'],2)}</td>
+    <td {if $r['status'] == 1}class="chak"{/if}  id="{$num}">{if $r['status'] == 1}查看详情{else}即将上市{/if}</td>
+    <td><a href="{$r['down_url']}" target="_blank">免费下载</a></td>
+    <td><a href="{$r['buy_url']}" target="_blank">在线购买</a></td>
+    <td><a href="http://126.am/UBZ0k3" target="_blank">客服咨询</a></td>
+    <td><a href="{$r['more_url']}" target="_blank">更多</a></td>
+  </tr>
+  <tr class="sub_tab hide" id="child-{$num}">
+    <td colspan="8">
+    <table width="100%%" border="0" cellspacing="0" cellpadding="0" class="sub_tab">
+  <tr >
+    <td  style="background:#b1c8e7;height:20px;">模块总题量</td>
+    <td  style="background:#b1c8e7;height:20px;">题型及题量</td>
+    <td  style="background:#b1c8e7;height:20px;">&quot;我要练习&quot;中包含科目名称及题量</td>
+    <td  style="background:#b1c8e7;height:20px;">模拟试卷套数及题量</td>
+    <td  style="background:#b1c8e7;height:20px;">历年真题套数及题量</td>
+    <td  style="background:#b1c8e7;height:20px;">冲刺试卷套数及题量</td>
+  </tr>
+
+  <tr>
+    <td>{$r['name_num']}</td>
+    <td>{nl2br($r['type_num'])}</td>
+    <td>{nl2br($r['content_1'])}</td>
+    <td>{nl2br($r['content_2'])}</td>
+    <td>{nl2br($r['content_3'])}</td>
+    <td>{nl2br($r['content_4'])}</td>
+  </tr>
+</table>
+  </td>
+  </tr>
+  {php $num++ }
+   {/loop}
+
+</table>
+{else}
+<p align="center">很遗憾暂时没有找到 <font color="red">{$q}</font>  相关模块，您可以试一试其它相关的关键词来查询！</p>
+{/if}
+<div class="">
+    	{str_replace("-0.html","-1.html",$pages)}  
+   		</div>
+</div>
+
+<div style="font-size:12px;" align="center">
+
+     ﻿ <!--考职称站点底部调用 -->
+ <!--cnzz tui-->
+<script type="text/javascript" charset="utf-8" src="http://tui.cnzz.net/cs.php?id=1000019745"></script><div id="aliyun_cnzz_tui_1000019745" style="display:block;float:none;border:0 none;background:none;opacity:1;filter:alpha(opacity=100);margin:0;padding:0;visibility:visible;overflow:visible;*zoom:1;position:relative;"></div>
+<!--cnzz tui-->
+
+<script type="text/javascript" src="http://chat.53kf.com/kf.php?arg=cdbroadcom&amp;style=2"></script><script src="http://www3.53kf.com/kf_ivt.php?arg=cdbroadcom&amp;test_do=&amp;style=2&amp;isonline=1&amp;kfonline=1&amp;lang=cn&amp;resize=yes&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;lytype=0&amp;tpl_name=crystal_blue&amp;tpl_width=703&amp;tpl_height=473" type="text/javascript" id="ivt_script"></script><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="1" height="1" align="middle" id="mainserverim"><param name="allowScriptAccess" value="always"><param name="movie" value="http://chat.53kf.com/flash/hz6d_53kf_kf_gid.swf"><param name="quality" value="high"><param name="wmode" value="transparent"><param name="bgcolor" value="#ffffff"><embed name="mainserverim" src="http://chat.53kf.com/flash/hz6d_53kf_kf_gid.swf" quality="high" wmode="transparent" bgcolor="#ffffff" width="1" height="1" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" swliveconnect="true"></object><iframe id="kfiframe" style="display:none;overflow:hidden;" frameborder="0"></iframe><div id="kfivteffect" style="display:none;position:absolute;width:0px;height:0px;overflow:hidden;border:1px solid #1B88D0;background:#D6EEFD;z-index:10087;"></div><div id="kfivtwin" style="display:none;overflow:hidden;"><div id="acc_title" style="position:relative;overflow:hidden;background-image: url(http://www3.53kf.com/img/ivt/new2011_07/zdyivt_53kf_1313696544.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;width: 450px;height: 250px;z-index: 0;border-style: none;font-family:宋体;"><div style="overflow: hidden;position:absolute;background-repeat: no-repeat;font-size: 12px;color: #000000;width: 23px;height: 23px;left: 416px;top: 3px;z-index: 2;border-style: none;font-family:宋体;cursor:pointer;" onclick=";onliner_zdfq=3;hidden_ivt();" id="hz6d_53kf_invite_hid"></div><div style="overflow: hidden;position:absolute;background-repeat: no-repeat;line-height:120%;font-size: 14px;color: #000000;text-align:left;font-weight: bold;width: 338px;height: 15px;left: 15px;top: 8px;z-index: 3;border-style: none;font-family:宋体;" id="ivtzdy_53kf_2">您好，感谢您对博大教育的关注！</div><div style="overflow: hidden;position:absolute;background-repeat: no-repeat;line-height:120%;font-size: 22px;color: #0059ab;font-weight: bold;width: 124px;height: 34px;left: 196px;top: 57px;z-index: 4;border-style: none;font-family:黑体;" id="ivtzdy_53kf_3">欢迎咨询</div><div style="overflow: hidden;position:absolute;background-repeat: no-repeat;line-height:120%;font-size: 14px;color: #0059ab;text-align:left;width: 220px;height: 50px;left: 196px;top: 103px;z-index: 5;border-style: none;font-family:宋体;" id="ivtzdy_53kf_4">如果您有任何疑问，请接受此邀请，我们会为您提供最专业的解答。</div><div style="overflow: hidden;position:absolute;background-image: url(http://www3.53kf.com/img/ivt/new2011_07/zdyivt_53kf_1313697305.gif);background-repeat: no-repeat;font-size: 12px;color: #FFFFFF;font-weight: bold;width: 137px;height: 34px;left: 198px;top: 164px;z-index: 6;border-style: none;font-family:宋体;cursor:pointer;" onclick=";onliner_zdfq=2;window.open(&quot;talk_openurl&quot;,&quot;_blank&quot;,&quot;height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no&quot;);hidden_ivt();" id="hz6d_53kf_invite_acc"></div><div style="overflow: hidden;position:absolute;background-repeat: no-repeat;line-height:120%;font-size: 14px;color: #FFFFFF;text-align:center;font-weight: bold;width: 64px;height: 18px;left: 249px;top: 172px;z-index: 8;border-style: none;font-family:宋体;cursor:pointer;" onclick=";onliner_zdfq=2;window.open(&quot;talk_openurl&quot;,&quot;_blank&quot;,&quot;height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no&quot;);hidden_ivt();" id="hz6d_53kf_invite_acc">立即咨询</div><div style="overflow: hidden;position:absolute;background-image: url(http://www3.53kf.com/img/ivt/new2011_07/zdyivt_53kf_1313697212.gif);background-repeat: repeat;font-size: 12px;color: #000000;width: 151px;height: 148px;left: 20px;top: 61px;z-index: 10;border-style: none;font-family:宋体;" id="ivtzdy_53kf_7"></div></div></div><div id="div_company_mini" style="display:none;position:fixed;_position:absolute;right:0;bottom:0;width:403px;height:378px;overflow:hidden;z-index:10089;cursor:move;"><div id="hz6d_cname_mini_div" style="overflow:hidden;position:absolute;top:7px;left:10px;width:330px;height:20px;color:#fff;text-indent:30px;background:url('http://www3.53kf.com/style/chat/minichat2/img/minchat_ns.gif') -79px 0 no-repeat;"> </div><div title="缩小" mini_narrow="缩小" mini_recover="还原" max_min="max" style="position:absolute;top:10px;right:46px;width:12px;height:12px;background:url('http://www3.53kf.com/style/chat/minichat2/img/min.gif') no-repeat; cursor:pointer;" onclick="max_min_company_mini(this);"></div><div title="切换到正常窗口" style="position:absolute;top:10px;right:28px;width:12px;height:12px;background:url('http://www3.53kf.com/style/chat/minichat2/img/maxto.gif') no-repeat; cursor:pointer;" onclick="max_from_company_mini(this);"></div><div title="关闭" style="position:absolute;top:10px;right:10px;width:12px;height:12px;background:url('http://www3.53kf.com/style/chat/minichat2/img/minchat_ns.gif') -18px 0 no-repeat;cursor:pointer;" onclick="close_company_mini();"></div><div id="mini_header_bg_div" style="width:403px;height:35px;background:url('http://www3.53kf.com/style/chat/minichat2/img/header_bg.gif') no-repeat;"></div><div id="iframe_company_mini_div" style="width:100%;height:100%;"><iframe id="iframe_company_mini" frameborder="0" width="100%" height="100%"></iframe></div></div><iframe src="" frameborder="0" style="overflow: hidden; position: absolute;height:0;width:0" id="hz6d_im_iframe"></iframe><div id="iconDiv1"><iframe style="position:absolute;z-index:7998;width:0px;height:0px;top:0px;left:0px;" frameborder="0"></iframe><div id="iconDivMain1" style="z-index: 10085; width: 156px; height: 300px; overflow-x: hidden; overflow-y: hidden; position: absolute; left: 1px; top: 3006px; "><div style="position: relative;overflow: hidden;z-index:10086;width: 156px;height: 300px;z-index: 1;background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;"><div style="position: absolute;overflow: hidden;width: 156px;height: 174px;left: 0px;top: 0px;z-index: 1;background-image: url(http://www3.53kf.com//img/kflogo/zdytb/new2011_01/zdytb_53kf_1313702560.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;"></div><div style="position: absolute;overflow: hidden;width: 156px;height: 30px;left: 0px;top: 267px;z-index: 3;background-image: url(http://www3.53kf.com//img/upload/cdbroadcom/zdytb/zdytb_53kf_1361260503.jpg);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;"></div><div style="position: absolute;overflow: hidden;width: 156px;height: 31px;left: 0px;top: 174px;z-index: 4;background-image: url(http://www3.53kf.com//img/kflogo/zdytb/new2011_01/zdytb_53kf_1313704648.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;cursor: pointer;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');"></div><div style="position: absolute;overflow: hidden;width: 156px;height: 31px;left: 0px;top: 205px;z-index: 5;background-image: url(http://www3.53kf.com//img/kflogo/zdytb/new2011_01/zdytb_53kf_1313704634.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;cursor: pointer;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');"></div><div style="position: absolute;overflow: hidden;width: 156px;height: 31px;left: 0px;top: 236px;z-index: 6;background-image: url(http://www3.53kf.com//img/kflogo/zdytb/new2011_01/zdytb_53kf_1313704910.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;cursor: pointer;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');"></div><div style="position: absolute;overflow: hidden;width: 121px;height: 120px;left: 17px;top: 49px;z-index: 8;background-image: url(http://www3.53kf.com//img/kflogo/zdytb/new2011_01/zdytb_53kf_1313714260.gif);background-repeat: no-repeat;font-size: 12px;text-align:left;font-family:宋体;border-style: none;cursor: pointer;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');"></div><div style="position: absolute;overflow: hidden;width: 106px;height: 22px;left: 36px;top: 178px;z-index: 9;background-repeat: no-repeat;font-size: 14px;color: #0059AB;text-align:center;font-family:宋体;border-style: none;cursor: pointer;line-height: 22px;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');" title="首席客服咨询">首席客服咨询</div><div style="position: absolute;overflow: hidden;width: 106px;height: 22px;left: 36px;top: 209px;z-index: 10;background-repeat: no-repeat;font-size: 14px;color: #0059AB;text-align:center;font-family:宋体;border-style: none;cursor: pointer;line-height: 22px;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');" title="产品购买咨询">产品购买咨询</div><div style="position: absolute;overflow: hidden;width: 106px;height: 22px;left: 36px;top: 240px;z-index: 11;background-repeat: no-repeat;font-size: 14px;color: #0059AB;text-align:center;font-family:宋体;border-style: none;cursor: pointer;line-height: 22px;" onclick="setIsinvited();window.open('http://www3.53kf.com/webCompany.php?arg=cdbroadcom&amp;style=2&amp;language=cn&amp;lytype=0&amp;charset=gbk&amp;kflist=on&amp;kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&amp;zdkf_type=1&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=&amp;tfrom=1&amp;tpl=crystal_blue', '_blank', 'height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no');" title="售后客服咨询">售后客服咨询</div><div style="position: absolute;overflow: hidden;width: 130px;height: 24px;left: 6px;top: 5px;z-index: 14;background-repeat: no-repeat;font-size: 14px;color: #FFFFFF;text-align:center;font-family:宋体;border-style: none;line-height: 24px;">官方在线客服</div><div style="position: absolute;overflow: hidden;width: 156px;height: 31px;left: 0px;top: 270px;z-index: 12;background-repeat: no-repeat;font-size: 12px;color: #0095AB;text-align:right;font-family:宋体;border-style: none;line-height: 31px;">24小时专业客服服务</div></div></div></div><script src="http://www3.53kf.com/stat.php?com_id=70668581&amp;referer=http%3A%2F%2Fwww.kaozc.com%2Fzyzg%2F&amp;keyword=" type="text/javascript" id="stat_script"></script><div style="display:none;"><a href="http://www.53kf.com">在线客服系统</a></div>
+
+<style>
+#foot a{font-size:12px;color:#333;}
+#foot{font-size:12px;color:#333;}
+.dzx{ bottom:0px;display:block;z-index:9999;background:url(/statics/images/boda/dzx.gif) no-repeat;width:965px;padding-left:0;clear:both;margin:0 auto;bottom:0;position:fixed;left:50%; margin-left:-482px;}
+*html .dzx{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+.qq{padding-right:20px;float:right;margin-top:25px;}
+.dzx .zx{width:640px;height:55px;float:left;}
+</style>
+<div id="foot" class="area area" style=" border-top:1px solid #E1E1E1; line-height:22px;padding-top:10px; height:150px;">
+      <p align="center"><a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.kaozc.com');return" href="javascript:void(0)" false;="">设置首页</a> - <a href="http://www.kaozc.com/list-2-1.html" rel="nofollow" target="_blank">关于博大</a> - <a href="http://www.cdbroad.com/cdbroad/gysy/18" rel="nofollow" target="_blank">博大公益</a> - <a href="http://wap.cdbroad.com/" rel="nofollow" target="_blank">手机版</a> - <a href="http://www.kaozc.com/list-5-1.html" rel="nofollow" target="_blank">合作联系</a> - <a href="http://www.kaozc.com/list-4-1.html" rel="nofollow" target="_blank">网站声明</a>- <a href="http://www.kaozc.com/old/" target="_blank">旧版</a> - <a href="http://www.kaozc.com/list-445-1.html" rel="nofollow" target="_blank">帮助中心</a> - <a href="http://www.kaozc.com/list-446-1.html" rel="nofollow" target="_blank">友情链接</a> - <a href="#" target="_blank">网站导航</a> </p>
+            <p align="center">Copyright © 2011-2013 Inc. all Rights Reserved. 博大教育 <a href="http://www.kaozc.com/list-4-1.html" target="_blank">版权所有</a> </p>
+       <p align="center"><a href="http://www.kaozc.com" target="_blank">成都博大教育科技有限公司</a>&nbsp;&nbsp;蜀ICP备07505764号&nbsp;&nbsp; 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc423ac9f2c732e1388bc1aa4648cf47e' type='text/javascript'%3E%3C/script%3E"));
+</script><script src=" http://hm.baidu.com/h.js?c423ac9f2c732e1388bc1aa4648cf47e" type="text/javascript"></script>
+</p>
+    </div>
+    
+
+ <!--考职称站点底部调用end -->
+ 
+  
+  </div>
+</body>
+</html>

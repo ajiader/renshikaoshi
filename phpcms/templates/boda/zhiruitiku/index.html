@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>博大致睿题库：中国执业、职称考试辅导软件第一品牌</title>
+<meta name="keywords" content="财会类考试题库、建筑类考试题库、医药卫生类考试题库、司法类考试题库、外贸类考试题库、公务员考试题库、计算机考试类题库、其他类考试题库">
+<meta name="description" content="博大致睿题库收集历年所有真题、习题、模拟题，所有考试试题一网打尽，并提供薄弱环节诊断、定期万人模考、软件免费升级、智能全程学习引导等功能，打造成为中国执业、职称考试第一品牌的辅导软件">
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/zrmokuai/css/toruisearch.css" />
+</script>
+
+</head>
+<body>
+{template "zhiruitiku","header"}
+<!--幻灯片-->
+<div class="torui-pic-tab">
+	<div class="onlinequizct">
+    	<div id="wrapper">
+          <div id="slider-wrapper">
+            <div id="slider" class="nivoSlider">
+            {pc:content  action="position" posid="299"  order="listorder DESC" thumb="1" num="6"} {loop $data $r}
+                 <a href="{$r['url']}"{title_style($r[style])} title="{str_cut($r['title'],50)}"><img src="{$r['thumb']}" alt="{$r['title']}" title="{$r['title']}" width="960" height="375" /></a>
+              {/loop}{/pc}
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption"> <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="onlinequizct">
+
+	<!--搜索-->
+    {template "zhiruitiku","form"}
+    
+    <!--软件分类导航-->
+    <div class="torui-dv-bod torui-ty-mg">
+    	<div class="bod-cut torui-ty-mg">软件分类导航</div>
+         {pc:block pos="zyzg_zrmk_nav"}{/pc}    
+    </div>
+    
+    <!--软件功能介绍-->
+    {template "zhiruitiku","jieshao"}
+    
+    <!--购买流程-->
+    <div class="torui-dv-bod torui-ty-mg">
+    	<div class="bod-cut torui-ty-mg">购买流程</div>
+        <div class="torui-align"><img src="/statics/kaozc/zrmokuai/images/gm-lc.jpg" /></div>
+    </div>
+
+</div>
+
+<!--底部-->
+
+<script type="text/javascript" src="/statics/kaozc/zrmokuai/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+
+{template "zhiruitiku","footer"}
+
+</body>
+</html>

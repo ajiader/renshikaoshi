@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body,div,p,span,ul,li,dl,dt,dd,table,tr,td,i,font,img,h1,h2,h3,h4,h5,h6,em{ margin:0px; padding:0px;}
+body{ font-family:"微软雅黑", "黑体", "新宋体"; font-size:16px; }
+img{ border:0px;}
+a{ color:#797979; text-decoration:none;}
+a:hover{ color:#31a4e5; text-decoration:underline;}
+ul li{ list-style:none;}
+
+.computercenter,.toruitywidth{ width:951px; margin:0 auto; overflow:hidden;}
+.zrcksearch{ height:51px; background:url(../../images/zrmokuai/ckcxbg.jpg) repeat-x; line-height:51px;}
+.zrcksearch span{ display:inline-block; padding:0 10px 0 15px; font-size:22px; color:#0d3562; font-weight:bold; float:left;}
+.zrcksearch input{ margin-top:12px; float:left;}
+.zrcksearch .ssbtn{ width:475px; height:24px; border:1px #1f63af solid; background:#ffffff url(../../images/zrmokuai/ssfdj.jpg) no-repeat left center; padding-left:25px; border-radius:5px 0 0 5px; -moz-border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px;}
+.zrcksearch .sstxtbtn{ width:125px; height:28px; background:url(../../images/zrmokuai/ssbtn.jpg) no-repeat; border:0px;}
+.zg_content{ border-top:1px #d3d3d3 solid; border-bottom:1px #d3d3d3 solid; height:32px; background:url(../../images/zrmokuai/zctopbg.jpg) repeat-x; padding:0 10px; line-height:32px;}
+.zg_content  a{ margin:0 8px; color:#424242; }
+.zg_table{ margin:0 10px; width:951px; font-size:14px;}
+.zg_table tr:hover{ background:#f9f9f9;}
+.zg_table tr td{ height:40px; border-bottom:1px #e4e4e4 dashed; color:#545454;}
+.zg_table tr td.pd1{ padding-left:10px;}
+.zg_table tr td.cl1 a{ color:#ffac16;}
+.zg_table tr td.cl2{ color:#f10202;}
+.zg_table tr td.cl3 a{ display:inline-block; padding:0 6px; height:22px; line-height:22px; background:#ff0000; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; color:#ffffff;}
+.zg_table tr td.cl3 a b{ color:#fda000; font-weight:normal;}
+/*分页*/
+#pages { padding:14px 0 10px;font-family:宋体; text-align:right}
+#pages a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
+#pages a.a1 { background:url(../../images/zrmokuai/admin_img/pages.png) no-repeat 0 5px; width:56px; padding:0 }
+#pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }
+#pages span { display:inline-block; height:22px;padding:0 10px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center; }

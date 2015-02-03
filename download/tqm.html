@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+    <link type="text/css" rel="stylesheet" href="http://code.ksbao.com/Content/images/style.css" />
+    <script type="text/javascript" src="http://code.ksbao.com/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://code.ksbao.com/Scripts/js.js"></script>
+
+ <script type="text/javascript">
+        String.prototype.trim = function () {
+            return this.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+        $(document).ready(function () {
+
+        });
+        function inputfocus(id) {
+            $("#" + id).html("");
+        }
+        //刷新验证码
+        function refreshCode() {
+            var vsrc = '/Captcha/Show';
+            $(".showcapt").attr("src", vsrc + "?r=" + Math.random());
+            $(".msg").html("");
+        }
+
+        //提交
+        function sub(id) {
+
+            var value = $("#" + id).val().trim();
+            if (value == "") {
+                $(".msg").html("请填写验证码");
+                return false;
+            }
+            else if (value.length != 4) {
+                $(".msg").html("请填写正确的验证码");
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: "http://code.ksbao.com/ExperienceCode/GetExperienceCode",
+                data: { captchaValue: value },
+                dataType: "json",
+                success: function (data) {
+                    if (data.Msg) {
+                        $(".showexpcode").html(data.Code);
+                        $(".showdiv").css("display", "block");
+                        $(".getCodeArea").css("display", "none");
+                    }
+                    else {
+                        $(".checkmsg").html(data.Code);
+                    }
+                },
+                error: function () {
+                    alert("提交失败");
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (window.addEventListener) {  //火狐
+
+
+        } else {
+            $("#qqkfpack").attr("style", "position: absolute; bottom: 140px; right: 0px; opacity: 1;");
+
+        }
+    });
+
+    window.onscroll = function () {
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var d = document.getElementById("divtop").offsetTop;
+        $("#con_box02").hide();
+        $("#totop").hide();
+        if (t >= 772) {
+            $("#divtop").attr("class", "topes");
+            if (window.addEventListener) {  //火狐
+                $("#divtop").attr("style", "position:fixed;");
+            }
+            $("#con_box02").show();
+        }
+        else {
+            $("#divtop").attr("class", "topst");
+            if (window.addEventListener) {  //火狐
+                $("#divtop").attr("style", "position:absolute;");
+            }
+        }
+        if (t >= 300) {
+            if (window.addEventListener) {  //火狐
+                $("#totop").attr("style", "position: fixed; bottom: 40px; right: 60px; opacity: 1;");
+            } else {
+                $("#totop").attr("style", "position: absolute; bottom: 40px; right: 60px; opacity: 1;");
+            }
+        }
+
+    }
+
+    function setop(value) {
+        $("li[name='selecttop']").attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/unselectbj.png'); color: #000000;");
+        $("#" + value.id).attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/selectbj.png'); color: rgb(255, 255, 255);");
+        $(".maincss").hide();
+        $(".selectleft").hide();
+        $("#l_" + value.id + "_left").show();
+        $("#l_" + value.id + "_left1_main").show();
+        $("li[id^='l_']").attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/unselectleftbj.png'); color: #000000;");
+        $("#l_" + value.id + "_left1").attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/selectleftbj.png'); color: #1367BF;");
+        //if ("l_t1_left1_main" == value.id) {
+        //    $("#l_" + value.id + "_left1_main").attr("style", "height:499px;");
+        //} else {
+        //    $("#l_" + value.id + "_left1_main").attr("style", "height:auto");
+        //}
+        $("#l_" + value.id + "_left1_main").attr("style", "height:auto");
+        $("#" + value.id).show();
+    }
+    function seleft(value) {
+        $("li[id^='l_']").attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/unselectleftbj.png'); color: #000000;");
+        $("#" + value.id).attr("style", "background-image: url('http://code.ksbao.com/Content/libaomage/selectleftbj.png'); color: #1367BF;");
+        $(".maincss").hide();
+        $("#" + value.id + "_main").attr("style", "height:499px;");
+        //if ("l_t1_left" == (value.id + "_main")) {
+        //    $("#" + value.id + "_main").attr("style", "height:499px;");
+        //} else {
+        //    $("#" + value.id + "_main").attr("style", "height:auto;");
+        //}
+    }
+    function mouseovermain(value) {
+        $("#" + value.id).attr("style", "height:auto;");
+        $("#" + value.id).attr("class", "maincss2");
+    }
+    function mouseoutmain(value) {
+        var height = $("#" + value.id).height();
+        if (height > 499) {
+            $("#" + value.id).attr("style", "height:499px;");
+        } else {
+            $("#" + value.id).attr("style", "height:auto");
+        }
+        $("#" + value.id).attr("class", "maincss");
+    }
+    $(function () {
+        var ishow = 0;
+        var elemlist = $('#advlist').find('.advsty');
+        for (var i = 0; i < elemlist.length; i++) {
+            $(elemlist[i]).hide();
+        }
+
+        shopin();
+
+        function shopin() {
+            $(elemlist[ishow]).fadeIn(2000, function () {
+                setTimeout(shopout, 3000);
+            });
+        }
+
+        function shopout() {
+            $(elemlist[ishow]).fadeOut(2000, function () {
+                ishow++;
+                if (ishow > elemlist.length - 1) {
+                    ishow = 0;
+                }
+                shopin();
+            });
+        }
+
+        rollpe();
+        function rollpe() {
+            $('#roll').animate({ width: $(window).width() }, elemlist.length * 7000, "swing", function () {
+                $('#roll').animate({ width: "0" }, elemlist.length * 7000, "swing", function () {
+                    rollpe();
+                });
+            });
+        };
+        $('#kjdshspb').click(function () {
+            window.location.href = 'http://code.ksbao.com/ExperienceCode?No=BEF716403A6F0580BF2CCCA3311703904AC476F1CC70384D&Type=kjdshspb';
+        });
+
+    });
+</script>
+
+<body>
+ <div class="con_box01">
+        <div class="function01">
+            <img src="http://code.ksbao.com/Content/images/pic01.jpg" style="padding-top: 30px;" /><a name="getcode"></a>
+
+            <div class="lqtym">
+                <div class="getCodeArea">
+                    <span class="lq_sr ">
+                        <input type="text" name="q" title="验证码" class="searchinput" id="searchinput" onkeydown="if (event.keyCode==13) {}" onblur="if(this.value=='')value='请输入验证码';" onfocus="if(this.value=='请输入验证码')value='';" value="请输入验证码" /></span>
+                    <span class="lq_yzm ">
+                        <img src="http://code.ksbao.com/Captcha/Show" onclick="refreshCode();" class="showcapt"  /></span>
+                    <span class="lq_btn "><a href="javascript:void(0);" onclick="sub('searchinput')">免费领取</a></span>
+                    <div class="msg"></div>
+                </div>
+                <div class="showdiv" style="display: none;">
+                    <div class="r">
+                        <img src="http://code.ksbao.com/Images/r.png" />恭喜您提取手机体验码成功！
+                    </div>
+
+                    <div class="tym">
+                        <span class="hint">手机体验码:</span> <span class="showexpcode">00000000000000000000</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 18px; color: #1369c0; padding-top: 50px; float: left; width: 1000px;">体验码使用说明</p>
+            <p style="font-size: 14px; color: #595958; line-height: 200%; float: left; width: 1000px;">
+                1. 体验码适用于所有科目，期间全部开放所有试题及功能，每个体验码只能注册一个科目；<br />
+                2. 体验码使用期限为7天，如希望继续使用，可点击软件主界面充值按钮购买充值码充值软件；<br />
+                3. 体验码使用方法如下：
+            </p>
+            <ul class="sj_pl">
+                <li>
+                    <img src="http://code.ksbao.com/Content/images/1.gif" width="327" height="581" /><p style="font-size: 18px; color: #000000; padding-top: 5px; padding-left: 120px;">1、软件注册</p>
+                </li>
+                <li style="margin-left: 6px;">
+                    <img src="http://code.ksbao.com/Content/images/2.gif" width="327" height="581" /><p style="font-size: 18px; color: #000000; padding-top: 5px; padding-left: 120px;">2、输入验证码</p>
+                </li>
+                <li style="margin-left: 6px;">
+                    <img src="http://code.ksbao.com/Content/images/3.gif" width="327" height="581" /><p style="font-size: 18px; color: #000000; padding-top: 5px; padding-left: 120px;">3、软件正常使用</p>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

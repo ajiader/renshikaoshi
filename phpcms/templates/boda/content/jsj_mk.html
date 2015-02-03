@@ -1,0 +1,15 @@
+
+{if $cityid>1 && $cityid<33}
+<div class="xgdfzdq">
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    	<tr>
+        	<td class="dfname">{citys2city($cityList['name'])}站</td>
+        	<td>   {loop $childCitylist $v}
+  {if $v['pinyin']} <a href="{$CATEGORYS[$catid]['url']}{$v['pinyin']}/" title="{$v['name']}职称计算机考试网">{citys2city($v['name'])}</a>{/if}
+   {/loop}</td>
+        </tr>
+    </table>
+	<div class="newsclear"></div>
+</div>
+{/if}

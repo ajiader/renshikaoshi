@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,span,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,ol,a,font,img,table,td,tr,i{ margin:0px; padding:0px;}
+body{ font-size:12px; font-family:"微软雅黑", "黑体", "新宋体"; background:#f5f5f5;}
+ul li{ list-style:none;}
+img{ border:0px;}
+a{ text-decoration:none; color:#515151; blr:expression_r(this.onFocus=this.blur());outline:none;}
+a:hover{ text-decoration:underline; color:#eb0000;}
+*{ margin:0px; padding:0px;}
+input, select, textarea { outline: medium none;}
+
+.teachtybg,.teachterdb,.teacherss input,.teacherlsdv .lfms .tyms .picnr span p,.spancut,.teacherdetail .detail .sy,.teacherdetail .detail .rgpicnr p.zjnr font,.teacherdetail .detail .rgpicnr .addgz a{ background-image:url(../../images/zhuanjia/teachertybg.png); background-repeat:no-repeat;}
+.teachterdb{ height:41px; background-position:0px -35px; line-height:41px; background-repeat:repeat-x;}
+.teachtymediacy{ width:960px; margin:0 auto; overflow:hidden;}
+.teachterdb span{ float:left;}
+.teachterdb span.fhsy{ float:right;}
+.teachtertop{ clear:both; height:360px; background:#a30100;}
+.teachermbx{ height:42px; line-height:42px; padding-left:5px; color:#353535;}
+.teachermbx a{ color:#353535; margin:0 5px;}
+.teacherss{ border:1px #dfdfdf solid; padding:8px 0 8px 16px;}
+.teacherss span{ display:inline-block; line-height:32px;}
+.teacherss span.sstitle{ color:#363231; font-size:16px; margin-right:10px;}
+.teacherss span.mshot{ margin-left:10px; color:#666666;}
+.teacherss span.mshot a{ color:#666666; margin:0 8px;}
+.teacherss input{ vertical-align:middle; border:0px; height:32px;}
+.teacherss input.iptext{ width:330px; background-position:0px 0px; padding-left:5px;}
+.teacherss input.ipbtn{ width:93px; background-position:-335px 0px; cursor:pointer;}
+.teachertycut{ height:50px; line-height:50px; background:url(../../images/zhuanjia/cuttitlebg.jpg) no-repeat left center; padding-left:20px; font-size:18px;
+ color:#db0000;}
+.teacherlsdv{ border:1px #dfdfdf solid; background:#ffffff; overflow:hidden;}
+.teacherlsdv .lfms{ float:left; width:710px; border-right:1px #dfdfdf solid; padding:15px 0 0 0;}
+.teacherlsdv .lfms .tyms{ width:338px; float:left; margin:0 6px 15px 9px; display:inline;}
+.teacherlsdv .lfms .tyms .pic{ width:163px; border:1px #dfdfdf solid; background:#f5f5f5; height:248px; text-align:center; float:left;}
+.teacherlsdv .lfms .tyms .pic img{ margin:3px 0; width:155px; height:210px;}
+.teacherlsdv .lfms .tyms .pic .fxwb{ border-top:2px #dfdfdf solid; height:26px; line-height:26px;}
+.teacherlsdv .lfms .tyms .pic .fxwb img{ width:16px; height:16px; vertical-align:middle;}
+.teacherlsdv .lfms .tyms .picnr{ width:162px; float:left; margin-left:10px; display:inline; height:248px; position:relative;}
+.teacherlsdv .lfms .tyms .picheight{ height:182px;}
+.teacherlsdv .lfms .tyms .picheight1{ height:184px;}
+.teacherlsdv .lfms .tyms .picnr p.title{ line-height:25px; font-size:14px;}
+.teacherlsdv .lfms .tyms .picnr p.title a{ color:#262626;}
+.teacherlsdv .lfms .tyms .picnr p.msnr{ line-height:20px; margin-top:5px; color:#666666;}
+.teacherlsdv .lfms .tyms .picnr p.msnr a{ color:#d50000;}
+.teacherlsdv .lfms .tyms .picnr span{ height:63px; background:#fafafa; border-top:1px #dfdfdf dashed; border-bottom:1px #dfdfdf dashed;
+position:absolute; bottom:0px; left:0px; width:162px;}
+.teacherlsdv .lfms .tyms .picnr span p{ height:18px; padding-left:5px; background-position:0px -86px; color:#333333; line-height:18px; margin-top:5px;}
+.teacherlsdv .lfms .tyms .picnr span p font{ display:inline-block; font-size:12px; margin-right:15px; color:#ffffff;}
+.teacherlsdv .rgms,.teacherdetail .detailright{ float:right; width:238px; padding-top:8px;}
+.spancut{ display:block; height:29px; line-height:27px; padding-left:22px; background-position:-191px -84px; margin-bottom:8px; font-size:14px;}
+.teacherlsdv .rgms .videonr{ margin-bottom:5px; _margin:0px;}
+.teacherlsdv .rgms .videonr span{ float:left; width:100px; height:95px; margin:0 7px 5px 9px; _margin:0 7px 0 9px; display:inline;}
+.teacherlsdv .rgms .videonr span img{ width:100px; height:75px;}
+.teacherlsdv .rgms .videonr span p{ line-height:22px; text-align:center;}
+.teacherlsdv .rgms .videonr span p a{ color:#828282;}
+.teacherclear{ clear:both; line-height:0; font-size:0; height:0;}
+.teachernewsul li{ background:url(../../images/zhuanjia/icon1.jpg) no-repeat 10px center; height:23px; line-height:23px; padding-left:20px;}
+.functionfoot{ padding:15px 0; text-align:center; border-top:1px #DFDFDF solid; margin-top:10px; color:#3d3d3d;}
+.functionfoot p{ line-height:25px;}
+.functionfoot p a{ color:#3d3d3d;}
+
+.teacherdetail{ overflow:hidden; margin:0px;}
+.teacherdetail .detailleft{ width:708px; float:left;}
+.teacherdetail .detail{ border:1px #dfdfdf solid; border-top:3px #dfdfdf solid; padding:14px 16px; background:#ffffff;}
+.teacherdetail .detail .lfpic{ width:245px; height:334px; background:url(../../images/zhuanjia/xx_msbg.jpg) no-repeat; position:relative; float:left;}
+.teacherdetail .detail .sy{ width:137px; height:38px; position:absolute; right:4px; bottom:10px; background-position:-1px -117px;}
+.teacherdetail .detail .rgpicnr{ width:410px; float:left; margin-left:15px; display:inline; height:328px; position:relative;}
+.teacherdetail .detail .rgpicnr h2{ height:30px; line-height:30px; color:#333333; font-size:16px;}
+.teacherdetail .detail .rgpicnr p.zjnr{ height:20px; line-height:20px; margin:8px 0;}
+.teacherdetail .detail .rgpicnr p.zjnr font{ display:inline-block; width:70px; height:20px;  background-position:-191px -125px; line-height:18px; padding-left:8px; font-size:12px; color:#ffffff; margin-right:5px;}
+.teacherdetail .detail .rgpicnr .dvbor{ border-bottom:1px #a3a3a3 dotted; line-height:0; font-size:0; height:1px; margin:5px 0;}
+.teacherdetail .detail .rgpicnr p.msjs{ background:url(../../images/zhuanjia/icon1.jpg) no-repeat left center; line-height:30px; font-weight:bold; padding-left:10px; color:#666666;}
+.teacherdetail .detail .rgpicnr p.mswznr{ line-height:22px; color:#333333;}
+.teacherdetail .detail .rgpicnr .addgz{ width:410px; text-align:center; margin-top:20px;}
+.teacherdetail .detail .rgpicnr .addgz a{ display:inline-block; width:70px; height:23px; padding-left:15px; margin-right:20px; line-height:23px; color:#ffffff; background-position:0px -168px;}
+.teacherdetail .detailvideo{ border-top:1px #dfdfdf solid; margin-top:10px; padding:10px 0;}
+.teacherdetail .detailvideo .videotitle{ display:block; height:30px; line-height:30px; font-size:18px; color:#db0000; padding-left:10px; margin-bottom:8px;}
+.teacherdetail .detailvideo .tyvd{ float:left; width:160px; height:135px; margin:0 5px 0 10px; display:inline;}
+.teacherdetail .detailvideo .tyvdmg0{ margin-right:0px;}
+.teacherdetail .detailvideo .tyvd span{ display:block; height:100px; position:relative;}
+.teacherdetail .detailvideo .tyvd span img{ width:160px; height:100px;}
+.teacherdetail .detailvideo .tyvd span em{ font-size:12px; height:22px; line-height:22px; font-style:normal; color:#ffffff; background:url(../../images/zhuanjia/videoicon.png) no-repeat right center; position:absolute; bottom:0px; left:0px; width:150px; padding-left:10px;}
+.teacherdetail .detailvideo .tyvd p{ line-height:30px; text-align:center; }
+.teacherdetail .detailvideo .tyvd p a{ color:#343434;}
+.teacherdetail .detailfy{ text-align:center; margin-top:10px;}
+.teacherdetail .detailfy a{ display:inline-block; margin:0 5px; padding:0 7px; height:20px; border:1px #dedede solid; line-height:20px; color:#343434;}
+.teacherdetail .detailfy span a{ padding:0 15px; border:1px #dedede solid;}
+.teacherdetail .detailfy b{ margin:0 5px; background:#cc0001; color:#ffffff; display:inline-block; padding:0 8px; height:22px; line-height:22px;}
+.teacherdetail .detailfy a:hover{ border:0px; background:#cc0001; height:22px; line-height:22px; padding:0 8px; color:#ffffff; font-weight:bold;}
+.teacherdetail .detailfy span a:hover{ padding:0 16px; border:0px; height:22px; line-height:22px; text-decoration:none;}
+.teacherdetail .detailright{ padding:0px;}
+.teacherdetail .detailright .fdwzty{ border:1px #dfdfdf solid; background:#ffffff; margin-bottom:10px;}
+.teacherbkzxmore{ position:relative;}
+.teacherbkzxmore a{ position:absolute; right:8px; top:0px; line-height:27px; color:#666666; font-size:12px;}
+.teacheryiwen{ overflow:hidden; margin:10px 6px; height:190px;}
+.teacheryiwenul li{ border-bottom:1px #dfdfdf dashed; padding-bottom:4px;}
+.teachertyyc,.teacheryiwenul li span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; word-wrap:normal;}
+.teacheryiwenul li span{ display:block; line-height:22px; width:200px;  padding-left:20px;}
+.teacheryiwenul li span.yiwentitle{ background:url(../../images/zhuanjia/yiwenicon.png) no-repeat left 6px;}
+.teacheryiwenul li span.yiwentitle a{ color:#333333;}
+.teacheryiwenul li span.yiwentitle a:hover{ color:#DB0000;}
+.teacheryiwenul li span.yiwenhd{ color:#666666;}
+
+
+
+
+
+
+

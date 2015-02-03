@@ -1,0 +1,2 @@
+document.writeln("<script type=\'text/javascript\' src=\'http://chat.53kf.com/kf.php?arg=cdbroadcom&style=3\'></script><div style=\'display:none;\'><a href=\'http://www.53kf.com\'>在线客服系统</a></div>");
+document.writeln("");

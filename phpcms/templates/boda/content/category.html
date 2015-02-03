@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}vms/reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}vms/sty.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
+<link href="/statics/css/boda/kaozc/style/kuaijishi.css" rel="stylesheet" type="text/css" />
+<link href="/statics/css/boda/kaozc/style/index.css" rel="stylesheet" type="text/css" />
+<link href="/statics/css/boda/kaozc/huandeng/css/css.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
+</head>
+<body>
+
+{template "content","top_mini"}
+<div id="PAGE_AD_537808" align="center"></div>
+
+
+<div id="PartTwo" class="newsBox">
+  <h2 class="dominantColor"><span class="columnName simhei18"><a href="{$url}" target="_blank">{$catname}</a></span><span class="subMenu">
+  {php $j=1;}
+  {loop subcat($catid) $v}
+  {php if($j == 8) break;}
+  <a href="{$v[url]}" target="_blank">{$v[catname]}</a> |
+    {$j++}
+  {/loop}</span></h2>
+  <!-- 辅导资料编辑推荐-->
+  <div class="tuijian marT8"><span></span>
+  <ul>
+ {pc:content  action="lists" catid="$catid"  where="posids = 1 and `status`=99" order="id DESC" num="6"}
+  {loop $data $k $v}
+  <li><a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 54, '')}</a></li>
+{/loop} {/pc}
+</ul>
+		  <div class="clearfloat"></div>
+  </div>
+  <div class="main newsLi14">
+  
+<div class="left">
+    
+
+
+	{php $j=1;}
+	{loop subcat($catid) $v}
+	{php if($v['type']!=0) continue;}
+<div class="box{if $j%2==0}2 {/if}">
+      <h3><a href="{$v[url]}" target="_blank">{$v[catname]}</a><span><a href="{$v[url]}" target="_blank">更多</a></span></h3>
+<ul>
+ {pc:content action="lists" catid="$v[catid]" num="6" order="id DESC"}
+ 	{loop $data $v}
+<li><a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 54, '')}</a></li>
+{/loop}
+				{/pc}
+
+</ul>
+      <div class="clearfloat marV5"></div>
+</div>
+{$j++}
+	{/loop}
+ 
+</div>
+    
+    
+    
+    <div class="right hot">
+      <div class="tit"></div>
+      <h3 class="marT8">热门排行</h3>
+      <ul>
+       {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
+     {loop $data $v}
+					<li><a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 54, '')}</a></li>
+				{/loop}
+			{/pc}
+</ul></div>
+  </div><div class="clearfloat"></div>
+</div>
+<!--异步加载开始-->
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+ <script type="text/javascript">
+    BAIDU_CLB_fillSlotAsync('','');
+
+</script>
+<!--异步加载结束 --> 
+<div align="center">
+{template "content","rsks_bottom"}
+</div>
+</body>
+</html>
