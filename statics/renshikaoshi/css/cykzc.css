@@ -177,7 +177,7 @@ ul.ftsmall li.lione .pccontent{ width:190px; font-size:12px;}
 
 .kzc-listym .listymlf .listcut{ width:639px; position:absolute; left:-5px; top:-1px; height:47px; background:url(../images/cutbg.jpg) no-repeat; line-height:47px; padding-left:40px; font-weight:bold; font-size:16px; color:#d10000;}
 
-.bjtj{ padding:0 8px; margin-bottom:8px; line-height:23px;}
+.bjtj{ margin-bottom:8px; line-height:23px;}
 
 .bjtj span{ display:inline-block; width:66px; height:23px; color:#ffffff; padding-left:10px; background-position:0px -31px; margin-right:6px; font-size:12px;}
 
@@ -614,5 +614,7 @@ ul.seorg li{ font-size:12px;}
 .zr_kszl .kszlA{ float:left; width:580px;}
 .zr_kszl .kszlA a{ display:inline-block; line-height:28px; margin:0 8px 0 0;}
 .quesdv{ height:230px; overflow:hidden; }
-.quesdv ul li{ display:block; height:48px; border-bottom:1px #d9d9d9 dashed; background-position:-276px -146px; padding-left:26px; font-size:12px; padding-top:8px;}
-.quesdv ul li p{ line-height:24px; width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#666666;}
+.quesdv ul li{ display:block; height:48px; border-bottom:1px #d9d9d9 dashed; background-position:-276px -146px; padding-left:26px; font-size:12px;}
+.contentwordhot{ padding:8px 0; line-height:27px;}
+.contentwordhot font{ width:105px; height:27px; display:inline-block; background-image:url(../images/kzc-ty-bg.png); background-repeat:no-repeat; background-position:0 -218px; font-size:14px; color:#ffffff; padding-left:8px;}
+.contentwordhot a{ display:inline-block; margin:0 6px;}
