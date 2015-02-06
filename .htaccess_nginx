@@ -113,7 +113,7 @@ rewrite ^/kaoshi-([0-9]+)-([0-9]+)-([0-9]+).html /goshouye.php?m=content&c=index
 	if (!-e $request_filename) {
 	#地方站 31省市
 	rewrite ^/(En|jsj)/beijing$ /goshouye.php?m=content&c=city&pinyin=beijing&catdir=$1 last;
-        rewrite ^/(En|jsj)/(beijing|shanghai|tianjin|chongqing|hebei|shanxi|neimenggu|liaoning|jilin|heilongjiang|jiangsu|zhejiang|anhui|fujian|jiangxi|shandong|henan|hubei|hunan|guangdong|guangxi|hainan|sichuan|guizhou|yunnan|xizang|shanxis|gansu|qinghai|ningxia|xinjiang)(.*)/$ /goshouye.php?m=content&c=city&pinyin=$2$3&catdir=$1 last;
+        rewrite ^/(En|jsj)/(beijing|shanghai|tianjin|chongqing|hebei|shanxi|neimenggu|liaoning|jilin|heilongjiang|jiangshu|zhejiang|anhui|fujian|jiangxi|shandong|henan|hubei|hunan|guangdong|guangxi|hainan|sichuan|guizhou|yunnan|xizang|shanxis|gansu|qinghai|ningxia|xinjiang)(.*)/$ /goshouye.php?m=content&c=city&pinyin=$2$3&catdir=$1 last;
 
 	#栏目伪静态
 	rewrite ^/(En|jsj|zyzg)(.*)/(.*)/list.html$ /goshouye.php?m=content&c=index&a=lists&categorydir=$1$2/&catdir=$3&$query_string last; 
