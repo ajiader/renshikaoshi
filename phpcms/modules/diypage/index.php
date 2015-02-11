@@ -42,7 +42,8 @@ class index {
 			}
 		}
 
-		$SEO = seo($siteid, '',$row['title'],$row['description'],$row['keywords']);
+		$SEO = seo($siteid, '',$row['title'],$row['description'],$row['keywods']);
+		
 		ob_start();
 		include template('diypage','index_'.$siteid);
 		echo mem_page(1);

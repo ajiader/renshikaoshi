@@ -358,6 +358,7 @@ function L($language = 'no_language',$pars = array(), $modules = '') {
 	} else {
 		$lang = pc_base::load_config('system','lang');
 	}
+	
 	if(!$LANG) {
 		require_once PC_PATH.'languages'.DIRECTORY_SEPARATOR.$lang.DIRECTORY_SEPARATOR.'system.lang.php';
 		if(defined('IN_ADMIN')) require_once PC_PATH.'languages'.DIRECTORY_SEPARATOR.$lang.DIRECTORY_SEPARATOR.'system_menu.lang.php';
@@ -1544,8 +1545,10 @@ function seo($siteid, $catid = '', $title = '', $description = '', $keyword = ''
 		$cat['setting'] = string2array($cat['setting']);
 	}
 	$seo['site_title'] =isset($site['site_title']) && !empty($site['site_title']) ? $site['site_title'] : $site['name'];
-	$seo['keyword'] = !empty($keyword) ? $keyword : $site['keywords'];
-	$seo['description'] = isset($description) && !empty($description) ? $description : (isset($cat['setting']['meta_description']) && !empty($cat['setting']['meta_description']) ? $cat['setting']['meta_description'] : (isset($site['description']) && !empty($site['description']) ? $site['description'] : ''));
+	// $seo['keyword'] = !empty($keyword) ? $keyword : $site['keywords'];
+	$seo['keyword'] = !empty($keyword) ? $keyword : '';
+	// $seo['description'] = isset($description) && !empty($description) ? $description : (isset($cat['setting']['meta_description']) && !empty($cat['setting']['meta_description']) ? $cat['setting']['meta_description'] : (isset($site['description']) && !empty($site['description']) ? $site['description'] : ''));
+	$seo['description'] = isset($description) && !empty($description) ? $description : (isset($cat['setting']['meta_description']) && !empty($cat['setting']['meta_description']) ? $cat['setting']['meta_description'] : '');
 	$seo['title'] =  (isset($title) && !empty($title) ? $title.' - ' : '').(isset($cat['setting']['meta_title']) && !empty($cat['setting']['meta_title']) ? $cat['setting']['meta_title'].' - ' : (isset($cat['catname']) && !empty($cat['catname']) ? $cat['catname'].' - ' : ''));
 	foreach ($seo as $k=>$v) {
 		$seo[$k] = str_replace(array("\n","\r"),	'', $v);

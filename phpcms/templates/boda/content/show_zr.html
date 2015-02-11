@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}人事考试资讯网</title>
-<meta name="keywords" content="{$SEO['keyword']}">
-<meta name="description" content="{$SEO['description']}">
+<meta name="keywords" content="{if $SEO['keyword']}{$SEO['keyword']}{/if}">
+<meta name="description" content="{if $SEO['description']}{$SEO['description']}{/if}">
 <link type="text/css" rel="stylesheet" href="/statics/zyzg/css/toruistyle.css" />
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
