@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}人事考试资讯网</title>
-<meta name="keywords" content="{if $SEO['keyword']}{$SEO['keyword']}{/if}">
-<meta name="description" content="{if $SEO['description']}{$SEO['description']}{/if}">
+<meta name="keywords" content="{if $SEO['keyword']}{$SEO['keyword']}{else}{str_replace(' - ', '', $SEO['title'])}{/if}">
+<meta name="description" content="{if $SEO['description']}{$SEO['description']}{else}{str_replace(' - ', '', $SEO['title'])}{/if}">
 <script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg0126" />
