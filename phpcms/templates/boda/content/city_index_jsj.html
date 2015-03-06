@@ -101,12 +101,12 @@ function stopScroll() {
             
             <div class="nr1-ct">
             	<h1><span>资讯</span>
-				{pc:content action="position" posid="183" order="listorder DESC" num="1" cache="0"}
+				{pc:content action="position" posid="183" cityid="$topparentid" order="listorder DESC" num="1" cache="0"}
 				  {loop $data $key $r}
-                   <a href="{$r['url']}" target="_blank" style="float:left;" title="{$r['title']}">{str_cut($r['sl_title'],80,'')}</a>
+                   <a href="{$r['url']}" target="_blank" style="float:left;" title="{$r['title']}">{str_cut($r['title'],80,'')}</a>
                   {/loop}
 				{/pc}</h1>
-                <h2><span>报名</span>：<a href="/jsj/ksdt/kssj_{$cityList_t['pinyin']}/">[{citys2city($cityList['name'])}职称计算机考试时间]</a> <a href="/jsj/ksdt/bmsj_{$cityList_t['pinyin']}/">[{citys2city($cityList['name'])}职称计算机报名时间]</a><br />
+                <h2><span>报名</span>：<a href="{siteurl($siteid)}/jsjbm/{$topcityList['pinyin']}.html">[{citys2city($cityList['name'])}职称计算机考试时间]</a> <a href="{siteurl($siteid)}/jsjbm/{$topcityList['pinyin']}.html">[{citys2city($cityList['name'])}职称计算机报名时间]</a><br />
 				<span>指南</span>：<a href="http://www.renshikaoshi.net/kaoshi-185-106623-1.html">[考试条件]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106620-1.html">[考试介绍]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106642-1.html">[成绩查询]</a> <a href="http://www.renshikaoshi.net/kaoshi-185-106640-1.html">[考试科目]</a></h2>
                 
 				<h3><span>真题</span>{pc:content action="category" catid="198" num="3" order="listorder DESC"}
@@ -115,18 +115,18 @@ function stopScroll() {
 				 {/loop}
 				{/PC} </h3>
                 
-				<h2>{pc:content  action="position" catid="189" posid="171" order="listorder DESC" num="4" start="0"}
+				<h2>{pc:content  action="position"  posid="171"  order="listorder DESC" num="4" start="0"}
 					{loop $data $n $r}
 					{php $num++;}
-                	  <a href="{$r['url']}" title="{$r[title]}">{str_cut($r['sl_title'],50,'')}</a>
-					{if $num % 2 == 0}<br />{/if}
+                	  <a href="{$r['url']}" title="{$r[title]}">{str_cut($r['title'],27,'')}</a>
+					{if $num % 3 == 0}<br />{/if}
 					{/loop}
 					{/pc}<span>模块</span>：<a href="http://www.renshikaoshi.net/jsj/ksmk/Word2003/">Word2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/excel/">Excel2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/ppt/">Powerpoint2003</a></h2>            
 			 
                 <h3><span>辅导</span>				
 				{pc:content action="position" posid="317" order="listorder DESC" num="1" start="0"}
 				  {loop $data $n $r}
-				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['title'],60)}</a>
 				  {/loop}
 				{/pc}
 				</h3>
@@ -146,7 +146,7 @@ function stopScroll() {
                 <div class="newstab" id="newstabone"><a href="javascript:;" class="selected">最近更新</a><a href="javascript:;">报考通知</a><a href="javascript:;">成绩查询</a><a href="javascript:;">准考证打印</a></div>
                 <div class="newsdv jsjtymg" id="newsdvone">
                 	<ul class="newsty">
-                		{pc:content action="lists" catid="10" order="id DESC" num="8"}
+                		{pc:content action="lists" catid="10" where="title like '%%'" order="id DESC" num="8"}
 						{loop $data $key $val}
                     	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
 						{/loop}

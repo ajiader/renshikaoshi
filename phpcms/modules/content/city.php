@@ -99,7 +99,8 @@ class city
 		$ksdb = pc_base::load_model('examremind_model');
 		$kslist  = $ksdb->get_one(array('cityid'=>$topparentid,'catid'=>$catid, 'siteid'=>$siteid));
 
-
+		$topcityList = $this->city_db->get_one(array('linkageid'=>$topparentid));
+		
 		ob_start();
 		include template('content',$template,$default_style);
 		echo mem_page(1);
