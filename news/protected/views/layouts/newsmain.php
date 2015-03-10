@@ -18,8 +18,8 @@
  <div class="body-top"  >
 
   <div class="expo_nav" style="width:940px;margin:0 auto;line-height:26px;height:36px;">
-   <span><a href="http://www.kaozc.com" target="_blank"><b>网站首页</b></a></span>-<a href="http://www.kaogwy.com">考公务员</a>-<a href="http://www.kaogwy.com/gjgwy/"><font color="red">国家公务员</font></a>-<a href="http://www.kaogwy.com/sydw/">事业单位</a>-<a href="http://www.kaozc.com/En/"><font color="red">职称英语</font></a>-<a href="http://www.kaozc.com/En/lgl/">理工类</a>-<a href="http://www.kaozc.com/En/wsl/">卫生类</a>-<a href="http://www.kaozc.com/jsj/">职称计算机</a>-
-  <a href="http://www.kaozc.com/zyzg/">职业资格</a>-<a href="http://www.kaozc.com/zyzg/ckl/">金融财会</a>-<a href="http://www.kaozc.com/zyzg/jz/">建筑工程</a>-<a href="http://www.kaozc.com/zyzg/yy/">医药卫生</a>-<a href="#">帮助中心</a></div>
+   <span><a href="http://www.renshikaoshi.net" target="_blank"><b>网站首页</b></a></span>-<a href="http://www.kaogwy.com">考公务员</a>-<a href="http://www.kaogwy.com/gjgwy/"><font color="red">国家公务员</font></a>-<a href="http://www.kaogwy.com/sydw/">事业单位</a>-<a href="http://www.renshikaoshi.net/En/"><font color="red">职称英语</font></a>-<a href="http://www.renshikaoshi.net/En/lgl/">理工类</a>-<a href="http://www.renshikaoshi.net/En/wsl/">卫生类</a>-<a href="http://www.renshikaoshi.net/jsj/">职称计算机</a>-
+  <a href="http://www.renshikaoshi.net/zyzg/">职业资格</a>-<a href="http://www.renshikaoshi.net/zyzg/ckl/">金融财会</a>-<a href="http://www.renshikaoshi.net/zyzg/jz/">建筑工程</a>-<a href="http://www.renshikaoshi.net/zyzg/yy/">医药卫生</a>-<a href="#">帮助中心</a></div>
   
   
 </div>
@@ -51,9 +51,9 @@
       </div>
 
 <div id="foot" class="area area"  style=" border-top:1px solid #E1E1E1; line-height:22px;padding-top:10px; height:150px;" >
-      <p align="center"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.kaozc.com');return" href="javascript:void(0)" false;="">设置首页</a> - <a href="http://www.kaozc.com/list-2-1.html" rel="nofollow" target="_blank">关于博大</a> - <a href="http://www.cdbroad.com/cdbroad/gysy/18" rel="nofollow" target="_blank">博大公益</a> - <a href="http://wap.cdbroad.com/" rel="nofollow" target="_blank">手机版</a> - <a href="http://www.kaozc.com/list-5-1.html" rel="nofollow" target="_blank">合作联系</a> - <a href="http://www.kaozc.com/list-4-1.html" rel="nofollow" target="_blank">网站声明</a>- <a href="http://www.kaozc.com/old/" target="_blank">旧版</a> - <a href="http://www.kaozc.com/list-445-1.html" rel="nofollow" target="_blank">帮助中心</a> - <a href="http://www.kaozc.com/list-446-1.html" rel="nofollow" target="_blank">友情链接</a> - <a href="#" target="_blank">网站导航</a> </p>
-            <p align="center">Copyright &#169; 2011-2013 Inc. all Rights Reserved. 博大教育 <a href="http://www.kaozc.com/list-4-1.html" target="_blank">版权所有</a> </p>
-       <p align="center"><a href="http://www.kaozc.com" target="_blank">成都博大教育科技有限公司</a>&nbsp;&nbsp;蜀ICP备07505764号&nbsp;&nbsp; 
+      <p align="center"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.renshikaoshi.net');return" href="javascript:void(0)" false;="">设置首页</a> - <a href="http://www.renshikaoshi.net/list-2-1.html" rel="nofollow" target="_blank">关于博大</a> - <a href="http://www.cdbroad.com/cdbroad/gysy/18" rel="nofollow" target="_blank">博大公益</a> - <a href="http://wap.cdbroad.com/" rel="nofollow" target="_blank">手机版</a> - <a href="http://www.renshikaoshi.net/list-5-1.html" rel="nofollow" target="_blank">合作联系</a> - <a href="http://www.renshikaoshi.net/list-4-1.html" rel="nofollow" target="_blank">网站声明</a>- <a href="http://www.renshikaoshi.net/old/" target="_blank">旧版</a> - <a href="http://www.renshikaoshi.net/list-445-1.html" rel="nofollow" target="_blank">帮助中心</a> - <a href="http://www.renshikaoshi.net/list-446-1.html" rel="nofollow" target="_blank">友情链接</a> - <a href="#" target="_blank">网站导航</a> </p>
+            <p align="center">Copyright &#169; 2011-2013 Inc. all Rights Reserved. 博大教育 <a href="http://www.renshikaoshi.net/list-4-1.html" target="_blank">版权所有</a> </p>
+       <p align="center"><a href="http://www.renshikaoshi.net" target="_blank">成都博大教育科技有限公司</a>&nbsp;&nbsp;蜀ICP备07505764号&nbsp;&nbsp; 
  </p></div>
 </body>
 
