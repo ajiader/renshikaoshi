@@ -11,7 +11,7 @@ class NewsController extends Controller
 		if(isset($_GET['q'])) {
 		    $criteria->addSearchCondition('title', $_GET['q']);
 		}
-		$criteria->addCondition("status <> 99"); //查询条件
+		$criteria->addCondition("catid in ('282','283','284')"); //查询条件
         $criteria->order = 'id desc'; 
 		if(strstr($_SERVER['HTTP_HOST'],'kaogwy')){
 		    $model = NewsGwy::model();

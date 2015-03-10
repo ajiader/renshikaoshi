@@ -2,6 +2,7 @@
 error_reporting(E_ALL ^ E_NOTICE); 
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../../yii/framework/yii.php'; //Yii框架位置
+echo $yii;
 $config=dirname(__FILE__).'/protected/config/main.php'; //当前应用程序的主配置文件位置
  
 // remove the following lines when in production mode// 部署正式环境时，去掉下面这行

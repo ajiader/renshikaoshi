@@ -2,7 +2,7 @@
 $this->breadcrumbs=array(
 	'News',
 );
-$this->kaozcUrl = 'http://www.kaozc.com';
+$this->kaozcUrl = 'http://www.renshikaoshi.net';
 
 ?>
 
