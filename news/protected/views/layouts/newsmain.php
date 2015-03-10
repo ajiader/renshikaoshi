@@ -18,7 +18,7 @@
  <div class="body-top"  >
 
   <div class="expo_nav" style="width:940px;margin:0 auto;line-height:26px;height:36px;">
-   <span><a href="http://www.renshikaoshi.net" target="_blank"><b>网站首页</b></a></span>-<a href="http://www.kaogwy.com">考公务员</a>-<a href="http://www.kaogwy.com/gjgwy/"><font color="red">国家公务员</font></a>-<a href="http://www.kaogwy.com/sydw/">事业单位</a>-<a href="http://www.renshikaoshi.net/En/"><font color="red">职称英语</font></a>-<a href="http://www.renshikaoshi.net/En/lgl/">理工类</a>-<a href="http://www.renshikaoshi.net/En/wsl/">卫生类</a>-<a href="http://www.renshikaoshi.net/jsj/">职称计算机</a>-
+   <span><a href="http://www.renshikaoshi.net" target="_blank"><b>网站首页</b></a></span><a href="http://www.renshikaoshi.net/En/"><font color="red">职称英语</font></a>-<a href="http://www.renshikaoshi.net/En/lgl/">理工类</a>-<a href="http://www.renshikaoshi.net/En/wsl/">卫生类</a>-<a href="http://www.renshikaoshi.net/jsj/">职称计算机</a>-
   <a href="http://www.renshikaoshi.net/zyzg/">职业资格</a>-<a href="http://www.renshikaoshi.net/zyzg/ckl/">金融财会</a>-<a href="http://www.renshikaoshi.net/zyzg/jz/">建筑工程</a>-<a href="http://www.renshikaoshi.net/zyzg/yy/">医药卫生</a>-<a href="#">帮助中心</a></div>
   
   
