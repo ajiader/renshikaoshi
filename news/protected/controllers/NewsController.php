@@ -4,7 +4,7 @@ class NewsController extends Controller
 {
     public $layout='//layouts/newscolumn1';
 	public $kaozcUrl,$newscount;
-    
+    public $seotitle,$seokeywords,$seodescription;
 	public function actionIndex()
 	{
 		$criteria = new CDbCriteria(); 
@@ -13,13 +13,7 @@ class NewsController extends Controller
 		}
 		$criteria->addCondition("catid in ('282','283','284')"); //查询条件
         $criteria->order = 'id desc'; 
-		if(strstr($_SERVER['HTTP_HOST'],'kaogwy')){
-		    $model = NewsGwy::model();
-			$this->pageTitle = "考公务员-资讯中心";
-		}else{
-		    $model = News::model();
-			$this->pageTitle = "考职称-资讯中心";
-		}
+		$model = News::model();
        
 		$count = $model->count($criteria); 
         $this->newscount = $count;
@@ -28,7 +22,16 @@ class NewsController extends Controller
         $pager->applyLimit($criteria);
 
 		$artList = $model->findAll($criteria); 
-        $this->render('index',array('pages'=>$pager,'list'=>$artList)); 
+
+		$connection = Yii::app()->db;
+		$sql = "SELECT * FROM `v9_seo` where id=64";
+		$command = $connection->createCommand($sql);
+		$result = $command->queryRow();
+		
+		$this->seotitle = $result['title'];
+		$this->seokeywords = $result['keywords'];
+		$this->seodescription = $result['description'];
+        $this->render('index',array('pages'=>$pager,'list'=>$artList, 'seolist' =>$result )); 
 	}
 
 	// Uncomment the following methods and override them if needed

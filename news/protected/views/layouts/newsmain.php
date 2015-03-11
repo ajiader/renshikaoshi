@@ -11,7 +11,9 @@
 <script type="text/javascript" src="<?php echo $this->kaozcUrl; ?>/statics/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo $this->kaozcUrl; ?>/statics/js/cookie.js"></script>
 <script type="text/javascript" src="<?php echo $this->kaozcUrl; ?>/statics/js/search_common.js"></script>
-<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+<title><?php echo CHtml::encode($this->seotitle ); ?></title>
+<meta name="keywords" content="<?php echo CHtml::encode($this->seokeywords ); ?>">
+<meta name="description" content="<?php echo CHtml::encode($this->seodescription ); ?>">
 
 </head>
 <body>

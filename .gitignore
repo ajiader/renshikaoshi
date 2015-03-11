@@ -5,3 +5,4 @@
 /sftp-config.json
 *_notes*
 /news/protected/config/main.php
+/news/protected/runtime
