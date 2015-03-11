@@ -51,7 +51,7 @@
       </div>
 
 <div id="foot" class="area area"  style=" border-top:1px solid #E1E1E1; line-height:22px;padding-top:10px; height:150px;" >
-      <p align="center"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.renshikaoshi.net');return" href="javascript:void(0)" false;="">设置首页</a> - <a href="http://g.renshikaoshi.net/" rel="nofollow" target="_blank">手机版</a> - <a href="http://www.renshikaoshi.net/sitemaps.html" target="_blank">网站导航</a> </p>
+      <p align="center"><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.renshikaoshi.net');return" href="javascript:void(0)" false;="">设置首页</a> - <a href="http://m.renshikaoshi.net/" rel="nofollow" target="_blank">手机版</a> - <a href="http://www.renshikaoshi.net/sitemaps.html" target="_blank">网站导航</a> </p>
       <p align="center">Copyright©2012-2018 RENSHIKAOSHI, All Rights Reserved. 备案编号: 皖ICP备13019968号-1 </p>
 </div>
 </body>
