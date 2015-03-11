@@ -93,8 +93,6 @@ $(document).ready(function(){
         {pc:content  action="lists" catid="419"  order="id DESC" num="9" start="9" cache="3600"}{loop $data $n $r}
         <div class="hotdv">
         	<h3><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>[{str_cut(trim($r[title]),'50','')}]</a></h3>
-            <p class="ply">{date('Y-m-d',$r[inputtime])}</p>
-            <p class="pcont">{str_cut(trim($r[description]),'84','')}...<a href="{$r[url]}" target="_blank">[详细]</a></p>
         </div>
         {/loop}{/pc}
         <!--循环div<end>-->
@@ -103,7 +101,7 @@ $(document).ready(function(){
     
     <div class="kzc-en-indexrg">
     	<div class="rgdvty rgmg">
-        	<div class="enrgcut"><span class="entitle">考试报名</span><a href="{$CATEGORYS[420][url]}" target="_blank" class="more">more</a></div>
+        	<div class="enrgcut"><span class="entitle"><a href="{$CATEGORYS[420][url]}" target="_blank">考试报名</a></span></div>
             <ul class="ennewsul">
             	{pc:content  action="lists" catid="420"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
 <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
@@ -113,7 +111,7 @@ $(document).ready(function(){
             </ul>
         </div>
         <div class="rgdvty">
-        	<div class="enrgcut"><span class="entitle">准考证打印</span><a href="{$CATEGORYS[421][url]}" class="more">more</a></div>
+        	<div class="enrgcut"><span class="entitle"><a href="{$CATEGORYS[421][url]}">准考证打印</a></span></div>
             <ul class="ennewsul">
             	{pc:content  action="lists" catid="421"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
 <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
@@ -124,7 +122,7 @@ $(document).ready(function(){
         </div>
         <div class="btline"></div>
         <div class="rgdvty rgmg">
-        	<div class="enrgcut"><span class="entitle">成绩查询</span><a href="{$CATEGORYS[422][url]}" target="_blank" class="more">more</a></div>
+        	<div class="enrgcut"><span class="entitle"><a href="{$CATEGORYS[422][url]}" target="_blank">成绩查询</a></span></div>
             <ul class="ennewsul">
             	{pc:content  action="lists" catid="422"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
 <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
@@ -134,7 +132,7 @@ $(document).ready(function(){
             </ul>
         </div>
         <div class="rgdvty">
-        	<div class="enrgcut"><span class="entitle">证书领取</span><a href="{$CATEGORYS[423][url]}" target="_blank" class="more">more</a></div>
+        	<div class="enrgcut"><span class="entitle"><a href="{$CATEGORYS[423][url]}" target="_blank">证书领取</a></span></div>
             <ul class="ennewsul">
             	{pc:content  action="lists" catid="423"  order="id DESC" num="6" start="0" cache="0"}{loop $data $n $r}
 <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}"
