@@ -19,6 +19,8 @@
 <script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
 
 <script language="javascript" src="/statics/renshikaoshi/js/dvqh.js"></script>
+<script language="javascript" src="/statics/jsj/js/jq_scroll.js"></script>
+
 
 </head>
 
@@ -174,15 +176,21 @@
 
         <div class="jsjzixun">
 
-        	<div class="zxcut">最新资讯</div>
-
-            <ul class="daitime">
-
-            	{pc:content action="lists" catid="16" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
-
-            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
-
-            </ul>
+        	<div class="jsjcutqh"><div id="jsjctqhA"><a href="javascript:void(0)" class="selected">最新资讯</a><a href="/jsj/ksdt/bktz/">考试报名</a><a href="/jsj/bkzn/">报考指南</a></div></div>
+            <div id="jsjctqhDIV">
+                <ul class="daitime">
+                    {pc:content action="lists" catid="16" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+                </ul>
+                <ul class="daitime" style="display:none;">
+                    {pc:content action="lists" catid="187" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
+            		<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+                </ul>
+                <ul class="daitime" style="display:none;">
+                    {pc:content action="lists" catid="184" order="id DESC" num="9" cache="3600"}{loop $data $n $r}
+            		<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'60','')}</a><span>{date('m-d',$r['inputtime'])}</span></li>{/loop}{/pc} 
+                </ul>
+            </div>
 
         </div>
 
@@ -190,25 +198,17 @@
 
         <div class="kzc-onerg">
 
-        	<div class="onecut"><a href="{$CATEGORYS[187][url]}">考试报名</a></div>
+        	<div class="onecut jsjwds"><a href="http://www.renshikaoshi.net/question/qlist_1_1.html" target="_blank">计算机问答</a></div>
 
-            <ul class="daitime">
-
-            	{pc:content action="lists" catid="187" order="id DESC" num="4" cache="3600"}{loop $data $n $r}
-
-            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'50','')}</a></li>{/loop}{/pc} 
-
-            </ul>
-
-            <div class="onecut"><a href="{$CATEGORYS[184][url]}">报考指南</a></div>
-
-            <ul class="daitime">
-
-            	{pc:content action="lists" catid="184" order="id DESC" num="4" cache="3600"}{loop $data $n $r}
-
-            	<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'50','')}</a></li>{/loop}{/pc} 
-
-            </ul>
+            <div class="quesdv" id="teacheryiwen">
+                <ul>
+               {pc:get sql="SELECT aq.qid,aq.question,aq.url,aq.ip,aq.catid,aa.* from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid WHERE aq.status != 1 AND aa.content != '' and aq.catid=1 and aq.siteid=1 ORDER BY aa.qid desc" cache="3600"  dbsource="" return="data" num="6"}
+                 {loop $data $key $val}
+                <li><p><a href="{$val['url']}" target="_blank" title="{$val['question']}">{str_cut($val['question'],'45')}</a></p><p>{trim(str_cut(strip_tags($val['content']),'70'))}</p></li>
+                 {/loop}
+                {/pc} 
+                </ul>
+            </div>
 
         </div>
 
@@ -557,14 +557,15 @@
 <script language="javascript">
 
 $(document).ready(function(){
-
     $('#bmzxA a').mouseover(function(){
-
         $(this).addClass("selected").siblings().removeClass();
-
         $("#bmzxDIV > div").eq($('#bmzxA a').index(this)).show().siblings().hide();
-
     });
+	$('#jsjctqhA a').mouseover(function(){
+        $(this).addClass("selected").siblings().removeClass();
+        $("#jsjctqhDIV > ul").eq($('#jsjctqhA a').index(this)).show().siblings().hide();
+    });
+	$("#teacheryiwen").Scroll({line:1,speed:500,timer:3000});
 
 });
 
