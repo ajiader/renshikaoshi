@@ -146,28 +146,40 @@ function stopScroll() {
                 <div class="newstab" id="newstabone"><a href="javascript:;" class="selected">最近更新</a><a href="javascript:;">报考通知</a><a href="javascript:;">成绩查询</a><a href="javascript:;">准考证打印</a></div>
                 <div class="newsdv jsjtymg" id="newsdvone">
                 	<ul class="newsty">
-                		{pc:content action="lists" catid="10" where="title like '%%'" order="id DESC" num="8"}
+                		  <?php
+                $catids = $CATEGORYS['10']['arrchildid'];
+                $data = city_news_list($siteid,$cityList,$catids,8);
+               ?>
 						{loop $data $key $val}
                     	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
 						{/loop}
 						{/pc}
                     </ul>
                     <ul class="newsty" style="display:none;">
-                    	{pc:content action="lists" catid="187" order="id DESC" num="8"}
+                    	  <?php
+                $catids = $CATEGORYS['187']['arrchildid'];
+                $data = city_news_list($siteid,$cityList,$catids,8);
+               ?>
 						{loop $data $key $val}
                     	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
 						{/loop}
 						{/pc}
                     </ul>
                     <ul class="newsty" style="display:none;">
-                    	{pc:content action="lists" catid="188" order="id DESC" num="8"}
+                    	  <?php
+                $catids = $CATEGORYS['188']['arrchildid'];
+                $data = city_news_list($siteid,$cityList,$catids,8);
+               ?>
 						{loop $data $key $val}
                     	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
 						{/loop}
 						{/pc}
                     </ul>
                     <ul class="newsty" style="display:none;">
-                    	{pc:content action="lists" catid="196" order="id DESC" num="8"}
+                    	  <?php
+                $catids = $CATEGORYS['196']['arrchildid'];
+                $data = city_news_list($siteid,$cityList,$catids,8);
+               ?>
 						{loop $data $key $val}
                     	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank">{str_cut($val['title'],66)}</a><span>{date('m/d',$val['updatetime'])}</span></li>
 						{/loop}

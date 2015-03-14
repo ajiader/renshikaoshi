@@ -95,8 +95,8 @@ rewrite ^/(jsj|En|zyzg)/kaoshichaxun/s/ /goshouye.php?m=content&c=index&a=kaoshi
 rewrite ^/(jsj|En|zyzg)/kaoshichaxun/ /goshouye.php?m=content&c=index&a=kaoshichaxun&catdir=$1 last;
 
 #计算机的 报名 等级 软件
-rewrite ^/(jsjbm|jsjrj|jsjdj)/(.*).html$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1&pinyin=$2 last;
-rewrite ^/(jsjbm|jsjrj|jsjdj)/$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1 last;
+rewrite ^/(jsjbm|jsjrj|jsjdj|zcjsjtk)/(.*).html$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1&pinyin=$2 last;
+rewrite ^/(jsjbm|jsjrj|jsjdj|zcjsjtk)/$ /goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1 last;
 
 #人事布局页面
 rewrite ^/jsj/soft.html /goshouye.php?m=content&c=index&a=jsj_soft last;

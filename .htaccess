@@ -20,6 +20,9 @@ RewriteRule ^(jsj|En|zyzg)/zhuanjia/ goshouye.php?m=content&c=index&a=zhuanjia&c
 RewriteRule ^(jsj|En|zyzg)/kaoshichaxun/ goshouye.php?m=content&c=index&a=kaoshichaxun&catdir=$1 [L]
 RewriteRule ^kaoshichaxun/ goshouye.php?m=content&c=index&a=kaoshichaxun [L]
 
+#计算机的 报名 等级 软件
+RewriteRule ^(jsjbm|jsjrj|jsjdj|zcjsjtk)/(.*).html$ goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1&pinyin=$2 [L]
+RewriteRule ^(jsjbm|jsjrj|jsjdj|zcjsjtk)/$ goshouye.php?m=content&c=renshi&a=jsjseo&nameurl=$1 [L]
 
 
 

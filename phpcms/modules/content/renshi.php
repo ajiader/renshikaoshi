@@ -177,6 +177,7 @@ class renshi
     {
     	//获取地区属性
 		$cityurl = safe_replace($_GET['pinyin']);
+
 		$cityurl = getCityPinyin($cityurl); //转为可用格式查询
 		if ($cityurl) {
 			$cityList = $this->city_db->get_one(array('pinyin'=>$cityurl));
@@ -229,13 +230,19 @@ class renshi
 			switch ($nameUrl) {
 				case 'jsjbm':
 					$seoid = '62';
+					$title_lx = '考试报名时间';
 					break;
-				
+				case 'zcjsjtk':
+					$seoid = '63';
+					$title_lx = '考试题库';
+					break;
 				case 'jsjrj':
 					$seoid = '65';
+					$title_lx = '软件';
 					break;
 				case 'jsjdj':
 					$seoid = '66';
+					$title_lx = '等级';
 					break;
 			}
 			$seoarr = $this->seo_db->get_one(array('id'=>$seoid,'siteid'=>$siteid));
