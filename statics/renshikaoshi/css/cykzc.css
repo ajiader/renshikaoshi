@@ -430,6 +430,10 @@ div.slideBox div.tips div.nums a.active{ background-position:0 -22px;}
 .kzc-jsjtwo .zrcut,.zrtydv .tycut{ background:url(../images/zrcut.gif) no-repeat left bottom; color:#439d04;}
 
 .kzc-jsjtwo .zxcut a.more{ font-size:12px; font-weight:normal; color:#666666; position:absolute; right:5px; top:0px; line-height:27px;}
+.kzc-jsjtwo .jsjcutqh{ border-bottom:2px #d9d9d9 solid; position:relative; height:35px;}
+.kzc-jsjtwo .jsjcutqh div{ position:absolute; height:37px; bottom:-2px; left:0px; width:100%;}
+.kzc-jsjtwo .jsjcutqh div a{ display:inline-block; height:37px; line-height:37px; font-size:16px; width:92px; padding-left:15px; }
+.kzc-jsjtwo .jsjcutqh div a.selected{ background:url(../images/jsjcut.gif) no-repeat left -4px; font-weight:bold; }
 
 ul.daitime{ display:block;}
 
@@ -443,7 +447,7 @@ ul.daitime li span{ position:absolute; right:0px; top:0px; line-height:26px; col
 
 .onecut{ height:31px; line-height:31px; background:url(../images/jsjrgcut.gif) no-repeat left center; font-size:18px; color:#017ab3; position:relative;}
 .onecut a{ color:#017ab3;}
-
+.jsjwds{ background:url(../images/jsjrgcut.gif) no-repeat 20px center;}
 .onecut a.more{ position:absolute; right:0px; top:7px; background:#017ab3; padding:0 3px; color:#ffffff; font-size:12px; line-height:18px;}
 
 .twocut{ color:#439d04;}

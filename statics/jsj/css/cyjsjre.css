@@ -61,7 +61,7 @@ a:hover,.jsjre_top ul li a:hover{ color:#0185d5;}
 .nr1-lf .pictab .picdv{ height:177px; overflow:hidden;}
 .nr1-lf .pictab .picdv p{ display:none;}
 .nrtydv{ border:1px #b6d0e1 solid; }
-.nrtydv .tycut{ height:33px; border-bottom:2px #b6d0e1 solid; background:url(/statics/jsj/images/icon2.gif) no-repeat 10px center #eef9ff; line-height:33px; position:relative; padding-left:22px; font-size:14px; font-weight:bold; color:#0188d9; margin-bottom:5px;}
+.nrtydv .tycut{ height:33px; border-bottom:2px #b6d0e1 solid; background:url(/statics/jsj/images/icon2.gif) no-repeat 10px center; line-height:33px; position:relative; padding-left:22px; font-size:14px; font-weight:bold; color:#0188d9; margin-bottom:5px;}
 .nrtydv .tycut a.more,.nr2-rg .tyrgcut a.more{ position:absolute; right:6px; top:0px; line-height:33px; color:#6999bd; font-size:12px; font-weight:normal; font-family:宋体;}
 ul.newsty{ margin:0 8px;}
 ul.newsty li{ height:25px; line-height:25px; font-size:12px; background:url(/statics/jsj/images/icon1.jpg) no-repeat left center; padding-left:10px; overflow:hidden;}
