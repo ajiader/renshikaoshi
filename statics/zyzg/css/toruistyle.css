@@ -176,7 +176,7 @@ ul li{ list-style:none;}
 
 .toruihotnews{ height:201px; overflow:hidden;}
 
-.toruihotnews .qhpic,.toruinewsdv .nwlf{ float:left; width:308px;}
+.toruihotnews .qhpic,.toruinewsdv .nwlf{ float:left; width:300px;}
 
 .toruihotnews .qhpic{ overflow:hidden; position:relative;}
 
@@ -330,7 +330,7 @@ margin-left:auto; margin-right:auto; z-index:9999;}
 
 .toruiyywscx{ margin:0 5px 10px 5px; border:1px #e7e7e7 solid; position:relative; padding-top:42px;}
 
-.toruipdcutbg,.toruiyywscx .spcxcut,.yywsrgcut,.toruitydivtitle,.cutone,.xsrmul li,.cuttwo,.cuttwo a.selected,.yywskstx,.yywszxzt li,.toruimenu span.zrmksearch,.spcut,.thirdclass .thirddvrg .jrdw,.thirdclass .thirddvrg .biul li,.thirdksfd span.tl,.toruilistymps,.toruilistlie .lieleft .dvcut,.toruilistlie .lieleft .dvcut span,.otherdhbg,.othertydaohao a,.toruilistlie .lieright .lietydv .rgtrcut,.contentkjljs a,.contentwordhot font{ background-image:url(../images/pdcutbg.png); background-repeat:no-repeat;}
+.toruipdcutbg,.toruiyywscx .spcxcut,.yywsrgcut,.cutone,.xsrmul li,.cuttwo,.cuttwo a.selected,.yywskstx,.yywszxzt li,.toruimenu span.zrmksearch,.spcut,.thirdclass .thirddvrg .jrdw,.thirdclass .thirddvrg .biul li,.thirdksfd span.tl,.toruilistymps,.toruilistlie .lieleft .dvcut,.toruilistlie .lieleft .dvcut span,.otherdhbg,.othertydaohao a,.toruilistlie .lieright .lietydv .rgtrcut,.contentkjljs a,.contentwordhot font{ background-image:url(../images/pdcutbg.png); background-repeat:no-repeat;}
 
 .toruiyywscx .spcxcut{ position:absolute; left:-6px; top:-1px; height:34px; line-height:28px; width:945px; padding-left:15px; background-position:0px 0px; color:#ffffff; font-size:14px;}
 
@@ -348,15 +348,15 @@ margin-left:auto; margin-right:auto; z-index:9999;}
 
 .uisize li{ font-size:12px; height:22px; line-height:22px;}
 
-.toruitydiv{ overflow:hidden; height:auto;}
+.toruitydiv{ overflow:hidden; height:auto; border:1px #e2e2e2 solid; padding-bottom:10px;}
 
-.toruitydivtitle{ background-position:0px -39px; height:40px; line-height:40px; margin-bottom:6px;}
+.toruitydivtitle{ height:40px; line-height:40px; margin-bottom:6px; border-bottom:1px #e2e2e2 solid; background:#f3f3f3; }
 
 .toruitydivtitle span{ float:left;}
 
-.toruitydivtitle span.title{ width:100px; text-align:center; font-size:18px; color:#ffffff; font-weight:bold;}
+.toruitydivtitle span.title{ width:145px; text-align:center; font-size:18px; color:#ffffff; font-weight:bold; background:#30944a;}
 
-.toruitydivtitle span.kja{ width:800px; text-align:center;}
+.toruitydivtitle span.kja{ width:700px; text-align:center;}
 
 .toruitydivtitle span.kja a{ margin:0 8px; color:#666666;}
 

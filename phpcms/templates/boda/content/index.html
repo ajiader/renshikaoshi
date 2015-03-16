@@ -241,7 +241,7 @@ jQuery(function($){
             </ul>
         </div>
         <div class="kzc-xszdty kzc-mg2">
-        	<div class="flcut kzc-newsone"><span>职称计算机</span></div>
+        	<div class="flcut kzc-newsone"><span>职称计算机</span><div><a href="/jsj/ksmk/Word2003/" target="_blank">Word</a> / <a href="/jsj/ksmk/ppt/" target="_blank">PPT</a> / <a href="/jsj/ksmk/Internet/" target="_blank">Internet</a> / <a href="/jsj/ksmk/excel/" target="_blank">Excel</a> / <a href="/jsj/ksmk/windowsxp/" target="_blank">XP</a></div></div>
             <ul class="newslist ftsmall">
             	{php $catid=16 // 考试动态}
                          {pc:content  action="lists" catid="$catid" order="id DESC" num="1" start="0" }{loop $data $n $r}
@@ -253,7 +253,7 @@ jQuery(function($){
             </ul>
         </div>
         <div class="kzc-xszdty">
-        	<div class="flcut kzc-newsone"><span>职称英语</span></div>
+        	<div class="flcut kzc-newsone"><span>职称英语</span><div><a href="/En/zhl/" target="_blank">综合类</a> / <a href="/En/lgl/" target="_blank">理工类</a> / <a href="/En/wsl/" target="_blank">卫生类</a></div></div>
             <ul class="newslist ftsmall">
                 {php $_where = "catid in (154,155,280)"; //考试指南：英语（154 155 280） 计算机（184）  致睿（871）}
             	{pc:get sql="SELECT id,style,url,title,description,updatetime FROM v9_news where  status=99 and $_where order by id desc"  dbsource="" return="data" start="0" num="1" }{loop $data $n $r}

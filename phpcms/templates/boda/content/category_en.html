@@ -8,6 +8,7 @@
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
 <script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="/statics/jsj/js/jq_scroll.js"></script>
 <script language="javascript">
 $(document).ready(function(){
 	$('#hotnewsqha a').mouseover(function(){
@@ -26,6 +27,7 @@ $(document).ready(function(){
 		$(this).addClass("selected").siblings().removeClass();
 		$("#jtjqDIV > ul").eq($('#jtjqA a').index(this)).show().siblings().hide();
 	});
+	$("#teacheryiwen").Scroll({line:1,speed:500,timer:3000});
 });
 </script>
 </head>
@@ -145,14 +147,16 @@ $(document).ready(function(){
             <a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>{str_cut(trim($r[title]),'50','')}</a>
             {/loop}{/pc}</p>
         </div>
-        <!--循环div<start>-->
-        {pc:content  action="lists" catid="419"  order="id DESC" num="9" start="9" cache="3600"}{loop $data $n $r}
-        <div class="hotdv">
-        	<h3><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target=_blank>[{str_cut(trim($r[title]),'50','')}]</a></h3>
+        <div class="enrgcut"><span class="entitle"><a href="/question/qlist_3_1.html" target="_blank">英语问答</a></span></div>
+        <div class="quesdv enquesdv" id="teacheryiwen">
+            <ul>
+           {pc:get sql="SELECT aq.qid,aq.question,aq.url,aq.ip,aq.catid,aa.content from v9_ask_question aq JOIN v9_ask_answer aa ON aq.qid=aa.qid
+WHERE aq.status != 1 AND aq.aid>0  and aq.catid=3 and aq.siteid=1 ORDER BY aa.qid desc" cache="3600"  dbsource="" return="data" num="10"}
+{loop $data $key $val}
+                  <li><p><a href="{$val['url']}" title="{$val['question']}" target="_blank">{str_cut($val['question'],'100')}</a> </p><p>{str_cut(strip_tags($val['content']),'110')}</p></li>
+                    {/loop}{/pc} 
+            </ul>
         </div>
-        {/loop}{/pc}
-        <!--循环div<end>-->
-        <div class="ckmore"><a href="/En/ksdt/bktz/" target="_blank">查看更多</a></div>
     </div>
     
     <div class="kzc-en-indexrg">

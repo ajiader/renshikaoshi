@@ -94,87 +94,7 @@
 
 
 
-    <div class="toruiyywscx toruitymg">
-
-
-
-    	<div class="spcxcut">按字母查询： <?php
-
-
-
-            $zmarr =  range('a','z'); 
-
-
-
-            ?>{loop $zmarr $k $v}<a href="{siteurl($siteid)}/zrmokuai/?zm={$v}" target="_blank">{strtoupper($v)}</a>{/loop}</div>
-
-
-
-        <div class="toruiyymk">
-
-
-
-        	<ul>
-
-
-
-            <?php
-
-
-
-            $linkageid = 3364;
-
-
-
-             $type_arr = GetTypeName(" `keyid` = '3362' AND `linkageid` =$linkageid");
-
-
-
-             $mk_arrchildid = $type_arr[$linkageid]['arrchildid'];
-
-
-
-            ?> 
-
-
-
-            {pc:get sql="SELECT id,typeid,name,pinyin from phpcms_zirui_mokuai WHERE  siteid=$siteid and status=1 and typeid in ($mk_arrchildid) ORDER BY id asc" cache="3600"  dbsource="" return="data" num="200"}
-
-
-
-
-
-
-
-             {loop $data $v}
-
-
-
-        	<li><a href="{$CATEGORYS[11][url]}ksmk/mk{$v[pinyin]}/" title="{$v['name']}" target="_blank">{$v['name']}</a></li>
-
-
-
-     
-
-
-
-              {/loop}
-
-
-
-            </ul>
-
-
-
-            <div class="toruiclear"></div>
-
-
-
-        </div>
-
-
-
-    </div>
+    
 
 
 
@@ -500,43 +420,12 @@
 
         	<div class="qhpic">
 
-
-
-            	<span class="cutone">历年真题</span>
-
-
-
+            	<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                  
-
-
-
-                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3372') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-               {/loop}{/pc}    
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
 
             </div>
 
@@ -651,45 +540,12 @@
 
 
             <div class="toruitydv">
-
-
-
-            	<span class="cutone">在线做题</span>
-
-
-
-               {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
-
             </div>
 
 
@@ -883,40 +739,13 @@
 
 
         	<div class="qhpic">
-
-
-
-            	<span class="cutone">历年真题</span>
-
-
-
+		
+        		<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3365') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-               {/loop}{/pc}    
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
 
             </div>
 
@@ -1031,44 +860,12 @@
 
 
             <div class="toruitydv">
-
-
-
-            	<span class="cutone">在线做题</span>
-
-
-
-               {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="1" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+				<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
 
             </div>
 
@@ -1263,40 +1060,12 @@
 
 
         	<div class="qhpic">
-
-
-
-            	<span class="cutone">历年真题</span>
-
-
-
+				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3371') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-    {/loop}{/pc}
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
 
             </div>
 
@@ -1412,44 +1181,12 @@
 
             <div class="toruitydv">
 
-
-
-            	<span class="cutone">在线做题</span>
-
-
-
-               {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="2" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+			<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
-
             </div>
 
 
@@ -1633,50 +1370,17 @@
         </div>
 
 
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
 
 
 
         	<div class="qhpic">
-
-
-
-            	<span class="cutone">历年真题</span>
-
-
-
+				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3373') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-    {/loop}{/pc}
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
 
             </div>
 
@@ -1791,45 +1495,12 @@
 
 
             <div class="toruitydv">
-
-
-
-            	<span class="cutone">在线做题</span>
-
-
-
-                {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
-
             </div>
 
 
@@ -2023,41 +1694,12 @@
 
 
         	<div class="qhpic">
-
-
-
-            	<span class="cutone">历年真题</span>
-
-
-
+				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3374') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-    {/loop}{/pc}
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
-
             </div>
 
 
@@ -2171,49 +1813,13 @@
 
 
             <div class="toruitydv">
-
-
-
-            	<span class="cutone">在线做题</span>
-
-
-
-                {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="4" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
 
 
@@ -2405,40 +2011,12 @@
 
 
             <div class="qhpic">
-
-
-
-                <span class="cutone">历年真题</span>
-
-
-
+				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
 
-
-
-                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3373') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
-
-
-
-            {loop $data $n $r} 
-
-
-
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
-
-
-
-    {/loop}{/pc}
-
-
+					<li><a href="#"></a></li>
 
                 </ul>
-
-
-
-
-
-
 
             </div>
 
@@ -2553,44 +2131,12 @@
 
 
             <div class="toruitydv">
-
-
-
-                <span class="cutone">在线做题</span>
-
-
-
-                {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-
-
-
-            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
-            {/loop}{/pc}
-
-
-
-                <ul class="yywszxzt">
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
-                    <li><a href="#">中级会计</a></li><li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li>
-
-
-
-                    <li><a href="#">会计从业</a></li><li><a href="#">初级会计</a></li><li><a href="#">会计从业</a></li>
-
-
-
+                <span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
+                    {/loop}{/pc}
                 </ul>
-
-
 
             </div>
 

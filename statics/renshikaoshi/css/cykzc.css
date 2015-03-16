@@ -148,9 +148,9 @@ ul.newslist li.lione .pccontent p{ line-height:20px; color:#999999;}
 
 .kzc-xszdty .flcut span{ display:inline-block; font-size:16px; color:#333333; padding:0 0 0 10px; font-weight:bold; font-family:微软雅黑;}
 
-.kzc-xszdty .flcut div{ position:absolute; right:0px; top:0px; line-height:38px; color:#666666;}
+.kzc-xszdty .flcut div{ position:absolute; right:0px; top:0px; line-height:38px; color:#666666; padding-right:5px;}
 
-.kzc-xszdty .flcut a{ color:#666666; margin:0 6px; font-family:宋体;}
+.kzc-xszdty .flcut a{ color:#666666;}
 
 ul.ftsmall{ padding:0 10px;}
 ul.ftsmall li{ font-size:14px; width:276px; line-height:24px; margin-bottom:3px;}
@@ -624,3 +624,6 @@ ul.seorg li{ font-size:12px;}
 .contentwordhot{ padding:8px 0; line-height:27px;}
 .contentwordhot font{ width:105px; height:27px; display:inline-block; background-image:url(../images/kzc-ty-bg.png); background-repeat:no-repeat; background-position:0 -218px; font-size:14px; color:#ffffff; padding-left:8px;}
 .contentwordhot a{ display:inline-block; margin:0 6px;}
+.enquesdv{ height:300px;}
+.enquesdv ul li p{ width:390px; font-size:14px;}
+.enquesdv ul li{ height:50px;}
