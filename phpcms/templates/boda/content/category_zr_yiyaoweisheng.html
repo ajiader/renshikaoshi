@@ -1,544 +1,129 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-
-
-
 <head>
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
-
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
-
-
-
 <meta name="keywords" content="{$SEO['keyword']}">
-
-
-
 <meta name="description" content="{$SEO['description']}">
-
-
-
 <link type="text/css" rel="stylesheet" href="/statics/zyzg/css/toruistyle.css" />
-
-
-
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
-
-
-
 <link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
-
-
-
 <script language="javascript" src="/statics/zyzg/js/qh.js"></script>
-
-
-
 </head>
-
-
-
-
-
-
-
 <body>
-
-
-
 <div id="bdshare_l"></div>
-
-
-
 <!-- heaer<start>-->
-
-
-
 {template "content","rsks_top"}
-
-
-
-
-
-
-
 <!-- heaer<end>-->
-
-
-
-
-
-
-
 <!-- center<start>-->
-
-
-
 <div class="toruitycenter">
-
-
-
 	{template "content","zr_banner"}
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
     <div class="toruihotnews toruitymg">
-
-
-
-    
-
-
-
     	<div class="qhpic">
-
-
-
          {pc:content action="position" posid="255" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}
-
-
-
         <a href="{$r['url']}" target="_blank"><img src="{$r['thumb']}" width="308" height="201" /></a>
-
-
-
         {/loop}{/pc}
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="rnct yywsli">
-
-
-
         	{pc:content action="position" posid="256" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
-
-
-
             <ul>
-
-
-
             {pc:content action="position" posid="256" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
-
-
-
             	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
-
-
-
   {/loop}{/pc}
-
-
-
             </ul>
-
-
-
            {pc:content action="position" posid="257" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
-
-
-
             <ul>
-
-
-
             {pc:content action="position" posid="257" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
-
-
-
             	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
-
-
-
   {/loop}{/pc}
-
-
-
             </ul>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruitydv">
-
-
-
         	<span class="yywsrgcut">精彩推荐</span>
-
-
-
            {pc:content action="position" posid="254" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}
-
-
-
             <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
-
-
-
             {/loop}{/pc}
-
-
-
             <ul class="toruinewslist uisize">
-
-
-
             {pc:content action="position" posid="254" catid="" thumb="" order="listorder DESC" start="1" num="4" }{loop $data $n $r}
-
-
-
                   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
-
-
-
-
               {/loop}{/pc}
-
-
-
             </ul>
-
-
-
         </div>
-
-
-
         <div class="toruiclear"></div>
-
-
-
     </div>
-
-
-
-    
-
-
-
     <!-- 医学高级<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-    	<div class="toruitydivtitle"><span class="title">医学高级</span><span class="kja"><a href="{$CATEGORYS[869]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[869]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[869]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[869]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+    	<div class="toruitydivtitle"><a class="title">医学高级</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
         	<div class="qhpic">
-
-
-
    	      {pc:block pos="zyzg_yyws_wszg"}{/pc}</div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[869]['url']}m{$mid}_t71_1.html" class="selected" id="yywsone1" onmouseover="yywsone(1)">考试报名</a><a href="{$CATEGORYS[869]['url']}m{$mid}_t97_1.html" id="yywsone2" onmouseover="yywsone(2)">成绩查询</a></span>
-
-
-
                 <div id="yywsoneDIV1">
-
-
-
                  {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywsoneDIV2" style="display:none;">
-
-
-
                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
             	<span class="cutone">考试提醒</span>
-
-
-
                 {pc:block pos="yyws_wszg_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
         	<div class="qhpic">
-
             	<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[869]['url']}m{$mid}_t96_1.html" target="_blank" class="selected" id="yywstwo1" onmouseover="yywstwo(1)">准考证打印</a><a href="{$CATEGORYS[869]['url']}m{$mid}_t98_1.html" id="yywstwo2" onmouseover="yywstwo(2)">证书领取</a></span>
-
-
-
                 <div id="yywstwoDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywstwoDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=227 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
@@ -547,318 +132,83 @@
                     {/loop}{/pc}
                 </ul>
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-    
-
-
-
     <!-- 执业医师<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-    	<div class="toruitydivtitle"><span class="title">执业医师</span><span class="kja"><a href="{$CATEGORYS[226]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[226]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[869]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[226]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+    	<div class="toruitydivtitle"><a class="title">执业医师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
         	<div class="qhpic">
-
-
-
             	{pc:block pos="zyzg_yyws_zyys"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[226]['url']}m{$mid}_t71_1.html" class="selected" id="yywsthree1" onmouseover="yywsthree(1)">考试报名</a><a href="{$CATEGORYS[226]['url']}m{$mid}_t97_1.html" id="yywsthree2" onmouseover="yywsthree(2)">成绩查询</a></span>
-
-
-
                 <div id="yywsthreeDIV1">
-
-
-
                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywsthreeDIV2" style="display:none;">
-
-
-
                      {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
             	<span class="cutone">考试提醒</span>
-
-
-
                 {pc:block pos="yyws_zyys_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
         	<div class="qhpic">
-		
         		<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[226]['url']}m{$mid}_t96_1.html" class="selected" id="yywsfoure1" onmouseover="yywsfoure(1)">准考证打印</a><a href="{$CATEGORYS[226]['url']}m{$mid}_t98_1.html" id="yywsfoure2" onmouseover="yywsfoure(2)">证书领取</a></span>
-
-
-
                 <div id="yywsfoureDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywsfoureDIV2" style="display:none;">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=226 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
 				<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
@@ -866,321 +216,85 @@
                     <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
                     {/loop}{/pc}
                 </ul>
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-    
-
-
-
     <!-- 执业药师<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-    	<div class="toruitydivtitle"><span class="title">执业药师</span><span class="kja"><a href="{$CATEGORYS[228]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[228]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[228]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[228]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+    	<div class="toruitydivtitle"><a class="title">执业药师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
         	<div class="qhpic">
-
-
-
             	 {pc:block pos="zyzg_yyws_zyyaos"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[228]['url']}m{$mid}_t71_1.html" target="_blank" class="selected" id="yywsfive1" onmouseover="yywsfive(1)">考试报名</a><a href="{$CATEGORYS[228]['url']}m{$mid}_t97_1.html" id="yywsfive2" onmouseover="yywsfive(2)">成绩查询</a></span>
-
-
-
                 <div id="yywsfiveDIV1">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywsfiveDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
             	<span class="cutone">考试提醒</span>
-
-
-
                   {pc:block pos="yyws_zyyaos_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[228]['url']}m{$mid}_t96_1.html" class="selected" id="yywssex1" onmouseover="yywssex(1)">准考证打印</a><a href="{$CATEGORYS[228]['url']}m{$mid}_t98_1.html" target="_blank" id="yywssex2" onmouseover="yywssex(2)">证书领取</a></span>
-
-
-
                 <div id="yywssexDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywssexDIV2" style="display:none;">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=228 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
 			<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
                     {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
@@ -1188,312 +302,83 @@
                     {/loop}{/pc}
                 </ul>
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-    
-
-
-
     <!-- 执业护士<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-    	<div class="toruitydivtitle"><span class="title">执业护士</span><span class="kja"><a href="{$CATEGORYS[462]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[462]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+    	<div class="toruitydivtitle"><a class="title">执业护士</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
         	<div class="qhpic">
-
-
-
             	{pc:block pos="zyzg_yyws_zysous"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[462]['url']}m{$mid}_t71_1.html" class="selected" id="yywsseven1" onmouseover="yywsseven(1)">考试报名</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t97_1.html" id="yywsseven2" onmouseover="yywsseven(2)">成绩查询</a></span>
-
-
-
                 <div id="yywssevenDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywssevenDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
             	<span class="cutone">考试提醒</span>
-
-
-
                 {pc:block pos="yyws_zysous_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[462]['url']}m{$mid}_t96_1.html" class="selected" id="yywseight1" onmouseover="yywseight(1)">准考证打印</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t98_1.html" id="yywseight2" onmouseover="yywseight(2)">证书领取</a></span>
-
-
-
                 <div id="yywseightDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywseightDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=225 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
@@ -1502,316 +387,83 @@
                     {/loop}{/pc}
                 </ul>
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-    
-
-
-
     <!-- 卫生资格<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-    	<div class="toruitydivtitle"><span class="title">卫生资格</span><span class="kja"><a href="{$CATEGORYS[454]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[454]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[454]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[454]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+    	<div class="toruitydivtitle"><a class="title">卫生资格</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
         	<div class="qhpic">
-
-
-
             	{pc:block pos="zyzg_yyws_yys"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[454]['url']}m{$mid}_t71_1.html" target="_blank" class="selected" id="yywsnine1" onmouseover="yywsnine(1)">考试报名</a><a href="{$CATEGORYS[454]['url']}m{$mid}_t97_1.html" id="yywsnine2" onmouseover="yywsnine(2)">成绩查询</a></span>
-
-
-
                 <div id="yywsnineDIV1">
-
-
-
                      {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=925  AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=925  AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywsnineDIV2" style="display:none;">
-
-
-
                      {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=925 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=925 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
             	<span class="cutone">考试提醒</span>
-
-
-
                  {pc:block pos="yyws_yys_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
             </div>
-
-
-
             <div class="yywsct">
-
-
-
             	<span class="cuttwo"><a href="{$CATEGORYS[454]['url']}m{$mid}_t96_1.html" class="selected" id="yywsten1" onmouseover="yywsten(1)">准考证打印</a><a href="{$CATEGORYS[454]['url']}m{$mid}_t98_1.html" id="yywsten2" onmouseover="yywsten(2)">证书领取</a></span>
-
-
-
                 <div id="yywstenDIV1">
-
-
-
                      {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=869 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=869 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="yywstenDIV2" style="display:none;">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=869 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=869 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
@@ -1821,315 +473,82 @@
                 </ul>
             </div>
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
     <!-- 主治医师<start>-->
-
-
-
     <div class="toruitydiv toruitymg">
-
-
-
-        <div class="toruitydivtitle"><span class="title">主治医师</span><span class="kja"><a href="{$CATEGORYS[462]['url']}m{$mid}_t71_1.html" target="_blank">考试报名</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t96_1.html"  target="_blank">准考证</a> <a href="{$CATEGORYS[462]['url']}m{$mid}_t97_1.html">成绩查询</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t98_1.html" target="_blank">证书领取</a><a href="#">考试大纲</a></span></div>
-
-
-
+        <div class="toruitydivtitle"><a class="title">主治医师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
-
-
-
             <div class="qhpic">
-
-
-
                 {pc:block pos="zyzg_yyws_zysous"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
                 <span class="cuttwo"><a href="{$CATEGORYS[462]['url']}m{$mid}_t71_1.html" class="selected" id="zzysten1" onmouseover="zzysten(1)">考试报名</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t97_1.html" id="zzysten2" onmouseover="zzysten(2)">成绩查询</a></span>
-
-
-
                 <div id="zzystenDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=71 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="zzystenDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=97 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
-
-
-
                 <span class="cutone">考试提醒</span>
-
-
-
                 {pc:block pos="yyws_zysous_kstx"}{/pc}
-
-
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
         <div class="toruihotnews toruitydvhg">
-
-
-
             <div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-
 					<li><a href="#"></a></li>
-
                 </ul>
-
             </div>
-
-
-
             <div class="yywsct">
-
-
-
                 <span class="cuttwo"><a href="{$CATEGORYS[462]['url']}m{$mid}_t96_1.html" class="selected" id="zzystenone1" onmouseover="zzystenone(1)">准考证打印</a><a href="{$CATEGORYS[462]['url']}m{$mid}_t98_1.html" id="zzystenone2" onmouseover="zzystenone(2)">证书领取</a></span>
-
-
-
                 <div id="zzystenoneDIV1">
-
-
-
                     {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=96 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
                 <div id="zzystenoneDIV2" style="display:none;">
-
-
-
                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="0" num="1"}
-
-
-
             {loop $data $n $r}
-
-
-
                     <p class="firstnw lghg"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></p>
-
-
-
                      {/loop}{/pc} 
-
-
-
                     <ul class="toruinewslist">
-
-
-
                         {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=229 AND status=99 and typeid=98 order by id desc" cache="0" dbsource="" return="data" start="1" num="6"}
-
-
-
             {loop $data $n $r}
-
-
-
                          <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
-
-
-
 {/loop}{/pc}
-
-
-
                     </ul>
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div class="toruitydv">
                 <span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
@@ -2137,160 +556,36 @@
                     <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
                     {/loop}{/pc}
                 </ul>
-
             </div>
-
-
-
             <div class="toruiclear"></div>
-
-
-
         </div>
-
-
-
-        
-
-
-
     </div>
-
-
-
-    
-
-
-
 </div>
-
-
-
 <!-- center<end>-->
-
-
-
-
-
-
-
 <!-- footer<start>-->
-
-
-
 	{template "content","rsks_bottom"}
-
-
-
 <!-- footer<end>-->
-
-
-
 <!--异步加载开始-->
-
-
-
  <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
-
-
-
  <script type="text/javascript">
-
-
-
  <!-- 广告位：(新版)致睿首页-顶部banner -->
-
-
-
         BAIDU_CLB_fillSlotAsync('690550','PAGE_AD_5690550');
-
-
-
 		<!-- 广告位：（新版）致睿顶部-左侧banner01 -->
-
-
-
 	BAIDU_CLB_fillSlotAsync('690553','PAGE_AD_690553');
-
-
-
 	<!-- 广告位：（新版）致睿顶部右部-banner02 -->
-
-
-
 	BAIDU_CLB_fillSlotAsync('690555','PAGE_AD_690555');
-
-
-
 	<!-- 广告位：（新版）致睿首页顶部左下-banner03 -->
-
-
-
 	BAIDU_CLB_fillSlotAsync('690558','PAGE_AD_690558'); <!-- 广告位：（新版）致睿首页顶部中间-banner04 -->
-
-
-
         BAIDU_CLB_fillSlotAsync('690562','PAGE_AD_690562');  
-
-
-
 		<!-- 广告位：（新版）致睿首页顶部右侧-banner05 -->
-
-
-
 		 BAIDU_CLB_fillSlotAsync('690565','PAGE_AD_690565');  
-
-
-
-		 
-
-
-
-		 
-
-
-
 		<!-- 广告位：（新）致睿首页-中栏banner -->
-
-
-
 		 BAIDU_CLB_fillSlotAsync('695678','PAGE_AD_695678');
-
-
-
 		<!-- 广告位：（新）致睿首页-顶部banner -->
-
-
-
 		 BAIDU_CLB_fillSlotAsync('695679','PAGE_AD_695679');
-
-
-
 </script>
-
-
-
 <!--异步加载结束 --> 
-
-
-
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
-
-
-
 <script type="text/javascript" src="/statics/js/53kefu.js"></script>
-
-
-
-
-
-
-
 </body>
-
-
-
 </html>
-
-
-
