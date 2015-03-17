@@ -51,7 +51,7 @@
         </div>
         <div class="toruiclear"></div>
     </div>
-    <!-- 医学高级<start>-->
+    <!-- 医学高级<start>--> {php $yxgj_catid = 227; //医学高级id}
     <div class="toruitydiv toruitymg">
     	<div class="toruitydivtitle"><a class="title">医学高级</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -94,7 +94,9 @@
         	<div class="qhpic">
             	<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+                {php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$yxgj_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
                 </ul>
             </div>
             <div class="yywsct">
@@ -127,15 +129,16 @@
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                    {php $where = "title like '%医学高级%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>{/loop}{/pc} 
+                </ul>
                 </ul>
             </div>
             <div class="toruiclear"></div>
         </div>
     </div>
-    <!-- 执业医师<start>-->
+    <!-- 执业医师<start>-->  {php $zyyis_catid = 226; //执业医师id}
     <div class="toruitydiv toruitymg">
     	<div class="toruitydivtitle"><a class="title">执业医师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -179,7 +182,9 @@
         	<div class="qhpic">
         		<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+					 {php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$zyyis_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
                 </ul>
             </div>
             <div class="yywsct">
@@ -212,15 +217,17 @@
             <div class="toruitydv">
 				<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                   {php $where = "title like '%执业医师%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>
+					{/loop}{/pc} 
+                </ul>
                 </ul>
             </div>
             <div class="toruiclear"></div>
         </div>
     </div>
-    <!-- 执业药师<start>-->
+    <!-- 执业药师<start>-->  {php $zyyos_catid = 228; //执业药师id}
     <div class="toruitydiv toruitymg">
     	<div class="toruitydivtitle"><a class="title">执业药师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -264,7 +271,9 @@
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+					{php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$zyyos_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
                 </ul>
             </div>
             <div class="yywsct">
@@ -297,15 +306,16 @@
             <div class="toruitydv">
 			<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                    {php $where = "title like '%执业药师%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>
+					{/loop}{/pc} 
                 </ul>
             </div>
             <div class="toruiclear"></div>
         </div>
     </div>
-    <!-- 执业护士<start>-->
+    <!-- 执业护士<start>--> {php $zyfus_catid = 225; //执业护士id}
     <div class="toruitydiv toruitymg">
     	<div class="toruitydivtitle"><a class="title">执业护士</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -349,7 +359,9 @@
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+					 {php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$zyfus_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
                 </ul>
             </div>
             <div class="yywsct">
@@ -382,15 +394,16 @@
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                   {php $where = "title like '%执业护士%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>
+					{/loop}{/pc} 
                 </ul>
             </div>
             <div class="toruiclear"></div>
         </div>
     </div>
-    <!-- 卫生资格<start>-->
+    <!-- 卫生资格<start>--> {php $wszg_catid = 217; //卫生资格id}
     <div class="toruitydiv toruitymg">
     	<div class="toruitydivtitle"><a class="title">卫生资格</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -434,7 +447,9 @@
         	<div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+					  {php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$wszg_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
                 </ul>
             </div>
             <div class="yywsct">
@@ -467,15 +482,17 @@
             <div class="toruitydv">
             	<span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                     {php $where = "title like '%卫生资格%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>
+					{/loop}{/pc} 
+                </ul>
                 </ul>
             </div>
             <div class="toruiclear"></div>
         </div>
     </div>
-    <!-- 主治医师<start>-->
+    <!-- 主治医师<start>--> {php $zzyis_catid = 229; //主治医师id}
     <div class="toruitydiv toruitymg">
         <div class="toruitydivtitle"><a class="title">主治医师</a></div>
         <div class="toruihotnews toruitydvhg toruitymg">
@@ -519,7 +536,10 @@
             <div class="qhpic">
 				<span class="cutone">考试大纲</span>
                 <ul class="toruinewslist">
-					<li><a href="#"></a></li>
+					  {php $where = "typeid=$this->ksdg_id"; }
+                {pc:content  action="lists" catid="$zzyis_catid" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'58','')}</a></li>{/loop}{/pc} 
+                </ul>
                 </ul>
             </div>
             <div class="yywsct">
@@ -552,9 +572,11 @@
             <div class="toruitydv">
                 <span class="cutone">历年真题</span>
                 <ul class="toruinewslist">
-                    {pc:content action="position" posid="278" catid="" thumb="" order="listorder DESC" start="3" num="1" }{loop $data $n $r}
-                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a></li>
-                    {/loop}{/pc}
+                    {php $where = "title like '%主治医师%'"; }
+                {pc:content  action="lists" catid="867" where="$where" order="listorder DESC" num="7" start="0"}{loop $data $n $r}
+					<li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'48','')}</a></li>
+					{/loop}{/pc} 
+                </ul>
                 </ul>
             </div>
             <div class="toruiclear"></div>

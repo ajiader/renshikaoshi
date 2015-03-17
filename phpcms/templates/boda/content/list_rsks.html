@@ -19,7 +19,6 @@
 {template "content","rsks_top"}
 
 {php $ad_ids = explode('|',$CATEGORYS[$catid][ad_ids])}
-
 <div class="cy-tyct kzx-dysx">
 <div id="{$ad_ids[0]}"> </div>
     <div class="kzc-listym kzc-newsone">
@@ -78,9 +77,10 @@
 
 <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
 <script type="text/javascript">
+
 {loop $ad_ids $k $v}
-{if $k>0}
-    BAIDU_CLB_fillSlotAsync('{$k}', '{$k}');
+{if $v>0}
+    BAIDU_CLB_fillSlotAsync('{$v}', '{$v}');
 	{/if}
 	{/loop}
 </script>

@@ -6,6 +6,7 @@ pc_base::load_app_func('util','content');
 pc_base::load_app_func('global','content');
 class MY_index extends index
 {
+	public $ksdg_id,$lnzt_id;
 	function __construct()
 	{
 		
@@ -22,6 +23,10 @@ class MY_index extends index
 		}
 		$this->teachdb = pc_base::load_model('zhuanjia_model');
 		$this->type_db = pc_base::load_model('type_model');
+
+		$TYPES = getcache('type_content','commons');
+		$this->ksdg_id = $TYPES[74]['typeid'];
+		$this->lnzt_id = $TYPES[99]['typeid'];
 		
 	}
 	/*

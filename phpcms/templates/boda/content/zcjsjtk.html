@@ -91,7 +91,7 @@ function hftb(){
         <div class="computeronecenter">
         	<div class="classnews dfzbkyc">
                 <span class="newstitle "><font>考试动态：</font>{php $catids = '185,186,187,188,196,197'; //考试动态}
-        {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and catid in($catids) and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="0" num="1" }{loop $data $key $val}<a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'40','')}</a>{/loop}{/pc}</span>
+       {$SEO['title']}</span>
                 <ul class="newsul">
         {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and catid in($catids) and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="1" num="4" }{loop $data $key $val}
                     <li><a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'40','')} </a></li>{/loop}{/pc}
