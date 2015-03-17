@@ -31,7 +31,20 @@
         {/loop}{/pc}
         </div>
         
-        
+        <div class="rnct yywsli">
+        	{pc:content action="position" posid="258" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
+            <ul>
+            {pc:content action="position" posid="258" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
+            	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
+  {/loop}{/pc}
+            </ul>
+           {pc:content action="position" posid="259" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
+            <ul>
+            {pc:content action="position" posid="259" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
+            	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
+  {/loop}{/pc}
+            </ul>
+        </div>
         
         <div class="toruitydv">
         	<span class="yywsrgcut">精彩推荐</span>
