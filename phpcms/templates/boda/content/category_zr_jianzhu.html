@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{str_replace(' - ','',$SEO['title'])}{/if}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link type="text/css" rel="stylesheet" href="/statics/zyzg/css/toruistyle.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css" />
+<script language="javascript" src="/statics/zyzg/js/qh.js"></script>
+</head>
+
+<body>
+<div id="bdshare_l"></div>
+<!-- heaer<start>-->
+{template "content","rsks_top"}
+
+<!-- heaer<end>-->
+
+<!-- center<start>-->
+<div class="toruitycenter toruipd">
+	{template "content","zr_banner"}
+    <div class="toruihotnews toruitymg">
+    
+    	<div class="qhpic">
+         {pc:content action="position" posid="261" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}
+        <a href="{$r['url']}" target="_blank"><img src="{$r['thumb']}" width="308" height="201" /></a>
+        {/loop}{/pc}
+        </div>
+        
+        <div class="rnct yywsli">
+        	{pc:content action="position" posid="262" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
+            <ul>
+            {pc:content action="position" posid="262" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
+            	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
+  {/loop}{/pc}
+            </ul>
+           {pc:content action="position" posid="263" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}<p class="firstnw"><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a> </p> {/loop}{/pc}
+            <ul>
+            {pc:content action="position" posid="263" catid="" thumb="" order="listorder DESC" start="1" num="6" }{loop $data $n $r}
+            	   <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'40','')}</a> </li>
+  {/loop}{/pc}
+            </ul>
+        </div>
+        
+        <div class="toruitydv">
+        	<span class="yywsrgcut">精彩推荐</span>
+           {pc:content action="position" posid="264" catid="" thumb="" order="listorder DESC" start="0" num="1" }{loop $data $n $r}
+            <p class="pct"><a href="{$r['url']}" title="{$r['title']}"><img src="{$r['thumb']}"  width="270" height="84" /></a><span>{str_cut(trim($r[title]),'36','')}</span></p>
+            {/loop}{/pc}
+            <ul class="toruinewslist uisize">
+            {pc:content action="position" posid="264" catid="" thumb="" order="listorder DESC" start="1" num="4" }{loop $data $n $r}
+                  <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+
+              {/loop}{/pc}
+            </ul>
+        </div>
+        <div class="toruiclear"></div>
+    </div>
+    
+    <!-- 建造师<start>-->
+    <div class="toruitydiv toruitymg">
+    	<div class="toruitydivtitle"><a class="title">建造师</a></div>
+        <div class="toruihotnews toruitydvhg toruitymg">
+        	<div class="qhpic">
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                  
+                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3366') order by id desc" cache="0" dbsource="" return="data" start="0" num="7"}
+            {loop $data $n $r} 
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
+               {/loop}{/pc}    
+                </ul>
+
+            </div>
+            <div class="yywsct">
+            	<span class="cuttwo"><a href="{$CATEGORYS[244]['url']}" class="selected" id="yywsone1" onmouseover="yywsone(1)">一级建造师</a><a href="{$CATEGORYS[245]['url']}" id="yywsone2" onmouseover="yywsone(2)">二级建造师</a></span>
+                <div id="yywsoneDIV1"> 
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=244 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                         <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+              </div>
+                <div id="yywsoneDIV2" style="display:none;"> 
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=245 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                         <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+      </div>
+            <div class="toruitydv">
+            	<span class="cutone">考试提醒</span>
+                {pc:block pos="zyzg_jzlA_kstx"}{/pc}
+          </div>
+            <div class="toruiclear"></div>
+        </div>
+        
+        
+        
+    </div>
+    
+    <!-- 建筑师<start>-->
+    <div class="toruitydiv toruitymg">
+    	<div class="toruitydivtitle"><a class="title">建筑师</a></div>
+        <div class="toruihotnews toruitydvhg toruitymg">
+        	<div class="qhpic">
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                   {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3366') order by id desc" cache="0" dbsource="" return="data" start="7" num="7"}
+            {loop $data $n $r} 
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
+               {/loop}{/pc}    
+                </ul>
+            </div>
+            <div class="yywsct">
+            	<span class="cuttwo"><a href="{$CATEGORYS[233]['url']}" class="selected" id="yywsthree1" onmouseover="yywsthree(1)">一级建筑师</a><a href="{$CATEGORYS[234]['url']}" id="yywsthree2" onmouseover="yywsthree(2)">二级建筑师</a></span>
+                <div id="yywsthreeDIV1"> 
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=233 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                      <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+                <div id="yywsthreeDIV2" style="display:none;">
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=234 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                      <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+            </div>
+            <div class="toruitydv">
+            	<span class="cutone">考试提醒</span>
+                {pc:block pos="zyzg_jzlB_kstx"}{/pc}
+          </div>
+            <div class="toruiclear"></div>
+        </div>
+        
+    </div>
+    
+    <!-- 工程师<start>-->
+    <div class="toruitydiv toruitymg">
+    	<div class="toruitydivtitle"><a class="title">工程师</a></div>
+        <div class="toruihotnews toruitydvhg toruitymg">
+        	<div class="qhpic">
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3366') order by id desc" cache="0" dbsource="" return="data" start="14" num="7"}
+            {loop $data $n $r} 
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
+    {/loop}{/pc}
+                </ul>
+            </div>
+            <div class="yywsct">
+            	<span class="cuttwo"><a href="{$CATEGORYS[240]['url']}" target="_blank" class="selected" id="yywsfive1" onmouseover="yywsfive(1)">安全工程师</a><a href="{$CATEGORYS[247]['url']}" id="yywsfive2" onmouseover="yywsfive(2)">造价工程师</a></span>
+                <div id="yywsfiveDIV1">
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=240 AND status=99 order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                      <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+                <div id="yywsfiveDIV2" style="display:none;">
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=247 AND status=99 order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                      <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+            </div>
+            <div class="toruitydv">
+            	<span class="cutone">考试提醒</span>
+                  {pc:block pos="zyzg_jzlC_kstx"}{/pc}
+            </div>
+            <div class="toruiclear"></div>
+        </div>
+        
+    </div>
+    
+    <!-- 其他<start>-->
+    <div class="toruitydiv toruitymg">
+    	<div class="toruitydivtitle"><a class="title">其他</a></div>
+        <div class="toruihotnews toruitydvhg toruitymg">
+        	<div class="qhpic">
+            	<span class="cutone">历年真题</span>
+                <ul class="toruinewslist">
+                    {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=867 and typeid=99 and mid in (SELECT id FROM `v9_zirui_mokuai` WHERE `typeid` = '3366') order by id desc" cache="0" dbsource="" return="data" start="21" num="7"}
+            {loop $data $n $r} 
+                    <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'54','')}</a></li>
+    {/loop}{/pc}
+                </ul>
+            </div>
+            <div class="yywsct">
+            	<span class="cuttwo"><a href="{$CATEGORYS[248]['url']}" class="selected" id="yywsseven1" onmouseover="yywsseven(1)">监理工程师</a><a href="{$CATEGORYS[253]['url']}" id="yywsseven2" onmouseover="yywsseven(2)">环评师</a></span>
+                <div id="yywssevenDIV1"> 
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=248 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                         <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+                <div id="yywssevenDIV2" style="display:none;"> 
+                    <ul class="toruinewslist">
+                        {pc:get sql="SELECT id,style,url,title FROM phpcms_news where catid=253 AND status=99  order by id desc" cache="0" dbsource="" return="data" start="1" num="7"}
+            {loop $data $n $r}
+                         <li><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank">{str_cut(trim($r[title]),'66','')}</a> </li>
+{/loop}{/pc}
+                    </ul>
+                </div>
+            </div>
+            <div class="toruitydv">
+            	<span class="cutone">考试提醒</span>
+                {pc:block pos="zyzg_jzlD_kstx"}{/pc}
+            </div>
+            <div class="toruiclear"></div>
+        </div>
+        
+    </div>
+    
+    
+    
+</div>
+<!-- center<end>-->
+
+<!-- footer<start>-->
+	{template "content","rsks_bottom"}
+<!-- footer<end>-->
+<!--异步加载开始-->
+ <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+ <script type="text/javascript">
+ <!-- 广告位：(新版)致睿首页-顶部banner -->
+        BAIDU_CLB_fillSlotAsync('690550','PAGE_AD_5690550');
+		<!-- 广告位：（新版）致睿顶部-左侧banner01 -->
+	BAIDU_CLB_fillSlotAsync('690553','PAGE_AD_690553');
+	<!-- 广告位：（新版）致睿顶部右部-banner02 -->
+	BAIDU_CLB_fillSlotAsync('690555','PAGE_AD_690555');
+	<!-- 广告位：（新版）致睿首页顶部左下-banner03 -->
+	BAIDU_CLB_fillSlotAsync('690558','PAGE_AD_690558'); <!-- 广告位：（新版）致睿首页顶部中间-banner04 -->
+        BAIDU_CLB_fillSlotAsync('690562','PAGE_AD_690562');  
+		<!-- 广告位：（新版）致睿首页顶部右侧-banner05 -->
+		 BAIDU_CLB_fillSlotAsync('690565','PAGE_AD_690565');  
+		 
+		 
+		<!-- 广告位：（新）致睿首页-中栏banner -->
+		 BAIDU_CLB_fillSlotAsync('695678','PAGE_AD_695678');
+		<!-- 广告位：（新）致睿首页-顶部banner -->
+		 BAIDU_CLB_fillSlotAsync('695679','PAGE_AD_695679');
+</script>
+<!--异步加载结束 --> 
+</body>
+</html>

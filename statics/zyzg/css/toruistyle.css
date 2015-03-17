@@ -206,11 +206,9 @@ margin-left:auto; margin-right:auto; z-index:9999;}
 
 .toruihotnews .rnct ul{ display:block;}
 
-.toruihotnews .rnct ul li{ float:left; width:163px; margin:0 5px 3px 0; _margin:0 5px 1px 0;}
+.toruihotnews .rnct ul li{ float:left; width:163px; margin:0 5px 3px 0; _margin:0 5px 1px 0; height:20px; line-height:20px; overflow:hidden;}
 
 .toruihotnews .rnct ul li a{ color:#666666;}
-
-.toruihotnews .yywsli ul li{ margin-bottom:5px; _margin-bottom:4px;}
 
 .toruitydv,.toruinewsdv .nwrg{ width:280px;float:right;}
 
