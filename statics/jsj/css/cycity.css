@@ -33,34 +33,34 @@
 }
 .cmtintro a{ padding:0px 10px; font-size:14px; color:#2F6FAD;}
 
-.city-box-border{ clear:both; border:1px solid #77c1de; width:980px; overflow:hidden;}
+.city-box-border{ clear:both; border:1px solid #c7d6e9; width:980px; overflow:hidden;}
 .pd8{ padding:8px; overflow:hidden;}
-.mkh3{ line-height:30px; font-size:14px; font-weight:bold; text-align:center; color:#2f6fad; border:1px solid #d1e6f1;}
+.mkh3{ line-height:30px; font-size:14px; font-weight:bold; text-align:center; color:#4276b6; border:1px solid #d1e6f1;}
 
-.mk-dl{ float:left; margin:10px 24px 0px 0px; width:204px; padding:4px 5px; height:47px; display:inline; border:1px solid #77C1DE; overflow:hidden;}
+.mk-dl{ float:left; margin:10px 24px 0px 0px; width:204px; padding:4px 5px; height:47px; display:inline; border:1px solid #c7d6e9; overflow:hidden;}
 .mk-dl dt{ float:left; margin:0px 8px 0px 0px; width:45px; height:45px; border:1px solid #CCC; overflow:hidden;}
-.mk-dl dd a{ line-height:25px; color:#2F6FAD; font-size:14px;}
+.mk-dl dd a{ line-height:25px; color:#4276b6; font-size:14px;}
 
 .mk-dl dd.dou a{ line-height:16px;}
 
 .zxfd-title{ height:55px; background:url(/statics/jsj/images/city_15.png) no-repeat;}
 .zxfd-title h2{ float:left; font-size:16px; font-weight:bold; color:#FFF; width:155px; text-align:center; line-height:44px; overflow:hidden;}
 
-.zxfd-box{ clear:both; width:980px; border:1px solid #c3e4f3; border-top:3px solid #00a7f0; overflow:hidden;}
-.zxfd-box-left{ float:left; width:707px; padding:0px 5px; border-right:1px solid #c3e4f3; height:292px; overflow:hidden;}
-.zxfd-box-left .zxfd-h40{ padding:0px 0px 0px 5px; height:39px; line-height:39px; border-bottom:1px solid #c3e4f3; overflow:hidden;}
+.zxfd-box{ clear:both; width:980px; overflow:hidden;}
+.zxfd-box-left{ float:left; width:690px; padding:0px 5px;  border:1px solid #c7d6e9; border-top:3px solid #4276b6; height:307px; overflow:hidden;}
+.zxfd-box-left .zxfd-h40{ padding:0px 0px 0px 5px; height:39px; line-height:39px; border-bottom:1px solid #c7d6e9; overflow:hidden; margin-bottom:10px;}
 
-.zxfd-md-tt{ float:left; font-size:15px; font-weight:bold; color:#007ac5;}
+.zxfd-md-tt{ float:left; font-size:15px; font-weight:bold; color:#4276b6;}
 .zxfd-more{ float:right; padding:0px 5px 0px 0px;}
 .zxfd-more a{ padding:0px 5px;}
 .zxfd-more .orange{ color:#f58500;}
 
 .zxfd-bd{ overflow:hidden;}
 
-.zxfd-mk-b{ float:left; width:350px; display:inline; overflow:hidden;}
+.zxfd-mk-b{ float:left; width:340px; display:inline; overflow:hidden;}
 .zxfd-mk-b .changtab-box{ height:36px; line-height:36px; padding:0px 8px; background:url(/statics/jsj/images/city_31.png) repeat-x left 33px;}
 .zxfd-mk-b .changtab-box span{
-    color: #007AC5;
+    color: #4276b6;
     display: inline-block;
     font-size: 12px;
     height: 36px;
@@ -72,15 +72,15 @@
 .changtab-content{ padding:8px 0px 8px 8px; overflow:hidden;}
 .list-chang-content{ list-style:none; display:none; overflow:hidden;}
 .list-chang-content li{ height:25px; line-height:25px; background:url(/statics/jsj/images/icon1.jpg) no-repeat left center; padding:0px 0px 0px 10px; overflow:hidden;}
-.list-chang-content li a{ font-size:14px;}
+.list-chang-content li a{ font-size:14px; color:#555555;}
 .list-chang-content li span{ float:right; color:#999999; font-family: Verdana,Arial;}
 
-.zxfd-box-right{ float:right; width:262px; overflow:hidden;}
-.zxfd-br-title{ height:33px; background:url(/statics/jsj/images/city_31.png) repeat-x left bottom; overflow:hidden;}
-.zxfd-br-title h2{ line-height:33px; font-size:14px; background:url(/statics/jsj/images/city_24.png) no-repeat 7px center; padding:0px 20px; color:#007ac5;}
+.zxfd-box-right{ float:right; width:262px; overflow:hidden; border:1px #c7d6e9 solid;}
+.zxfd-br-title{ height:41px; border-bottom:1px #c7d6e9 solid; overflow:hidden; background:#e6ecf4;}
+.zxfd-br-title h2{ line-height:41px; font-size:14px; background:url(/statics/jsj/images/city_24.png) no-repeat 7px center; padding:0px 20px; color:#4276b6;}
 
 .list-zxfd-br{ padding:8px; list-style:none; overflow:hidden;}
 .list-zxfd-br li{ height:25px; line-height:25px; background:url(/statics/jsj/images/icon1.jpg) no-repeat left center; padding:0px 0px 0px 10px; overflow:hidden; position:relative;}
-.list-zxfd-br li a{ font-size:14px;}
+.list-zxfd-br li a{ font-size:14px; color:#555555;}
 .list-zxfd-br li span{ color:#999999; position:absolute; right:0px; top:0px; font-family: Verdana,Arial;}
 

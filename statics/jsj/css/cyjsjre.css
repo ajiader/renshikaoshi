@@ -55,26 +55,25 @@ a:hover,.jsjre_top ul li a:hover{ color:#0185d5;}
 .nr1-lf{ width:283px; float:left;}
 .nr1-lf .pictab{ width:283px;}
 .nr1-lf .pictab ul { height:36px; margin-bottom:6px;}
-.nr1-lf .pictab ul li{ float:left; height:36px; background-position:-79px -49px; width:66px; line-height:30px; text-align:center; margin-right:6px; _display:inline;}
+.nr1-lf .pictab ul li{ float:left; height:36px; background-position:-79px -43px; width:66px; line-height:40px; text-align:center; margin-right:6px; _display:inline;}
 .nr1-lf .pictab ul li.selected{ background-position:-150px -49px;}
 .nr1-lf .pictab ul li.selected a{ color:#ffffff;}
 .nr1-lf .pictab .picdv{ height:177px; overflow:hidden;}
 .nr1-lf .pictab .picdv p{ display:none;}
-.nrtydv{ border:1px #b6d0e1 solid; }
-.nrtydv .tycut{ height:33px; border-bottom:2px #b6d0e1 solid; background:url(/statics/jsj/images/icon2.gif) no-repeat 10px center; line-height:33px; position:relative; padding-left:22px; font-size:14px; font-weight:bold; color:#0188d9; margin-bottom:5px;}
+.nrtydv .tycut{ height:33px; background:url(/statics/jsj/images/titleBarBg.gif) no-repeat left bottom; line-height:33px; position:relative; padding-left:8px; font-size:16px; font-weight:bold; color:#4276b6; margin-bottom:10px;}
 .nrtydv .tycut a.more,.nr2-rg .tyrgcut a.more{ position:absolute; right:6px; top:0px; line-height:33px; color:#6999bd; font-size:12px; font-weight:normal; font-family:宋体;}
 ul.newsty{ margin:0 8px;}
-ul.newsty li{ height:25px; line-height:25px; font-size:12px; background:url(/statics/jsj/images/icon1.jpg) no-repeat left center; padding-left:10px; overflow:hidden;}
+ul.newsty li{ height:28px; line-height:28px; font-size:12px; background:url(/statics/jsj/images/icon1.jpg) no-repeat left center; padding-left:10px; overflow:hidden;}
 ul.newsty li a,ul.newsty li a:hover{ font-family:"微软雅黑";}
 .nr1-ct{ width:398px; float:left; margin:0 14px; _display:inline;}
 .nr1-ct h1,.nr1-ct h3{ height:28px;}
 .nr1-ct h1 span,.nr1-ct h3 span{ float:left; width:37px; height:19px; background-position:-222px -49px; color:#ffffff; font-family:宋体; font-size:12px; text-align:center; font-weight:normal; line-height:19px; padding-right:5px; }
-.nr1-ct h1 a,.nr1-ct h3 a{ display:inline-block; font-size:14px; color:#0188d9; margin:0 5px; font-weight:bold;}
+.nr1-ct h1 a,.nr1-ct h3 a{ display:inline-block; font-size:14px; color:#4276b6; margin:0 5px; font-weight:bold;}
 .nr1-ct h2{ line-height:22px; font-size:12px; font-family:宋体; padding:0 0 8px 0; border-bottom:1px #d0d0d0 dashed; margin-bottom:6px; font-weight:normal;}
-.nr1-ct .newstab{ height:31px; background-position:0 -146px; background-repeat:repeat-x; margin-bottom:8px;}
-.nr1-ct .newstab a{ display:inline-block; color:#057bc2; border-right:1px #cfe9f2 solid; width:98px; text-align:center; font-size:14px; border-top:2px #eef9ff solid; line-height:28px;}
+.nr1-ct .newstab{ height:34px; background-position:0 -144px; background-repeat:repeat-x; margin-bottom:8px;}
+.nr1-ct .newstab a{ display:inline-block; color:#666666; text-align:center; font-size:14px; line-height:32px; width:98px;}
 .nr1-ct .newstab a:hover{ text-decoration:none;}
-.nr1-ct .newstab a.selected{ font-weight:bold; border:1px #326f9e solid; border-top:2px #326f9e solid; border-bottom:0px; background:#ffffff; width:96px; border-bottom:1px #ffffff solid;}
+.nr1-ct .newstab a.selected{ font-weight:bold; border-bottom:3px #4276b6 solid; color:#4276b6;}
 .nr1-ct .newsdv ul li{ position:relative; font-size:14px;}
 .nr1-ct .newsdv ul li span{ position:absolute; right:0px; top:0px; line-height:25px; color:#999999; font-size:12px; font-family: Verdana,Arial;}
 .nr1-rg{ width:272px; float:left;}
@@ -85,7 +84,7 @@ ul.newsty li a,ul.newsty li a:hover{ font-family:"微软雅黑";}
 .zkquestion input{ float:left;}
 .zkquestion input.ip1{ width:158px; padding-left:8px; border:1px #c3dbe7 solid; height:23px; line-height:23px; color:#999999;}
 .zkquestion input.ip2{ width:60px; height:27px; border:0px; background:#c3dbe7; color:#016ba7;}
-.quesdv{ height:190px; overflow:hidden; padding:0 12px; font-family:宋体; }
+.quesdv{ height:190px; overflow:hidden; padding:0 12px; }
 .quesdv ul li{ display:block; height:54px; border-bottom:1px #d9d9d9 dashed; background:url(/statics/jsj/images/wh_bg.gif) no-repeat left 13px; padding-left:22px; font-size:12px; padding-top:8px;}
 .quesdv ul li p{ line-height:24px; width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#666666;}
 .jsj_nr2{ border:1px #b7cfe1 solid; border-top:4px #b7cfe1 solid; background:url(/statics/jsj/images/nrbg.gif) repeat-x left top; margin-top:20px;}

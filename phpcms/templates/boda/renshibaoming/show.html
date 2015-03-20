@@ -80,7 +80,7 @@ function hftb(){
 
             {loop $data $r}
 
-            	<li><a href="{$r['url']}" title="{$r[title]}" target="_blank">{str_cut($r[title],70,'')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
+            	<li><a href="{$r['url']}" title="{$r[title]}" target="_blank">{str_cut($r[title],65,'')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
 
               {php $i++}
 
@@ -267,7 +267,7 @@ function hftb(){
 
                  {loop $data $n $r}
 
-  <li><span>({date('Y-m-d',$r['updatetime'])}})</span><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'70','')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
+  <li><span>({date('Y-m-d',$r['updatetime'])})</span><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'70','')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
 
    {php $i++}
 

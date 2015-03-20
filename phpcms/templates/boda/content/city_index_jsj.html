@@ -78,13 +78,14 @@ function stopScroll() {
         
         	<div class="nr1-lf">
             	<div class="pictab jsjtymg">
-                	<ul><li class="selected" id="ttl1" onmouseover="ttlOn(1);" ><a href="javascript:;">全真模拟</a></li><li id="ttl2" onmouseover="ttlOn(2)" ><a href="javascript:;">快速通关</a></li><li id="ttl3" onmouseover="ttlOn(3)" ><a href="javascript:;">真题题库</a></li><li id="ttl4" onmouseover="ttlOn(4)" style="margin-right:0px;"><a href="javascript:;">升职加薪</a></li></ul>
-                    <div class="picdv">
+                	
+                    <div class="picdv jsjtymg">
                     	{pc:content  action="position" posid="242" order="listorder DESC" num="4"}
                         {loop $data $key $val}
 				           <p id="ctn{$n}" ><a href="{$val['url']}" title="{$val['title']}" target="_blank"><img src="{thumb($val['thumb'],300,560)}" alt="{$val['title']}" /></a></p>
                         {/loop} {/pc}
                     </div>
+                    <ul><li class="selected" id="ttl1" onmouseover="ttlOn(1);" ><a href="javascript:;">全真模拟</a></li><li id="ttl2" onmouseover="ttlOn(2)" ><a href="javascript:;">快速通关</a></li><li id="ttl3" onmouseover="ttlOn(3)" ><a href="javascript:;">真题题库</a></li><li id="ttl4" onmouseover="ttlOn(4)" style="margin-right:0px;"><a href="javascript:;">升职加薪</a></li></ul>
                     <script language="JavaScript" type="text/javascript">affScroll();</script>
                 </div>
                 <div class="nrtydv jsjtymg">
@@ -124,21 +125,21 @@ function stopScroll() {
 					{/pc}<span>模块</span>：<a href="http://www.renshikaoshi.net/jsj/ksmk/Word2003/">Word2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/excel/">Excel2003</a> | <a href="http://www.renshikaoshi.net/jsj/ksmk/ppt/">Powerpoint2003</a></h2>            
 			 
                 <h3><span>辅导</span>				
-				{pc:content action="position" posid="317" order="listorder DESC" num="1" start="0"}
+				{pc:content action="position" posid="319" order="listorder DESC" num="1" start="0"}
 				  {loop $data $n $r}
 				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['title'],60)}</a>
 				  {/loop}
 				{/pc}
 				</h3>
                 <h2><a href="javascript:;">辅导</a>：				
-				{pc:content action="position" posid="317" order="listorder DESC" num="2" start="1"}
+				{pc:content action="position" posid="319" order="listorder DESC" num="2" start="1"}
 				  {loop $data $n $r}
-				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['title'],60)}</a>
 				   {/loop}
 				{/pc}<br /><a href="javascript:;">必看</a>：				 
-				 {pc:content action="position" posid="318" order="listorder DESC" num="2"}
+				 {pc:content action="position" posid="320" order="listorder DESC" num="2" start="0"}
 				  {loop $data $n $r}
-				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['sl_title'],60)}</a>
+				   <a href="{$r['url']}" title="{$r['title']}" {title_style($r[style])}  target="_blank">{str_cut($r['title'],60)}</a>
 				   {/loop}
 				{/pc}
 				 </h2>
@@ -236,13 +237,6 @@ function stopScroll() {
         
         <!--//考试模块-->
         <div class="city-box">
-           <div class="city-mk-title">
-               <h2 class="cmth2">学习软件</h2>
-               <div class="cmtintro">
-                  <span></span>
-                  
-               </div>
-           </div>
            <div class="clear"></div>
            <!--//city-mk-title-->
            <div class="city-box-border">
@@ -367,28 +361,28 @@ function stopScroll() {
                                 <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="199" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="809" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="201" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="842" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -397,33 +391,33 @@ function stopScroll() {
                         </div>
                         <!--//box-->
                         <div class="zxfd-mk-b" style="float:right;">
-                            <div class="changtab-box" id="mk02"><span class="on">Powerpoint2003</span><span>Powerpoint2007</span><span>windows XP</span><span>Internet</span></div>
+                            <div class="changtab-box" id="mk02"><span class="on">ppt2003</span><span>ppt2007</span><span>windows XP</span><span>Internet</span></div>
                             <div class="changtab-content" id="mk02_tab">
                                 <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="202" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="843" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="200" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="203" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -439,7 +433,7 @@ function stopScroll() {
                     <ul class="list-zxfd-br">
                     {pc:content  action="lists" catid="185" order="id DESC" num="10" start="0" cache="0"} 
                       {loop $data $key $val}
-                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'48','')}</a></li>
                        {/loop}
 					{/pc}
                    </ul>
@@ -468,21 +462,21 @@ function stopScroll() {
                                 <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="214" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="215" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="845" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -495,28 +489,28 @@ function stopScroll() {
                                 <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="213" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="204" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="205" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="207" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -532,7 +526,7 @@ function stopScroll() {
                     <ul class="list-zxfd-br">
                     {pc:content  action="lists" catid="194" order="id DESC" num="10" start="0" cache="0"} 
                       {loop $data $key $val}
-                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'48','')}</a></li>
                        {/loop}
 					{/pc}
                    </ul>
@@ -560,28 +554,28 @@ function stopScroll() {
                            <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="210" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="208" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="216" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="844" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -594,28 +588,28 @@ function stopScroll() {
                            <ul class="list-chang-content" style="display:block;">
                                  {pc:content  action="lists" catid="206" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="212" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="211" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
                                 <ul class="list-chang-content">
                                  {pc:content  action="lists" catid="209" order="id DESC" num="8" start="0" cache="0"}
 								 {loop $data $n $r}
-                                   <li><span>[{date('m-d',$r['updatetime'])}]</span><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'50','')}</a></li>
+                                   <li><a  href="{$r['url']}" title="{$r['title']}">{str_cut($r['title'],'70','')}</a></li>
 								  {/loop}
 								 {/pc}
                                 </ul>
@@ -631,7 +625,7 @@ function stopScroll() {
                     <ul class="list-zxfd-br">
                     {pc:content  action="lists" catid="192" order="id DESC" num="10" start="0" cache="0"} 
                       {loop $data $key $val}
-                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'40','')}</a><span>[{date('m-d',$val['updatetime'])}]</span></li>
+                       <li><a  href="{$val['url']}" title="{$val['title']}">{str_cut($val['title'],'48','')}</a></li>
                        {/loop}
 					{/pc}
                    </ul>
