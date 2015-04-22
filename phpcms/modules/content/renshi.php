@@ -215,7 +215,7 @@ class renshi
 		        }
             }else{
             	$childCitylist = $this->city_db->select("parentid=0  AND keyid=1 AND linkageid NOT IN (33,34,35,3358,3360)",'linkageid,name,pinyin',50, 'listorder asc');
-            	$condition = '1=1';
+            	$condition = 'id > 0';
             	//$cityList['name'] = '';
          }
 
