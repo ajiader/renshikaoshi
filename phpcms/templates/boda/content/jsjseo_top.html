@@ -8,6 +8,6 @@
     <?php
     $thiscityname =  strlen($r['name'])>6?str_replace(array('省','市','县'),'',$r['name']):$r['name'];
     ?>
-    <a href="{siteurl($siteid)}/{$nameUrl}/{getCityUrl($r['pinyin'])}.html" title="{$thiscityname}{$catname}考试">{$thiscityname}</a>{/loop}</div>
+    <a href="{siteurl($siteid)}/jsj/{getCityUrl($r['pinyin'])}.html" title="{$thiscityname}{$catname}考试">{$thiscityname}</a>{/loop}</div>
     {/if}
     </div>

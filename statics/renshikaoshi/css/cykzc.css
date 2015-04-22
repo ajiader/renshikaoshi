@@ -65,7 +65,8 @@
 
 .kzc-newsone .lf-1{ width:400px; float:left; padding-right:20px;}
 
-.kzc-newsone .lf-1 .jhyd{ line-height:36px; border-bottom:1px #d9d9d9 dashed; font-size:14px; color:#044C68;}
+.kzc-newsone .lf-1 .jhyd{ line-height:36px; border-bottom:1px #d9d9d9 dashed; font-size:14px;}
+.kzc-newsone .lf-1 .jhyd a,.kzc-newsone .lf-1 .jhyd{ color:#044C68;}
 
 .kzc-newsone .lf-1 .jhyd b{ font-size:18px; color:#d20001; padding:0 3px;}
 
@@ -128,7 +129,7 @@ ul.newslist li.lione img{ width:87px; height:63px; margin-right:8px; float:left;
 
 ul.newslist li.lione .pccontent{ width:165px; float:left;}
 
-ul.newslist li.lione .pccontent h2{ font-weight:bold; font-size:12px;}
+ul.newslist li.lione .pccontent h2{ font-weight:bold; font-size:12px; width:165px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 
 ul.newslist li.lione .pccontent p{ line-height:20px; color:#999999;}
 
@@ -571,7 +572,7 @@ ul.daitime li span{ position:absolute; right:0px; top:0px; line-height:26px; col
 .seo_onedv .kstkright .kstkcontent p.p2{ font-size:20px; font-weight:bold;}
 .seo_onedv .kstkright .kstkcontent p.p3{ color:#ff0000; text-align:center; line-height:40px; font-size:18px; margin-bottom:15px;}
 .seo_onedv .kstkright .kstkcontent p.p4{ text-align:center;}
-.seo_onedv .kstkright .kstkcontent p.p4 a{ display:inline-block; width:228px; height:48px; background:url(../images/lj_download.gif) no-repeat; font-size:0; text-indent:-99em; overflow:hidden; line-height:0;}
+.seo_onedv .kstkright .kstkcontent p.p4 a{ display:inline-block; width:228px; height:48px; background:url(../images/lj_download.gif) no-repeat; font-size:0; overflow:hidden; line-height:0;}
 .seo_content{ overflow:hidden; padding:10px 0;}
 .seo_content .seoleft{ width:680px; float:left;}
 .seo_content .seoleft h2{ height:33px; background:#106993; line-height:33px; color:#ffffff; font-size:18px; font-weight:normal; padding:0 10px; margin-bottom:5px;}
@@ -627,3 +628,5 @@ ul.seorg li{ font-size:12px;}
 .enquesdv{ height:300px;}
 .enquesdv ul li p{ width:390px; font-size:14px;}
 .enquesdv ul li{ height:50px;}
+.jsj_jh_bt{ padding:10px 0;}
+.jsj_jh_bt p{ line-height:28px;}

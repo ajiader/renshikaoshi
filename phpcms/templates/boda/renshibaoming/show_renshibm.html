@@ -9,7 +9,7 @@
 <title>{$SEO['title']}</title>
 <meta name="keywords" content="{$SEO['keywords']}">
 <meta name="description" content="{$SEO['description']}">
-<link type="text/css" rel="stylesheet" href="http://www.renshikaoshi.net/statics/kaozc/css/rsstyle.css" />
+<link type="text/css" rel="stylesheet" href="/statics/kaozc/css/rsstyle.css" />
 
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 
@@ -41,61 +41,22 @@ $("#menua li").mouseleave(function(){$(this).find("div").slideUp("fast");});
 });
 
 </script>
+<script type="text/javascript">
+function hftb(){
+  window.open("http://item.taobao.com/item.htm?spm=a1z10.1.w6842337-6518291215.31.Q60c6b&id=37117006912","");
+}
+</script>
 </head>
 
 
 
 <body>
-
-<div class="rshead">
-
-	<div class="rsxs">
-
-    	<div class="rsctty rsdh"><a href="{siteurl($siteid)}" target="_blank">网站首页</a>-<a href="http://www.kaogwy.com/" target="_blank">考公务员</a>-<a href="http://www.renshikaoshi.net/En/" target="_blank">职称英语</a>-<a href="http://www.renshikaoshi.net/jsj/" target="_blank">职称计算机</a>-<a href="http://www.renshikaoshi.net/zyzg/" target="_blank">职业资格</a>-<a href="http://www3.53kf.com/webCompany.php?arg=cdbroadcom&style=2&language=cn&lytype=0&charset=gbk&kflist=on&kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&zdkf_type=1&referer=http%3A%2F%2Fwww.kaozc.com%2Fjsj2%2Fcomputer2013%2F&keyword=http%3A//www.kaozc.com/&tfrom=1&tpl=crystal_blue&timeStamp=1364542066875" target="_blank">帮助中心</a></div>
-
-        <div class="rstobanner"></div>
-
-        <div class="rsctty rsmenu">
-
-        	<ul id="menua">
-
-            	<li><a href="{siteurl($siteid)}/En/" target="_blank">首页</a></li>
-
-                <li><a href="http://www.renshikaoshi.net/kaoshi-154-110018-1.html" target="_blank">考试介绍</a></li>
-
-                <li><a href="http://www.renshikaoshi.net/En/ksdt/bktz/" target="_blank">考试科目</a></li>
-
-                <li><a href="http://www.renshikaoshi.net/kaoshi-154-110027-1.html" target="_blank">报名时间</a></li>
-
-                <li><a href="http://www.renshikaoshi.net/En/ksdt/cjcx/" target="_blank">成绩查询</a></li>
-
-                <li><a href="http://www.cdbroad.com/mall" target="_blank">下载中心</a></li>
-
-                <li><a href="http://www.renshikaoshi.net/En/xszd/" target="_blank">新手入门</a></li>
-
-                <li><a href="http://www3.53kf.com/webCompany.php?arg=cdbroadcom&style=2&language=cn&lytype=0&charset=gbk&kflist=on&kf=sl864,ycy875,zhoucl,fanxuemei,yushunlai,zhangjing,lijanq,lilinglin,litingting,zhouq835,hr869,lijiao867,zhangyu,tanggl,yangjiao,linj&zdkf_type=1&referer=http%3A%2F%2Fwww.kaozc.com%2Fjsj2%2Fcomputer2013%2F&keyword=http%3A//www.kaozc.com/&tfrom=1&tpl=crystal_blue&timeStamp=1364542066875" target="_blank">在线咨询</a></li>
-
-            </ul>
-
-        </div>
-
-        
-
-    </div>
-
-</div>
-
-
-
+{template "renshibaoming","header"}
 <div class="rsctty">
 
-	<div class="rshotnew rstymgbt"><h1>{$seotitle}</h1>网上报名入口({$url})</div>
+	<div id="PAGE_AD_943278"></div>
 
-	<div class="rstymgbt" id="PAGE_AD_709944">
-
-    </div>
-
-<div class="gwyadd"><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语培训</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank">职称计算机考试</a><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank">职称英语(理工)班</a><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语(卫生)班</a><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语(综合)班</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/
+<div class="gwyadd"><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语培训</a><a onclick="hftb()">职称计算机考试</a><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank">职称英语(理工)班</a><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语(卫生)班</a><a href="http://www.egbroad.com/kfb/zcyy/" target="_blank">职称英语(综合)班</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/
 " target="_blank">执(职)业考试</a><a href="http://www.egbroad.com/kfb/gwy/" target="_blank">公务员考试</a></div>
 
 
@@ -105,7 +66,7 @@ $("#menua li").mouseleave(function(){$(this).find("div").slideUp("fast");});
 
         <!-- 广告位：仿人事-幻灯片 -->
 
-        <div id="744421"></div>
+        <div id="PAGE_AD_943280"></div>
 
     	</div>
 
@@ -123,7 +84,7 @@ $("#menua li").mouseleave(function(){$(this).find("div").slideUp("fast");});
 
             {loop $data $r}
 
-            	<li><a href="{$r['url']}" title="{$r[title]}" target="_blank">{str_cut($r[title],80,'')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
+            	<li><a href="{$r['url']}" title="{$r[title]}" target="_blank">{str_cut($r[title],70,'')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
 
               {php $i++}
 
@@ -157,255 +118,6 @@ $("#menua li").mouseleave(function(){$(this).find("div").slideUp("fast");});
 
     </div>
 
-    <!-- 模块<start>-->
-
-<?php
-
-$type_arr = GetTypeName(" `keyid` = '3362' AND `parentid` = '0' and linkageid != '3375'");
-
- $mokuai_arr = GetZrMokuai("siteid=$siteid and status=1",'id,typeid,name,pinyin');
-
- ?> 
-
-    <div class="toruimoremk rstymgbt">
-
-    	<div class="qhdv toruitymg">
-
-        	<ul>
-				<li><a href="javascript:;" id="toruimk9" onmouseover="toruimokuai(9)" class="selected">职称英语</a></li>
-            	{php $i=1;}
-
-            {loop $type_arr $r}
-
-            	<li><a href="javascript:;" id="toruimk{$i}" onmouseover="toruimokuai({$i})">{$r['name']}</a></li>
-
-       {php $i++;}          
-
- {/loop}
-
-            <li><a href="javascript:;" id="toruimk8" onmouseover="toruimokuai(8)">职称计算机</a></li>
-
-                
-
-
-
-            </ul>
-
-        </div>
-
- <div class="toruimokuai" id="toruimokuaiDIV9">
-
-    <ul>
-
-        <li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="VIP协议班">VIP协议班</a></li><li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="零基础协议班">零基础协议班</a></li>
-
-        <li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="强化冲刺班">强化冲刺班</a></li><li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="词汇精讲班">词汇精讲班</a></li>
-
-        <li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="完形填空精讲班">完形填空精讲班</a></li><li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="阅读理解精讲班">阅读理解精讲班</a></li>
-
-        <li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="历年真题讲解班">历年真题讲解班</a></li><li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="冲刺押题班">冲刺押题班</a></li>
-
-        <li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="考前练习班">考前练习班</a></li><li><a href="http://www.renshikaoshi.net/tg/zcyy/rs/" target="_blank" title="音频班">音频班</a></li>
-
-    </ul>
-
-    <div class="toruiclear"></div>
-
-</div>
-
-          {php $i=1;}
-
-            {loop $type_arr $r}
-
-        <div class="toruimokuai" id="toruimokuaiDIV{$i}" {if $i >= 1}style="display:none"{/if}>
-
-
-
-        	<ul id="mk_{$r['linkageid']}" >
-
-
-
-            <?php if($r['child']==0): ?>
-
-
-
-
-
-
-
-            {php $j=1}
-
-            {loop  $mokuai_arr[$r['linkageid']] $v}
-
-            	<li><a href="{siteurl($siteid)}/zhiruitiku/{$v[pinyin]}.html" title="{$v['name']}" target="_blank">{$v['name']}</a></li>
-
-    <?php
-
-               //if($j==50) break;
-
-                $j++;
-
-                ?>
-
-              {/loop}
-
-
-
-
-
-
-
-             <?php elseif( $r['child']==1):
-
-
-
-
-
-
-
-              $type_arr_child = GetTypeName(" `keyid` = '3362' AND `parentid` =  $r[linkageid]");
-
-
-
-              ?>
-
-
-
-             {php $j=1} 
-
-
-
-             {loop $type_arr_child $r2}
-
-
-
-            {loop  $mokuai_arr[$r2['linkageid']] $v}
-
-
-
-
-
-
-
-            	<li><a href="{siteurl($siteid)}/zhiruitiku/{$v[pinyin]}.html" target="_blank">{$v['name']}</a></li>
-
-
-
-
-
-
-
-              <?php
-
-               //if($j==50) break;
-
-                $j++;
-
-                ?>  {/loop}{/loop}
-
-
-
-
-
-
-
-              <?php endif; ?>
-
-
-
-
-
-
-
-            </ul>
-
-
-
-
-
-
-
-            <div class="toruiclear"></div>
-
-
-
-
-
-
-
-            {if $j>40}<div class="toruimokuaimore" id="chakangd_{$r['linkageid']}"><a href="javascript:;"  onclick="openmk({$r['linkageid']})">查看更多>></a></div>{/if}
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-       {php $i++;}          
-
- {/loop}  
-
-<div class="toruimokuai" id="toruimokuaiDIV8" style="display:none">
-
-        	<ul>
-
-            	<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="PowerPoint2007模块题库下载">PowerPoint2007</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Excel2007模块题库下载">Excel2007</a></li>
-
-                <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Word2007模块题库下载">Word2007</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Internet应用模块题库下载">Internet应用</a></li>
-
-                <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="PowerPoint2003模块题库下载">PowerPoint2003</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Excel2003模块题库下载">Excel2003</a></li>
-
-                <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Word2003模块题库下载">Word2003</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="WindowsXP模块题库下载">WindowsXP</a></li>
-
-            	<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="FrontPage2003模块题库下载">FrontPage2003</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="金山文字2005模块题库下载">金山文字2005</a></li>
-
-                <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="金山表格2005模块题库下载">金山表格2005</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="金山演示2005模块题库下载">金山演示2005</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="WPSOffice办公组合中文字处理模块题库下载">WPSOffice办公组合中文字处理</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="FrontPage2000模块题库下载">FrontPage2000</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="AutoCAD2004模块题库下载">AutoCAD2004</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="用友U8模块题库下载">用友U8</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="VisualFoxPro5.0模块题库下载">VisualFoxPro5.0</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="FlashMX2004动画制作模块题库下载">FlashMX2004动画制作</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Authorware7.0模块题库下载">Authorware7.0</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Project2000项目管理模块题库下载">Project2000项目管理</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="Access2000模块题库下载">Access2000</a></li><li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="PhotoshopCS4图像处理模块题库下载">PhotoshopCS4图像处理</a></li>
-
-<li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" title="用友T3会计信息化软件模块题库下载">用友T3会计信息化软件</a></li>
-
-</li>
-
-            </ul>
-
-            <div class="toruiclear"></div>
-
-        </div>
-
-
-
-
-
-        
-
-
-
-    </div>
-
-    <!-- 模块<end>-->
-
-    
-
-    
-
-    
  <!-- 职称英语考试 -->
 
     <div class="computerstudycut">
@@ -416,13 +128,9 @@ $type_arr = GetTypeName(" `keyid` = '3362' AND `parentid` = '0' and linkageid !=
 
     </div>
 
-    
-
-    
-
     <div class="computerctone rstymgbt hgl">
 
-    	<div class="computeroneleft hglsp" id="744333">
+    	<div class="computeroneleft hglsp" id="PAGE_AD_943281">
 
 			<!-- 广告位：仿人事-下左-英语图文环绕 -->
 
@@ -483,23 +191,150 @@ $type_arr = GetTypeName(" `keyid` = '3362' AND `parentid` = '0' and linkageid !=
     </div>
     
 
-    <!-- 职业资格考试 -->
+    
 
+    <!-- 职称计算机考试 -->
+
+    <div class="computerstudycut">
+
+    	<span class="lftitle">职称计算机考试</span>
+
+        <div class="rgnr">考试类别：<a href="javascript:hftb()">题库下载</a><a href="javascript:hftb()">考试咨询</a><a href="javascript:hftb()">免费下载</a></div>
+
+    </div>   
+
+    <div class="computerctone rstymgbt hgl">
+
+    	<div class="computeroneleft hglsp" id="PAGE_AD_943283">
+
+			<!-- 广告位：仿人事-下左-计算机图文环绕 -->
+
+    	</div>
+
+        
+
+        <div class="computeronecenter hgl wdtwo">
+
+            <ul class="tyullist">
+
+            	     {pc:get sql="SELECT id,style,url,title,description,updatetime FROM phpcms_news where title like '%$title%' and title like '%计算机%' and status=99 order by id desc" page="$page" num=8  urlrule=""}
+
+ {if !$data}
+
+{pc:get sql="SELECT id,style,url,title,description,updatetime FROM phpcms_news where title like '%$cityname%' and title like '%计算机%' and status=99 order by id desc" page="$page" num=8  urlrule=""}
+
+{/if}
+
+                   {php $i=1}
+
+                 {loop $data $n $r}
+
+                <li><span>({date('Y-m-d',$r['updatetime'])}})</span><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'70','')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
+
+   {php $i++}
+
+  {/loop}{/pc}
+
+            </ul>
+
+        </div>
+
+        
+
+        <div class="computeroneright hgl bgone wdone">
+
+        	 <span class="spancut">考试专题<a href="#">更多>></a></span>
+
+             <ul class="tyullist">
+
+            {pc:content  action="position" posid="295" order="listorder DESC" num="7"}
+
+             {loop $data $key $val}
+
+            	<li> <a href="{$val['url']}" title="{$val['title']}">{str_cut(trim($val[title]),'40','')}</a></li>
+
+                {/loop}{/pc}
+
+            </ul>
+
+       	</div>
+
+        <div class="newsclear"></div>
+
+    </div>
+    
+    <div class="computerstudynr rstymgbt">
+
+    	<h2 class="h2js">2015年考试宝典职称计算机考试模拟题-全真题库，模拟真实考试操作，全国同类题库过关率最高，过万考生好评[查看评价]</h2>
+
+        <ul>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/pointer2007.jpg"></a><a onclick="hftb()" rel="nofollow">PowerPoint2007</a><br>科目代码：213 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/excel2007.jpg"></a><a onclick="hftb()" rel="nofollow">Excel2007</a><br>科目代码：212 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/word2007.jpg"></a><a onclick="hftb()" rel="nofollow">Word2007</a><br>科目代码：211 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/Internet.jpg"></a><a onclick="hftb()" rel="nofollow">Internet应用</a><br>科目代码：303 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/PowerPoint2003.jpg"></a><a onclick="hftb()" rel="nofollow">PowerPoint2003</a><br>科目代码：207 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/Excel2003.jpg"></a><a onclick="hftb()" rel="nofollow">Excel2003</a><br>科目代码：206 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/wrod2003.jpg"></a><a onclick="hftb()" rel="nofollow">Word2003</a><br>科目代码：205 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/xp.jpg"></a><a onclick="hftb()" rel="nofollow">WindowsXP</a><br>科目代码：102 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a onclick="hftb()" rel="nofollow">FrontPage2003</a><br>科目代码：305 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/jswz.jpg"></a><a onclick="hftb()" rel="nofollow">金山文字2005</a><br>科目代码：208 常考模块</li>
+
+            <li><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/jsbg.jpg"></a><a onclick="hftb()" rel="nofollow">金山表格2005</a><br>科目代码：209 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/jsys.jpg"></a><a onclick="hftb()" rel="nofollow">金山演示2005</a><br>科目代码：210 常考模块</li>
+
+            <li class="duoa"><b></b><a onclick="hftb()"><img src="/statics/kaozc/images/wpsoffice.jpg"></a><a onclick="hftb()" rel="nofollow">WPSOffice办公组合中文字处理</a><br>科目代码：204 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a onclick="hftb()" rel="nofollow">FrontPage2000</a><br>科目代码：302 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/cad.jpg"></a><a onclick="hftb()" rel="nofollow">AutoCAD2004</a><br>科目代码：503 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/u8.jpg"></a><a onclick="hftb()" rel="nofollow">用友U8</a><br>科目代码：403 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/VisualFoxPro.jpg"></a><a onclick="hftb()" rel="nofollow">VisualFoxPro5.0</a><br>科目代码：401 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Flash.jpg"></a><a onclick="hftb()" rel="nofollow">FlashMX2004动画制作</a><br>科目代码：504 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Authorware.jpg"></a><a onclick="hftb()" rel="nofollow">Authorware7.0</a><br>科目代码：505 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a onclick="hftb()" rel="nofollow">Project2000项目管理</a><br>科目代码：901 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/Access2000.jpg"></a><a onclick="hftb()" rel="nofollow">Access2000</a><br>科目代码：402 常考模块</li>
+
+            <li class="duoa"><a onclick="hftb()"><img src="/statics/kaozc/images/ps.jpg"></a><a onclick="hftb()" rel="nofollow">PhotoshopCS4图像处理</a><br>科目代码：506 常考模块</li>
+
+            <li><a onclick="hftb()"><img src="/statics/kaozc/images/u8.jpg"></a><a onclick="hftb()" rel="nofollow">用友T3会计信息化软件</a><br>科目代码：404 常考模块</li>
+
+        
+
+        </ul>
+
+        <div class="newsclear"></div>
+
+   	</div>
+    
+    <!-- 职业资格考试 -->
     <div class="computerstudycut">
 
     	<span class="lftitle">职业资格考试</span>
 
-        <div class="rgnr">致睿题库软件类别：<a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/" target="_blank">[财会类]</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/" target="_blank">[医药类]</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/" target="_blank">[建筑类]</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/" target="_blank">[外贸类]</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zyzg/" target="_blank">[司法类]</a></div>
+        
 
     </div>   
 
-    
-
-    
-
     <div class="computerctone rstymgbt hgl">
 
-    	<div class="computeroneleft hglsp" id="744331">
+    	<div class="computeroneleft hglsp" id="PAGE_AD_943282">
 
 			<!-- 广告位：仿人事-下左-致睿图文环绕 -->
 
@@ -557,198 +392,111 @@ $type_arr = GetTypeName(" `keyid` = '3362' AND `parentid` = '0' and linkageid !=
 
     </div>
 
+    <!-- 职业资格考试题库下载 -->
+    <dl class="daohang">
+  <dt>
+    <h1>软件分类导航</h1>
+    <span>热门标签：<a target="_blank" href="/download/yiyaokaoshi/gaojizhichen/">医学高级</a> <a target="_blank" href="/download/yiyaokaoshi/weishengzige/">卫生资格</a> <a target="_blank" href="/download/zhichenyingyu/">职称英语</a> <a target="_blank" href="/download/jisuanjilei/zhichenjisuanji/">职称计算机</a></span></dt>
+    <dd>
+    <h2><a href="/download/yiyaokaoshi/">医药考试</a></h2>
+    <ul>
+       <li><a target="_blank" href="/download/yiyaokaoshi/zhiyeyishi/">执业医师</a></li><li><a style="color:#e10000;" target="_blank" href="/download/yiyaokaoshi/gaojizhichen/">医学高级</a></li><li><a target="_blank" href="/download/yiyaokaoshi/">卫生资格</a></li><li><a target="_blank" href="/download/yiyaokaoshi/yaoxuezhicheng/">药师资格</a></li><li><a target="_blank" href="/download/yiyaokaoshi/zhuyuanyishi/">住院医师</a></li><li><a target="_blank" href="/download/yiyaokaoshi/hulikaoshi/">护士考试</a></li><li><a target="_blank" href="/download/yiyaokaoshi/yixuesanji/">医学三基</a></li><li><a style="color:#e10000;" target="_blank" href="/download/yiyaokaoshi/zhiyeyaoshi/soft1238.html">执业药师(西药)</a></li><li><a target="_blank" href="/download/yiyaokaoshi/zhiyeyaoshi/soft1239.html">执业药师(中药)</a></li>    
+   <li><a style="color:#e10000;" target="_blank" href="/download/yiyaokaoshi/zhiyeyishi/soft2107.html">临床执业医师</a></li><li><a target="_blank" href="/download/yiyaokaoshi/gaojizhichen/hulixilie/soft1242.html">外科护理高级职称</a></li><li><a style="color:#e10000;" target="_blank" href="/download/yiyaokaoshi/gaojizhichen/fuchankexilie/soft1269.html">妇产科高级职称</a></li><li><a target="_blank" href="/download/yiyaokaoshi/zhuzhiyishi/neikexilie/soft2123.html">内科主治医师</a></li><li><a target="_blank" href="/download/yiyaokaoshi/gaojizhichen/hulixilie/soft1244.html">内科护理高级职称</a></li><li><a target="_blank" href="/download/yiyaokaoshi/zhuzhiyishi/fuchankexilie/soft1345.html">妇产科主治医师</a></li> </ul>
+    <br class="clear">
+  </dd>
+  <dd>
+    <h2><a href="/download/jianzhugongcheng/">建筑工程</a></h2>
+    <ul>
+       <li><a target="_blank" href="/download/jianzhugongcheng/yijijianzaoshi/">一级建造师</a></li><li><a target="_blank" href="/download/download/jianzhugongcheng/gongchengshizhicheng/">土地代理人</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2260.html">环境评价师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/zhucejianzhushi/soft2268.html">一级建筑师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/">中级质量师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2259.html">注册安全师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/">资产评估师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2251.html">注册电气师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2267.html">监理工程师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/zhucejianzhushi/soft2246.html">二级建筑师</a></li><li><a style="color:#e10000;" target="_blank" href="/download/jianzhugongcheng/erjijianzaoshi/">二级建造师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2258.html">招标师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/">初级质量师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2257.html">土地估价师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2265.html">房地产估价</a></li><li><a target="_blank" href="/download/zhiyezige/wuyeguanlishi/soft2256.html">物业管理师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2255.html">设备监理师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2264.html">造价工程师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/">房产经纪人</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2263.html">一级结构师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2252.html">注册岩土师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2261.html">投资项目管理师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2250.html">城市规划师</a></li><li><a target="_blank" href="/download/jianzhugongcheng/gongchengshizhicheng/soft2262.html">咨询工程师</a></li> 
+    </ul>
+    <br class="clear">
+  </dd>
+  <dd>
+    <h2><a href="/download/caihuijingji/">财会经济</a></h2>
+    <ul>
+      <li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2304.html">保险代理</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2310.html">基金从业</a></li><li><a target="_blank" href="/download/caihuijingji/caihuikaoshi/soft2323.html">会计电算化</a></li><li><a target="_blank" href="/download/caihuijingji/jingjishikaoshi/zhongjijingjishi/">中级经济师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2309.html">期货从业</a></li><li><a target="_blank" href="/download/caihuijingji/caihuikaoshi/soft2321.html">初级会计师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2308.html">保险公估人</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2320.html">银行从业</a></li><li><a target="_blank" href="/download/caihuijingji/jingjishikaoshi/chujijingjishi/">初级经济师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2305.html">保险经纪人</a></li><li><a style="color:#e10000;" target="_blank" href="/download/caihuijingji/caihuikaoshi/soft2317.html">中级会计师</a></li><li><a target="_blank" href="/download/caihuijingji/caihuikaoshi/soft2322.html">注册会计师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/">注册税务师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2367.html">理财规划师</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/soft2312.html">证券从业</a></li><li><a target="_blank" href="/download/caihuijingji/jinrongkaoshi/">证券经纪人</a></li> 
+    </ul>
+    <br class="clear">
+  </dd>
+  
+  <dd>
+    <h2><a href="/download/zhichenyingyu/">职称英语</a></h2>
+    <ul>
+      <li><a href="/download/zhichenyingyu/ligongxue/">理工类</a></li>
+ <li><a href="/download/zhichenyingyu/weishengxue/">卫生类</a></li>
+ <li><a href="/download/zhichenyingyu/zonghelei/">综合类</a></li>
+      <li class="point"><a href="/download/zhichenjisuanji/">计算机类</a></li>
+      <li><a target="_blank" href="/download/zhichenjisuanji/">职称计算机</a></li> 
+      
+    </ul>
     
-
+    <br class="clear">
+  </dd>
+  
+  <dd>
+    <h2><a href="/download/waimaokaoshi/">外贸考试</a></h2>
+    <ul>
+       <li><a target="_blank" href="/download/zhiyezige/wuliushi/">物流师</a></li> 
+      <li class="point"><a href="/download/xuelikaoshi/">学历考试</a></li>
+       <li><a target="_blank" href="/download/qita/shuoshi/">考研</a></li>
+    </ul>
+    <br class="clear">
+  </dd>
+  <dd style="border-bottom:0">
+    <h2><a href="/download/zhiyezige/">职业资格</a></h2>
+    <ul>
+       <li><a target="_blank" href="/download/zhiyezige/jiaoshizige/">教师资格</a></li><li><a target="_blank" href="/download/zhiyezige/renliziyuanshi/">人力资源师</a></li><li><a target="_blank" href="/download/zhiyezige/xinlizixunshi/">心理咨询师</a></li><li><a target="_blank" href="/download/qita/sifakaoshi/">司法考试</a></li><li><a target="_blank" href="/download/qita/gongwuyuan/">公务员</a></li><li><a target="_blank" href="/download/qita/shenzhenzhiyuankaoshi/">深圳职员</a></li>
+    </ul>
+    <br class="clear">
+  </dd>
+  
+  
+</dl>
     
-
-   
-
+    <div class="addfooter">
     
-
-    <!-- 职称计算机考试 -->
-
-    <div class="computerstudycut">
-
-    	<span class="lftitle">职称计算机考试</span>
-
-        <div class="rgnr">考试类别：<a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/">题库下载</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/">考试咨询</a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/">免费下载</a></div>
-
-    </div>
-
-    
-
-    
-
-    <div class="computerctone rstymgbt hgl">
-
-    	<div class="computeroneleft hglsp" id="744334">
-
-			<!-- 广告位：仿人事-下左-计算机图文环绕 -->
-
-    	</div>
-
-        
-
-        <div class="computeronecenter hgl wdtwo">
-
-            <ul class="tyullist">
-
-            	     {pc:get sql="SELECT id,style,url,title,description,updatetime FROM phpcms_news where title like '%$title%' and title like '%计算机%' and status=99 order by id desc" page="$page" num=8  urlrule=""}
-
- {if !$data}
-
-{pc:get sql="SELECT id,style,url,title,description,updatetime FROM phpcms_news where title like '%$cityname%' and title like '%计算机%' and status=99 order by id desc" page="$page" num=8  urlrule=""}
-
-{/if}
-
-                   {php $i=1}
-
-                 {loop $data $n $r}
-
-                <li><span>({date('Y-m-d',$r['updatetime'])}})</span><a href="{$r[url]}"{title_style($r[style])} title="{trim($r[title])}" target="_blank" >{str_cut(trim($r[title]),'70','')}</a>{if $i<4}<img src="/statics/kaozc/images/newsicon2.jpg" />{/if}</li>
-
-   {php $i++}
-
-  {/loop}{/pc}
-
-            </ul>
-
+    	<div class="rscitydq ftssrk">
+        	<span>考试专栏</span>
+            <div class="xjct">
+            	{pc:get sql="SELECT * from phpcms_diypage WHERE cityid in ($arrchildid) and level=1 order by id desc" cache="0" num="30" return="data"}
+{loop $data $key $val}
+<a href="/r/{$val[dirname]}/" target="_blank" title="{$val[h1]}">{$val[h1]}</a>
+{/loop}{/pc}
+            </div>
+            <div class="clear"></div>
         </div>
-
+		
+        <div class="rscitydq ftssrk">
+        	<span>省市入口</span>
+            <div class="xjct">
+            	{pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND child=1 AND linkageid NOT IN (33,34,35,3358,3364)" cache="3600"  dbsource="" return="data" num=31}
+{loop $data $key $v}
+      
+        <a href="{siteurl($siteid)}/renshibaoming/{$v['pinyin']}.html" target="_blank">{replace_arr($v['name'],array('省','市'))}人事考试网</a>
+{/loop}
+            </div>
+            <div class="clear"></div>
+        </div>
         
 
-        <div class="computeroneright hgl bgone wdone">
-
-        	 <span class="spancut">考试专题<a href="#">更多>></a></span>
-
-             <ul class="tyullist">
-
-            {pc:content  action="position" posid="295" order="listorder DESC" num="7"}
-
-             {loop $data $key $val}
-
-            	<li> <a href="{$val['url']}" title="{$val['title']}">{str_cut(trim($val[title]),'40','')}</a></li>
-
-                {/loop}{/pc}
-
-            </ul>
-
-       	</div>
-
-        <div class="newsclear"></div>
-
     </div>
-
-    
-
-    <div class="computerstudynr rstymgbt">
-
-    	<h2 class="h2js">2013年博大考神职称计算机考试软件 - 全国过关率最高,真题率最高职称计算机考试模拟题软件</h2>
-
-        <ul>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/pointer2007.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">PowerPoint2007</a><br>科目代码：213 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/excel2007.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Excel2007</a><br>科目代码：212 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/word2007.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Word2007</a><br>科目代码：211 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Internet.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Internet应用</a><br>科目代码：303 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/PowerPoint2003.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">PowerPoint2003</a><br>科目代码：207 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Excel2003.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Excel2003</a><br>科目代码：206 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/wrod2003.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Word2003</a><br>科目代码：205 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/xp.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">WindowsXP</a><br>科目代码：102 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">FrontPage2003</a><br>科目代码：305 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/jswz.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">金山文字2005</a><br>科目代码：208 常考模块</li>
-
-            <li><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/jsbg.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">金山表格2005</a><br>科目代码：209 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/jsys.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">金山演示2005</a><br>科目代码：210 常考模块</li>
-
-            <li class="duoa"><b></b><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/wpsoffice.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">WPSOffice办公组合中文字处理</a><br>科目代码：204 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">FrontPage2000</a><br>科目代码：302 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/cad.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">AutoCAD2004</a><br>科目代码：503 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/u8.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">用友U8</a><br>科目代码：403 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/VisualFoxPro.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">VisualFoxPro5.0</a><br>科目代码：401 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Flash.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">FlashMX2004动画制作</a><br>科目代码：504 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Authorware.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Authorware7.0</a><br>科目代码：505 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Frontpage2000.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Project2000项目管理</a><br>科目代码：901 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/Access2000.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">Access2000</a><br>科目代码：402 常考模块</li>
-
-            <li class="duoa"><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/ps.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">PhotoshopCS4图像处理</a><br>科目代码：506 常考模块</li>
-
-            <li><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank"><img src="/statics/kaozc/images/u8.jpg"></a><a href="http://cps.egbroad.com/cpstransfer.php?unid=j1037&&urlto=http://www.egbroad.com/kfb/zcjsj/" target="_blank" rel="nofollow">用友T3会计信息化软件</a><br>科目代码：404 常考模块</li>
-
-        
-
-        </ul>
-
-        <div class="newsclear"></div>
-
-   	</div>
-
-    
-
-    
-
-    <div class="rsfooter">
-
-    	 {pc:block pos="renshibangming-foot"}{/pc}
-
-    </div>
-
-    
-
-    
-<script src="http://s17.cnzz.com/stat.php?id=5665564&web_id=5665564" language="JavaScript"></script>
-       {template "content","footer"}
-
-    <script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script><script type="text/javascript">        				  BAIDU_CLB_fillSlotAsync('709944','PAGE_AD_709944');
-
-    BAIDU_CLB_fillSlotAsync('744421','744421');
-
-	<!-- 广告位：仿人事-下左-致睿图文环绕 -->
-
-	BAIDU_CLB_fillSlotAsync('744331','744331');
-
-	<!-- 广告位：仿人事-下左-英语图文环绕 -->
-
-	BAIDU_CLB_fillSlotAsync('744333','744333');
-
-	<!-- 广告位：仿人事-下左-计算机图文环绕 -->
-
-	BAIDU_CLB_fillSlotAsync('744334','744334');
-
-    </script><script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
-
-<!-- 广告位：仿人事-左边漂浮 -->
-
-<script type="text/javascript">BAIDU_CLB_fillSlot("744792");</script> 
-
-
-
-<script type="text/javascript">BAIDU_CLB_fillSlot("749611");</script> 
-
+</div>
 </div>
 
-<script type='text/javascript' src='http://chat.53kf.com/kf.php?arg=cdbroadcom&style=6'></script><div style='display:none;'><a href='http://www.53kf.com'>在线客服系统</a></div>
-<script language="javascript">BAIDU_CLB_fillSlot("735510");</script>
-
+{template "content","rsks_bottom"}
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script><script type="text/javascript"> 
+<!-- 广告位：地方人事-图文环绕 -->
+BAIDU_CLB_fillSlotAsync('943278', 'PAGE_AD_943278');
+<!-- 广告位：地方人事-幻灯片 -->
+BAIDU_CLB_fillSlotAsync('943280', 'PAGE_AD_943280');
+<!-- 广告位：人事页面-职称英语 -->
+BAIDU_CLB_fillSlotAsync('943281', 'PAGE_AD_943281');
+<!-- 广告位：地方人事-职业资格 -->
+BAIDU_CLB_fillSlotAsync('943282', 'PAGE_AD_943282');
+<!-- 广告位：地方人事-职称计算机 -->
+BAIDU_CLB_fillSlotAsync('943283', 'PAGE_AD_943283');
+</script><script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<!-- 广告位：仿人事-左边漂浮 -->
 </body>
-
 </html>
 

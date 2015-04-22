@@ -10,12 +10,11 @@ img{ border:0px;}
 .clear{ clear:both;}
 
 .rstobanner{ height:171px; background:url(/statics/renshikaoshi/images/toban.jpg) no-repeat center top;}
-.rshead{ background:url(../images/headbg.jpg) repeat-x;}
 .rsctty{ width:960px; margin:0 auto;}
 .rsdh{ height:29px; line-height:29px; font-size:14px;}
 .rsdh a{ margin:0 5px;}
 .computeroneleft .ksjm .newshot span i,.computeronecenter .newstitle b,.computeronecenter .newsqhcut,.rgbgone dl dt a{ background-image:url(../images/computertyicon.png); background-repeat:no-repeat;}
-.rsmenu{ background-color:#3a3a3a; height:35px; line-height:35px; _line-height:30px;}
+.rsmenu{ background-color:#3a3a3a; height:45px; line-height:45px; _line-height:30px;}
 .rsmenu ul li{ float:left; width:105px; text-align:center; position:relative;}
 .rsmenu ul li a{ color:#ffffff; font-size:13px; font-weight:bold;}
 .rsmenu ul li a:hover{ color:#ffffff;}
@@ -104,7 +103,7 @@ img{ border:0px;}
 .h2js a{ font-size:12px; color:#666666;}
 .computerstudynr ul li{ width:204px; border:1px #77C1DE solid; height:47px; padding:4px 5px; background:#ffffff; float:left; margin:0 10px 6px 10px; display:inline;}
 .computerstudynr ul li img{ border:1px #d7d7d7 solid; width:45px; height:45px; float:left; margin-right:8px;}
-.computerstudynr ul li a{ color:#2F6FAD; font-size:14px; font-weight:700px; line-height:25px;}
+.computerstudynr ul li a{ color:#2F6FAD; font-size:14px; font-weight:700px; line-height:25px; cursor:pointer;}
 .computerstudynr ul li.duoa a{ margin-bottom:5px; line-height:16px;}
 .toruitopnewshot{ height:121px; overflow:hidden;}
 .toruitopnewshot .newspic{ float:left; width:252px;}

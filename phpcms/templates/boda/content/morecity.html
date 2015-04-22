@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$city}{$catname}考试题库软件-考职称网</title>
+<link type="text/css" rel="stylesheet" href="{CSS_PATH}renshi/personnel_examination.css" />
+<link type="text/css" rel="stylesheet" href="http://www.kaozc.com/statics/jsj/css/computer.css" />
+</head>
+
+<body>
+
+{template "content","renshi_header"}
+
+<!--//header-->
+
+
+<div class="personelauto">
+	<div class="personeldfz personelmgtp">
+    	<b><i></i>{$city}{$catname}考试导航<i class="i1"></i></b>
+    	<span>{pc:get sql="SELECT linkageid,name,pinyin from v9_linkage WHERE parentid=0 AND linkageid NOT IN (33,34,35,3358,3360) and keyid=1 order by listorder asc" cache="3600"  dbsource="" return="data" num=32}
+
+{loop $data $key $v}<a title="{$v['name']}{$catname}考试网" href="
+{$cat_url}morecity_{$v['linkageid']}.html"  class="">{str_replace(array('省','市','县'),'',$v['name'])}</a> 
+ {/loop}
+{/pc}</span>
+    	<div class="personelclear"></div>
+    </div>
+   
+    <div class="functionsflist personelmgtp">
+    	<ul>
+   
+         {if $caturl == 'zyzg'}
+        {loop $zr_list $r}
+        	<li><a href="{$cat_url}{$r['id']}/{getCityUrl($citypinyin)}.html">{$r['name']}</a></li>
+               {/loop} 
+        {elseif $caturl == 'jsj'}
+       {pc:content action="category" catid="198" num="100" siteid="$siteid" order="listorder ASC"}   {loop $data $r}
+        	<li><a href="{$cat_url}{$r['catid']}/{getCityUrl($citypinyin)}.html">{$r['catname']}</a></li>
+               {/loop} 
+      {else}         
+                   {loop $childCitylist $r}
+                     <?php
+    $thiscityname =  strlen($r['name'])>6?str_replace(array('省','市','县'),'',$r['name']):$r['name'];
+    ?>
+        	<li><a href="{$cat_url}{getCityUrl($r['pinyin'])}.html" target="_blank"  title="{$thiscityname}{$catname}考试">{$thiscityname}{$catname}考试</a></li>
+               {/loop}
+                    
+                {/if}
+        </ul>
+        <div class="personelclear"></div>
+    </div>
+    {template "content","footer"}
+    
+</div>
+</body>
+</html>

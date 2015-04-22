@@ -8,6 +8,10 @@
 <meta name="description" content="{$SEO['description']}">
 <link type="text/css" rel="stylesheet" href="/statics/kaozc/ask/css/online_quiz.css" />
 <link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/kzcty-css.css?xg=0403" />
+<link type="text/css" rel="stylesheet" href="/statics/renshikaoshi/css/cykzc.css?xg=0112" />
+<script type="text/javascript" src="http://www.51kaozc.com/js/53kf.js"></script>
+<script type="text/javascript" src="/statics/renshikaoshi/js/jquery-1.7.2.min.js"></script>
 </head>
 
 <body>
@@ -64,7 +68,7 @@ function on_submit() {
 </script>
 <div class="onlinequizct">
 
-	<div class="quizdetail">
+	<div class="quizdetail kzc-newsone">
     	<div class="dqposition">当前位置：：<a href="{siteurl($siteid)}">考职称</a>><a href="{siteurl($siteid)}/question/">在线问答</a>><a href="{siteurl($siteid)}/question/ask.html">提问</a></div>
         <div class="quiztiwen">
         	<span class="fjsp">方式一：填写您的问题</span>
@@ -80,26 +84,15 @@ function on_submit() {
             <div class="dvarea"><textarea  name="question" id="question" ></textarea></div>
             <p><span>你还可以输入<strong id="title_num">40</strong>个字</span></p>
             <div id="buchong" onclick="col_show()" class="questionbuc"><span>问题补充（选填）</span></div>
-             <div class="dvarea"><textarea  name="content" id="cont"  style="display:none" ></textarea></div>
+             <div class="dvarea"><textarea  name="content" id="cont" style="display:none;" ></textarea></div>
             <div class="tjbtn"><input type="submit" name="dosubmit" value=" "  /></div>
             </form>
             <div class="zjxgb"><span class="fjsp rgzx">方式二：人工咨询</span></div>
-            <p><a href="#" onclick="kefu_url(1)">联系在线客服</a></p>
+            <p style="padding-bottom:10px;"><a onclick="kefulink()" href="javascript:void(0)">联系在线客服</a></p>
         </div>
   	</div>
     
-    <div class="quizrg">
-    	<div class="quiztydv">
-    		<span class="spde">答疑专家<a href="http://www.kaogwy.com/zhuanjia/" target="_blank">更多>></a></span>
-             <?php
-            $typeArr = gettypeurl();
-            ?>
-             {pc:get sql="SELECT * from v9_zhuanjia where siteid=$this->siteid ORDER BY id asc" cache="" num="4"  dbsource="" return="data"}
-{loop $data $key $val}
-            <div class="zjpclsit"><a href="{siteurl($siteid)}/{$typeArr[$val['typeid']]['typedir']}/zhuanjia/t_{$val['id']}_1.html" target="_blank"><img src="{$val['thumb']}"  width="100"/></a><p><a href="{siteurl($siteid)}/{$typeArr[$val['typeid']]['typedir']}/zhuanjia/t_{$val['id']}_1.html" target="_blank">{$val['name']}</a></p></div>
-           {/loop} {/pc} 
-        </div>
-    </div>
+    {template "zsask","right"}
     
 </div>
 {template "content","rsks_bottom"}
