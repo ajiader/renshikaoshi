@@ -123,26 +123,26 @@ ORDER BY  t1.id " cache="0"  dbsource="" return="data" start="1" num="4" }
             </div>
             <div id="zxnewsDIV">
                 <ul class="newsultylist">
-                {php $C_title = "title like '%报考通知%'  and  ( $condition    )"; //报考通知}
-                {pc:content action="lists" catid="10" where="$C_title" order="id DESC" num="2" start="5"}{loop $data $key $val}
+                {php $C_title = "locate('报考通知',title)"; //报考通知}
+                 {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and catid=187 and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="0" num="5" }{loop $data $key $val}
                 	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'60','')}</a><span>[{date('m-d', $val['updatetime'])}]</span></li>
                     {/loop}{/pc}
                 </ul>
                 <ul class="newsultylist" style="display:none;">
-                	 {php $C_title = "title like '%报名时间%' and  ( $condition    )"; //报名时间}
-                 {pc:content action="lists" catid="10" where="$C_title" order="id DESC" num="2" start="5"}{loop $data $key $val}
+                	 {php $C_title = "locate('报名时间',title)"; //报名时间}
+                 {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and $C_title and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="0" num="5" }{loop $data $key $val}
                 	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'60','')}</a><span>[{date('m-d', $val['updatetime'])}]</span></li>
                     {/loop}{/pc}
                 </ul>
                 <ul class="newsultylist" style="display:none;">
-                	 {php $C_title = "title like '%报名入口%'  and  ( $condition    )"; //报名入口}
-                {pc:content action="lists" catid="10" where="$C_title" order="id DESC" num="2" start="5"} {loop $data $key $val}
+                	 {php $C_title = "title like '%报名入口%'"; //报名入口}
+                 {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and $C_title and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="0" num="5" }{loop $data $key $val}
                 	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'60','')}</a><span>[{date('m-d', $val['updatetime'])}]</span></li>
                     {/loop}{/pc}
                 </ul>
                 <ul class="newsultylist" style="display:none;">
-                	 {php $C_title = "title like '%考试时间%'   and  ( $condition    )"; //考试时间}
-                {pc:content action="lists" catid="10" where="$C_title" order="id DESC" num="2" start="5"}{loop $data $key $val}
+                	 {php $C_title = "title like '%考试时间%'"; //考试时间}
+                 {pc:get sql="SELECT url,title,updatetime,catid,city_id FROM v9_news WHERE status=99 and typeid=111 and  ( $condition    )  order by id desc" cache="0" dbsource="" return="data" start="0" num="5" }{loop $data $key $val}
                 	<li><a href="{$val['url']}" title="{$val['title']}" target="_blank" >{str_cut($val['title'],'60','')}</a><span>[{date('m-d', $val['updatetime'])}]</span></li>
                     {/loop}{/pc}
                 </ul>
