@@ -54,6 +54,7 @@ function open_list(obj) {
 		<a href="#"></a>
 		</span>
 		<a href="#"><img src="<?php echo IMG_PATH;?>minus.gif" /> <img src="<?php echo IMG_PATH;?>application_side_expand.png" /> 展开/收缩</a>
+		<br /><a href="?m=content&c=content2&a=init&menuid=822" target='right'><img src="<?php echo IMG_PATH;?>minus.gif" /> <img src="<?php echo IMG_PATH;?>application_side_expand.png" /> 所有内容</a>
 </div>
 <?php
  if($_GET['from']=='block') {
