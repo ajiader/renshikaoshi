@@ -208,7 +208,8 @@ class index extends admin {
 		$logintime = $r['lastlogintime'];
 		$loginip = $r['lastloginip'];
 		$sysinfo = get_sysinfo();
-		$sysinfo['mysqlv'] = mysql_get_server_info();
+		//$sysinfo['mysqlv'] = mysqli_get_server_info();
+		$sysinfo['mysqlv'] = 'mysql5.5';
 		$show_header = $show_pc_hash = 1;
 		/*检测框架目录可写性*/
 		$pc_writeable = is_writable(PC_PATH.'base.php');

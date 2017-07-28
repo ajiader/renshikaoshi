@@ -181,6 +181,8 @@ rewrite ^/zhiruitiku/$ /goshouye.php?m=zrmokuai&c=zhiruitiku  last;
 rewrite ^/zhuanjia/list_([0-9]+)_([0-9]+).html /goshouye.php?m=content&c=index&a=zhuanjia&id=$1&page=$2 last;
 #自定义seo推广页面
 rewrite ^/r/(.*)/ /goshouye.php?m=diypage&c=index&a=init&dirname=$1 last;
+rewrite ^/r/(.*) /goshouye.php?m=diypage&c=index&a=init&dirname=$1 last;
+
 
 #ajax页面调用
 rewrite ^/ajax_(.*).html /goshouye.php?m=ajax&a=$1 last;
